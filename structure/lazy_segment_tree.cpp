@@ -30,7 +30,7 @@ struct LazySegmentTree {
         lazy[k] = oe;
     }
 
-    M update(int a, int b, OM &x, int k, int l, int r) {
+    M update(int a, int b, const OM &x, int k, int l, int r) {
         propagate(k, r - l);
         if (r <= a || b <= l) {
             return data[k];
@@ -45,7 +45,7 @@ struct LazySegmentTree {
         }
     }
 
-    void update(int a, int b, OM &x) {
+    void update(int a, int b, const OM &x) {
         // update [a, b) with x.
         update(a, b, x, 1, 0, sz);
     }

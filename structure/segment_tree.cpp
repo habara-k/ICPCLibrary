@@ -15,7 +15,7 @@ struct SegmentTree {
         data.assign(2*sz, e);
     }
 
-    void update(int k, M &x) {
+    void update(int k, const M &x) {
         k += sz;
         data[k] = x;
         while (k >>= 1) {

@@ -1,7 +1,7 @@
 #include "template.cpp"
 
 template<typename T>
-vector<T> dijkstra(Graph<T> &g, int s) {
+vector<T> dijkstra(const Graph<T> &g, int s) {
     const auto INF = numeric_limits<T>::max();
     vector<T> d(g.size(), INF);
 

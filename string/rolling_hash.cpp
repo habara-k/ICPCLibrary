@@ -6,7 +6,7 @@ struct RollingHash {
     vector<int> s;
     vector<long long> hash[2], pow[2];
 
-    RollingHash(vector<int> &cs) : s(cs) {
+    RollingHash(const vector<int> &cs) : s(cs) {
         int n = s.size();
         for (int id = 0; id < 2; ++id) {
             hash[id].assign(n+1, 0);
