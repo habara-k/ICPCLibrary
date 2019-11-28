@@ -2,7 +2,7 @@
 
 #include "../../structure/lazy_segment_tree.cpp"
 
-main() {
+int main() {
     int N, Q;
     cin >> N >> Q;
     LazySegmentTree<long long> seg(N);

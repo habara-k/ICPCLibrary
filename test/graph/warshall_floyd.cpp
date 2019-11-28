@@ -2,11 +2,11 @@
 
 #include "../../graph/warshall_floyd.cpp"
 
-main() {
+int main() {
     int V, E;
     cin >> V >> E;
 
-    const int INF = inf<int>();
+    const int INF = numeric_limits<int>::max();
     vector<vector<int>> G(V, vector<int>(V, INF));
     for (int i = 0; i < V; ++i) G[i][i] = 0;
     for (int i = 0; i < E; ++i) {

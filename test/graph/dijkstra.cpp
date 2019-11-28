@@ -2,7 +2,7 @@
 
 #include "../../graph/dijkstra.cpp"
 
-main() {
+int main() {
     int V, E, R;
     cin >> V >> E >> R;
     Graph<int> g(V);
@@ -12,7 +12,7 @@ main() {
         g[a].push_back({a,b,c});
     }
     for (auto &dist : dijkstra(g, R)) {
-        if (dist == inf<int>()) puts("INF");
+        if (dist == numeric_limits<int>::max()) puts("INF");
         else cout << dist << endl;
     }
 }

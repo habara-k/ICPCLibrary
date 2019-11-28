@@ -2,7 +2,7 @@
 
 #include "../../structure/weighted_union_find.cpp"
 
-main() {
+int main() {
     int N, M;
     cin >> N >> M;
     WeightedUnionFind<int> uf(N);

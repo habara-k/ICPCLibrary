@@ -2,7 +2,7 @@
 
 #include "../../structure/segment_tree.cpp"
 
-main() {
+int main() {
     int N, Q;
     cin >> N >> Q;
     SegmentTree<int> seg(N);

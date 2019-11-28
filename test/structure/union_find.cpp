@@ -2,7 +2,7 @@
 
 #include "../../structure/union_find.cpp"
 
-main() {
+int main() {
     int N, Q;
     cin >> N >> Q;
     UnionFind uf(N);

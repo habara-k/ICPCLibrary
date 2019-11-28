@@ -2,7 +2,7 @@
 
 #include "../../string/rolling_hash.cpp"
 
-main() {
+int main() {
     string T, P;
     cin >> T >> P;
     int n = T.size(), m = P.size();
