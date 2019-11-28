@@ -6,7 +6,7 @@ main() {
     int V, E, R;
     cin >> V >> E >> R;
     Graph<int> g(V);
-    for(int i = 0; i < E; i++) {
+    for (int i = 0; i < E; ++i) {
         int a, b, c;
         cin >> a >> b >> c;
         g[a].push_back({a,b,c});
