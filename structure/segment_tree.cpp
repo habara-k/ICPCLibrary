@@ -6,7 +6,7 @@ struct SegmentTree {
     vector<M> data;
 
     // RMQ
-    const M e = inf<M>();
+    const M e = numeric_limits<M>::max();
     const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
 
     SegmentTree(int n) {

@@ -2,7 +2,7 @@
 
 template<typename T>
 vector<T> dijkstra(Graph<T> &g, int s) {
-    const auto INF = inf<T>();
+    const auto INF = numeric_limits<T>::max();
     vector<T> d(g.size(), INF);
 
     using Pi = pair<T, int>;
