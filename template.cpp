@@ -1,6 +1,7 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 using namespace std;
 
-main()
-{
+template<typename T>
+T inf() {
+    return numeric_limits<T>::max();
 }
