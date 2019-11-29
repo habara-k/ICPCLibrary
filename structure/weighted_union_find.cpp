@@ -4,7 +4,7 @@ template<typename A>
 struct WeightedUnionFind
 {
     vector<int> par, sz;
-    vector<A> data;     // data[x]: root から見たx の重み
+    vector<A> data;     // data[x]: diff from root to x
     WeightedUnionFind(int n, A e=0) :
         par(n), sz(n, 1), data(n, e) {
         for (int i = 0; i < n; ++i) par[i] = i;
@@ -23,12 +23,12 @@ struct WeightedUnionFind
     }
 
     A diff(int x, int y) {
-        // x から見たy の重み
+        // diff from x to y
         return data[y] - data[x];
     }
 
     void merge(int x, int y, A w) {
-        // x から見たy の重みがw になるようにmerge
+        // merge so that "diff from x to y" will be w.
         w += weight(x); w -= weight(y);
         x = root(x); y = root(y);
         if (x == y) return;

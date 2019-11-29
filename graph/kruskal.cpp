@@ -8,7 +8,7 @@ T kruskal(vector<edge<T>> &es, int V) {
     UnionFind uf(V);
     T ret = 0;
 
-    // es を破壊的にソートする
+    // sort destructively
     sort(es.begin(), es.end(), [](edge<T> &a,edge<T> &b){
             return a.cost < b.cost;
             });
@@ -19,7 +19,7 @@ T kruskal(vector<edge<T>> &es, int V) {
         }
     }
 
-    // es を見る順番だけをソート
+    // // sort only the order to check
     // vector<int> ord(es.size());
     // iota(ord.begin(), ord.end(), 0);
     // sort(ord.begin(), ord.end(), [&](int i,int j){
