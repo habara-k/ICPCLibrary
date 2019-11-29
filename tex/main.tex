@@ -1,0 +1,36 @@
+\documentclass{jsarticle}
+\usepackage{listings}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\begin{document}
+
+\title{ICPC Library}
+\author{Keigo Habara}
+\date{\today}
+
+\maketitle
+
+\input{src/template.tex}
+\input{src/graph.tex}
+\input{src/number.tex}
+\input{src/string.tex}
+\input{src/structure.tex}
+
+\end{document}
