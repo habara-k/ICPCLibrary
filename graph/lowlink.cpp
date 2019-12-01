@@ -1,7 +1,5 @@
 #include "./template.cpp"
 
-// bridge: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
-// articulation: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A
 template<typename T>
 struct LowLink {
     const int inf = 1000000000;
