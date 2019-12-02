@@ -3,8 +3,8 @@
 #include "../../number/combination.cpp"
 
 int main() {
-    int64_t n, k; cin >> n >> k;
-    const int64_t mod = 1e9+7;
+    ll n, k; cin >> n >> k;
+    const ll mod = 1e9+7;
 
     init_fact(k, mod);
 

@@ -4,7 +4,7 @@ struct RollingHash {
     const int base = 9973;
     const int mod[2] = {999999937, 1000000007};
     vector<int> s;
-    vector<int64_t> hash[2], pow[2];
+    vector<ll> hash[2], pow[2];
 
     RollingHash(const vector<int> &cs) : s(cs) {
         int n = s.size();
@@ -19,8 +19,8 @@ struct RollingHash {
     }
 
     // get hash of s[l:r)
-    int64_t get(int l, int r, int id = 0) {
-        int64_t res = hash[id][r] - hash[id][l] * pow[id][r-l] % mod[id];
+    ll get(int l, int r, int id = 0) {
+        ll res = hash[id][r] - hash[id][l] * pow[id][r-l] % mod[id];
         if (res < 0) res += mod[id];
         return res;
     }

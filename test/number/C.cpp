@@ -3,14 +3,14 @@
 #include "../../number/combination.cpp"
 
 int main() {
-    int64_t n, k; cin >> n >> k;
-    const int64_t mod = 1e9+7;
+    ll n, k; cin >> n >> k;
+    const ll mod = 1e9+7;
 
     init_fact(k, mod);
 
-    int64_t ans = 0;
-    for (int64_t l = 0; l <= k; ++l) {
-        int64_t tmp = powm(k-l, n, mod);
+    ll ans = 0;
+    for (ll l = 0; l <= k; ++l) {
+        ll tmp = powm(k-l, n, mod);
         (tmp *= C(k, l, mod)) %= mod;
         if (l & 1) tmp = (-tmp + mod) % mod;
         (ans += tmp) %= mod;

@@ -1,7 +1,7 @@
 #include "mod.cpp"
 
-vector<int64_t> fact;
-void init_fact(int n, int64_t m) {
+vector<ll> fact;
+void init_fact(int n, ll m) {
     fact.assign(n+1, 1);
     for (int i = 2; i <= n; ++i) {
         (fact[i] = fact[i-1] * i) %= m;
@@ -9,7 +9,7 @@ void init_fact(int n, int64_t m) {
 }
 
 // require init_fact(GREATER THAN OR EQUAL TO n, m)
-int64_t C(int64_t n, int64_t r, int64_t m) {
+ll C(ll n, ll r, ll m) {
     return (fact[n] * invm((fact[r] * fact[n-r]) % m, m)) % m;
 }
 
@@ -20,10 +20,10 @@ int64_t C(int64_t n, int64_t r, int64_t m) {
 //            s.t. each box contains at least one ball.
 //
 // require init_fact(GREATER THAN OR EQUAL TO k, m)
-int64_t Stirling(int64_t n, int64_t k, int64_t m) {
-    int64_t ret = 0;
-    for (int64_t l = 0; l <= k; ++l) {
-        int64_t tmp = (C(k, l, m) * powm((k-l) % m, n, m)) % m;
+ll Stirling(ll n, ll k, ll m) {
+    ll ret = 0;
+    for (ll l = 0; l <= k; ++l) {
+        ll tmp = (C(k, l, m) * powm((k-l) % m, n, m)) % m;
         if (l & 1) tmp = (-tmp + m) % m;
         (ret += tmp) %= m;
     }
@@ -36,9 +36,9 @@ int64_t Stirling(int64_t n, int64_t k, int64_t m) {
 //            into k boxes(not distinguished)
 //
 // require init_fact(GREATER THAN OR EQUAL TO k, m)
-int64_t Bell(int64_t n, int64_t k, int64_t m) {
-    int64_t ret = 0;
-    for (int64_t l = 0; l <= k; ++l) {
+ll Bell(ll n, ll k, ll m) {
+    ll ret = 0;
+    for (ll l = 0; l <= k; ++l) {
         (ret += Stirling(n, l, m)) %= m;
     }
     return ret;
@@ -48,9 +48,9 @@ int64_t Bell(int64_t n, int64_t k, int64_t m) {
 // Partition[k][n] := the number of cases
 //            to split n balls(not distinguished)
 //            into k boxes(not distinguished)
-vector<vector<int64_t>> Part;
-void init_partition(int64_t k, int64_t n, int64_t m) {
-    Part.assign(k+1, vector<int64_t>(n+1, 0));
+vector<vector<ll>> Part;
+void init_partition(ll k, ll n, ll m) {
+    Part.assign(k+1, vector<ll>(n+1, 0));
     Part[0][0] = 1;
     for (int i = 1; i <= k; ++i) {
         for (int j = 0; j <= n; ++j) {

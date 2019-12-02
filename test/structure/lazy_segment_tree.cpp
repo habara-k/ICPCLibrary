@@ -5,11 +5,11 @@
 int main() {
     int N, Q;
     cin >> N >> Q;
-    LazySegmentTree<int64_t> seg(N);
+    LazySegmentTree<ll> seg(N);
     while (Q--) {
         int C; cin >> C;
         if (C == 0) {
-            int S, T; int64_t X;
+            int S, T; ll X;
             cin >> S >> T >> X;
             --S, --T;
             seg.update(S, T+1, X);
