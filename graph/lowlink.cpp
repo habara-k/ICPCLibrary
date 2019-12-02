@@ -50,6 +50,8 @@ struct LowLink {
             if(now == 0 || pre[now] <= low[nxt]) art++;
             get_articulation(g, nxt, now);
         }
-        if((now == 0 && art >= 2) || (now != 0 && art >= 1)) articulation.push_back(now);
+        if((now == 0 && art >= 2) || (now != 0 && art >= 1)) {
+            articulation.push_back(now);
+        }
     }
 };
