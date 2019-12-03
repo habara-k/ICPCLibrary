@@ -44,13 +44,14 @@ int maximum_clique(const vector<vector<bool>>& G) {
             }
         }
 
+        vector<int> dp(1<<sz);
+        dp[0] = 1;
         for (int s = 1; s < 1<<sz; ++s) {
-            int valid = 1;
-            for (int i = 0; i < sz; ++i) if (s >> i & 1) {
-                valid &= (s & bit[i]) == 0;
-            }
+            int i = __builtin_ffs(s) - 1;
 
-            if (valid) ret = max(ret, __builtin_popcount(s));
+            if (dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0) {
+                ret = max(ret, __builtin_popcount(s));
+            }
         }
 
         if (u == -1) break;
