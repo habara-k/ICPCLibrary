@@ -1,3 +1,5 @@
+#include "template.cpp"
+
 template<typename T>
 struct SCC {
     int sz, cnt, num;
@@ -22,9 +24,9 @@ struct SCC {
             sel[i] = true;
             dfs1(g, i);
         }
-        
+
         rev(g, revg);
-        
+
         for(int i=0;i<sz;++i) {
             vp.emplace_back(make_pair(post[i], i));
         }
@@ -74,7 +76,8 @@ struct SCC {
     void rev(const Graph<T> &g, Graph<T> &revg) {
         for(int i=0;i<sz;++i) {
             for(int j=0;j<(int)(g[i].size());++j) {
-                revg[g[i][j].to].emplace_back(edge<T>(g[i][j].to, g[i][j].src, g[i][j].cost));
+                //revg[g[i][j].to].emplace_back(edge<T>(g[i][j].to, g[i][j].src, g[i][j].cost));
+                revg[g[i][j].to].push_back(g[i][j]);
             }
         }
     }

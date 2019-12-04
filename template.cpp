@@ -18,11 +18,11 @@ using vvll = vector<vll>;
 const double eps = 1e-8;
 const int MOD = 1000000007;
 
-int main() {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    cout << fixed << setprecision(10);
-
-}
+//int main() {
+//    cin.tie(0);
+//    ios::sync_with_stdio(false);
+//    cout << fixed << setprecision(10);
+//
+//}
 
 #endif
