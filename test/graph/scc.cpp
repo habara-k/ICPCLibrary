@@ -13,10 +13,6 @@ int main() {
     SCC<int> scc(g);
     scc.build(g);
     vector<int> comp = scc.get_comp();
-    for(int i=0;i<V;++i) {
-        cout << comp[i] << " ";
-    }
-    cout << endl;
     cin >> Q;
     while (Q--) {
         int a, b; cin >> a >> b;
