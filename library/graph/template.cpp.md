@@ -44,7 +44,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="dijkstra.cpp.html">graph/dijkstra.cpp</a>
-* :x: <a href="dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="dinic.cpp.html">graph/dinic.cpp</a>
 * :heavy_check_mark: <a href="hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
 * :heavy_check_mark: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
 * :warning: <a href="lowlink.cpp.html">graph/lowlink.cpp</a>
@@ -61,7 +61,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
-* :x: <a href="../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/dinic.test.cpp
+# :heavy_check_mark: test/graph/dinic.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 16:29:38+09:00
+    - Last commit date: 2020-01-09 20:21:47+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/graph/dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/dinic.cpp.html">graph/dinic.cpp</a>
 * :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
 * :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A"
 
 #include "../../graph/dinic.cpp"
 
@@ -71,7 +71,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graph/dinic.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A"
 
 #line 1 "test/graph/../../graph/template.cpp"
 

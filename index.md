@@ -47,7 +47,7 @@ layout: default
 
 * :warning: <a href="library/graph/bfs01.cpp.html">graph/bfs01.cpp</a>
 * :heavy_check_mark: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
-* :x: <a href="library/graph/dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="library/graph/dinic.cpp.html">graph/dinic.cpp</a>
 * :heavy_check_mark: <a href="library/graph/hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
 * :heavy_check_mark: <a href="library/graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="library/graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>
@@ -155,7 +155,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
-* :x: <a href="verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/lowest_common_ancestor.test.cpp.html">test/graph/lowest_common_ancestor.test.cpp</a>
