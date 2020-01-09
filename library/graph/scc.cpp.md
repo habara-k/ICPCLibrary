@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graph/scc.cpp
+# :heavy_check_mark: graph/scc.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/scc.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:21:41+09:00
+    - Last commit date: 2020-01-09 20:11:11+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
 
 
 ## Code
@@ -110,7 +110,7 @@ struct SCC {
         }
         for(int i=0;i<sz;++i) {
             for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>(i, j, 1));
+                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
             }
         }
         return res;
@@ -258,7 +258,7 @@ struct SCC {
         }
         for(int i=0;i<sz;++i) {
             for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>(i, j, 1));
+                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
             }
         }
         return res;

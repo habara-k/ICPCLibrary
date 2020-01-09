@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/warshall_floyd.test.cpp
+# :heavy_check_mark: test/graph/warshall_floyd.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :x: <a href="../../../library/graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
 * :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 

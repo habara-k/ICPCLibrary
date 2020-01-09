@@ -50,10 +50,10 @@ layout: default
 * :warning: <a href="lowlink.cpp.html">graph/lowlink.cpp</a>
 * :warning: <a href="maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="primal_dual.cpp.html">graph/primal_dual.cpp</a>
-* :x: <a href="scc.cpp.html">graph/scc.cpp</a>
+* :heavy_check_mark: <a href="scc.cpp.html">graph/scc.cpp</a>
 * :warning: <a href="topological_sort.cpp.html">graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">graph/twoconnectedcomponents.cpp</a>
-* :x: <a href="warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
 * :warning: <a href="../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 
@@ -65,8 +65,8 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
-* :x: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
-* :x: <a href="../../verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
 
 
 ## Code
