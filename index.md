@@ -143,7 +143,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/lowest_common_ancestor.test.cpp.html">test/graph/lowest_common_ancestor.test.cpp</a>
-* :x: <a href="verify/test/graph/lowlink.test.cpp.html">test/graph/lowlink.test.cpp</a>
+* :x: <a href="verify/test/graph/lowlink/articulation.test.cpp.html">test/graph/lowlink/articulation.test.cpp</a>
+* :x: <a href="verify/test/graph/lowlink/bridge.test.cpp.html">test/graph/lowlink/bridge.test.cpp</a>
 * :x: <a href="verify/test/graph/maximum_clique.test.cpp.html">test/graph/maximum_clique.test.cpp</a>
 * :x: <a href="verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :x: <a href="verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
