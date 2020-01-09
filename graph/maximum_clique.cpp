@@ -49,7 +49,8 @@ int maximum_clique(const vector<vector<bool>>& G) {
         for (int s = 1; s < 1<<sz; ++s) {
             int i = __builtin_ffs(s) - 1;
 
-            if (dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0) {
+            dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0;
+            if (dp[s]) {
                 ret = max(ret, __builtin_popcount(s));
             }
         }
