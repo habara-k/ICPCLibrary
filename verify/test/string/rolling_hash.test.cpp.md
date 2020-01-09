@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/string/rolling_hash.cpp
+# :heavy_check_mark: test/string/rolling_hash.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:32:27+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -74,7 +73,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/string/rolling_hash.cpp"
+#line 1 "test/string/rolling_hash.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B"
 
 #line 1 "test/string/../../string/../template.cpp"
@@ -133,7 +132,7 @@ struct RollingHash {
         return res;
     }
 };
-#line 4 "test/string/rolling_hash.cpp"
+#line 4 "test/string/rolling_hash.test.cpp"
 
 int main() {
     string T, P;

@@ -44,12 +44,12 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :warning: <a href="../test/structure/union_find.cpp.html">test/structure/union_find.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/structure/union_find.test.cpp.html">test/structure/union_find.test.cpp</a>
 
 
 ## Code

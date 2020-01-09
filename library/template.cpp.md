@@ -57,24 +57,18 @@ layout: default
 * :heavy_check_mark: <a href="number/mod.cpp.html">number/mod.cpp</a>
 * :warning: <a href="others/LIS.cpp.html">others/LIS.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">others/inversion.cpp</a>
-* :warning: <a href="string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
 * :warning: <a href="string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
-* :warning: <a href="structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
-* :warning: <a href="structure/lazy_segment_tree.cpp.html">structure/lazy_segment_tree.cpp</a>
-* :warning: <a href="structure/segment_tree.cpp.html">structure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="structure/lazy_segment_tree.cpp.html">structure/lazy_segment_tree.cpp</a>
+* :heavy_check_mark: <a href="structure/segment_tree.cpp.html">structure/segment_tree.cpp</a>
 * :heavy_check_mark: <a href="structure/union_find.cpp.html">structure/union_find.cpp</a>
-* :warning: <a href="structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
+* :heavy_check_mark: <a href="structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
 * :warning: <a href="test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 * :warning: <a href="test/others/LIS.cpp.html">test/others/LIS.cpp</a>
 * :warning: <a href="test/others/inversion.cpp.html">test/others/inversion.cpp</a>
-* :warning: <a href="test/string/rolling_hash.cpp.html">test/string/rolling_hash.cpp</a>
 * :warning: <a href="test/string/z_algorithm.cpp.html">test/string/z_algorithm.cpp</a>
-* :warning: <a href="test/structure/binary_indexed_tree.cpp.html">test/structure/binary_indexed_tree.cpp</a>
-* :warning: <a href="test/structure/lazy_segment_tree.cpp.html">test/structure/lazy_segment_tree.cpp</a>
-* :warning: <a href="test/structure/segment_tree.cpp.html">test/structure/segment_tree.cpp</a>
-* :warning: <a href="test/structure/union_find.cpp.html">test/structure/union_find.cpp</a>
-* :warning: <a href="test/structure/weighted_union_find.cpp.html">test/structure/weighted_union_find.cpp</a>
 
 
 ## Verified with
@@ -93,6 +87,12 @@ layout: default
 * :heavy_check_mark: <a href="../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/structure/lazy_segment_tree.test.cpp.html">test/structure/lazy_segment_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/structure/segment_tree.test.cpp.html">test/structure/segment_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/structure/union_find.test.cpp.html">test/structure/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/structure/weighted_union_find.test.cpp.html">test/structure/weighted_union_find.test.cpp</a>
 
 
 ## Code

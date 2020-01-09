@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/structure/lazy_segment_tree.cpp
+# :heavy_check_mark: test/structure/lazy_segment_tree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/lazy_segment_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/structure/lazy_segment_tree.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:32:27+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../structure/lazy_segment_tree.cpp.html">structure/lazy_segment_tree.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/structure/lazy_segment_tree.cpp.html">structure/lazy_segment_tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -78,7 +77,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/lazy_segment_tree.cpp"
+#line 1 "test/structure/lazy_segment_tree.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
 
 #line 1 "test/structure/../../structure/../template.cpp"
@@ -180,7 +179,7 @@ struct LazySegmentTree {
         return query(a, b, 1, 0, sz);
     }
 };
-#line 4 "test/structure/lazy_segment_tree.cpp"
+#line 4 "test/structure/lazy_segment_tree.test.cpp"
 
 int main() {
     int N, Q;

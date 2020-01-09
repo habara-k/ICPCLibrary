@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/structure/weighted_union_find.cpp
+# :heavy_check_mark: test/structure/weighted_union_find.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/weighted_union_find.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/structure/weighted_union_find.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:32:27+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -78,7 +77,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/weighted_union_find.cpp"
+#line 1 "test/structure/weighted_union_find.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B"
 
 #line 1 "test/structure/../../structure/../template.cpp"
@@ -155,7 +154,7 @@ struct WeightedUnionFind
         return root(x) == root(y);
     }
 };
-#line 4 "test/structure/weighted_union_find.cpp"
+#line 4 "test/structure/weighted_union_find.test.cpp"
 
 int main() {
     int N, M;

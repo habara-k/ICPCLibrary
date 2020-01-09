@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/weighted_union_find.cpp
+# :heavy_check_mark: structure/weighted_union_find.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -41,9 +41,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/structure/weighted_union_find.cpp.html">test/structure/weighted_union_find.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/structure/weighted_union_find.test.cpp.html">test/structure/weighted_union_find.test.cpp</a>
 
 
 ## Code

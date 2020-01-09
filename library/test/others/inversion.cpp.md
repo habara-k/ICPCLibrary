@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../others/inversion.cpp.html">others/inversion.cpp</a>
-* :warning: <a href="../../structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="../../structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
 * :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/segment_tree.cpp
+# :heavy_check_mark: structure/segment_tree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -41,9 +41,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/structure/segment_tree.cpp.html">test/structure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/structure/segment_tree.test.cpp.html">test/structure/segment_tree.test.cpp</a>
 
 
 ## Code

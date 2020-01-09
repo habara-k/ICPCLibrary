@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/binary_indexed_tree.cpp
+# :heavy_check_mark: structure/binary_indexed_tree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -45,7 +45,11 @@ layout: default
 
 * :warning: <a href="../others/inversion.cpp.html">others/inversion.cpp</a>
 * :warning: <a href="../test/others/inversion.cpp.html">test/others/inversion.cpp</a>
-* :warning: <a href="../test/structure/binary_indexed_tree.cpp.html">test/structure/binary_indexed_tree.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
 
 
 ## Code

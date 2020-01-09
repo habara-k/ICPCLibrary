@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/structure/union_find.cpp
+# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/union_find.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:32:27+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../structure/union_find.cpp.html">structure/union_find.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -48,19 +47,19 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
 
-#include "../../structure/union_find.cpp"
+#include "../../structure/binary_indexed_tree.cpp"
 
 int main() {
     int N, Q;
     cin >> N >> Q;
-    UnionFind uf(N);
+    BIT<int> bit(N);
     while (Q--) {
-        int t, x, y;
-        cin >> t >> x >> y;
-        if (t == 0) uf.merge(x, y);
-        else printf("%d\n", uf.root(x) == uf.root(y));
+        int T, X, Y;
+        cin >> T >> X >> Y;
+        if (T == 0) bit.add(X - 1, Y);
+        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
     }
 }
 
@@ -70,8 +69,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/union_find.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#line 1 "test/structure/binary_indexed_tree.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
 
 #line 1 "test/structure/../../structure/../template.cpp"
 
@@ -102,45 +101,34 @@ const int MOD = 1000000007;
 //}
 
 
-#line 2 "test/structure/../../structure/union_find.cpp"
+#line 2 "test/structure/../../structure/binary_indexed_tree.cpp"
 
-struct UnionFind
-{
-    vector<int> par, sz;
-    UnionFind(int n) : par(n), sz(n, 1) {
-        for (int i = 0; i < n; ++i) par[i] = i;
+template<typename T>
+struct BIT {
+    vector<T> bit;
+    int sz;
+    BIT(int n) : sz(n+1), bit(n+1) {}
+    void add(int i, T x) {
+        i += 1;
+        while (i < sz) { bit[i] += x; i += i & -i; }
     }
-    int root(int x) {
-        if (par[x] == x) return x;
-        return par[x] = root(par[x]);
-    }
-    void merge(int x, int y) {
-        x = root(x);
-        y = root(y);
-        if (x == y) return;
-        if (sz[x] < sz[y]) swap(x, y);
-        par[y] = x;
-        sz[x] += sz[y];
-        sz[y] = 0;
-    }
-    bool issame(int x, int y) {
-        return root(x) == root(y);
-    }
-    int size(int x) {
-        return sz[root(x)];
+    T sum(int i) {
+        i += 1; T s = 0;
+        while (i > 0) { s += bit[i]; i -= i & -i; }
+        return s;
     }
 };
-#line 4 "test/structure/union_find.cpp"
+#line 4 "test/structure/binary_indexed_tree.test.cpp"
 
 int main() {
     int N, Q;
     cin >> N >> Q;
-    UnionFind uf(N);
+    BIT<int> bit(N);
     while (Q--) {
-        int t, x, y;
-        cin >> t >> x >> y;
-        if (t == 0) uf.merge(x, y);
-        else printf("%d\n", uf.root(x) == uf.root(y));
+        int T, X, Y;
+        cin >> T >> X >> Y;
+        if (T == 0) bit.add(X - 1, Y);
+        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
     }
 }
 
