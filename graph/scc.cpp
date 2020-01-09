@@ -56,7 +56,7 @@ struct SCC {
         }
         for(int i=0;i<sz;++i) {
             for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>(i, j, 1));
+                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
             }
         }
         return res;
