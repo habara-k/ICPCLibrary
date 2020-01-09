@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>
-* :warning: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code

@@ -41,7 +41,7 @@ layout: default
 
 * :warning: <a href="../../number/combination.cpp.html">number/combination.cpp</a>
 * :warning: <a href="../../number/mod.cpp.html">number/mod.cpp</a>
-* :warning: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code

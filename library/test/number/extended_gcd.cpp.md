@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
-* :warning: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code

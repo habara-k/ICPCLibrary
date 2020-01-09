@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/template.cpp
+# :heavy_check_mark: graph/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Required by
 
-* :warning: <a href="dijkstra.cpp.html">graph/dijkstra.cpp</a>
+* :heavy_check_mark: <a href="dijkstra.cpp.html">graph/dijkstra.cpp</a>
 * :warning: <a href="dinic.cpp.html">graph/dinic.cpp</a>
 * :warning: <a href="hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
 * :warning: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
@@ -54,7 +54,6 @@ layout: default
 * :warning: <a href="topological_sort.cpp.html">graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">graph/twoconnectedcomponents.cpp</a>
 * :warning: <a href="warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
-* :warning: <a href="../test/graph/dijkstra.cpp.html">test/graph/dijkstra.cpp</a>
 * :warning: <a href="../test/graph/dinic.cpp.html">test/graph/dinic.cpp</a>
 * :warning: <a href="../test/graph/hopcroft_karp.cpp.html">test/graph/hopcroft_karp.cpp</a>
 * :warning: <a href="../test/graph/kruskal.cpp.html">test/graph/kruskal.cpp</a>
@@ -63,6 +62,11 @@ layout: default
 * :warning: <a href="../test/graph/scc.cpp.html">test/graph/scc.cpp</a>
 * :warning: <a href="../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 * :warning: <a href="../test/graph/warshall_floyd.cpp.html">test/graph/warshall_floyd.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 
 
 ## Code

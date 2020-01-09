@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
 * :warning: <a href="../../graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
-* :warning: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code
