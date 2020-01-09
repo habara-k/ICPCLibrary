@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/maximum_clique.cpp
+# :x: graph/maximum_clique.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -42,9 +42,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
+* :x: <a href="../../verify/test/graph/maximum_clique.test.cpp.html">test/graph/maximum_clique.test.cpp</a>
 
 
 ## Code

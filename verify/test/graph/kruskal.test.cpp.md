@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/kruskal.cpp
+# :heavy_check_mark: test/graph/kruskal.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/kruskal.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/kruskal.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 16:29:38+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A</a>
@@ -39,10 +38,10 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
-* :warning: <a href="../../structure/union_find.cpp.html">structure/union_find.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/kruskal.cpp.html">graph/kruskal.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/structure/union_find.cpp.html">structure/union_find.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -72,7 +71,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/kruskal.cpp"
+#line 1 "test/graph/kruskal.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
 
 #line 1 "test/graph/../../graph/template.cpp"
@@ -216,7 +215,7 @@ T kruskal(vector<edge<T>> &es, int V) {
 
     return ret;
 }
-#line 4 "test/graph/kruskal.cpp"
+#line 4 "test/graph/kruskal.test.cpp"
 
 int main() {
     int V, E;

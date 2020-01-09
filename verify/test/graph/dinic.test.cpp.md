@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/dinic.cpp
+# :x: test/graph/dinic.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/dinic.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 16:29:38+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A</a>
@@ -39,9 +38,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../graph/dinic.cpp.html">graph/dinic.cpp</a>
-* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :x: <a href="../../../library/graph/dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -71,7 +70,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/dinic.cpp"
+#line 1 "test/graph/dinic.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
 
 #line 1 "test/graph/../../graph/template.cpp"
@@ -188,7 +187,7 @@ struct Dinic {
         return flow;
     }
 };
-#line 4 "test/graph/dinic.cpp"
+#line 4 "test/graph/dinic.test.cpp"
 
 int main() {
     int V, E;

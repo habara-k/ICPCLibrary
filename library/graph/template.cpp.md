@@ -44,29 +44,29 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="dijkstra.cpp.html">graph/dijkstra.cpp</a>
-* :warning: <a href="dinic.cpp.html">graph/dinic.cpp</a>
-* :warning: <a href="hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
-* :warning: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
+* :x: <a href="dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
+* :heavy_check_mark: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
 * :warning: <a href="lowlink.cpp.html">graph/lowlink.cpp</a>
-* :warning: <a href="maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
-* :warning: <a href="primal_dual.cpp.html">graph/primal_dual.cpp</a>
-* :warning: <a href="scc.cpp.html">graph/scc.cpp</a>
-* :warning: <a href="topological_sort.cpp.html">graph/topological_sort.cpp</a>
+* :x: <a href="maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
+* :x: <a href="primal_dual.cpp.html">graph/primal_dual.cpp</a>
+* :x: <a href="scc.cpp.html">graph/scc.cpp</a>
+* :x: <a href="topological_sort.cpp.html">graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">graph/twoconnectedcomponents.cpp</a>
-* :warning: <a href="warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
-* :warning: <a href="../test/graph/dinic.cpp.html">test/graph/dinic.cpp</a>
-* :warning: <a href="../test/graph/hopcroft_karp.cpp.html">test/graph/hopcroft_karp.cpp</a>
-* :warning: <a href="../test/graph/kruskal.cpp.html">test/graph/kruskal.cpp</a>
-* :warning: <a href="../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
-* :warning: <a href="../test/graph/primal_dual.cpp.html">test/graph/primal_dual.cpp</a>
-* :warning: <a href="../test/graph/scc.cpp.html">test/graph/scc.cpp</a>
-* :warning: <a href="../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
-* :warning: <a href="../test/graph/warshall_floyd.cpp.html">test/graph/warshall_floyd.cpp</a>
+* :x: <a href="warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
+* :x: <a href="../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
+* :x: <a href="../../verify/test/graph/maximum_clique.test.cpp.html">test/graph/maximum_clique.test.cpp</a>
+* :x: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
+* :x: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
+* :x: <a href="../../verify/test/graph/topological_sort.test.cpp.html">test/graph/topological_sort.test.cpp</a>
+* :x: <a href="../../verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
 
 
 ## Code

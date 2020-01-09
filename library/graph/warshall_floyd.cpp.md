@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/warshall_floyd.cpp
+# :x: graph/warshall_floyd.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -42,9 +42,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/graph/warshall_floyd.cpp.html">test/graph/warshall_floyd.cpp</a>
+* :x: <a href="../../verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
 
 
 ## Code

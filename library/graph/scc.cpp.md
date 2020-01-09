@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/scc.cpp
+# :x: graph/scc.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -42,9 +42,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/graph/scc.cpp.html">test/graph/scc.cpp</a>
+* :x: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
 
 
 ## Code

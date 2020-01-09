@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/lowlink.cpp
+# :x: test/graph/lowlink.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-02 07:56:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowlink.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 16:29:38+09:00
 
 
 
@@ -51,7 +50,7 @@ layout: default
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/lowlink.cpp"
+#line 1 "test/graph/lowlink.test.cpp"
 // bridge: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
 // articulation: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A
 

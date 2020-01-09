@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../structure/union_find.cpp.html">structure/union_find.cpp</a>
+* :heavy_check_mark: <a href="../../structure/union_find.cpp.html">structure/union_find.cpp</a>
 * :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 

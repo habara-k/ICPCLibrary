@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/maximum_clique.cpp
+# :x: test/graph/maximum_clique.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 16:29:38+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc002/tasks/abc002_4">https://atcoder.jp/contests/abc002/tasks/abc002_4</a>
@@ -39,9 +38,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
-* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :x: <a href="../../../library/graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -73,7 +72,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/maximum_clique.cpp"
+#line 1 "test/graph/maximum_clique.test.cpp"
 #define PROBLEM "https://atcoder.jp/contests/abc002/tasks/abc002_4"
 
 #line 1 "test/graph/../../graph/template.cpp"
@@ -189,7 +188,7 @@ int maximum_clique(const vector<vector<bool>>& G) {
 
     return ret;
 }
-#line 4 "test/graph/maximum_clique.cpp"
+#line 4 "test/graph/maximum_clique.test.cpp"
 
 int main() {
     int N, M;

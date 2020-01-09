@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/lowest_common_ancestor.cpp
+# :heavy_check_mark: test/graph/lowest_common_ancestor.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowest_common_ancestor.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowest_common_ancestor.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 16:29:38+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -77,7 +76,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/lowest_common_ancestor.cpp"
+#line 1 "test/graph/lowest_common_ancestor.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C"
 
 #line 1 "test/graph/../../graph/../template.cpp"
@@ -160,7 +159,7 @@ struct LCA {
         return par[0][u];
     }
 };
-#line 4 "test/graph/lowest_common_ancestor.cpp"
+#line 4 "test/graph/lowest_common_ancestor.test.cpp"
 
 int main() {
     int N, Q;
