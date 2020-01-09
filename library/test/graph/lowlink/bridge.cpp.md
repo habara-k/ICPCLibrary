@@ -25,12 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/lowlink/bridge.test.cpp
+# :warning: test/graph/lowlink/bridge.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowlink/bridge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 16:43:33+09:00
+* category: <a href="../../../../index.html#2f522f94949fa34ad9333addc4407bb3">test/graph/lowlink</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowlink/bridge.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:03:34+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B</a>
@@ -53,7 +54,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/lowlink/bridge.test.cpp"
+#line 1 "test/graph/lowlink/bridge.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B"
 
 int main() {

@@ -52,11 +52,11 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="library/graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>
 * :warning: <a href="library/graph/lowlink.cpp.html">graph/lowlink.cpp</a>
-* :x: <a href="library/graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
+* :warning: <a href="library/graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="library/graph/primal_dual.cpp.html">graph/primal_dual.cpp</a>
 * :x: <a href="library/graph/scc.cpp.html">graph/scc.cpp</a>
 * :heavy_check_mark: <a href="library/graph/template.cpp.html">graph/template.cpp</a>
-* :x: <a href="library/graph/topological_sort.cpp.html">graph/topological_sort.cpp</a>
+* :warning: <a href="library/graph/topological_sort.cpp.html">graph/topological_sort.cpp</a>
 * :warning: <a href="library/graph/twoconnectedcomponents.cpp.html">graph/twoconnectedcomponents.cpp</a>
 * :x: <a href="library/graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
 
@@ -95,6 +95,22 @@ layout: default
 * :warning: <a href="library/structure/segment_tree.cpp.html">structure/segment_tree.cpp</a>
 * :heavy_check_mark: <a href="library/structure/union_find.cpp.html">structure/union_find.cpp</a>
 * :warning: <a href="library/structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
+
+
+<div id="baa37bfd168b079b758c0db816f7295f"></div>
+
+### test/graph
+
+* :warning: <a href="library/test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
+* :warning: <a href="library/test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
+
+
+<div id="2f522f94949fa34ad9333addc4407bb3"></div>
+
+### test/graph/lowlink
+
+* :warning: <a href="library/test/graph/lowlink/articulation.cpp.html">test/graph/lowlink/articulation.cpp</a>
+* :warning: <a href="library/test/graph/lowlink/bridge.cpp.html">test/graph/lowlink/bridge.cpp</a>
 
 
 <div id="27c49c4e5cc6f85fad5dbff6f8f0ef1b"></div>
@@ -143,12 +159,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/lowest_common_ancestor.test.cpp.html">test/graph/lowest_common_ancestor.test.cpp</a>
-* :x: <a href="verify/test/graph/lowlink/articulation.test.cpp.html">test/graph/lowlink/articulation.test.cpp</a>
-* :x: <a href="verify/test/graph/lowlink/bridge.test.cpp.html">test/graph/lowlink/bridge.test.cpp</a>
-* :x: <a href="verify/test/graph/maximum_clique.test.cpp.html">test/graph/maximum_clique.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :x: <a href="verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
-* :x: <a href="verify/test/graph/topological_sort.test.cpp.html">test/graph/topological_sort.test.cpp</a>
 * :x: <a href="verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
 
 

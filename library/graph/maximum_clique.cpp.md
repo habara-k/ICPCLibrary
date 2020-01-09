@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graph/maximum_clique.cpp
+# :warning: graph/maximum_clique.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+    - Last commit date: 2020-01-09 20:02:35+09:00
 
 
 
@@ -42,9 +42,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Verified with
+## Required by
 
-* :x: <a href="../../verify/test/graph/maximum_clique.test.cpp.html">test/graph/maximum_clique.test.cpp</a>
+* :warning: <a href="../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 
 
 ## Code
@@ -103,7 +103,8 @@ int maximum_clique(const vector<vector<bool>>& G) {
         for (int s = 1; s < 1<<sz; ++s) {
             int i = __builtin_ffs(s) - 1;
 
-            if (dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0) {
+            dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0;
+            if (dp[s]) {
                 ret = max(ret, __builtin_popcount(s));
             }
         }
@@ -223,7 +224,8 @@ int maximum_clique(const vector<vector<bool>>& G) {
         for (int s = 1; s < 1<<sz; ++s) {
             int i = __builtin_ffs(s) - 1;
 
-            if (dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0) {
+            dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0;
+            if (dp[s]) {
                 ret = max(ret, __builtin_popcount(s));
             }
         }

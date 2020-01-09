@@ -25,12 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/maximum_clique.test.cpp
+# :warning: test/graph/maximum_clique.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 16:29:38+09:00
+* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:02:35+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc002/tasks/abc002_4">https://atcoder.jp/contests/abc002/tasks/abc002_4</a>
@@ -38,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
-* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :warning: <a href="../../graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
+* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -72,7 +73,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/maximum_clique.test.cpp"
+#line 1 "test/graph/maximum_clique.cpp"
 #define PROBLEM "https://atcoder.jp/contests/abc002/tasks/abc002_4"
 
 #line 1 "test/graph/../../graph/template.cpp"
@@ -173,7 +174,8 @@ int maximum_clique(const vector<vector<bool>>& G) {
         for (int s = 1; s < 1<<sz; ++s) {
             int i = __builtin_ffs(s) - 1;
 
-            if (dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0) {
+            dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0;
+            if (dp[s]) {
                 ret = max(ret, __builtin_popcount(s));
             }
         }
@@ -188,7 +190,7 @@ int maximum_clique(const vector<vector<bool>>& G) {
 
     return ret;
 }
-#line 4 "test/graph/maximum_clique.test.cpp"
+#line 4 "test/graph/maximum_clique.cpp"
 
 int main() {
     int N, M;
