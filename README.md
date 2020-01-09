@@ -1,5 +1,6 @@
 # PROCON LIBRARY for WHITE-BOARD
 
+[![Actions Status](https://github.com/habara-k/ICPClibrary/workflows/verify/badge.svg)](https://github.com/habara-k/ICPClibrary/actions)
 
 ## 手動テスト
 
