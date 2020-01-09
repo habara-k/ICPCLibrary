@@ -30,7 +30,7 @@ layout: default
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowlink/bridge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 16:39:20+09:00
+    - Last commit date: 2020-01-09 16:43:33+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B</a>
@@ -43,6 +43,10 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B"
 
+int main() {
+    return 0;
+}
+
 ```
 {% endraw %}
 
@@ -51,6 +55,10 @@ layout: default
 ```cpp
 #line 1 "test/graph/lowlink/bridge.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B"
+
+int main() {
+    return 0;
+}
 
 ```
 {% endraw %}

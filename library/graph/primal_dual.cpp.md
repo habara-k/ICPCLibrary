@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graph/primal_dual.cpp
+# :heavy_check_mark: graph/primal_dual.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -44,7 +44,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 
 
 ## Code
