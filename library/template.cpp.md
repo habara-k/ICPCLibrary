@@ -52,9 +52,9 @@ layout: default
 * :warning: <a href="graph/topological_sort.cpp.html">graph/topological_sort.cpp</a>
 * :warning: <a href="graph/twoconnectedcomponents.cpp.html">graph/twoconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
-* :warning: <a href="number/combination.cpp.html">number/combination.cpp</a>
-* :warning: <a href="number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
-* :warning: <a href="number/mod.cpp.html">number/mod.cpp</a>
+* :heavy_check_mark: <a href="number/combination.cpp.html">number/combination.cpp</a>
+* :heavy_check_mark: <a href="number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="number/mod.cpp.html">number/mod.cpp</a>
 * :warning: <a href="others/LIS.cpp.html">others/LIS.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">others/inversion.cpp</a>
 * :warning: <a href="string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
@@ -66,12 +66,6 @@ layout: default
 * :warning: <a href="structure/weighted_union_find.cpp.html">structure/weighted_union_find.cpp</a>
 * :warning: <a href="test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
-* :warning: <a href="test/number/Bell.cpp.html">test/number/Bell.cpp</a>
-* :warning: <a href="test/number/C.cpp.html">test/number/C.cpp</a>
-* :warning: <a href="test/number/Partition1.cpp.html">test/number/Partition1.cpp</a>
-* :warning: <a href="test/number/Partition2.cpp.html">test/number/Partition2.cpp</a>
-* :warning: <a href="test/number/Stirling.cpp.html">test/number/Stirling.cpp</a>
-* :warning: <a href="test/number/extended_gcd.cpp.html">test/number/extended_gcd.cpp</a>
 * :warning: <a href="test/others/LIS.cpp.html">test/others/LIS.cpp</a>
 * :warning: <a href="test/others/inversion.cpp.html">test/others/inversion.cpp</a>
 * :warning: <a href="test/string/rolling_hash.cpp.html">test/string/rolling_hash.cpp</a>
@@ -93,6 +87,12 @@ layout: default
 * :heavy_check_mark: <a href="../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/C.test.cpp.html">test/number/C.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 
 
 ## Code

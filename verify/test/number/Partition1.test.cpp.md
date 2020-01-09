@@ -25,23 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/number/Stirling.cpp
+# :heavy_check_mark: test/number/Partition1.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/number/Stirling.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/number/Partition1.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:25:51+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J</a>
 
 
 ## Depends on
 
-* :warning: <a href="../../number/combination.cpp.html">number/combination.cpp</a>
-* :warning: <a href="../../number/mod.cpp.html">number/mod.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/number/combination.cpp.html">number/combination.cpp</a>
+* :heavy_check_mark: <a href="../../../library/number/mod.cpp.html">number/mod.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -49,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J"
 
 #include "../../number/combination.cpp"
 
@@ -57,9 +56,9 @@ int main() {
     ll n, k; cin >> n >> k;
     const ll mod = 1e9+7;
 
-    init_fact(k, mod);
+    init_partition(k, n, mod);
 
-    cout << Stirling(n, k, mod) << endl;
+    cout << Part[k][n] << endl;
 }
 
 ```
@@ -68,8 +67,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/number/Stirling.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I"
+#line 1 "test/number/Partition1.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J"
 
 #line 1 "test/number/../../number/../template.cpp"
 
@@ -179,15 +178,15 @@ void init_partition(ll k, ll n, ll m) {
         }
     }
 }
-#line 4 "test/number/Stirling.cpp"
+#line 4 "test/number/Partition1.test.cpp"
 
 int main() {
     ll n, k; cin >> n >> k;
     const ll mod = 1e9+7;
 
-    init_fact(k, mod);
+    init_partition(k, n, mod);
 
-    cout << Stirling(n, k, mod) << endl;
+    cout << Part[k][n] << endl;
 }
 
 ```

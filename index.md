@@ -65,9 +65,9 @@ layout: default
 
 ### number
 
-* :warning: <a href="library/number/combination.cpp.html">number/combination.cpp</a>
-* :warning: <a href="library/number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
-* :warning: <a href="library/number/mod.cpp.html">number/mod.cpp</a>
+* :heavy_check_mark: <a href="library/number/combination.cpp.html">number/combination.cpp</a>
+* :heavy_check_mark: <a href="library/number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="library/number/mod.cpp.html">number/mod.cpp</a>
 
 
 <div id="5e2bab0ecb94c4ea40777733195abe1b"></div>
@@ -113,18 +113,6 @@ layout: default
 * :warning: <a href="library/test/graph/lowlink/bridge.cpp.html">test/graph/lowlink/bridge.cpp</a>
 
 
-<div id="27c49c4e5cc6f85fad5dbff6f8f0ef1b"></div>
-
-### test/number
-
-* :warning: <a href="library/test/number/Bell.cpp.html">test/number/Bell.cpp</a>
-* :warning: <a href="library/test/number/C.cpp.html">test/number/C.cpp</a>
-* :warning: <a href="library/test/number/Partition1.cpp.html">test/number/Partition1.cpp</a>
-* :warning: <a href="library/test/number/Partition2.cpp.html">test/number/Partition2.cpp</a>
-* :warning: <a href="library/test/number/Stirling.cpp.html">test/number/Stirling.cpp</a>
-* :warning: <a href="library/test/number/extended_gcd.cpp.html">test/number/extended_gcd.cpp</a>
-
-
 <div id="387155223b8efcb396433364712bb3df"></div>
 
 ### test/others
@@ -162,5 +150,11 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/C.test.cpp.html">test/number/C.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 
 

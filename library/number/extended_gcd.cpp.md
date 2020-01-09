@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: number/extended_gcd.cpp
+# :heavy_check_mark: number/extended_gcd.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -41,9 +41,9 @@ layout: default
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/number/extended_gcd.cpp.html">test/number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 
 
 ## Code

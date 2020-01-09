@@ -25,13 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/number/extended_gcd.cpp
+# :heavy_check_mark: test/number/extended_gcd.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/number/extended_gcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/number/extended_gcd.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-01-09 20:25:51+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E</a>
@@ -39,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -65,7 +64,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/number/extended_gcd.cpp"
+#line 1 "test/number/extended_gcd.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E"
 
 #line 1 "test/number/../../number/../template.cpp"
@@ -107,7 +106,7 @@ ll extended_gcd(ll a, ll b, ll& x, ll& y) {
     x = Y; y = X - a/b * Y;
     return g;
 }
-#line 4 "test/number/extended_gcd.cpp"
+#line 4 "test/number/extended_gcd.test.cpp"
 
 int main() {
     ll a, b; cin >> a >> b;

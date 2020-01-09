@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: number/combination.cpp
+# :heavy_check_mark: number/combination.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,17 +38,17 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="mod.cpp.html">number/mod.cpp</a>
+* :heavy_check_mark: <a href="mod.cpp.html">number/mod.cpp</a>
 * :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/number/Bell.cpp.html">test/number/Bell.cpp</a>
-* :warning: <a href="../test/number/C.cpp.html">test/number/C.cpp</a>
-* :warning: <a href="../test/number/Partition1.cpp.html">test/number/Partition1.cpp</a>
-* :warning: <a href="../test/number/Partition2.cpp.html">test/number/Partition2.cpp</a>
-* :warning: <a href="../test/number/Stirling.cpp.html">test/number/Stirling.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/C.test.cpp.html">test/number/C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
 
 
 ## Code
