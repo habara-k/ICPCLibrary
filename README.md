@@ -1,12 +1,15 @@
-# HOW TO USE
+# PROCON LIBRARY for WHITE-BOARD
 
-## COMPILE & TEST
+
+## 手動テスト
+
+### コンパイル・実行
 
 - `test/`に移動
-- `$ g++ graph/dijkstra.cpp`
+- `$ g++ graph/dijkstra.test.cpp`
 - `$ ./a.out`
 
-## SUBMIT
+### 提出
 
 - `template.cpp`の`#include <bits/stdc++.h>`をコメントアウトする
 - `test/`に移動
@@ -14,7 +17,11 @@
 - 標準出力をコピーして`PROBLEM`のjudge に貼り付けて提出
 - `//#include <bits/stdc++.h>`のコメントアウトを外す
 
-## TEX
+## 自動テスト
+
+`*.test.cpp`に従うファイルは [Online Judge Verify Helper](https://github.com/kmyk/online-judge-verify-helper) が自動でテストしてくれる。
+
+## TeXファイルの出力
 
 - `tex/`に移動
 - `$ docker run --rm -v $PWD:/workdir -it paperist/alpine-texlive-ja /bin/sh`
