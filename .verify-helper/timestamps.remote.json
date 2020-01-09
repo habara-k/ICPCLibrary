@@ -13,5 +13,11 @@
 "test/number/Partition2.test.cpp": "2020-01-09 20:25:51 +0900",
 "test/number/Stirling.test.cpp": "2020-01-09 20:25:51 +0900",
 "test/number/extended_gcd.test.cpp": "2020-01-09 20:25:51 +0900",
+"test/string/rolling_hash.test.cpp": "2020-01-09 20:32:27 +0900",
+"test/structure/binary_indexed_tree.test.cpp": "2020-01-09 20:32:27 +0900",
+"test/structure/lazy_segment_tree.test.cpp": "2020-01-09 20:32:27 +0900",
+"test/structure/segment_tree.test.cpp": "2020-01-09 20:32:27 +0900",
+"test/structure/union_find.test.cpp": "2020-01-09 20:32:27 +0900",
+"test/structure/weighted_union_find.test.cpp": "2020-01-09 20:32:27 +0900",
 "~": "dummy"
 }
