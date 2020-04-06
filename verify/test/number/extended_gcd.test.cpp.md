@@ -29,8 +29,9 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/extended_gcd.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 20:25:51+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E</a>
@@ -67,7 +68,7 @@ int main() {
 #line 1 "test/number/extended_gcd.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E"
 
-#line 1 "test/number/../../number/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -85,8 +86,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -96,7 +97,7 @@ const int MOD = 1000000007;
 //}
 
 
-#line 2 "test/number/../../number/extended_gcd.cpp"
+#line 2 "number/extended_gcd.cpp"
 
 ll extended_gcd(ll a, ll b, ll& x, ll& y) {
     // solve ax + by = gcd(a, b)

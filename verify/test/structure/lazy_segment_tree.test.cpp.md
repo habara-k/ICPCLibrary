@@ -29,8 +29,9 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/lazy_segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 20:32:27+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
@@ -80,7 +81,7 @@ int main() {
 #line 1 "test/structure/lazy_segment_tree.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
 
-#line 1 "test/structure/../../structure/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -98,8 +99,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -109,7 +110,7 @@ const int MOD = 1000000007;
 //}
 
 
-#line 2 "test/structure/../../structure/lazy_segment_tree.cpp"
+#line 2 "structure/lazy_segment_tree.cpp"
 
 template<typename M, typename OM = M>
 struct LazySegmentTree {

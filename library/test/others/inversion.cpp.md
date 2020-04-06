@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#387155223b8efcb396433364712bb3df">test/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/others/inversion.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 01:41:42+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/agc034/tasks/agc034_b">https://atcoder.jp/contests/agc034/tasks/agc034_b</a>
@@ -92,7 +92,7 @@ int main()
 #line 1 "test/others/inversion.cpp"
 #define PROBLEM "https://atcoder.jp/contests/agc034/tasks/agc034_b"
 
-#line 1 "test/others/../../others/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -110,8 +110,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -121,38 +121,9 @@ const int MOD = 1000000007;
 //}
 
 
-#line 2 "test/others/../../others/inversion.cpp"
+#line 2 "others/inversion.cpp"
 
-#line 1 "test/others/../../others/../structure/../template.cpp"
-
-
-
-#include <bits/stdc++.h>
-using namespace std;
-
-#define SZ(x) (int)(x.size())
-#define REP(i, n) for(int i = 0; i < n; i++)
-#define FOR(i, a, b) for(int i = a; i < b; i++)
-
-using ll = long long;
-using ld = long double;
-using P = pair<int, int>;
-using vi = vector<int>;
-using vvi = vector<vi>;
-using vll = vector<ll>;
-using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
-
-//int main() {
-//    cin.tie(0);
-//    ios::sync_with_stdio(false);
-//    cout << fixed << setprecision(10);
-//
-//}
-
-
-#line 2 "test/others/../../others/../structure/binary_indexed_tree.cpp"
+#line 2 "structure/binary_indexed_tree.cpp"
 
 template<typename T>
 struct BIT {
@@ -169,7 +140,7 @@ struct BIT {
         return s;
     }
 };
-#line 4 "test/others/../../others/inversion.cpp"
+#line 4 "others/inversion.cpp"
 
 template<typename T>
 ll inversion(const vector<T>& a)

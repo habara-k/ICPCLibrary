@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/z_algorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 01:09:39+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc141/tasks/abc141_e">https://atcoder.jp/contests/abc141/tasks/abc141_e</a>
@@ -80,7 +80,7 @@ int main() {
 #line 1 "test/string/z_algorithm.cpp"
 #define PROBLEM "https://atcoder.jp/contests/abc141/tasks/abc141_e"
 
-#line 1 "test/string/../../string/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -98,8 +98,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -109,7 +109,7 @@ const int MOD = 1000000007;
 //}
 
 
-#line 2 "test/string/../../string/z_algorithm.cpp"
+#line 2 "string/z_algorithm.cpp"
 
 // GET A[i]: the longest common prefix size of S and S[i:n-1]
 template<typename S>

@@ -29,8 +29,9 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/primal_dual.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 16:29:38+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B</a>
@@ -73,11 +74,11 @@ int main() {
 #line 1 "test/graph/primal_dual.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B"
 
-#line 1 "test/graph/../../graph/template.cpp"
+#line 1 "graph/template.cpp"
 
 
 
-#line 1 "test/graph/../../graph/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -95,8 +96,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -106,7 +107,7 @@ const int MOD = 1000000007;
 //}
 
 
-#line 5 "test/graph/../../graph/template.cpp"
+#line 5 "graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -120,7 +121,7 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "test/graph/../../graph/primal_dual.cpp"
+#line 2 "graph/primal_dual.cpp"
 
 template<typename flow_t, typename cost_t>
 struct PrimalDual {

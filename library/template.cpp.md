@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../index.html#5058f1af8388633f609cadb75a75dc9d">.</a>
 * <a href="{{ site.github.repository_url }}/blob/master/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 
 
 ## Required by
 
-* :warning: <a href="graph/bfs01.cpp.html">graph/bfs01.cpp</a>
-* :heavy_check_mark: <a href="graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
+* :heavy_check_mark: <a href="graph/bfs01.cpp.html"> <small>(graph/bfs01.cpp)</small></a>
+* :heavy_check_mark: <a href="graph/dijkstra.cpp.html"> <small>(graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/dinic.cpp.html">graph/dinic.cpp</a>
 * :heavy_check_mark: <a href="graph/hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
 * :heavy_check_mark: <a href="graph/kruskal.cpp.html">graph/kruskal.cpp</a>
@@ -73,6 +73,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../verify/test/graph/bfs01.test.cpp.html">test/graph/bfs01.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
 * :heavy_check_mark: <a href="../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
@@ -117,8 +118,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -153,8 +154,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);

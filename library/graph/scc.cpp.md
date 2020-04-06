@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/scc.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 20:11:11+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 
@@ -157,7 +157,7 @@ struct SCC {
 
 
 
-#line 1 "graph/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -175,8 +175,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);

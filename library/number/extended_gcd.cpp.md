@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#b1bc248a7ff2b2e95569f56de68615df">number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/number/extended_gcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-05 00:07:05+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 
@@ -68,7 +68,7 @@ ll extended_gcd(ll a, ll b, ll& x, ll& y) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "number/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -86,8 +86,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);

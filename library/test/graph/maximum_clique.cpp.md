@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-09 20:02:35+09:00
+    - Last commit date: 2020-04-07 03:51:42+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc002/tasks/abc002_4">https://atcoder.jp/contests/abc002/tasks/abc002_4</a>
@@ -76,11 +76,11 @@ int main() {
 #line 1 "test/graph/maximum_clique.cpp"
 #define PROBLEM "https://atcoder.jp/contests/abc002/tasks/abc002_4"
 
-#line 1 "test/graph/../../graph/template.cpp"
+#line 1 "graph/template.cpp"
 
 
 
-#line 1 "test/graph/../../graph/../template.cpp"
+#line 1 "template.cpp"
 
 
 
@@ -98,8 +98,8 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
-const double eps = 1e-8;
-const int MOD = 1000000007;
+const ld eps = 1e-9;
+const ll MOD = 1000000007;
 
 //int main() {
 //    cin.tie(0);
@@ -109,7 +109,7 @@ const int MOD = 1000000007;
 //}
 
 
-#line 5 "test/graph/../../graph/template.cpp"
+#line 5 "graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -123,7 +123,7 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "test/graph/../../graph/maximum_clique.cpp"
+#line 2 "graph/maximum_clique.cpp"
 
 int maximum_clique(const vector<vector<bool>>& G) {
     // G: 隣接行列, 無向グラフ
