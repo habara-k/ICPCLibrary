@@ -11,7 +11,7 @@ int main() {
         cin >> a >> b >> c;
         g[a].push_back({a,b,c});
     }
-    for (auto &dist : dijkstra(g, R)) {
+    for (auto &dist : bfs01(g, R)) {
         if (dist == numeric_limits<int>::max()) puts("INF");
         else cout << dist << endl;
     }
