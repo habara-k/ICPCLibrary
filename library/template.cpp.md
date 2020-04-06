@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="graph/bfs01.cpp.html"> <small>(graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/dijkstra.cpp.html"> <small>(graph/dijkstra.cpp)</small></a>
-* :heavy_check_mark: <a href="graph/dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="graph/dinic.cpp.html"> <small>(graph/dinic.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
 * :heavy_check_mark: <a href="graph/kruskal.cpp.html">graph/kruskal.cpp</a>
 * :heavy_check_mark: <a href="graph/lowest_common_ancestor.cpp.html">graph/lowest_common_ancestor.cpp</a>

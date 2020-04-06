@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 03:51:42+09:00
+    - Last commit date: 2020-04-07 05:47:46+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/dinic.cpp.html">graph/dinic.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graph/dinic.cpp.html"> <small>(graph/dinic.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
 * :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
 
@@ -123,70 +123,105 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "graph/dinic.cpp"
 
-template<typename T>
+/**
+ * @brief
+ * Dinic法(最大流)
+ * 始点から終点までフローを流したときの最大流量を求める
+ * O(EV^2) （だいたいもっとはやい）
+ * ほぼこれhttps://ei1333.github.io/luzhiled/snippets/graph/dinic.html
+ * @author Md
+ * @date 2019/12
+ * @detail
+ * 2020/04/07 コメント追加 by Md
+ * 構築したい
+ */
+
+template <typename T>
 struct Dinic {
-    const T INF;
+  int sz;
+  T inf = numeric_limits<T>::max();
+  vector<int> level, iter;
 
-    struct edge {
-        int to;
-        T cap;
-        int rev;
-        bool isrev;
-    };
+  struct Edge {
+    int to, rev;
+    T cap;
+    Edge(int to, int rev, T cap): to(to), rev(rev), cap(cap) {}
+  };
+  vector<vector<Edge>> g;
 
-    vector<vector<edge>> g;
-    vector<int> level, iter;
+  /**
+   * @brief コンストラクタ
+   * @param V 頂点数
+   */
+  Dinic(int V): sz(V) {
+    g.resize(V);
+    level.resize(V);
+    iter.resize(V);
+  };
 
-    Dinic(int V) : INF(numeric_limits<T>::max()), g(V) {}
+  /**
+   * @brief 辺を追加
+   * @param[in] from 始点
+   * @param[in] to 終点
+   * @param[in] cap 容量
+   */
+  void add_edge(int from, int to, T cap) {
+    g[from].emplace_back(to, (int)(g[to].size()), cap);
+    g[to].emplace_back(from, (int)(g[from].size())-1, 0);
+  }
 
-    void add_edge(int from, int to, T cap) {
-        g[from].push_back({to, cap, (int)g[to].size(), false});
-        g[to].push_back({from, 0, (int)g[from].size()-1, true});
+  /**
+   * @brief 最大流を求める
+   * @param[in] s 始点
+   * @param[in] t 終点
+   */
+  T max_flow(int s, int t) {
+    T flow = 0;
+    while(1) {
+      bfs(s);
+      if(level[t] < 0) return flow;
+      iter.assign(sz, 0);
+      T f = dfs(s, t, inf);
+      while(f > 0) {
+        flow += f;
+        f = dfs(s, t, inf);
+      }
     }
+  }
 
-    bool bfs(int s, int t) {
-        level.assign(g.size(), -1);
-        queue<int> que;
-        level[s] = 0;
-        que.push(s);
-        while (!que.empty()) {
-            int v = que.front();
-            que.pop();
-            for (auto &e : g[v]) {
-                if (e.cap > 0 && level[e.to] == -1) {
-                    level[e.to] = level[v] + 1;
-                    que.push(e.to);
-                }
-            }
+private:
+  void bfs(int s) {
+    level.assign(sz, -1);
+    level[s] = 0;
+    queue<int> que;
+    que.push(s);
+    while(!que.empty()) {
+      int now = que.front(); que.pop();
+      for(auto &e: g[now]) {
+        if(e.cap > 0 && level[e.to] < 0) {
+          level[e.to] = level[now] + 1;
+          que.push(e.to);
         }
-        return level[t] != -1;
+      }
     }
+  }
 
-    T dfs(int v, const int t, T flow) {
-        if (v == t) return flow;
-        for (int &i = iter[v]; i < g[v].size(); i++) {
-            edge &e = g[v][i];
-            if (e.cap > 0 && level[v] < level[e.to]) {
-                T d = dfs(e.to, t, min(flow, e.cap));
-                if (d > 0) {
-                    e.cap -= d;
-                    g[e.to][e.rev].cap += d;
-                    return d;
-                }
-            }
+  T dfs(int s, int t, T flow) {
+    if(s == t) return flow;
+    for(int i=iter[s];i<(int)(g[s].size());++i) {
+      iter[s] = i;
+      auto e = g[s][i];
+      if(e.cap > 0 && level[s] < level[e.to]) {
+        T d = dfs(e.to, t, min(flow, e.cap));
+        if(d > 0) {
+          g[s][i].cap -= d;
+          g[e.to][e.rev].cap += d;
+          return d;
         }
-        return 0;
+      }
     }
-
-    T max_flow(int s, int t) {
-        T flow = 0;
-        while (bfs(s, t)) {
-            iter.assign(g.size(), 0);
-            T f = 0;
-            while((f = dfs(s, t, INF)) > 0) flow += f;
-        }
-        return flow;
-    }
+    return 0;
+  }
 };
 #line 4 "test/graph/dinic.test.cpp"
 
