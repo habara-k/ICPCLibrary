@@ -1,5 +1,17 @@
 #include "../template.cpp"
 
+/**
+ * @brief
+ * 最小共通祖先（ダブリング）
+ * 構築O(VlogV), クエリO(logV)
+ *
+ * LCA(G, root)で構築（無向木Gを、rootを根として向きづけしたときのLCAを構築）
+ * query(u, v)で取得
+ *
+ * @author ゆきのん？
+ * @date 2019/12
+ */
+
 struct LCA {
     int n, log2_n;
     vector<int> depth;
