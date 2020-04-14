@@ -1,9 +1,22 @@
 #include "template.cpp"
 
+/**
+ * @brief
+ * HopcroftKarp(二部グラフの最大マッチング)
+ * |最大マッチング| + |最小辺カバー| = |V|
+ * |最大マッチング| = |最小点カバー|
+ * |最大安定集合| + |最小点カバー| = |V|
+ *
+ * @author Md
+ * @date 2019/12
+ * @details
+ * 2020/04/14 コメント追加 by Md
+ */
+
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> used, vv;
+    vector<bool> vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -14,8 +27,8 @@ struct HopcroftKarp {
     void bfs() {
         d.assign(g.size(), -1);
         queue<int> que;
-        for (int i = 0; i < g.size(); i++) {
-            if (!used[i]) {
+        for (int i = 0; i < (int)(g.size()); i++) {
+            if (mch[i] != -1) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -40,11 +53,10 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
-                used[a] = true;
-                return (true);
+                return true;
             }
         }
-        return (false);
+        return false;
     }
 
     int bipartite_matching() {
@@ -54,7 +66,7 @@ struct HopcroftKarp {
             vv.assign(g.size(), false);
             int flow = 0;
             for (int i = 0; i < g.size(); i++) {
-                if (!used[i] && dfs(i)) ++flow;
+                if (mch[i] < 0 && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;

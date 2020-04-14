@@ -5,7 +5,6 @@
  * Dinic法(最大流)
  * 始点から終点までフローを流したときの最大流量を求める
  * O(EV^2) （だいたいもっとはやい）
- * ほぼこれhttps://ei1333.github.io/luzhiled/snippets/graph/dinic.html
  * @author Md
  * @date 2019/12
  * @detail

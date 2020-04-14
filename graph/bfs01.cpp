@@ -15,7 +15,7 @@
  * @details
  * 2020/04/07
  * ソースコード修正、コメント追加、テスト追加 by Md
- * テストはdijkstraのものを流用(01-BFSでしか通らない問題、あるか？)
+ * テストはdijkstraのものを流用(01-BFSでしか通らない問題、ある？)
  */
 
 template <typename T>
