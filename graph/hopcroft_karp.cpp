@@ -3,6 +3,7 @@
 /**
  * @brief
  * HopcroftKarp(二部グラフの最大マッチング)
+ * O(|E| sqrt(|V|))
  * |最大マッチング| + |最小辺カバー| = |V|
  * |最大マッチング| = |最小点カバー|
  * |最大安定集合| + |最小点カバー| = |V|
@@ -16,7 +17,7 @@
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> vv;
+    vector<bool> used, vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -28,7 +29,7 @@ struct HopcroftKarp {
         d.assign(g.size(), -1);
         queue<int> que;
         for (int i = 0; i < (int)(g.size()); i++) {
-            if (mch[i] != -1) {
+            if (!used[i]) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -53,6 +54,7 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
+                used[a] = true;
                 return true;
             }
         }
@@ -65,8 +67,8 @@ struct HopcroftKarp {
             bfs();
             vv.assign(g.size(), false);
             int flow = 0;
-            for (int i = 0; i < g.size(); i++) {
-                if (mch[i] < 0 && dfs(i)) ++flow;
+            for (int i = 0; i < (int)(g.size()); i++) {
+                if (!used[i] && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;
