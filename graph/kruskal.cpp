@@ -2,6 +2,16 @@
 
 #include "../structure/union_find.cpp"
 
+/**
+ * @brief
+ * クラスカル法（最小全域木）
+ * O(|E|log|E|)
+ * 大きさだけ求めてるけど構築もすぐ書けるはず（mergeのタイミングで登録）
+ *
+ * @author ?
+ * @date 2019/12
+ */
+
 template<typename T>
 T kruskal(vector<edge<T>> &es, int V) {
 
