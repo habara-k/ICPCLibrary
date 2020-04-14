@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/structure/lazy_segment_tree.cpp.html">structure/lazy_segment_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code

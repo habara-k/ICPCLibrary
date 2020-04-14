@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 05:47:46+09:00
+    - Last commit date: 2020-04-14 23:28:02+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A</a>
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/graph/dinic.cpp.html"> <small>(graph/dinic.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :question: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -128,7 +128,6 @@ using Graph = vector<vector<edge<T>>>;
  * Dinic法(最大流)
  * 始点から終点までフローを流したときの最大流量を求める
  * O(EV^2) （だいたいもっとはやい）
- * ほぼこれhttps://ei1333.github.io/luzhiled/snippets/graph/dinic.html
  * @author Md
  * @date 2019/12
  * @detail

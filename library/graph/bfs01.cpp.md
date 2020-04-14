@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/bfs01.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 03:51:42+09:00
+    - Last commit date: 2020-04-14 23:28:02+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
+* :question: <a href="template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Verified with
@@ -69,7 +69,7 @@ layout: default
  * @details
  * 2020/04/07
  * ソースコード修正、コメント追加、テスト追加 by Md
- * テストはdijkstraのものを流用(01-BFSでしか通らない問題、あるか？)
+ * テストはdijkstraのものを流用(01-BFSでしか通らない問題、ある？)
  */
 
 template <typename T>
@@ -170,7 +170,7 @@ using Graph = vector<vector<edge<T>>>;
  * @details
  * 2020/04/07
  * ソースコード修正、コメント追加、テスト追加 by Md
- * テストはdijkstraのものを流用(01-BFSでしか通らない問題、あるか？)
+ * テストはdijkstraのものを流用(01-BFSでしか通らない問題、ある？)
  */
 
 template <typename T>

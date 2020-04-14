@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../graph/maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
-* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :question: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code

@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 05:47:46+09:00
+    - Last commit date: 2020-04-14 23:28:02+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
+* :question: <a href="template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Verified with
@@ -59,7 +59,6 @@ layout: default
  * Dinic法(最大流)
  * 始点から終点までフローを流したときの最大流量を求める
  * O(EV^2) （だいたいもっとはやい）
- * ほぼこれhttps://ei1333.github.io/luzhiled/snippets/graph/dinic.html
  * @author Md
  * @date 2019/12
  * @detail
@@ -214,7 +213,6 @@ using Graph = vector<vector<edge<T>>>;
  * Dinic法(最大流)
  * 始点から終点までフローを流したときの最大流量を求める
  * O(EV^2) （だいたいもっとはやい）
- * ほぼこれhttps://ei1333.github.io/luzhiled/snippets/graph/dinic.html
  * @author Md
  * @date 2019/12
  * @detail

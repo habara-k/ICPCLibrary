@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
-* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code

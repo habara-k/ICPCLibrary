@@ -39,8 +39,8 @@ layout: default
 ## Depends on
 
 * :warning: <a href="lowlink.cpp.html">graph/lowlink.cpp</a>
-* :heavy_check_mark: <a href="template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
+* :question: <a href="template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Code

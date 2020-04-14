@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/graph/hopcroft_karp.test.cpp
+# :x: test/graph/hopcroft_karp.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/hopcroft_karp.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 03:51:42+09:00
+    - Last commit date: 2020-04-14 23:28:02+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
-* :heavy_check_mark: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :x: <a href="../../../library/graph/hopcroft_karp.cpp.html"> <small>(graph/hopcroft_karp.cpp)</small></a>
+* :question: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
 
 
 ## Code
@@ -123,10 +123,23 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "graph/hopcroft_karp.cpp"
 
+/**
+ * @brief
+ * HopcroftKarp(二部グラフの最大マッチング)
+ * |最大マッチング| + |最小辺カバー| = |V|
+ * |最大マッチング| = |最小点カバー|
+ * |最大安定集合| + |最小点カバー| = |V|
+ *
+ * @author Md
+ * @date 2019/12
+ * @details
+ * 2020/04/14 コメント追加 by Md
+ */
+
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> used, vv;
+    vector<bool> vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -137,8 +150,8 @@ struct HopcroftKarp {
     void bfs() {
         d.assign(g.size(), -1);
         queue<int> que;
-        for (int i = 0; i < g.size(); i++) {
-            if (!used[i]) {
+        for (int i = 0; i < (int)(g.size()); i++) {
+            if (mch[i] != -1) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -163,11 +176,10 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
-                used[a] = true;
-                return (true);
+                return true;
             }
         }
-        return (false);
+        return false;
     }
 
     int bipartite_matching() {
@@ -177,7 +189,7 @@ struct HopcroftKarp {
             vv.assign(g.size(), false);
             int flow = 0;
             for (int i = 0; i < g.size(); i++) {
-                if (!used[i] && dfs(i)) ++flow;
+                if (mch[i] < 0 && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;

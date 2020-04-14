@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/template.cpp
+# :question: graph/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
+* :question: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Required by
@@ -46,7 +46,7 @@ layout: default
 * :heavy_check_mark: <a href="bfs01.cpp.html"> <small>(graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="dijkstra.cpp.html"> <small>(graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="dinic.cpp.html"> <small>(graph/dinic.cpp)</small></a>
-* :heavy_check_mark: <a href="hopcroft_karp.cpp.html">graph/hopcroft_karp.cpp</a>
+* :x: <a href="hopcroft_karp.cpp.html"> <small>(graph/hopcroft_karp.cpp)</small></a>
 * :heavy_check_mark: <a href="kruskal.cpp.html">graph/kruskal.cpp</a>
 * :warning: <a href="lowlink.cpp.html">graph/lowlink.cpp</a>
 * :warning: <a href="maximum_clique.cpp.html">graph/maximum_clique.cpp</a>
@@ -64,7 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/graph/bfs01.test.cpp.html">test/graph/bfs01.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
+* :x: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>

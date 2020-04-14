@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/hopcroft_karp.cpp
+# :x:  <small>(graph/hopcroft_karp.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/hopcroft_karp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 03:51:42+09:00
+    - Last commit date: 2020-04-14 23:28:02+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../template.cpp.html">template.cpp</a>
+* :question: <a href="template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../template.cpp.html">template.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
+* :x: <a href="../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 
 
 ## Code
@@ -54,10 +54,23 @@ layout: default
 ```cpp
 #include "template.cpp"
 
+/**
+ * @brief
+ * HopcroftKarp(二部グラフの最大マッチング)
+ * |最大マッチング| + |最小辺カバー| = |V|
+ * |最大マッチング| = |最小点カバー|
+ * |最大安定集合| + |最小点カバー| = |V|
+ *
+ * @author Md
+ * @date 2019/12
+ * @details
+ * 2020/04/14 コメント追加 by Md
+ */
+
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> used, vv;
+    vector<bool> vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -68,8 +81,8 @@ struct HopcroftKarp {
     void bfs() {
         d.assign(g.size(), -1);
         queue<int> que;
-        for (int i = 0; i < g.size(); i++) {
-            if (!used[i]) {
+        for (int i = 0; i < (int)(g.size()); i++) {
+            if (mch[i] != -1) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -94,11 +107,10 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
-                used[a] = true;
-                return (true);
+                return true;
             }
         }
-        return (false);
+        return false;
     }
 
     int bipartite_matching() {
@@ -108,7 +120,7 @@ struct HopcroftKarp {
             vv.assign(g.size(), false);
             int flow = 0;
             for (int i = 0; i < g.size(); i++) {
-                if (!used[i] && dfs(i)) ++flow;
+                if (mch[i] < 0 && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;
@@ -171,10 +183,23 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "graph/hopcroft_karp.cpp"
 
+/**
+ * @brief
+ * HopcroftKarp(二部グラフの最大マッチング)
+ * |最大マッチング| + |最小辺カバー| = |V|
+ * |最大マッチング| = |最小点カバー|
+ * |最大安定集合| + |最小点カバー| = |V|
+ *
+ * @author Md
+ * @date 2019/12
+ * @details
+ * 2020/04/14 コメント追加 by Md
+ */
+
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> used, vv;
+    vector<bool> vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -185,8 +210,8 @@ struct HopcroftKarp {
     void bfs() {
         d.assign(g.size(), -1);
         queue<int> que;
-        for (int i = 0; i < g.size(); i++) {
-            if (!used[i]) {
+        for (int i = 0; i < (int)(g.size()); i++) {
+            if (mch[i] != -1) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -211,11 +236,10 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
-                used[a] = true;
-                return (true);
+                return true;
             }
         }
-        return (false);
+        return false;
     }
 
     int bipartite_matching() {
@@ -225,7 +249,7 @@ struct HopcroftKarp {
             vv.assign(g.size(), false);
             int flow = 0;
             for (int i = 0; i < g.size(); i++) {
-                if (!used[i] && dfs(i)) ++flow;
+                if (mch[i] < 0 && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;

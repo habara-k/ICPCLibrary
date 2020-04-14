@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
+* :question: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
 * :warning: <a href="../../graph/topological_sort.cpp.html">graph/topological_sort.cpp</a>
-* :heavy_check_mark: <a href="../../template.cpp.html">template.cpp</a>
+* :question: <a href="../../template.cpp.html">template.cpp</a>
 
 
 ## Code
