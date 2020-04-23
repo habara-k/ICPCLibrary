@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I"
 
-#include "../../number/combination.cpp"
+#include "../../lib/number/combination.cpp"
 
 int main() {
     ll n, k; cin >> n >> k;

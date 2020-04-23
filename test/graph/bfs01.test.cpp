@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
-#include "../../graph/bfs01.cpp"
+#include "../../lib/graph/bfs01.cpp"
 
 int main() {
     int V, E, R;

@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/tdpc/tasks/tdpc_target"
 
-#include "../../others/LIS.cpp"
+#include "../../lib/others/LIS.cpp"
 
 int main()
 {
