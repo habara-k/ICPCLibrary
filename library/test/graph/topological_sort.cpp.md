@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/topological_sort.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../graph/template.cpp.html">graph/template.cpp</a>
-* :warning: <a href="../../graph/topological_sort.cpp.html">graph/topological_sort.cpp</a>
-* :question: <a href="../../template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :warning: <a href="../../lib/graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B"
 
-#include "../../graph/topological_sort.cpp"
+#include "../../lib/graph/topological_sort.cpp"
 
 int main() {
     int V, E; cin >> V >> E;
@@ -76,11 +76,11 @@ int main() {
 #line 1 "test/graph/topological_sort.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B"
 
-#line 1 "graph/template.cpp"
+#line 1 "lib/graph/template.cpp"
 
 
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -160,7 +160,7 @@ int main() {
 */
 
 
-#line 5 "graph/template.cpp"
+#line 5 "lib/graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -174,7 +174,7 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "graph/topological_sort.cpp"
+#line 2 "lib/graph/topological_sort.cpp"
 
 void topological_sort(const vector<vector<int>>& G, vector<int>& ord)
 {

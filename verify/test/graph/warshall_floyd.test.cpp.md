@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/warshall_floyd.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/graph/warshall_floyd.cpp.html">graph/warshall_floyd.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C"
 
-#include "../../graph/warshall_floyd.cpp"
+#include "../../lib/graph/warshall_floyd.cpp"
 
 int main() {
     int V, E;
@@ -92,11 +92,11 @@ int main() {
 #line 1 "test/graph/warshall_floyd.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C"
 
-#line 1 "graph/template.cpp"
+#line 1 "lib/graph/template.cpp"
 
 
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -176,7 +176,7 @@ int main() {
 */
 
 
-#line 5 "graph/template.cpp"
+#line 5 "lib/graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -190,7 +190,7 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "graph/warshall_floyd.cpp"
+#line 2 "lib/graph/warshall_floyd.cpp"
 
 template<typename T>
 void warshall_floyd(vector<vector<T>> &g) {

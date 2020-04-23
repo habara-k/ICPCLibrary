@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/graph/dijkstra.test.cpp
+# :warning: test/graph/hopcroft_karp.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/dijkstra.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/hopcroft_karp.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-23 18:36:28+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :warning: <a href="../../lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
+* :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -49,23 +49,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A"
 
-#include "../../lib/graph/dijkstra.cpp"
+#include "../../lib/graph/hopcroft_karp.cpp"
 
 int main() {
-    int V, E, R;
-    cin >> V >> E >> R;
-    Graph<int> g(V);
-    for (int i = 0; i < E; ++i) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        g[a].push_back({a,b,c});
+    int X, Y, E;
+    cin >> X >> Y >> E;
+    HopcroftKarp bm(X, Y);
+    for(int i = 0; i < E; i++) {
+        int a, b;
+        cin >> a >> b;
+        bm.add_edge(a, b);
     }
-    for (auto &dist : dijkstra(g, R)) {
-        if (dist == numeric_limits<int>::max()) puts("INF");
-        else cout << dist << endl;
-    }
+    cout << bm.bipartite_matching() << endl;
 }
 
 ```
@@ -74,8 +71,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/dijkstra.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
+#line 1 "test/graph/hopcroft_karp.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A"
 
 #line 1 "lib/graph/template.cpp"
 
@@ -175,63 +172,93 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "lib/graph/dijkstra.cpp"
+#line 2 "lib/graph/hopcroft_karp.cpp"
 
 /**
  * @brief
- * 単一始点最短路(ダイクストラ)
- * 二分ヒープ(priority_queue)を使ってO((E+V)logV)
- * @author ?
+ * HopcroftKarp(二部グラフの最大マッチング)
+ * |最大マッチング| + |最小辺カバー| = |V|
+ * |最大マッチング| = |最小点カバー|
+ * |最大安定集合| + |最小点カバー| = |V|
+ *
+ * @author Md
  * @date 2019/12
- * 
- * @param[in] g グラフ
- * @param[in] s 始点
- * @return vector<T> sからそれぞれの頂点への最短路
- * 
  * @details
- * 2020/04/07 コメント追加、テスト有無のチェック by Md
+ * 2020/04/14 コメント追加 by Md
  */
 
-template<typename T>
-vector<T> dijkstra(const Graph<T> &g, int s) {
-    const auto INF = numeric_limits<T>::max();
-    vector<T> d(g.size(), INF);
+struct HopcroftKarp {
+    vector<vector<int>> g;
+    vector<int> d, mch;
+    vector<bool> vv;
 
-    using Pi = pair<T, int>;
-    priority_queue<Pi, vector<Pi>, greater<Pi>> que;
-    d[s] = 0;
-    que.emplace(d[s], s);
-    while (!que.empty()) {
-        T cost;
-        int v;
-        tie(cost, v) = que.top();
-        que.pop();
-        if (d[v] < cost) continue;
-        for (auto &e : g[v]) {
-            auto nxt = cost + e.cost;
-            if (d[e.to] > nxt) {
-                d[e.to] = nxt;
-                que.emplace(nxt, e.to);
+    HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
+
+    void add_edge(int u, int v) {
+        g[u].push_back(v);
+    }
+
+    void bfs() {
+        d.assign(g.size(), -1);
+        queue<int> que;
+        for (int i = 0; i < (int)(g.size()); i++) {
+            if (mch[i] != -1) {
+                que.emplace(i);
+                d[i] = 0;
+            }
+        }
+
+        while (!que.empty()) {
+            int a = que.front();
+            que.pop();
+            for (auto &b : g[a]) {
+                int c = mch[b];
+                if (c >= 0 && d[c] == -1) {
+                    d[c] = d[a] + 1;
+                    que.emplace(c);
+                }
             }
         }
     }
-    return d;
-}
-#line 4 "test/graph/dijkstra.test.cpp"
+
+    bool dfs(int a) {
+        vv[a] = true;
+        for (auto &b : g[a]) {
+            int c = mch[b];
+            if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
+                mch[b] = a;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    int bipartite_matching() {
+        int ret = 0;
+        while (true) {
+            bfs();
+            vv.assign(g.size(), false);
+            int flow = 0;
+            for (int i = 0; i < g.size(); i++) {
+                if (mch[i] < 0 && dfs(i)) ++flow;
+            }
+            if (flow == 0) return ret;
+            ret += flow;
+        }
+    }
+};
+#line 4 "test/graph/hopcroft_karp.cpp"
 
 int main() {
-    int V, E, R;
-    cin >> V >> E >> R;
-    Graph<int> g(V);
-    for (int i = 0; i < E; ++i) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        g[a].push_back({a,b,c});
+    int X, Y, E;
+    cin >> X >> Y >> E;
+    HopcroftKarp bm(X, Y);
+    for(int i = 0; i < E; i++) {
+        int a, b;
+        cin >> a >> b;
+        bm.add_edge(a, b);
     }
-    for (auto &dist : dijkstra(g, R)) {
-        if (dist == numeric_limits<int>::max()) puts("INF");
-        else cout << dist << endl;
-    }
+    cout << bm.bipartite_matching() << endl;
 }
 
 ```

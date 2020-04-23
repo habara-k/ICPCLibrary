@@ -25,22 +25,34 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :heavy_check_mark: lib/number/mod.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/number/mod.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Required by
+
+* :heavy_check_mark: <a href="combination.cpp.html">lib/number/combination.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/C.test.cpp.html">test/number/C.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
 
 
 ## Code
@@ -48,20 +60,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+ll powm(ll a, ll n, ll m) {
+    ll ret = 1;
+    while (n > 0) {
+        if (n & 1) (ret *= a) %= m;
+        (a *= a) %= m;
+        n >>= 1;
     }
+    return ret;
+}
+
+ll invm(ll a, ll m) {
+    return powm(a, m-2, m);
 }
 
 ```
@@ -70,9 +82,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,35 +162,20 @@ int main() {
 */
 
 
-#line 2 "lib/structure/binary_indexed_tree.cpp"
+#line 2 "lib/number/mod.cpp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
-    int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
+ll powm(ll a, ll n, ll m) {
+    ll ret = 1;
+    while (n > 0) {
+        if (n & 1) (ret *= a) %= m;
+        (a *= a) %= m;
+        n >>= 1;
     }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
-    }
-};
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
+    return ret;
+}
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
-    }
+ll invm(ll a, ll m) {
+    return powm(a, m-2, m);
 }
 
 ```

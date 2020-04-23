@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/bfs01.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/bfs01.cpp.html"> <small>(graph/bfs01.cpp)</small></a>
-* :question: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
-#include "../../graph/bfs01.cpp"
+#include "../../lib/graph/bfs01.cpp"
 
 int main() {
     int V, E, R;
@@ -77,11 +77,11 @@ int main() {
 #line 1 "test/graph/bfs01.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
-#line 1 "graph/template.cpp"
+#line 1 "lib/graph/template.cpp"
 
 
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -161,7 +161,7 @@ int main() {
 */
 
 
-#line 5 "graph/template.cpp"
+#line 5 "lib/graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -175,7 +175,7 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "graph/bfs01.cpp"
+#line 2 "lib/graph/bfs01.cpp"
 
 // verify: https://codeforces.com/contest/590/problem/C
 

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/structure/segment_tree.cpp.html">structure/segment_tree.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/segment_tree.cpp.html">lib/structure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A"
 
-#include "../../structure/segment_tree.cpp"
+#include "../../lib/structure/segment_tree.cpp"
 
 int main() {
     int N, Q;
@@ -73,7 +73,7 @@ int main() {
 #line 1 "test/structure/segment_tree.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -153,7 +153,7 @@ int main() {
 */
 
 
-#line 2 "structure/segment_tree.cpp"
+#line 2 "lib/structure/segment_tree.cpp"
 
 template<typename M>
 struct SegmentTree {

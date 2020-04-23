@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/string/rolling_hash.cpp.html">string/rolling_hash.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html">lib/string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B"
 
-#include "../../string/rolling_hash.cpp"
+#include "../../lib/string/rolling_hash.cpp"
 
 int main() {
     string T, P;
@@ -77,7 +77,7 @@ int main() {
 #line 1 "test/string/rolling_hash.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -157,7 +157,7 @@ int main() {
 */
 
 
-#line 2 "string/rolling_hash.cpp"
+#line 2 "lib/string/rolling_hash.cpp"
 
 struct RollingHash {
     const int base = 9973;

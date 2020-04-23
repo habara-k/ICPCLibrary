@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/Partition1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/number/combination.cpp.html">number/combination.cpp</a>
-* :heavy_check_mark: <a href="../../../library/number/mod.cpp.html">number/mod.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/combination.cpp.html">lib/number/combination.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/mod.cpp.html">lib/number/mod.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J"
 
-#include "../../number/combination.cpp"
+#include "../../lib/number/combination.cpp"
 
 int main() {
     ll n, k; cin >> n >> k;
@@ -71,7 +71,7 @@ int main() {
 #line 1 "test/number/Partition1.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -151,7 +151,7 @@ int main() {
 */
 
 
-#line 2 "number/mod.cpp"
+#line 2 "lib/number/mod.cpp"
 
 ll powm(ll a, ll n, ll m) {
     ll ret = 1;
@@ -166,7 +166,7 @@ ll powm(ll a, ll n, ll m) {
 ll invm(ll a, ll m) {
     return powm(a, m-2, m);
 }
-#line 2 "number/combination.cpp"
+#line 2 "lib/number/combination.cpp"
 
 vector<ll> fact;
 void init_fact(int n, ll m) {

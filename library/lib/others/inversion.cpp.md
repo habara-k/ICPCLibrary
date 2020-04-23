@@ -25,22 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :warning: lib/others/inversion.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#2569b475fca6e8e7d428548d20016ff0">lib/others</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/others/inversion.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Required by
+
+* :warning: <a href="../../test/others/inversion.cpp.html">test/others/inversion.cpp</a>
 
 
 ## Code
@@ -48,20 +52,27 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
+#include "../structure/binary_indexed_tree.cpp"
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+template<typename T>
+ll inversion(const vector<T>& a)
+{
+    map<T,int> mp;
+    for (auto e : a) mp[e] = -1;
+    int sz = 0;
+    for (auto &q : mp) {
+        q.second = sz++;
     }
+
+    BIT<int> bit(sz+1);
+    ll res = 0;
+    for (int i = 0; i < a.size(); ++i) {
+        res += i - bit.sum(mp[a[i]]);
+        bit.add(mp[a[i]], 1);
+    }
+    return res;
 }
 
 ```
@@ -70,9 +81,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,6 +161,8 @@ int main() {
 */
 
 
+#line 2 "lib/others/inversion.cpp"
+
 #line 2 "lib/structure/binary_indexed_tree.cpp"
 
 template<typename T>
@@ -170,18 +180,25 @@ struct BIT {
         return s;
     }
 };
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
+#line 4 "lib/others/inversion.cpp"
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+template<typename T>
+ll inversion(const vector<T>& a)
+{
+    map<T,int> mp;
+    for (auto e : a) mp[e] = -1;
+    int sz = 0;
+    for (auto &q : mp) {
+        q.second = sz++;
     }
+
+    BIT<int> bit(sz+1);
+    ll res = 0;
+    for (int i = 0; i < a.size(); ++i) {
+        res += i - bit.sum(mp[a[i]]);
+        bit.add(mp[a[i]], 1);
+    }
+    return res;
 }
 
 ```

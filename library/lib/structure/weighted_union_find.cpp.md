@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :heavy_check_mark: lib/structure/weighted_union_find.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/structure/weighted_union_find.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/structure/weighted_union_find.test.cpp.html">test/structure/weighted_union_find.test.cpp</a>
 
 
 ## Code
@@ -48,21 +51,51 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+template<typename A>
+struct WeightedUnionFind
+{
+    vector<int> par, sz;
+    vector<A> data;     // data[x]: diff from root to x
+    WeightedUnionFind(int n, A e=0) :
+        par(n), sz(n, 1), data(n, e) {
+        for (int i = 0; i < n; ++i) par[i] = i;
     }
-}
+
+    int root(int x) {
+        if (par[x] == x) return x;
+        int r = root(par[x]);
+        data[x] += data[par[x]];
+        return par[x] = r;
+    }
+
+    A weight(int x) {
+        root(x);
+        return data[x];
+    }
+
+    A diff(int x, int y) {
+        // diff from x to y
+        return data[y] - data[x];
+    }
+
+    void merge(int x, int y, A w) {
+        // merge so that "diff from x to y" will be w.
+        w += weight(x); w -= weight(y);
+        x = root(x); y = root(y);
+        if (x == y) return;
+        if (sz[x] < sz[y]) swap(x, y), w = -w;
+        par[y] = x;
+        sz[x] += sz[y];
+        sz[y] = 0;
+        data[y] = w;
+    }
+
+    bool issame(int x, int y) {
+        return root(x) == root(y);
+    }
+};
 
 ```
 {% endraw %}
@@ -70,9 +103,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,36 +183,51 @@ int main() {
 */
 
 
-#line 2 "lib/structure/binary_indexed_tree.cpp"
+#line 2 "lib/structure/weighted_union_find.cpp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
-    int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
+template<typename A>
+struct WeightedUnionFind
+{
+    vector<int> par, sz;
+    vector<A> data;     // data[x]: diff from root to x
+    WeightedUnionFind(int n, A e=0) :
+        par(n), sz(n, 1), data(n, e) {
+        for (int i = 0; i < n; ++i) par[i] = i;
     }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
+
+    int root(int x) {
+        if (par[x] == x) return x;
+        int r = root(par[x]);
+        data[x] += data[par[x]];
+        return par[x] = r;
+    }
+
+    A weight(int x) {
+        root(x);
+        return data[x];
+    }
+
+    A diff(int x, int y) {
+        // diff from x to y
+        return data[y] - data[x];
+    }
+
+    void merge(int x, int y, A w) {
+        // merge so that "diff from x to y" will be w.
+        w += weight(x); w -= weight(y);
+        x = root(x); y = root(y);
+        if (x == y) return;
+        if (sz[x] < sz[y]) swap(x, y), w = -w;
+        par[y] = x;
+        sz[x] += sz[y];
+        sz[y] = 0;
+        data[y] = w;
+    }
+
+    bool issame(int x, int y) {
+        return root(x) == root(y);
     }
 };
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
-    }
-}
 
 ```
 {% endraw %}

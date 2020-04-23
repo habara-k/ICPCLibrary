@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/lazy_segment_tree.test.cpp
+# :heavy_check_mark: lib/structure/lazy_segment_tree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/lazy_segment_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/structure/lazy_segment_tree.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/lazy_segment_tree.cpp.html">lib/structure/lazy_segment_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/structure/lazy_segment_tree.test.cpp.html">test/structure/lazy_segment_tree.test.cpp</a>
 
 
 ## Code
@@ -48,29 +51,76 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
+#include "../template.cpp"
 
-#include "../../lib/structure/lazy_segment_tree.cpp"
+template<typename M, typename OM = M>
+struct LazySegmentTree {
+    int sz;
+    vector<M> data;
+    vector<OM> lazy;
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    LazySegmentTree<ll> seg(N);
-    while (Q--) {
-        int C; cin >> C;
-        if (C == 0) {
-            int S, T; ll X;
-            cin >> S >> T >> X;
-            --S, --T;
-            seg.update(S, T+1, X);
+    // RangeSumRangeAdd
+    const function<M(M,M)> f = [](M a,M b){ return a+b; };
+    const function<M(M,OM,int)> g = [](M a,OM b,int l){ return a+b*l; };
+    const function<OM(OM,OM)> h = [](OM a,OM b){ return a+b; };
+    const M e = 0;
+    const OM oe = 0;
+
+    LazySegmentTree(int n) {
+        sz = 1;
+        while (sz < n) sz <<= 1;
+        data.assign(2*sz, e);
+        lazy.assign(2*sz, oe);
+    }
+
+    void propagate(int k, int len) {
+        if (lazy[k] == oe) return;
+        if (k < sz) {
+            lazy[2*k  ] = h(lazy[2*k  ], lazy[k]);
+            lazy[2*k+1] = h(lazy[2*k+1], lazy[k]);
+        }
+        data[k] = g(data[k], lazy[k], len);
+        lazy[k] = oe;
+    }
+
+    M update(int a, int b, const OM &x, int k, int l, int r) {
+        propagate(k, r - l);
+        if (r <= a || b <= l) {
+            return data[k];
+        } else if (a <= l && r <= b) {
+            lazy[k] = h(lazy[k], x);
+            propagate(k, r - l);
+            return data[k];
         } else {
-            int S, T;
-            cin >> S >> T;
-            --S, --T;
-            cout << seg.query(S, T+1) << endl;
+            return data[k] = f(
+                update(a, b, x, 2*k,   l, (l+r)/2),
+                update(a, b, x, 2*k+1, (l+r)/2, r));
         }
     }
-}
+
+    void update(int a, int b, const OM &x) {
+        // update [a, b) with x.
+        update(a, b, x, 1, 0, sz);
+    }
+
+    M query(int a, int b, int k, int l, int r) {
+        propagate(k, r - l);
+        if (r <= a || b <= l) {
+            return e;
+        } else if (a <= l && r <= b) {
+            return data[k];
+        } else {
+            return f(
+                query(a, b, 2*k,   l, (l+r)/2),
+                query(a, b, 2*k+1, (l+r)/2, r));
+        }
+    }
+
+    M query(int a, int b) {
+        // return f[a, b).
+        return query(a, b, 1, 0, sz);
+    }
+};
 
 ```
 {% endraw %}
@@ -78,9 +128,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/lazy_segment_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
-
 #line 1 "lib/template.cpp"
 
 
@@ -231,27 +278,6 @@ struct LazySegmentTree {
         return query(a, b, 1, 0, sz);
     }
 };
-#line 4 "test/structure/lazy_segment_tree.test.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    LazySegmentTree<ll> seg(N);
-    while (Q--) {
-        int C; cin >> C;
-        if (C == 0) {
-            int S, T; ll X;
-            cin >> S >> T >> X;
-            --S, --T;
-            seg.update(S, T+1, X);
-        } else {
-            int S, T;
-            cin >> S >> T;
-            --S, --T;
-            cout << seg.query(S, T+1) << endl;
-        }
-    }
-}
 
 ```
 {% endraw %}

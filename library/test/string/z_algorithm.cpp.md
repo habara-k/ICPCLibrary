@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/z_algorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc141/tasks/abc141_e">https://atcoder.jp/contests/abc141/tasks/abc141_e</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../string/z_algorithm.cpp.html">string/z_algorithm.cpp</a>
-* :question: <a href="../../template.cpp.html">template.cpp</a>
+* :warning: <a href="../../lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://atcoder.jp/contests/abc141/tasks/abc141_e"
 
-#include "../../string/z_algorithm.cpp"
+#include "../../lib/string/z_algorithm.cpp"
 
 int main() {
     int n; cin >> n;
@@ -80,7 +80,7 @@ int main() {
 #line 1 "test/string/z_algorithm.cpp"
 #define PROBLEM "https://atcoder.jp/contests/abc141/tasks/abc141_e"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -160,7 +160,7 @@ int main() {
 */
 
 
-#line 2 "string/z_algorithm.cpp"
+#line 2 "lib/string/z_algorithm.cpp"
 
 // GET A[i]: the longest common prefix size of S and S[i:n-1]
 template<typename S>

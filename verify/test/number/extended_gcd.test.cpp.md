@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/extended_gcd.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/number/extended_gcd.cpp.html">number/extended_gcd.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E"
 
-#include "../../number/extended_gcd.cpp"
+#include "../../lib/number/extended_gcd.cpp"
 
 int main() {
     ll a, b; cin >> a >> b;
@@ -68,7 +68,7 @@ int main() {
 #line 1 "test/number/extended_gcd.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -148,7 +148,7 @@ int main() {
 */
 
 
-#line 2 "number/extended_gcd.cpp"
+#line 2 "lib/number/extended_gcd.cpp"
 
 ll extended_gcd(ll a, ll b, ll& x, ll& y) {
     // solve ax + by = gcd(a, b)

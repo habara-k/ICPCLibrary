@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/union_find.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/structure/union_find.cpp.html">structure/union_find.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
 
-#include "../../structure/union_find.cpp"
+#include "../../lib/structure/union_find.cpp"
 
 int main() {
     int N, Q;
@@ -73,7 +73,7 @@ int main() {
 #line 1 "test/structure/union_find.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -153,7 +153,7 @@ int main() {
 */
 
 
-#line 2 "structure/union_find.cpp"
+#line 2 "lib/structure/union_find.cpp"
 
 struct UnionFind
 {

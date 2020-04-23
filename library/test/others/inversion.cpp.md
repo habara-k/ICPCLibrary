@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#387155223b8efcb396433364712bb3df">test/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/others/inversion.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/agc034/tasks/agc034_b">https://atcoder.jp/contests/agc034/tasks/agc034_b</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../others/inversion.cpp.html">others/inversion.cpp</a>
-* :heavy_check_mark: <a href="../../structure/binary_indexed_tree.cpp.html">structure/binary_indexed_tree.cpp</a>
-* :question: <a href="../../template.cpp.html">template.cpp</a>
+* :warning: <a href="../../lib/others/inversion.cpp.html">lib/others/inversion.cpp</a>
+* :heavy_check_mark: <a href="../../lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://atcoder.jp/contests/agc034/tasks/agc034_b"
 
-#include "../../others/inversion.cpp"
+#include "../../lib/others/inversion.cpp"
 
 int main()
 {
@@ -92,7 +92,7 @@ int main()
 #line 1 "test/others/inversion.cpp"
 #define PROBLEM "https://atcoder.jp/contests/agc034/tasks/agc034_b"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -172,9 +172,9 @@ int main() {
 */
 
 
-#line 2 "others/inversion.cpp"
+#line 2 "lib/others/inversion.cpp"
 
-#line 2 "structure/binary_indexed_tree.cpp"
+#line 2 "lib/structure/binary_indexed_tree.cpp"
 
 template<typename T>
 struct BIT {
@@ -191,7 +191,7 @@ struct BIT {
         return s;
     }
 };
-#line 4 "others/inversion.cpp"
+#line 4 "lib/others/inversion.cpp"
 
 template<typename T>
 ll inversion(const vector<T>& a)

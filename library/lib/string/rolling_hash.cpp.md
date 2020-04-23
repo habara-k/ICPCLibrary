@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :heavy_check_mark: lib/string/rolling_hash.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#9a48db5fb6f746df590a3d4604f6478b">lib/string</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/string/rolling_hash.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
 
 
 ## Code
@@ -48,21 +51,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
+struct RollingHash {
+    const int base = 9973;
+    const int mod[2] = {999999937, 1000000007};
+    vector<int> s;
+    vector<ll> hash[2], pow[2];
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+    RollingHash(const vector<int> &cs) : s(cs) {
+        int n = s.size();
+        for (int id = 0; id < 2; ++id) {
+            hash[id].assign(n+1, 0);
+            pow[id].assign(n+1, 1);
+            for (int i = 0; i < n; ++i) {
+                hash[id][i+1] = (hash[id][i] * base + s[i]) % mod[id];
+                pow[id][i+1] = pow[id][i] * base % mod[id];
+            }
+        }
     }
-}
+
+    // get hash of s[l:r)
+    ll get(int l, int r, int id = 0) {
+        ll res = hash[id][r] - hash[id][l] * pow[id][r-l] % mod[id];
+        if (res < 0) res += mod[id];
+        return res;
+    }
+};
 
 ```
 {% endraw %}
@@ -70,9 +85,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,36 +165,33 @@ int main() {
 */
 
 
-#line 2 "lib/structure/binary_indexed_tree.cpp"
+#line 2 "lib/string/rolling_hash.cpp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
-    int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
+struct RollingHash {
+    const int base = 9973;
+    const int mod[2] = {999999937, 1000000007};
+    vector<int> s;
+    vector<ll> hash[2], pow[2];
+
+    RollingHash(const vector<int> &cs) : s(cs) {
+        int n = s.size();
+        for (int id = 0; id < 2; ++id) {
+            hash[id].assign(n+1, 0);
+            pow[id].assign(n+1, 1);
+            for (int i = 0; i < n; ++i) {
+                hash[id][i+1] = (hash[id][i] * base + s[i]) % mod[id];
+                pow[id][i+1] = pow[id][i] * base % mod[id];
+            }
+        }
     }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
+
+    // get hash of s[l:r)
+    ll get(int l, int r, int id = 0) {
+        ll res = hash[id][r] - hash[id][l] * pow[id][r-l] % mod[id];
+        if (res < 0) res += mod[id];
+        return res;
     }
 };
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
-    }
-}
 
 ```
 {% endraw %}

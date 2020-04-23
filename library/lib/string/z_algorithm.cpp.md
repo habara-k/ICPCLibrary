@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :warning: lib/string/z_algorithm.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#9a48db5fb6f746df590a3d4604f6478b">lib/string</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/string/z_algorithm.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Required by
+
+* :warning: <a href="../../test/string/z_algorithm.cpp.html">test/string/z_algorithm.cpp</a>
 
 
 ## Code
@@ -48,19 +51,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+// GET A[i]: the longest common prefix size of S and S[i:n-1]
+template<typename S>
+void z_algorithm(const S& s, vector<int>& A) {
+    int n = s.size();
+    A.resize(n);
+    A[0] = n;
+    int i = 1, j = 0;
+    while (i < n) {
+        while (i+j < n && s[j] == s[i+j]) ++j;
+        A[i] = j;
+        if (j == 0) { ++i; continue; }
+        int k = 1;
+        while (i+k < n && k+A[k] < j) { A[i+k] = A[k]; ++k; }
+        i += k; j -= k;
     }
 }
 
@@ -70,9 +76,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,34 +156,22 @@ int main() {
 */
 
 
-#line 2 "lib/structure/binary_indexed_tree.cpp"
+#line 2 "lib/string/z_algorithm.cpp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
-    int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
-    }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
-    }
-};
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+// GET A[i]: the longest common prefix size of S and S[i:n-1]
+template<typename S>
+void z_algorithm(const S& s, vector<int>& A) {
+    int n = s.size();
+    A.resize(n);
+    A[0] = n;
+    int i = 1, j = 0;
+    while (i < n) {
+        while (i+j < n && s[j] == s[i+j]) ++j;
+        A[i] = j;
+        if (j == 0) { ++i; continue; }
+        int k = 1;
+        while (i+k < n && k+A[k] < j) { A[i+k] = A[k]; ++k; }
+        i += k; j -= k;
     }
 }
 

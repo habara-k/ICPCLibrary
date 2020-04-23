@@ -25,23 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/number/Bell.test.cpp
+# :heavy_check_mark: lib/number/combination.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/number/Bell.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/number/combination.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/number/combination.cpp.html">lib/number/combination.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/number/mod.cpp.html">lib/number/mod.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="mod.cpp.html">lib/number/mod.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/C.test.cpp.html">test/number/C.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
 
 
 ## Code
@@ -49,17 +56,69 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
+#include "mod.cpp"
 
-#include "../../lib/number/combination.cpp"
+vector<ll> fact;
+void init_fact(int n, ll m) {
+    fact.assign(n+1, 1);
+    for (int i = 2; i <= n; ++i) {
+        (fact[i] = fact[i-1] * i) %= m;
+    }
+}
 
-int main() {
-    ll n, k; cin >> n >> k;
-    const ll mod = 1e9+7;
+// require init_fact(GREATER THAN OR EQUAL TO n, m)
+ll C(ll n, ll r, ll m) {
+    return (fact[n] * invm((fact[r] * fact[n-r]) % m, m)) % m;
+}
 
-    init_fact(k, mod);
+// Stirling number
+// Stirling(n, k) := the number of cases
+//            to split n balls(distinguished)
+//            into k boxes(not distinguished)
+//            s.t. each box contains at least one ball.
+//
+// require init_fact(GREATER THAN OR EQUAL TO k, m)
+ll Stirling(ll n, ll k, ll m) {
+    ll ret = 0;
+    for (ll l = 0; l <= k; ++l) {
+        ll tmp = (C(k, l, m) * powm((k-l) % m, n, m)) % m;
+        if (l & 1) tmp = (-tmp + m) % m;
+        (ret += tmp) %= m;
+    }
+    return (ret *= invm(fact[k], m)) %= m;
+}
 
-    cout << Bell(n, k, mod) << endl;
+// Bell number
+// Bell(n, k) := the number of cases
+//            to split n balls(distinguished)
+//            into k boxes(not distinguished)
+//
+// require init_fact(GREATER THAN OR EQUAL TO k, m)
+ll Bell(ll n, ll k, ll m) {
+    ll ret = 0;
+    for (ll l = 0; l <= k; ++l) {
+        (ret += Stirling(n, l, m)) %= m;
+    }
+    return ret;
+}
+
+// Partition function
+// Partition[k][n] := the number of cases
+//            to split n balls(not distinguished)
+//            into k boxes(not distinguished)
+vector<vector<ll>> Part;
+void init_partition(ll k, ll n, ll m) {
+    Part.assign(k+1, vector<ll>(n+1, 0));
+    Part[0][0] = 1;
+    for (int i = 1; i <= k; ++i) {
+        for (int j = 0; j <= n; ++j) {
+            if (j-i >= 0) {
+                Part[i][j] = (Part[i-1][j] + Part[i][j-i]) % m;
+            } else {
+                Part[i][j] = Part[i-1][j];
+            }
+        }
+    }
 }
 
 ```
@@ -68,9 +127,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/number/Bell.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
-
 #line 1 "lib/template.cpp"
 
 
@@ -229,16 +285,6 @@ void init_partition(ll k, ll n, ll m) {
             }
         }
     }
-}
-#line 4 "test/number/Bell.test.cpp"
-
-int main() {
-    ll n, k; cin >> n >> k;
-    const ll mod = 1e9+7;
-
-    init_fact(k, mod);
-
-    cout << Bell(n, k, mod) << endl;
 }
 
 ```

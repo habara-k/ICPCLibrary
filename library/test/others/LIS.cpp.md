@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#387155223b8efcb396433364712bb3df">test/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/others/LIS.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/tdpc/tasks/tdpc_target">https://atcoder.jp/contests/tdpc/tasks/tdpc_target</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../others/LIS.cpp.html">others/LIS.cpp</a>
-* :question: <a href="../../template.cpp.html">template.cpp</a>
+* :warning: <a href="../../lib/others/LIS.cpp.html">lib/others/LIS.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://atcoder.jp/contests/tdpc/tasks/tdpc_target"
 
-#include "../../others/LIS.cpp"
+#include "../../lib/others/LIS.cpp"
 
 int main()
 {
@@ -82,7 +82,7 @@ int main()
 #line 1 "test/others/LIS.cpp"
 #define PROBLEM "https://atcoder.jp/contests/tdpc/tasks/tdpc_target"
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -162,7 +162,7 @@ int main() {
 */
 
 
-#line 2 "others/LIS.cpp"
+#line 2 "lib/others/LIS.cpp"
 
 template<typename T>
 int LIS(const vector<T>& a) {

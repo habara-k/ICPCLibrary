@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/kruskal.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:17:04+09:00
+    - Last commit date: 2020-04-23 18:25:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A</a>
@@ -39,10 +39,10 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/graph/kruskal.cpp.html">graph/kruskal.cpp</a>
-* :question: <a href="../../../library/graph/template.cpp.html">graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/structure/union_find.cpp.html">structure/union_find.cpp</a>
-* :question: <a href="../../../library/template.cpp.html">template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/kruskal.cpp.html">lib/graph/kruskal.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -52,7 +52,7 @@ layout: default
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
 
-#include "../../graph/kruskal.cpp"
+#include "../../lib/graph/kruskal.cpp"
 
 int main() {
     int V, E;
@@ -75,11 +75,11 @@ int main() {
 #line 1 "test/graph/kruskal.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A"
 
-#line 1 "graph/template.cpp"
+#line 1 "lib/graph/template.cpp"
 
 
 
-#line 1 "template.cpp"
+#line 1 "lib/template.cpp"
 
 
 
@@ -159,7 +159,7 @@ int main() {
 */
 
 
-#line 5 "graph/template.cpp"
+#line 5 "lib/graph/template.cpp"
 
 template<typename T>
 struct edge {
@@ -173,9 +173,9 @@ template<typename T>
 using Graph = vector<vector<edge<T>>>;
 
 
-#line 2 "graph/kruskal.cpp"
+#line 2 "lib/graph/kruskal.cpp"
 
-#line 2 "structure/union_find.cpp"
+#line 2 "lib/structure/union_find.cpp"
 
 struct UnionFind
 {
@@ -203,7 +203,7 @@ struct UnionFind
         return sz[root(x)];
     }
 };
-#line 4 "graph/kruskal.cpp"
+#line 4 "lib/graph/kruskal.cpp"
 
 template<typename T>
 T kruskal(vector<edge<T>> &es, int V) {

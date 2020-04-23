@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/binary_indexed_tree.test.cpp
+# :heavy_check_mark: lib/structure/segment_tree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/structure/segment_tree.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-23 18:25:40+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/structure/segment_tree.test.cpp.html">test/structure/segment_tree.test.cpp</a>
 
 
 ## Code
@@ -48,21 +51,51 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+#include "../template.cpp"
 
-#include "../../lib/structure/binary_indexed_tree.cpp"
+template<typename M>
+struct SegmentTree {
+    int sz;
+    vector<M> data;
 
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
+    // RMQ
+    const M e = numeric_limits<M>::max();
+    const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
+
+    SegmentTree(int n) {
+        sz = 1;
+        while (sz < n) sz <<= 1;
+        data.assign(2*sz, e);
     }
-}
+
+    void update(int k, const M &x) {
+        k += sz;
+        data[k] = x;
+        while (k >>= 1) {
+            data[k] = f(data[2*k], data[2*k+1]);
+        }
+    }
+
+    M query(int a, int b, int k, int l, int r) {
+        if (r <= a || b <= l) {
+            return e;
+        } else if (a <= l && r <= b) {
+            return data[k];
+        } else {
+            return f(query(a,b,2*k,  l,(l+r)/2),
+                     query(a,b,2*k+1,(l+r)/2,r));
+        }
+    }
+
+    M query(int a, int b) {
+        // return f[a,b)
+        return query(a, b, 1, 0, sz);
+    }
+
+    M operator[](int k) {
+        return data[k + sz];
+    }
+};
 
 ```
 {% endraw %}
@@ -70,9 +103,6 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/structure/binary_indexed_tree.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
 #line 1 "lib/template.cpp"
 
 
@@ -153,36 +183,51 @@ int main() {
 */
 
 
-#line 2 "lib/structure/binary_indexed_tree.cpp"
+#line 2 "lib/structure/segment_tree.cpp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
+template<typename M>
+struct SegmentTree {
     int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
+    vector<M> data;
+
+    // RMQ
+    const M e = numeric_limits<M>::max();
+    const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
+
+    SegmentTree(int n) {
+        sz = 1;
+        while (sz < n) sz <<= 1;
+        data.assign(2*sz, e);
     }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
+
+    void update(int k, const M &x) {
+        k += sz;
+        data[k] = x;
+        while (k >>= 1) {
+            data[k] = f(data[2*k], data[2*k+1]);
+        }
+    }
+
+    M query(int a, int b, int k, int l, int r) {
+        if (r <= a || b <= l) {
+            return e;
+        } else if (a <= l && r <= b) {
+            return data[k];
+        } else {
+            return f(query(a,b,2*k,  l,(l+r)/2),
+                     query(a,b,2*k+1,(l+r)/2,r));
+        }
+    }
+
+    M query(int a, int b) {
+        // return f[a,b)
+        return query(a, b, 1, 0, sz);
+    }
+
+    M operator[](int k) {
+        return data[k + sz];
     }
 };
-#line 4 "test/structure/binary_indexed_tree.test.cpp"
-
-int main() {
-    int N, Q;
-    cin >> N >> Q;
-    BIT<int> bit(N);
-    while (Q--) {
-        int T, X, Y;
-        cin >> T >> X >> Y;
-        if (T == 0) bit.add(X - 1, Y);
-        else printf("%d\n", bit.sum(Y - 1) - bit.sum(X - 2));
-    }
-}
 
 ```
 {% endraw %}
