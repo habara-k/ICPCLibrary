@@ -20,3 +20,21 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
       run: oj-verify all
+
+    - name: Create LeTeX file
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: git checkout master && python3 tex/src/main.py
+
+    - name: Compile LaTeX document
+      uses: habara-k/uplatex-action@master
+      with:
+        target_file: main.tex
+        working_directory: tex/
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@master
+      with:
+        name: main.pdf
+        path: tex/main.pdf
+      if: always()
