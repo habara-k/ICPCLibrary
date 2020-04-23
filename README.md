@@ -6,15 +6,13 @@
 
 ### コンパイル・実行
 
-- `test/`に移動
-- `$ g++ graph/dijkstra.test.cpp`
+- `$ g++ test/graph/dijkstra.test.cpp`
 - `$ ./a.out`
 
 ### 提出
 
-- `template.cpp`の`#include <bits/stdc++.h>`をコメントアウトする
-- `test/`に移動
-- `$ g++ -E -C -P graph/dijkstra.cpp`
+- `lib/template.cpp`の`#include <bits/stdc++.h>`をコメントアウトする
+- `$ g++ test/graph/dijkstra.cpp -E -C -P`
 - 標準出力をコピーして`PROBLEM`のjudge に貼り付けて提出
 - `//#include <bits/stdc++.h>`のコメントアウトを外す
 
@@ -22,11 +20,7 @@
 
 `*.test.cpp`に従うファイルは [Online Judge Verify Helper](https://github.com/kmyk/online-judge-verify-helper) が自動でテストしてくれる。
 
-## TeXファイルの出力
+## TeXファイル
 
-- `tex/`に移動
-- `$ docker run --rm -v $PWD:/workdir -it paperist/alpine-texlive-ja /bin/sh`
-- `# platex main.tex`
-- `# dvipdfmx main.dvi`
-- Ctrl-D で終了
-- `$ open main.pdf`
+[Action](https://github.com/habara-k/ICPCLibrary/actions)でpassしてる最新のActionを開いて、Artifactsのmain.pdfを確認する。
+
