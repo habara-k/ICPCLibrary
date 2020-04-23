@@ -3,3 +3,4 @@ a.out
 *.dvi
 *.log
 .idea/
+tex/main.tex
