@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/lib/structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

@@ -41,7 +41,7 @@ layout: default
 
 * :warning: <a href="../../lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
 * :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

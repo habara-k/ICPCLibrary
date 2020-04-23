@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/structure/segment_tree.cpp
+# :x: lib/number/matrix.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/structure/segment_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+* category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/number/matrix.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-23 23:28:06+09:00
 
 
 
@@ -43,7 +43,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/structure/segment_tree.test.cpp.html">test/structure/segment_tree.test.cpp</a>
+* :x: <a href="../../../verify/test/number/matrix.test.cpp.html">test/number/matrix.test.cpp</a>
 
 
 ## Code
@@ -53,49 +53,32 @@ layout: default
 ```cpp
 #include "../template.cpp"
 
-template<typename M>
-struct SegmentTree {
-    int sz;
-    vector<M> data;
+template<class T>
+using Matrix = vector<vector<T>>;
 
-    // RMQ
-    const M e = numeric_limits<M>::max();
-    const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
+template<class T>
+Matrix<T> operator*(const Matrix<T>& A, const Matrix<T>& B) {
+    assert(A[0].size() == B.size());
+    int n = A.size(), m = B[0].size(), p = A[0].size();
+    Matrix<T> C(n, vector<T>(m));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < m; ++j)
+            for (int k = 0; k < p; ++k)
+                C[i][j] += A[i][k] * B[k][j];
+    return C;
+}
 
-    SegmentTree(int n) {
-        sz = 1;
-        while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
+template<class T>
+Matrix<T> pow(Matrix<T> a, ll k) {
+    int n = a.size(), m = a[0].size();
+    Matrix<T> ret(n, vector<T>(m));
+    REP(i, n) ret[i][i] = 1;
+    while (k) {
+        if (k & 1) ret = ret * a;
+        a = a * a; k >>= 1;
     }
-
-    void update(int k, const M &x) {
-        k += sz;
-        data[k] = x;
-        while (k >>= 1) {
-            data[k] = f(data[2*k], data[2*k+1]);
-        }
-    }
-
-    M query(int a, int b, int k, int l, int r) {
-        if (r <= a || b <= l) {
-            return e;
-        } else if (a <= l && r <= b) {
-            return data[k];
-        } else {
-            return f(query(a,b,2*k,  l,(l+r)/2),
-                     query(a,b,2*k+1,(l+r)/2,r));
-        }
-    }
-
-    M query(int a, int b) {
-        // return f[a,b)
-        return query(a, b, 1, 0, sz);
-    }
-
-    M operator[](int k) {
-        return data[k + sz];
-    }
-};
+    return ret;
+}
 
 ```
 {% endraw %}
@@ -183,51 +166,34 @@ int main() {
 */
 
 
-#line 2 "lib/structure/segment_tree.cpp"
+#line 2 "lib/number/matrix.cpp"
 
-template<typename M>
-struct SegmentTree {
-    int sz;
-    vector<M> data;
+template<class T>
+using Matrix = vector<vector<T>>;
 
-    // RMQ
-    const M e = numeric_limits<M>::max();
-    const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
+template<class T>
+Matrix<T> operator*(const Matrix<T>& A, const Matrix<T>& B) {
+    assert(A[0].size() == B.size());
+    int n = A.size(), m = B[0].size(), p = A[0].size();
+    Matrix<T> C(n, vector<T>(m));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < m; ++j)
+            for (int k = 0; k < p; ++k)
+                C[i][j] += A[i][k] * B[k][j];
+    return C;
+}
 
-    SegmentTree(int n) {
-        sz = 1;
-        while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
+template<class T>
+Matrix<T> pow(Matrix<T> a, ll k) {
+    int n = a.size(), m = a[0].size();
+    Matrix<T> ret(n, vector<T>(m));
+    REP(i, n) ret[i][i] = 1;
+    while (k) {
+        if (k & 1) ret = ret * a;
+        a = a * a; k >>= 1;
     }
-
-    void update(int k, const M &x) {
-        k += sz;
-        data[k] = x;
-        while (k >>= 1) {
-            data[k] = f(data[2*k], data[2*k+1]);
-        }
-    }
-
-    M query(int a, int b, int k, int l, int r) {
-        if (r <= a || b <= l) {
-            return e;
-        } else if (a <= l && r <= b) {
-            return data[k];
-        } else {
-            return f(query(a,b,2*k,  l,(l+r)/2),
-                     query(a,b,2*k+1,(l+r)/2,r));
-        }
-    }
-
-    M query(int a, int b) {
-        // return f[a,b)
-        return query(a, b, 1, 0, sz);
-    }
-
-    M operator[](int k) {
-        return data[k + sz];
-    }
-};
+    return ret;
+}
 
 ```
 {% endraw %}

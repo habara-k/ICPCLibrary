@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :warning: <a href="../../lib/graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
