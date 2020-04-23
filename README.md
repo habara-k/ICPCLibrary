@@ -6,15 +6,15 @@
 
 - ### コンパイル・実行
 
-- `$ g++ test/graph/dijkstra.test.cpp`
-- `$ ./a.out`
+1. `$ g++ test/graph/dijkstra.test.cpp`
+2. `$ ./a.out`
 
 - ### 提出
 
-- `lib/template.cpp`の`#include <bits/stdc++.h>`をコメントアウトする
-- `$ g++ test/graph/dijkstra.cpp -E -C -P`
-- 標準出力をコピーして`PROBLEM`のjudge に貼り付けて提出
-- `//#include <bits/stdc++.h>`のコメントアウトを外す
+1. `lib/template.cpp`の`#include <bits/stdc++.h>`をコメントアウトする
+2. `$ g++ test/graph/dijkstra.cpp -E -C -P`
+3. 標準出力をコピーして`PROBLEM`のjudge に貼り付けて提出
+4. `//#include <bits/stdc++.h>`のコメントアウトを外す
 
 ## CI
 
