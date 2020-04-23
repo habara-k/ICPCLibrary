@@ -3,15 +3,16 @@
 #include "../../lib/number/matrix.cpp"
 
 
+template<int mod>
 struct modint {
     ll x;
     modint(ll x=0) : x(x) {}
     modint &operator+=(const modint& a) {
-        (x += a.x) %= MOD;
+        (x += a.x) %= mod;
         return *this;
     }
     friend modint operator*(const modint& a, const modint& b) {
-        return modint((a.x * b.x) % MOD);
+        return modint((a.x * b.x) % mod);
     }
     friend ostream &operator<<(ostream &os, const modint &a) {
         return os << a.x;
@@ -43,10 +44,12 @@ int main() {
             return 0;
         }
 
-        Matrix<modint> A(W, vector<modint>(W));
+        using Int = modint<1000000009>;
+
+        Matrix<Int> A(W, vector<Int>(W));
         REP(i, W) A[i][i] = 1;
 
-        Matrix<modint> B = A;
+        Matrix<Int> B = A;
         REP(i, W) {
             if (i - 1 >= 0) B[i][i - 1] = 1;
             if (i + 1 < W) B[i][i + 1] = 1;
@@ -58,7 +61,7 @@ int main() {
 
             A = A * pow(B, now - prv - 1);
 
-            Matrix<modint> tmp = B;
+            Matrix<Int> tmp = B;
             for (int j : tp.second) {
                 REP(i, W) tmp[i][j] = 0;
             }
