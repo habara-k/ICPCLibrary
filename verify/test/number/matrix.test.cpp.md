@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/number/matrix.test.cpp
+# :heavy_check_mark: test/number/matrix.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 23:28:06+09:00
+    - Last commit date: 2020-04-23 23:40:05+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/number/matrix.cpp.html">lib/number/matrix.cpp</a>
-* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/matrix.cpp.html">lib/number/matrix.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -53,15 +53,16 @@ layout: default
 #include "../../lib/number/matrix.cpp"
 
 
+template<int mod>
 struct modint {
     ll x;
     modint(ll x=0) : x(x) {}
     modint &operator+=(const modint& a) {
-        (x += a.x) %= MOD;
+        (x += a.x) %= mod;
         return *this;
     }
     friend modint operator*(const modint& a, const modint& b) {
-        return modint((a.x * b.x) % MOD);
+        return modint((a.x * b.x) % mod);
     }
     friend ostream &operator<<(ostream &os, const modint &a) {
         return os << a.x;
@@ -93,10 +94,12 @@ int main() {
             return 0;
         }
 
-        Matrix<modint> A(W, vector<modint>(W));
+        using Int = modint<1000000009>;
+
+        Matrix<Int> A(W, vector<Int>(W));
         REP(i, W) A[i][i] = 1;
 
-        Matrix<modint> B = A;
+        Matrix<Int> B = A;
         REP(i, W) {
             if (i - 1 >= 0) B[i][i - 1] = 1;
             if (i + 1 < W) B[i][i + 1] = 1;
@@ -108,7 +111,7 @@ int main() {
 
             A = A * pow(B, now - prv - 1);
 
-            Matrix<modint> tmp = B;
+            Matrix<Int> tmp = B;
             for (int j : tp.second) {
                 REP(i, W) tmp[i][j] = 0;
             }
@@ -246,15 +249,16 @@ Matrix<T> pow(Matrix<T> a, ll k) {
 #line 4 "test/number/matrix.test.cpp"
 
 
+template<int mod>
 struct modint {
     ll x;
     modint(ll x=0) : x(x) {}
     modint &operator+=(const modint& a) {
-        (x += a.x) %= MOD;
+        (x += a.x) %= mod;
         return *this;
     }
     friend modint operator*(const modint& a, const modint& b) {
-        return modint((a.x * b.x) % MOD);
+        return modint((a.x * b.x) % mod);
     }
     friend ostream &operator<<(ostream &os, const modint &a) {
         return os << a.x;
@@ -286,10 +290,12 @@ int main() {
             return 0;
         }
 
-        Matrix<modint> A(W, vector<modint>(W));
+        using Int = modint<1000000009>;
+
+        Matrix<Int> A(W, vector<Int>(W));
         REP(i, W) A[i][i] = 1;
 
-        Matrix<modint> B = A;
+        Matrix<Int> B = A;
         REP(i, W) {
             if (i - 1 >= 0) B[i][i - 1] = 1;
             if (i + 1 < W) B[i][i + 1] = 1;
@@ -301,7 +307,7 @@ int main() {
 
             A = A * pow(B, now - prv - 1);
 
-            Matrix<modint> tmp = B;
+            Matrix<Int> tmp = B;
             for (int j : tp.second) {
                 REP(i, W) tmp[i][j] = 0;
             }
