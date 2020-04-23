@@ -13,6 +13,7 @@
 "test/number/Partition2.test.cpp": "2020-04-23 18:25:40 +0900",
 "test/number/Stirling.test.cpp": "2020-04-23 18:25:40 +0900",
 "test/number/extended_gcd.test.cpp": "2020-04-23 18:25:40 +0900",
+"test/number/gauss_jordan.test.cpp": "2020-04-23 21:07:10 +0900",
 "test/string/rolling_hash.test.cpp": "2020-04-23 18:25:40 +0900",
 "test/structure/binary_indexed_tree.test.cpp": "2020-04-23 18:25:40 +0900",
 "test/structure/lazy_segment_tree.test.cpp": "2020-04-23 18:25:40 +0900",
