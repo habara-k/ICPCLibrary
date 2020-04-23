@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/weighted_union_find.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 03:51:42+09:00
+    - Last commit date: 2020-04-23 18:17:04+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B</a>
@@ -86,28 +86,79 @@ int main() {
 
 
 #include <bits/stdc++.h>
+
 using namespace std;
 
-#define SZ(x) (int)(x.size())
-#define REP(i, n) for(int i = 0; i < n; i++)
-#define FOR(i, a, b) for(int i = a; i < b; i++)
+#define REP(i, n) for (int i=0; i<(n); ++i)
+#define RREP(i, n) for (int i=(int)(n)-1; i>=0; --i)
+#define FOR(i, a, n) for (int i=(a); i<(n); ++i)
+#define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
+
+#define SZ(x) ((int)(x).size())
+#define all(x) begin(x),end(x)
+
+#define dump(x) cerr<<#x<<" = "<<(x)<<endl
+#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+
+template<class T>
+ostream &operator<<(ostream &os, const vector <T> &v) {
+    os << "[";
+    REP(i, SZ(v)) {
+        if (i) os << ", ";
+        os << v[i];
+    }
+    return os << "]";
+}
+
+template<class T, class U>
+ostream &operator<<(ostream &os, const pair <T, U> &p) {
+    return os << "(" << p.first << " " << p.second << ")";
+}
+
+template<class T>
+bool chmax(T &a, const T &b) {
+    if (a < b) {
+        a = b;
+        return true;
+    }
+    return false;
+}
+
+template<class T>
+bool chmin(T &a, const T &b) {
+    if (b < a) {
+        a = b;
+        return true;
+    }
+    return false;
+}
 
 using ll = long long;
+using ull = unsigned long long;
 using ld = long double;
 using P = pair<int, int>;
 using vi = vector<int>;
-using vvi = vector<vi>;
 using vll = vector<ll>;
+using vvi = vector<vi>;
 using vvll = vector<vll>;
-const ld eps = 1e-9;
-const ll MOD = 1000000007;
 
-//int main() {
-//    cin.tie(0);
-//    ios::sync_with_stdio(false);
-//    cout << fixed << setprecision(10);
-//
-//}
+const ll MOD = 1e9 + 7;
+const int INF = INT_MAX / 2;
+const ll LINF = LLONG_MAX / 2;
+const ld eps = 1e-9;
+
+/*
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    cout << fixed << setprecision(10);
+
+    // ifstream in("in.txt");
+    // cin.rdbuf(in.rdbuf());
+
+    return 0;
+}
+*/
 
 
 #line 2 "structure/weighted_union_find.cpp"
