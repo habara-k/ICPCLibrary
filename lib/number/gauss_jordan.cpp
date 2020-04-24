@@ -1,5 +1,17 @@
 #include "../template.cpp"
 
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
+
+/**
+ * @brief
+ * ガウスの消去法
+ * 行列をランクを求めたり、Ax = b を解いたりする
+ * @author habara-k
+ * @date 2020/4
+ * @param[in] mat 行列
+ * @return int mat のランク
+ */
+
 template<class T>
 int GaussJordanElimination(vector<vector<T>>& mat) {
     int H = mat.size(), W = mat[0].size(), rank = 0;

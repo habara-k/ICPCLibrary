@@ -1,5 +1,20 @@
 #include "../template.cpp"
 
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+
+/**
+ * @brief
+ * 行列累乗
+ * @author habara-k
+ * @date 2020/04/24
+ * @param[in] a 行列
+ * @param[in] k 指数
+ * @return 行列 a^k
+ *
+ * @details
+ * T に渡すのは環であり、operator *, += を定義すること
+ */
+
 template<class T>
 using Matrix = vector<vector<T>>;
 
