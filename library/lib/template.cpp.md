@@ -54,8 +54,8 @@ layout: default
 * :heavy_check_mark: <a href="graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
 * :heavy_check_mark: <a href="number/combination.cpp.html">lib/number/combination.cpp</a>
 * :heavy_check_mark: <a href="number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
-* :heavy_check_mark: <a href="number/gauss_jordan.cpp.html">lib/number/gauss_jordan.cpp</a>
-* :heavy_check_mark: <a href="number/matrix.cpp.html">lib/number/matrix.cpp</a>
+* :heavy_check_mark: <a href="number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
+* :heavy_check_mark: <a href="number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
 * :heavy_check_mark: <a href="number/mod.cpp.html">lib/number/mod.cpp</a>
 * :warning: <a href="others/LIS.cpp.html">lib/others/LIS.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">lib/others/inversion.cpp</a>

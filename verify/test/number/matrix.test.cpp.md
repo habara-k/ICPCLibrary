@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 23:40:05+09:00
+    - Last commit date: 2020-04-24 10:45:15+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/number/matrix.cpp.html">lib/number/matrix.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -219,6 +219,21 @@ int main() {
 
 
 #line 2 "lib/number/matrix.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+
+/**
+ * @brief
+ * 行列累乗
+ * @author habara-k
+ * @date 2020/04/24
+ * @param[in] a 行列
+ * @param[in] k 指数
+ * @return 行列 a^k
+ *
+ * @details
+ * T に渡すのは環であり、operator *, += を定義すること
+ */
 
 template<class T>
 using Matrix = vector<vector<T>>;

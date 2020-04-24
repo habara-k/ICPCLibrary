@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/number/matrix.cpp
+# :heavy_check_mark:  <small>(lib/number/matrix.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 23:28:06+09:00
+    - Last commit date: 2020-04-24 10:45:15+09:00
 
 
 
@@ -52,6 +52,21 @@ layout: default
 {% raw %}
 ```cpp
 #include "../template.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+
+/**
+ * @brief
+ * 行列累乗
+ * @author habara-k
+ * @date 2020/04/24
+ * @param[in] a 行列
+ * @param[in] k 指数
+ * @return 行列 a^k
+ *
+ * @details
+ * T に渡すのは環であり、operator *, += を定義すること
+ */
 
 template<class T>
 using Matrix = vector<vector<T>>;
@@ -167,6 +182,21 @@ int main() {
 
 
 #line 2 "lib/number/matrix.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
+
+/**
+ * @brief
+ * 行列累乗
+ * @author habara-k
+ * @date 2020/04/24
+ * @param[in] a 行列
+ * @param[in] k 指数
+ * @return 行列 a^k
+ *
+ * @details
+ * T に渡すのは環であり、operator *, += を定義すること
+ */
 
 template<class T>
 using Matrix = vector<vector<T>>;

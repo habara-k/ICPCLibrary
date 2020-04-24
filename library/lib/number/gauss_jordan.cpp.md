@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/number/gauss_jordan.cpp
+# :heavy_check_mark:  <small>(lib/number/gauss_jordan.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/gauss_jordan.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 21:07:10+09:00
+    - Last commit date: 2020-04-24 10:45:15+09:00
 
 
 
@@ -52,6 +52,18 @@ layout: default
 {% raw %}
 ```cpp
 #include "../template.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
+
+/**
+ * @brief
+ * ガウスの消去法
+ * 行列をランクを求めたり、Ax = b を解いたりする
+ * @author habara-k
+ * @date 2020/4
+ * @param[in] mat 行列
+ * @return int mat のランク
+ */
 
 template<class T>
 int GaussJordanElimination(vector<vector<T>>& mat) {
@@ -167,6 +179,18 @@ int main() {
 
 
 #line 2 "lib/number/gauss_jordan.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
+
+/**
+ * @brief
+ * ガウスの消去法
+ * 行列をランクを求めたり、Ax = b を解いたりする
+ * @author habara-k
+ * @date 2020/4
+ * @param[in] mat 行列
+ * @return int mat のランク
+ */
 
 template<class T>
 int GaussJordanElimination(vector<vector<T>>& mat) {

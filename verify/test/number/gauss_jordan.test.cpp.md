@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/gauss_jordan.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 21:07:10+09:00
+    - Last commit date: 2020-04-24 10:45:15+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/number/gauss_jordan.cpp.html">lib/number/gauss_jordan.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -209,6 +209,18 @@ int main() {
 
 
 #line 2 "lib/number/gauss_jordan.cpp"
+
+// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
+
+/**
+ * @brief
+ * ガウスの消去法
+ * 行列をランクを求めたり、Ax = b を解いたりする
+ * @author habara-k
+ * @date 2020/4
+ * @param[in] mat 行列
+ * @return int mat のランク
+ */
 
 template<class T>
 int GaussJordanElimination(vector<vector<T>>& mat) {
