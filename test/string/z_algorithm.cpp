@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/abc141/tasks/abc141_e"
 
-#include "../../string/z_algorithm.cpp"
+#include "../../lib/string/z_algorithm.cpp"
 
 int main() {
     int n; cin >> n;

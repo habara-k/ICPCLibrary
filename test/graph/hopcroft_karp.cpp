@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A"
 
-#include "../../graph/hopcroft_karp.cpp"
+#include "../../lib/graph/hopcroft_karp.cpp"
 
 int main() {
     int X, Y, E;

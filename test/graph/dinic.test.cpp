@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A"
 
-#include "../../graph/dinic.cpp"
+#include "../../lib/graph/dinic.cpp"
 
 int main() {
     int V, E;

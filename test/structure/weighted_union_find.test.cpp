@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B"
 
-#include "../../structure/weighted_union_find.cpp"
+#include "../../lib/structure/weighted_union_find.cpp"
 
 int main() {
     int N, M;

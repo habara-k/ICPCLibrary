@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/agc034/tasks/agc034_b"
 
-#include "../../others/inversion.cpp"
+#include "../../lib/others/inversion.cpp"
 
 int main()
 {

@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/abc002/tasks/abc002_4"
 
-#include "../../graph/maximum_clique.cpp"
+#include "../../lib/graph/maximum_clique.cpp"
 
 int main() {
     int N, M;
