@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/lowest_common_ancestor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:07+09:00
+    - Last commit date: 2020-04-25 05:58:56+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/lowest_common_ancestor.cpp.html">lib/graph/lowest_common_ancestor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/lowest_common_ancestor.cpp.html"> <small>(lib/graph/lowest_common_ancestor.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -161,6 +161,18 @@ int main() {
 
 
 #line 2 "lib/graph/lowest_common_ancestor.cpp"
+
+/**
+ * @brief
+ * 最小共通祖先（ダブリング）
+ * 構築O(VlogV), クエリO(logV)
+ *
+ * LCA(G, root)で構築（無向木Gを、rootを根として向きづけしたときのLCAを構築）
+ * query(u, v)で取得
+ *
+ * @author ゆきのん？
+ * @date 2019/12
+ */
 
 struct LCA {
     int n, log2_n;

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/graph/hopcroft_karp.cpp
+# :heavy_check_mark: test/graph/hopcroft_karp.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/hopcroft_karp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:43+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/hopcroft_karp.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-25 06:00:22+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
-* :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -71,7 +71,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/hopcroft_karp.cpp"
+#line 1 "test/graph/hopcroft_karp.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A"
 
 #line 1 "lib/graph/template.cpp"
@@ -177,6 +177,7 @@ using Graph = vector<vector<edge<T>>>;
 /**
  * @brief
  * HopcroftKarp(二部グラフの最大マッチング)
+ * O(|E| sqrt(|V|))
  * |最大マッチング| + |最小辺カバー| = |V|
  * |最大マッチング| = |最小点カバー|
  * |最大安定集合| + |最小点カバー| = |V|
@@ -190,7 +191,7 @@ using Graph = vector<vector<edge<T>>>;
 struct HopcroftKarp {
     vector<vector<int>> g;
     vector<int> d, mch;
-    vector<bool> vv;
+    vector<bool> used, vv;
 
     HopcroftKarp(int n, int m) : g(n), mch(m, -1), used(n) {}
 
@@ -202,7 +203,7 @@ struct HopcroftKarp {
         d.assign(g.size(), -1);
         queue<int> que;
         for (int i = 0; i < (int)(g.size()); i++) {
-            if (mch[i] != -1) {
+            if (!used[i]) {
                 que.emplace(i);
                 d[i] = 0;
             }
@@ -227,6 +228,7 @@ struct HopcroftKarp {
             int c = mch[b];
             if (c < 0 || (!vv[c] && d[c] == d[a] + 1 && dfs(c))) {
                 mch[b] = a;
+                used[a] = true;
                 return true;
             }
         }
@@ -239,15 +241,15 @@ struct HopcroftKarp {
             bfs();
             vv.assign(g.size(), false);
             int flow = 0;
-            for (int i = 0; i < g.size(); i++) {
-                if (mch[i] < 0 && dfs(i)) ++flow;
+            for (int i = 0; i < (int)(g.size()); i++) {
+                if (!used[i] && dfs(i)) ++flow;
             }
             if (flow == 0) return ret;
             ret += flow;
         }
     }
 };
-#line 4 "test/graph/hopcroft_karp.cpp"
+#line 4 "test/graph/hopcroft_karp.test.cpp"
 
 int main() {
     int X, Y, E;

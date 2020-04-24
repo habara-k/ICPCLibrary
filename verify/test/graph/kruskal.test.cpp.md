@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/kruskal.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:07+09:00
+    - Last commit date: 2020-04-25 05:58:56+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/kruskal.cpp.html">lib/graph/kruskal.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/kruskal.cpp.html"> <small>(lib/graph/kruskal.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :heavy_check_mark: <a href="../../../library/lib/structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
@@ -204,6 +204,16 @@ struct UnionFind
     }
 };
 #line 4 "lib/graph/kruskal.cpp"
+
+/**
+ * @brief
+ * クラスカル法（最小全域木）
+ * O(|E|log|E|)
+ * 大きさだけ求めてるけど構築もすぐ書けるはず（mergeのタイミングで登録）
+ *
+ * @author ?
+ * @date 2019/12
+ */
 
 template<typename T>
 T kruskal(vector<edge<T>> &es, int V) {

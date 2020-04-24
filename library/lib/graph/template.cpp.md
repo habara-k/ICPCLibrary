@@ -46,8 +46,8 @@ layout: default
 * :heavy_check_mark: <a href="bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="dinic.cpp.html"> <small>(lib/graph/dinic.cpp)</small></a>
-* :warning: <a href="hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
-* :heavy_check_mark: <a href="kruskal.cpp.html">lib/graph/kruskal.cpp</a>
+* :heavy_check_mark: <a href="hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
+* :heavy_check_mark: <a href="kruskal.cpp.html"> <small>(lib/graph/kruskal.cpp)</small></a>
 * :warning: <a href="lowlink.cpp.html">lib/graph/lowlink.cpp</a>
 * :warning: <a href="maximum_clique.cpp.html">lib/graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="primal_dual.cpp.html">lib/graph/primal_dual.cpp</a>
@@ -55,7 +55,6 @@ layout: default
 * :warning: <a href="topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
-* :warning: <a href="../../test/graph/hopcroft_karp.cpp.html">test/graph/hopcroft_karp.cpp</a>
 * :warning: <a href="../../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="../../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 
@@ -65,6 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/graph/bfs01.test.cpp.html">test/graph/bfs01.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
