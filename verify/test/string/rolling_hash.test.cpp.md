@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+    - Last commit date: 2020-04-24 14:14:07+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html">lib/string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html"> <small>(lib/string/rolling_hash.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -56,13 +56,10 @@ int main() {
     string T, P;
     cin >> T >> P;
     int n = T.size(), m = P.size();
-    vector<int> t(T.begin(), T.end()),
-                p(P.begin(), P.end());
 
-    RollingHash rh(t), rh2(p);
+    RollingHash hashT(T), hashP(P);
     for (int i = 0; i+m <= n; i++) {
-        if (rh.get(i, i+m) == rh2.get(0, m) &&
-            rh.get(i, i+m, 1) == rh2.get(0, m, 1)) {
+        if (hashT.get(i, i+m) == hashP.get(0, m)) {
             cout << i << endl;
         }
     }
@@ -159,13 +156,28 @@ int main() {
 
 #line 2 "lib/string/rolling_hash.cpp"
 
+// verify: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B
+
+/**
+ * @brief
+ * ロリハ
+ * 部分列のハッシュ値をO(1) で返す. 何回もアクセスする場合はメモ化してね
+ * @author habara-k
+ * @date 2019/04/24
+ * @param[in] s 文字列. vector でも可
+ *
+ * @param[in] l, r 区間
+ * @return pair<ll,ll> [l, r) に対応するハッシュ値(ペア)を返す.
+ */
+
 struct RollingHash {
     const int base = 9973;
     const int mod[2] = {999999937, 1000000007};
     vector<int> s;
     vector<ll> hash[2], pow[2];
 
-    RollingHash(const vector<int> &cs) : s(cs) {
+    template<class S>
+    RollingHash(const S &s) {
         int n = s.size();
         for (int id = 0; id < 2; ++id) {
             hash[id].assign(n+1, 0);
@@ -178,10 +190,13 @@ struct RollingHash {
     }
 
     // get hash of s[l:r)
-    ll get(int l, int r, int id = 0) {
-        ll res = hash[id][r] - hash[id][l] * pow[id][r-l] % mod[id];
-        if (res < 0) res += mod[id];
-        return res;
+    pair<ll,ll> get(int l, int r) {
+        ll ret[2];
+        for (int id = 0; id < 2; ++id) {
+            ret[id] = hash[id][r] - hash[id][l] * pow[id][r - l] % mod[id];
+            if (ret[id] < 0) ret[id] += mod[id];
+        }
+        return { ret[0], ret[1] };
     }
 };
 #line 4 "test/string/rolling_hash.test.cpp"
@@ -190,13 +205,10 @@ int main() {
     string T, P;
     cin >> T >> P;
     int n = T.size(), m = P.size();
-    vector<int> t(T.begin(), T.end()),
-                p(P.begin(), P.end());
 
-    RollingHash rh(t), rh2(p);
+    RollingHash hashT(T), hashP(P);
     for (int i = 0; i+m <= n; i++) {
-        if (rh.get(i, i+m) == rh2.get(0, m) &&
-            rh.get(i, i+m, 1) == rh2.get(0, m, 1)) {
+        if (hashT.get(i, i+m) == hashP.get(0, m)) {
             cout << i << endl;
         }
     }

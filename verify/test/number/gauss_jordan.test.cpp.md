@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/gauss_jordan.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 10:45:15+09:00
+    - Last commit date: 2020-04-24 14:14:07+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308</a>

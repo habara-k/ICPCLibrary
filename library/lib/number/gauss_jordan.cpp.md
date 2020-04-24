@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/gauss_jordan.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 10:45:15+09:00
+    - Last commit date: 2020-04-24 14:14:43+09:00
 
 
 

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#387155223b8efcb396433364712bb3df">test/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/others/LIS.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+    - Last commit date: 2020-04-24 14:14:43+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/tdpc/tasks/tdpc_target">https://atcoder.jp/contests/tdpc/tasks/tdpc_target</a>

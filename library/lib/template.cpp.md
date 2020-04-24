@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8acc63b1e238f3255c900eed37254b8">lib</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+    - Last commit date: 2020-04-24 14:14:43+09:00
 
 
 
@@ -59,7 +59,7 @@ layout: default
 * :heavy_check_mark: <a href="number/mod.cpp.html">lib/number/mod.cpp</a>
 * :warning: <a href="others/LIS.cpp.html">lib/others/LIS.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">lib/others/inversion.cpp</a>
-* :heavy_check_mark: <a href="string/rolling_hash.cpp.html">lib/string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="string/rolling_hash.cpp.html"> <small>(lib/string/rolling_hash.cpp)</small></a>
 * :warning: <a href="string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 * :heavy_check_mark: <a href="structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
 * :heavy_check_mark: <a href="structure/lazy_segment_tree.cpp.html">lib/structure/lazy_segment_tree.cpp</a>

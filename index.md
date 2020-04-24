@@ -84,7 +84,7 @@ layout: default
 
 ### lib/string
 
-* :heavy_check_mark: <a href="library/lib/string/rolling_hash.cpp.html">lib/string/rolling_hash.cpp</a>
+* :heavy_check_mark: <a href="library/lib/string/rolling_hash.cpp.html"> <small>(lib/string/rolling_hash.cpp)</small></a>
 * :warning: <a href="library/lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 
 

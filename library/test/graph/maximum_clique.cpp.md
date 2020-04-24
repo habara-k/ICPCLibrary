@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-23 18:25:40+09:00
+    - Last commit date: 2020-04-24 14:14:43+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc002/tasks/abc002_4">https://atcoder.jp/contests/abc002/tasks/abc002_4</a>
