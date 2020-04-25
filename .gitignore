@@ -4,4 +4,4 @@ a.out
 *.log
 .idea/
 tex/main.tex
-.verify-helper/*
+.verify-helper/timestamps.remote.json
