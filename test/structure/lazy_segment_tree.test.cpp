@@ -5,7 +5,13 @@
 int main() {
     int N, Q;
     cin >> N >> Q;
-    LazySegmentTree<ll> seg(N);
+    LazySegmentTree<ll> seg(
+            N,
+            [](ll a, ll b){ return a+b; },
+            [](ll a, ll b, ll w){ return a + b*w; },
+            [](ll a, ll b){ return a+b; },
+            0, 0);
+
     while (Q--) {
         int C; cin >> C;
         if (C == 0) {
