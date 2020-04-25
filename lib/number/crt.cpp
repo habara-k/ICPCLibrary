@@ -1,5 +1,16 @@
 #include "./extended_gcd.cpp"
 
+/**
+ * @brief
+ * 中国式場予定理(CRT)
+ * m1で割ったあまりがa1, m2で割ったあまりがa2のとき、m1*m2でわったあまりを構築
+ * @author Md
+ * @date 2020/04/25
+ */
+
+/**
+ * @return first: 答え, second: modの値
+ */
 pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
   ll p, q;
   ll g = extended_gcd(m1, m2, p, q);
@@ -7,6 +18,11 @@ pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
   return make_pair(a1 + m1 * (a2 - a1) / g * p % (m2 / g), m1 * (m2 / g));
 }
 
+/**
+ * @brief
+ * 式が複数個ある場合
+ * @return first: 答え, second: modの値
+ */
 pair<ll, ll> crt(const vector<ll> &a, const vector<ll> &m) {
   ll r = 0, mod = 1;
   REP(i, SZ(a)) {
