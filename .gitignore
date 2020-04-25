@@ -4,3 +4,4 @@ a.out
 *.log
 .idea/
 tex/main.tex
+.verify-helper/*
