@@ -48,6 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/graph/bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/dinic.cpp.html"> <small>(lib/graph/dinic.cpp)</small></a>
+* :heavy_check_mark: <a href="library/lib/graph/heavy_light_decomposition.cpp.html">HL分解 <small>(lib/graph/heavy_light_decomposition.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/kruskal.cpp.html"> <small>(lib/graph/kruskal.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/lowest_common_ancestor.cpp.html"> <small>(lib/graph/lowest_common_ancestor.cpp)</small></a>
@@ -94,7 +95,7 @@ layout: default
 ### lib/structure
 
 * :heavy_check_mark: <a href="library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/structure/lazy_segment_tree.cpp.html">lib/structure/lazy_segment_tree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/structure/lazy_segment_tree.cpp.html">遅延セグメント木 <small>(lib/structure/lazy_segment_tree.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/structure/segment_tree.cpp.html">lib/structure/segment_tree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
 * :heavy_check_mark: <a href="library/lib/structure/weighted_union_find.cpp.html">lib/structure/weighted_union_find.cpp</a>
@@ -136,6 +137,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/bfs01.test.cpp.html">test/graph/bfs01.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/heavy_light_decomposition/hld.test.cpp.html">test/graph/heavy_light_decomposition/hld.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/heavy_light_decomposition/lca.test.cpp.html">test/graph/heavy_light_decomposition/lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/hopcroft_karp.test.cpp.html">test/graph/hopcroft_karp.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/lowest_common_ancestor.test.cpp.html">test/graph/lowest_common_ancestor.test.cpp</a>

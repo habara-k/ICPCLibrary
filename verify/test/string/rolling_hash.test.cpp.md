@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 03:33:40+09:00
+    - Last commit date: 2020-04-26 05:06:58+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B</a>
@@ -57,7 +57,7 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    int64_t base = RollingHash::gen_base();
+    auto base = RollingHash::gen_base();
 
     RollingHash rht(T, base);
     RollingHash rhp(P, base);
@@ -164,14 +164,6 @@ int main() {
 * @brief 文字列のハッシュ化
 * @author habara-k
 * @date 2020/04/26
-* @details 使い方
-*   using uint = RollingHash::uint;
-*   uint base = RollingHash::gen_base();
-*
-*   string t; cin >> t;
-*   RollingHash hash(t, base);
-*
-*   cout << hash.get(0, t.size()) << endl;
 */
 
 struct RollingHash {
@@ -181,6 +173,11 @@ struct RollingHash {
     * @brief コンストラクタ. O(|s|)
     * @param[in] s ハッシュ化する文字列(or vector).
     * @param[in] base ハッシュ化に使う基数. RollingHash::gen_base で作る.
+    * @details 使い方
+    *   auto base = RollingHash::gen_base();
+    *
+    *   string t; cin >> t;
+    *   RollingHash hash(t, base);
     */
     template<typename S>
     RollingHash(const S& s, uint base) {
@@ -197,6 +194,8 @@ struct RollingHash {
     * @brief ハッシュを計算する. O(1)
     * @param[in] l, r ハッシュを計算したい区間.
     * @return 区間[l, r) のハッシュ.
+    * @details 使い方
+    *   cout << hash.get(0, t.size()) << endl;
     */
     uint get(int l, int r) const {
         return mod(hash[r] + MASK61 - mul(hash[l], pow[r - l]));
@@ -205,6 +204,8 @@ struct RollingHash {
     /**
     * @brief 基数を生成する. O(1)
     * @return ランダムな基数.
+    * @details 使い方
+    *   auto base = RollingHash::gen_base();
     */
     static uint gen_base() {
         mt19937 random{random_device{}()};
@@ -240,7 +241,7 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    int64_t base = RollingHash::gen_base();
+    auto base = RollingHash::gen_base();
 
     RollingHash rht(T, base);
     RollingHash rhp(P, base);
