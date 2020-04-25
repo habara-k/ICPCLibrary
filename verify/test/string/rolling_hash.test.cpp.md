@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-04-26 03:33:40+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html"> <small>(lib/string/rolling_hash.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -57,9 +57,13 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    RollingHash hashT(T), hashP(P);
-    for (int i = 0; i+m <= n; i++) {
-        if (hashT.get(i, i+m) == hashP.get(0, m)) {
+    int64_t base = RollingHash::gen_base();
+
+    RollingHash rht(T, base);
+    RollingHash rhp(P, base);
+
+    for (int i = 0; i+m <= n; ++i) {
+        if (rht.get(i, i+m) == rhp.get(0, m)) {
             cout << i << endl;
         }
     }
@@ -156,47 +160,77 @@ int main() {
 
 #line 2 "lib/string/rolling_hash.cpp"
 
-// verify: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B
-
 /**
- * @brief
- * ロリハ
- * 部分列のハッシュ値をO(1) で返す. 何回もアクセスする場合はメモ化してね
- * @author habara-k
- * @date 2019/04/24
- * @param[in] s 文字列. vector でも可
- *
- * @param[in] l, r 区間
- * @return pair<ll,ll> [l, r) に対応するハッシュ値(ペア)を返す.
- */
+* @brief 文字列のハッシュ化
+* @author habara-k
+* @date 2020/04/26
+* @details 使い方
+*   using uint = RollingHash::uint;
+*   uint base = RollingHash::gen_base();
+*
+*   string t; cin >> t;
+*   RollingHash hash(t, base);
+*
+*   cout << hash.get(0, t.size()) << endl;
+*/
 
 struct RollingHash {
-    const int base = 9973;
-    const int mod[2] = {999999937, 1000000007};
-    vector<int> s;
-    vector<ll> hash[2], pow[2];
+    using uint = uint64_t;
 
-    template<class S>
-    RollingHash(const S &s) {
+    /**
+    * @brief コンストラクタ. O(|s|)
+    * @param[in] s ハッシュ化する文字列(or vector).
+    * @param[in] base ハッシュ化に使う基数. RollingHash::gen_base で作る.
+    */
+    template<typename S>
+    RollingHash(const S& s, uint base) {
         int n = s.size();
-        for (int id = 0; id < 2; ++id) {
-            hash[id].assign(n+1, 0);
-            pow[id].assign(n+1, 1);
-            for (int i = 0; i < n; ++i) {
-                hash[id][i+1] = (hash[id][i] * base + s[i]) % mod[id];
-                pow[id][i+1] = pow[id][i] * base % mod[id];
-            }
+        hash.assign(n+1, 0);
+        pow.assign(n+1, 1);
+        for (int i = 0; i < n; ++i) {
+            hash[i+1] = mod(mul(hash[i], base) + s[i]);
+            pow[i+1] = mul(pow[i], base);
         }
     }
 
-    // get hash of s[l:r)
-    pair<ll,ll> get(int l, int r) {
-        ll ret[2];
-        for (int id = 0; id < 2; ++id) {
-            ret[id] = hash[id][r] - hash[id][l] * pow[id][r - l] % mod[id];
-            if (ret[id] < 0) ret[id] += mod[id];
-        }
-        return { ret[0], ret[1] };
+    /**
+    * @brief ハッシュを計算する. O(1)
+    * @param[in] l, r ハッシュを計算したい区間.
+    * @return 区間[l, r) のハッシュ.
+    */
+    uint get(int l, int r) const {
+        return mod(hash[r] + MASK61 - mul(hash[l], pow[r - l]));
+    }
+
+    /**
+    * @brief 基数を生成する. O(1)
+    * @return ランダムな基数.
+    */
+    static uint gen_base() {
+        mt19937 random{random_device{}()};
+        uniform_int_distribution<uint> dist(2, MASK61-2);
+        return dist(random);
+    }
+
+private:
+    vector<uint> hash, pow;
+    static const uint MASK30 = (1LL<<30)-1,
+                      MASK31 = (1LL<<31)-1,
+                      MASK61 = (1LL<<61)-1;
+
+    static uint mul(uint a, uint b) {
+        uint au = a >> 31, ad = a & MASK31,
+             bu = b >> 31, bd = b & MASK31;
+        uint m = au * bd + ad * bu;
+        uint mu = m >> 30, md = m & MASK30;
+
+        return mod(au*bu*2 + mu + (md<<31) + ad*bd);
+    }
+    static uint mod(uint x) {
+        uint xu = x >> 61, xd = x & MASK61;
+        uint ret = xu + xd;
+        if (ret >= MASK61) ret -= MASK61;
+        return ret;
     }
 };
 #line 4 "test/string/rolling_hash.test.cpp"
@@ -206,9 +240,13 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    RollingHash hashT(T), hashP(P);
-    for (int i = 0; i+m <= n; i++) {
-        if (hashT.get(i, i+m) == hashP.get(0, m)) {
+    int64_t base = RollingHash::gen_base();
+
+    RollingHash rht(T, base);
+    RollingHash rhp(P, base);
+
+    for (int i = 0; i+m <= n; ++i) {
+        if (rht.get(i, i+m) == rhp.get(0, m)) {
             cout << i << endl;
         }
     }
