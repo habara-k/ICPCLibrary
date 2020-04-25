@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/number/crt.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 11:21:51+09:00
+    - Last commit date: 2020-04-25 11:34:54+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/number/crt.cpp.html">lib/number/crt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
@@ -185,6 +185,17 @@ ll extended_gcd(ll a, ll b, ll& x, ll& y) {
 }
 #line 2 "lib/number/crt.cpp"
 
+/**
+ * @brief
+ * 中国式場予定理(CRT)
+ * m1で割ったあまりがa1, m2で割ったあまりがa2のとき、m1*m2でわったあまりを構築
+ * @author Md
+ * @date 2020/04/25
+ */
+
+/**
+ * @return first: 答え, second: modの値
+ */
 pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
   ll p, q;
   ll g = extended_gcd(m1, m2, p, q);
@@ -192,6 +203,11 @@ pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
   return make_pair(a1 + m1 * (a2 - a1) / g * p % (m2 / g), m1 * (m2 / g));
 }
 
+/**
+ * @brief
+ * 式が複数個ある場合
+ * @return first: 答え, second: modの値
+ */
 pair<ll, ll> crt(const vector<ll> &a, const vector<ll> &m) {
   ll r = 0, mod = 1;
   REP(i, SZ(a)) {

@@ -43,7 +43,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="crt.cpp.html">lib/number/crt.cpp</a>
+* :heavy_check_mark: <a href="crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
 
 
 ## Verified with
