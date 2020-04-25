@@ -7,9 +7,13 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    RollingHash hashT(T), hashP(P);
-    for (int i = 0; i+m <= n; i++) {
-        if (hashT.get(i, i+m) == hashP.get(0, m)) {
+    int64_t base = RollingHash::gen_base();
+
+    RollingHash rht(T, base);
+    RollingHash rhp(P, base);
+
+    for (int i = 0; i+m <= n; ++i) {
+        if (rht.get(i, i+m) == rhp.get(0, m)) {
             cout << i << endl;
         }
     }
