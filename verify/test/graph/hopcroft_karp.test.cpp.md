@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/hopcroft_karp.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 06:00:22+09:00
+    - Last commit date: 2020-04-25 22:26:20+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/7/GRL_7_A</a>
@@ -92,7 +92,7 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) begin(x),end(x)
+#define all(x) (x).begin(),(x).end()
 
 #define dump(x) cerr<<#x<<" = "<<(x)<<endl
 #define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/z_algorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:43+09:00
+    - Last commit date: 2020-04-25 22:26:20+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc141/tasks/abc141_e">https://atcoder.jp/contests/abc141/tasks/abc141_e</a>
@@ -94,7 +94,7 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) begin(x),end(x)
+#define all(x) (x).begin(),(x).end()
 
 #define dump(x) cerr<<#x<<" = "<<(x)<<endl
 #define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
