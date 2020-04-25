@@ -25,31 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/number/extended_gcd.cpp
+# :heavy_check_mark: test/number/crt.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/number/extended_gcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:43+09:00
+* category: <a href="../../../index.html#27c49c4e5cc6f85fad5dbff6f8f0ef1b">test/number</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/number/crt.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-25 11:21:51+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="crt.cpp.html">lib/number/crt.cpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../../verify/test/number/crt.test.cpp.html">test/number/crt.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/crt.cpp.html">lib/number/crt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -57,23 +49,50 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include "../template.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659"
 
-ll extended_gcd(ll a, ll b, ll& x, ll& y) {
-    // solve ax + by = gcd(a, b)
-    if (b == 0) { x = 1; y = 0; return a; }
-    ll X, Y;
-    ll g = extended_gcd(b, a % b, X, Y);
-    x = Y; y = X - a/b * Y;
-    return g;
+#include "../../lib/number/crt.cpp"
+
+int main() {
+  ll n, m, d; cin >> n >> m >> d;
+  vll mod(m);
+  REP(i, m) {
+    cin >> mod[i];
+  }
+  vvll a(d, vll(m));
+  REP(i, d) {
+    REP(j, m) {
+      cin >> a[i][j];
+    }
+  }
+
+  bool ok = true;
+  REP(i, d) {
+    vll b, nowmod;
+    REP(j, m) {
+      if(a[i][j] != -1) b.push_back(a[i][j]), nowmod.push_back(mod[j]);
+    }
+    if(b.empty()) continue;
+
+    pair<ll, ll> p = crt(b, nowmod);
+
+    if(p.second == -1 || n < p.first) ok = false;
+
+    n = n - (n - p.first) % p.second;
+  }
+
+  if(ok) cout << n << endl;
+  else cout << -1 << endl;
 }
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+#line 1 "test/number/crt.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2659"
+
 #line 1 "lib/template.cpp"
 
 
@@ -163,6 +182,60 @@ ll extended_gcd(ll a, ll b, ll& x, ll& y) {
     ll g = extended_gcd(b, a % b, X, Y);
     x = Y; y = X - a/b * Y;
     return g;
+}
+#line 2 "lib/number/crt.cpp"
+
+pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
+  ll p, q;
+  ll g = extended_gcd(m1, m2, p, q);
+  if ((a1 - a2) % g) return make_pair(0, -1);
+  return make_pair(a1 + m1 * (a2 - a1) / g * p % (m2 / g), m1 * (m2 / g));
+}
+
+pair<ll, ll> crt(const vector<ll> &a, const vector<ll> &m) {
+  ll r = 0, mod = 1;
+  REP(i, SZ(a)) {
+    ll p, q;
+    ll g = extended_gcd(mod, m[i], p, q);
+    if ((a[i] - r) % g) return make_pair(0, -1);
+    ll tmp = (a[i] - r) / g * p % (m[i] / g);
+    r += mod * tmp;
+    mod *= m[i] / g;
+  }
+  return make_pair(r % mod, mod);
+}
+#line 4 "test/number/crt.test.cpp"
+
+int main() {
+  ll n, m, d; cin >> n >> m >> d;
+  vll mod(m);
+  REP(i, m) {
+    cin >> mod[i];
+  }
+  vvll a(d, vll(m));
+  REP(i, d) {
+    REP(j, m) {
+      cin >> a[i][j];
+    }
+  }
+
+  bool ok = true;
+  REP(i, d) {
+    vll b, nowmod;
+    REP(j, m) {
+      if(a[i][j] != -1) b.push_back(a[i][j]), nowmod.push_back(mod[j]);
+    }
+    if(b.empty()) continue;
+
+    pair<ll, ll> p = crt(b, nowmod);
+
+    if(p.second == -1 || n < p.first) ok = false;
+
+    n = n - (n - p.first) % p.second;
+  }
+
+  if(ok) cout << n << endl;
+  else cout << -1 << endl;
 }
 
 ```

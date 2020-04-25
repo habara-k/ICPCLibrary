@@ -25,31 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/number/extended_gcd.cpp
+# :heavy_check_mark: lib/number/crt.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/number/extended_gcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-24 14:14:43+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/lib/number/crt.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-25 11:21:51+09:00
 
 
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
 * :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="crt.cpp.html">lib/number/crt.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/number/crt.test.cpp.html">test/number/crt.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 
 
 ## Code
@@ -57,15 +52,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include "../template.cpp"
+#include "./extended_gcd.cpp"
 
-ll extended_gcd(ll a, ll b, ll& x, ll& y) {
-    // solve ax + by = gcd(a, b)
-    if (b == 0) { x = 1; y = 0; return a; }
-    ll X, Y;
-    ll g = extended_gcd(b, a % b, X, Y);
-    x = Y; y = X - a/b * Y;
-    return g;
+pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
+  ll p, q;
+  ll g = extended_gcd(m1, m2, p, q);
+  if ((a1 - a2) % g) return make_pair(0, -1);
+  return make_pair(a1 + m1 * (a2 - a1) / g * p % (m2 / g), m1 * (m2 / g));
+}
+
+pair<ll, ll> crt(const vector<ll> &a, const vector<ll> &m) {
+  ll r = 0, mod = 1;
+  REP(i, SZ(a)) {
+    ll p, q;
+    ll g = extended_gcd(mod, m[i], p, q);
+    if ((a[i] - r) % g) return make_pair(0, -1);
+    ll tmp = (a[i] - r) / g * p % (m[i] / g);
+    r += mod * tmp;
+    mod *= m[i] / g;
+  }
+  return make_pair(r % mod, mod);
 }
 
 ```
@@ -163,6 +169,27 @@ ll extended_gcd(ll a, ll b, ll& x, ll& y) {
     ll g = extended_gcd(b, a % b, X, Y);
     x = Y; y = X - a/b * Y;
     return g;
+}
+#line 2 "lib/number/crt.cpp"
+
+pair<ll, ll> crt(ll a1, ll m1, ll a2, ll m2) {
+  ll p, q;
+  ll g = extended_gcd(m1, m2, p, q);
+  if ((a1 - a2) % g) return make_pair(0, -1);
+  return make_pair(a1 + m1 * (a2 - a1) / g * p % (m2 / g), m1 * (m2 / g));
+}
+
+pair<ll, ll> crt(const vector<ll> &a, const vector<ll> &m) {
+  ll r = 0, mod = 1;
+  REP(i, SZ(a)) {
+    ll p, q;
+    ll g = extended_gcd(mod, m[i], p, q);
+    if ((a[i] - r) % g) return make_pair(0, -1);
+    ll tmp = (a[i] - r) / g * p % (m[i] / g);
+    r += mod * tmp;
+    mod *= m[i] / g;
+  }
+  return make_pair(r % mod, mod);
 }
 
 ```

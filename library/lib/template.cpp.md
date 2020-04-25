@@ -53,6 +53,7 @@ layout: default
 * :warning: <a href="graph/twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
 * :heavy_check_mark: <a href="number/combination.cpp.html">lib/number/combination.cpp</a>
+* :heavy_check_mark: <a href="number/crt.cpp.html">lib/number/crt.cpp</a>
 * :heavy_check_mark: <a href="number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
 * :heavy_check_mark: <a href="number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
 * :heavy_check_mark: <a href="number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
@@ -89,6 +90,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/number/Partition1.test.cpp.html">test/number/Partition1.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/number/Partition2.test.cpp.html">test/number/Partition2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/number/Stirling.test.cpp.html">test/number/Stirling.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/number/crt.test.cpp.html">test/number/crt.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/number/gauss_jordan.test.cpp.html">test/number/gauss_jordan.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/number/matrix.test.cpp.html">test/number/matrix.test.cpp</a>
