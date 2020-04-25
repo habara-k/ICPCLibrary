@@ -4,14 +4,6 @@
 * @brief 文字列のハッシュ化
 * @author habara-k
 * @date 2020/04/26
-* @details 使い方
-*   using uint = RollingHash::uint;
-*   uint base = RollingHash::gen_base();
-*
-*   string t; cin >> t;
-*   RollingHash hash(t, base);
-*
-*   cout << hash.get(0, t.size()) << endl;
 */
 
 struct RollingHash {
@@ -21,6 +13,11 @@ struct RollingHash {
     * @brief コンストラクタ. O(|s|)
     * @param[in] s ハッシュ化する文字列(or vector).
     * @param[in] base ハッシュ化に使う基数. RollingHash::gen_base で作る.
+    * @details 使い方
+    *   auto base = RollingHash::gen_base();
+    *
+    *   string t; cin >> t;
+    *   RollingHash hash(t, base);
     */
     template<typename S>
     RollingHash(const S& s, uint base) {
@@ -37,6 +34,8 @@ struct RollingHash {
     * @brief ハッシュを計算する. O(1)
     * @param[in] l, r ハッシュを計算したい区間.
     * @return 区間[l, r) のハッシュ.
+    * @details 使い方
+    *   cout << hash.get(0, t.size()) << endl;
     */
     uint get(int l, int r) const {
         return mod(hash[r] + MASK61 - mul(hash[l], pow[r - l]));
@@ -45,6 +44,8 @@ struct RollingHash {
     /**
     * @brief 基数を生成する. O(1)
     * @return ランダムな基数.
+    * @details 使い方
+    *   auto base = RollingHash::gen_base();
     */
     static uint gen_base() {
         mt19937 random{random_device{}()};

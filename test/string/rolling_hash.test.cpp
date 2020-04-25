@@ -7,7 +7,7 @@ int main() {
     cin >> T >> P;
     int n = T.size(), m = P.size();
 
-    int64_t base = RollingHash::gen_base();
+    auto base = RollingHash::gen_base();
 
     RollingHash rht(T, base);
     RollingHash rhp(P, base);
