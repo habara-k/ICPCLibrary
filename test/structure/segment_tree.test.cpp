@@ -5,11 +5,12 @@
 int main() {
     int N, Q;
     cin >> N >> Q;
-    SegmentTree<int> seg(N);
+    SegmentTree<int> seg(N, [](int a,int b){return min(a,b);},
+            (1ll<<31)-1);
     while (Q--) {
         int T, X, Y;
         cin >> T >> X >> Y;
-        if (T == 0) seg.update(X, Y);
+        if (T == 0) seg.update(X, [&](int a){return Y;});
         else printf("%d\n", seg.query(X, Y + 1));
     }
 }
