@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:55:27+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/segment_tree.cpp.html">lib/structure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/segment_tree.cpp.html">セグメント木 <small>(lib/structure/segment_tree.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -55,11 +55,12 @@ layout: default
 int main() {
     int N, Q;
     cin >> N >> Q;
-    SegmentTree<int> seg(N);
+    SegmentTree<int> seg(N, [](int a,int b){return min(a,b);},
+            (1ll<<31)-1);
     while (Q--) {
         int T, X, Y;
         cin >> T >> X >> Y;
-        if (T == 0) seg.update(X, Y);
+        if (T == 0) seg.update(X, [&](int a){return Y;});
         else printf("%d\n", seg.query(X, Y + 1));
     }
 }
@@ -155,30 +156,116 @@ int main() {
 
 #line 2 "lib/structure/segment_tree.cpp"
 
+/**
+* @brief セグメント木
+* @author habara-k
+* @date ?
+*/
+
 template<typename M>
 struct SegmentTree {
-    int sz;
-    vector<M> data;
 
-    // RMQ
-    const M e = numeric_limits<M>::max();
-    const function<M(M,M)> f = [](M a,M b){ return min(a,b); };
-
-    SegmentTree(int n) {
+    /**
+    * @brief コンストラクタ. O(n)
+    * @param[in] n セグ木のサイズ.
+    * @param[in] f モノイドの演算.
+    * @param[in] e モノイドの単位元.
+    * @details 使い方
+    *   e.g. Range Minimum
+    *   SegmentTree<int> segt(
+    *            n,
+    *            [](int a,int b){ return min(a+b); },
+    *            INF);
+    *               // 全て単位元で初期化される.
+    */
+    SegmentTree(
+            int n,
+            const function<M(M,M)>& f,
+            const M& e) : n(n), f(f), e(e) {
         sz = 1;
         while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
+        data.assign(2 * sz, e);
     }
 
-    void update(int k, const M &x) {
-        k += sz;
-        data[k] = x;
-        while (k >>= 1) {
-            data[k] = f(data[2*k], data[2*k+1]);
+    /**
+    * @brief 全体に初期値を入れる. O(n)
+    * @param[in] v 要素モノイドのvector. 初期化する.
+    * @details 使い方
+    *   segt.build(vector<int>(n, 0));
+    */
+    void build(const vector<M>& v) {
+        assert(v.size() <= n);
+        for (int i = 0; i < v.size(); ++i) {
+            data[i + sz] = v[i];
+        }
+        for (int i = sz-1; i > 0; --i) {
+            data[i] = f(data[2 * i], data[2 * i + 1]);
         }
     }
 
-    M query(int a, int b, int k, int l, int r) {
+    /**
+    * @brief 指定した位置に更新クエリを実行する. O(log n)
+    * @param[in] k 位置k の要素に作用させる.
+    * @param[in] q 値x をq(x) で更新する.
+    * @details 使い方
+    *   e.g. Add Query
+    *   int i, x; // 位置i をx を足したい.
+    *   segt.update(i, [&](int a){ return a + x; });
+    *
+    *   e.g. Update Query
+    *   int i, x; // 位置i をx に更新したい.
+    *   segt.update(i, [&](int a){ return x; });
+    */
+    template<class UpdateQuery>
+    void update(int k, const UpdateQuery &q) {
+        k += sz;
+        data[k] = q(data[k]);
+        while (k >>= 1) {
+            data[k] = f(data[2 * k], data[2 * k + 1]);
+        }
+    }
+
+    /**
+    * @brief 指定した区間に取得クエリを実行する. O(log n)
+    * @param[in] l, r 区間[l, r) を取得する.
+    * @return 取得した値.
+    * @details 使い方
+    *   e.g. Range Minimum
+    *   int l, r; // 区間[l, r) のminを取得したい.
+    *   cout << segt.query(l, r) << endl;
+    */
+    M query(int a, int b) const {
+        return query(a, b, 1, 0, sz);
+    }
+
+    /**
+    * @brief 指定したindexの要素を取得. O(1)
+    * @param[in] i 取得したい要素のindex
+    * @return 取得した値.
+    */
+    M operator[](int k) const {
+        return data[k + sz];
+    }
+
+    /**
+    * @brief vector みたいに出力.
+    */
+    friend ostream& operator<<(ostream& os, SegmentTree& s) {
+        os << "[";
+        for (int i = 0; i < s.n; ++i) {
+            if (i) os << " ";
+            os << s[i];
+        }
+        return os << "]";
+    }
+
+private:
+    int n, sz;
+    vector<M> data;
+    const function<M(M,M)> f;
+    const M e;
+
+    M query(int a, int b, int k, int l, int r) const {
         if (r <= a || b <= l) {
             return e;
         } else if (a <= l && r <= b) {
@@ -188,26 +275,18 @@ struct SegmentTree {
                      query(a,b,2*k+1,(l+r)/2,r));
         }
     }
-
-    M query(int a, int b) {
-        // return f[a,b)
-        return query(a, b, 1, 0, sz);
-    }
-
-    M operator[](int k) {
-        return data[k + sz];
-    }
 };
 #line 4 "test/structure/segment_tree.test.cpp"
 
 int main() {
     int N, Q;
     cin >> N >> Q;
-    SegmentTree<int> seg(N);
+    SegmentTree<int> seg(N, [](int a,int b){return min(a,b);},
+            (1ll<<31)-1);
     while (Q--) {
         int T, X, Y;
         cin >> T >> X >> Y;
-        if (T == 0) seg.update(X, Y);
+        if (T == 0) seg.update(X, [&](int a){return Y;});
         else printf("%d\n", seg.query(X, Y + 1));
     }
 }

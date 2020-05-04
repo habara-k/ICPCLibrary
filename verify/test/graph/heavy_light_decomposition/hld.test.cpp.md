@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#f108cdd252ebfc58a7b9bc5c4c206374">test/graph/heavy_light_decomposition</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/heavy_light_decomposition/hld.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 05:05:16+09:00
+    - Last commit date: 2020-05-04 15:56:10+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_E">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_E</a>
@@ -255,7 +255,7 @@ struct HLDecomposition {
     *            // u, v 間のパスを小分けにした区間全体に
     *            // 第三引数の関数が実行される.
     */
-    template<typename UpdateQuery>
+    template<class UpdateQuery>
     void update(int u, int v, const UpdateQuery& q, bool edge = false) const {
         for (;; v = par[head[v]]) {
             if (depth[head[u]] > depth[head[v]]) swap(u, v);
@@ -276,6 +276,7 @@ struct HLDecomposition {
     * @param[in] f 小分けにした区間から取得した値をマージする方法.
     * @param[in] ident fの単位元.
     * @param[in] edge 辺クエリか頂点クエリか. デフォルトは頂点クエリ.
+    * @return 取得した値.
     *
     * @details 使い方
     *     e.g. Range Minimum Query
@@ -292,7 +293,7 @@ struct HLDecomposition {
     *            // 各区間から取得した値は, 第四引数の関数によってマージされる.
     *            // minの単位元INFを第五引数に渡す.
     */
-    template<typename Query, typename MergeFunc, typename T>
+    template<class Query, class MergeFunc, typename T>
     T query(int u, int v,
             const Query& q, const MergeFunc& f,
             const T& ident, bool edge = false) const {
@@ -379,8 +380,8 @@ struct LazySegmentTree {
             ) : n(n), f(f), g(g), h(h), e(e), oe(oe) {
         sz = 1;
         while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
-        lazy.assign(2*sz, oe);
+        data.assign(2 * sz, e);
+        lazy.assign(2 * sz, oe);
     }
 
     /**
@@ -395,12 +396,12 @@ struct LazySegmentTree {
             data[i + sz] = v[i];
         }
         for (int i = sz-1; i > 0; --i) {
-            data[i] = f(data[2*i], data[2*i+1]);
+            data[i] = f(data[2 * i], data[2 * i + 1]);
         }
     }
 
     /**
-    * @brief 指定した区間に作用素x を作用させる.
+    * @brief 指定した区間に作用素x を作用させる. O(log n)
     * @param[in] l, r 区間[l, r) に作用させる.
     * @param[in] x 作用素モノイドの元.
     * @details 使い方
@@ -413,8 +414,9 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定した区間に取得クエリを実行する.
+    * @brief 指定した区間に取得クエリを実行する. O(log n)
     * @param[in] l, r 区間[l, r) を取得する.
+    * @return 取得した値.
     * @details 使い方
     *   e.g. Range Minimum
     *   int l, r; // 区間[l, r) のminを取得したい.
@@ -425,11 +427,12 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定したindexの要素を取得.
+    * @brief 指定したindexの要素を取得. O(1)
     * @param[in] i 取得したい要素のindex
+    * @return 取得した値.
     */
     M operator[](int i) {
-        return query(i, i+1);
+        return query(i, i + 1);
     }
 
     /**
@@ -458,8 +461,8 @@ private:
     void propagate(int k, int len) {
         if (lazy[k] == oe) return;
         if (k < sz) {
-            lazy[2*k  ] = h(lazy[2*k  ], lazy[k]);
-            lazy[2*k+1] = h(lazy[2*k+1], lazy[k]);
+            lazy[2 * k    ] = h(lazy[2 * k    ], lazy[k]);
+            lazy[2 * k + 1] = h(lazy[2 * k + 1], lazy[k]);
         }
         data[k] = g(data[k], lazy[k], len);
         lazy[k] = oe;
@@ -472,9 +475,9 @@ private:
             lazy[k] = h(lazy[k], x);
             propagate(k, r - l);
         } else {
-            update(a, b, x, 2*k,   l, (l+r)/2);
-            update(a, b, x, 2*k+1, (l+r)/2, r);
-            data[k] = f(data[2*k], data[2*k+1]);
+            update(a, b, x, 2 * k,     l, (l + r) >> 1);
+            update(a, b, x, 2 * k + 1, (l + r) >> 1, r);
+            data[k] = f(data[2 * k], data[2 * k + 1]);
         }
     }
 
@@ -483,8 +486,8 @@ private:
         if (r <= a or b <= l) return e;
         else if (a <= l and r <= b) return data[k];
         else return f(
-                query(a, b, 2*k,   l, (l+r)/2),
-                query(a, b, 2*k+1, (l+r)/2, r));
+                query(a, b, 2 * k,     l, (l + r) >> 1),
+                query(a, b, 2 * k + 1, (l + r) >> 1, r));
     }
 };
 #line 5 "test/graph/heavy_light_decomposition/hld.test.cpp"

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/structure/lazy_segment_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 05:01:55+09:00
+    - Last commit date: 2020-05-04 15:56:10+09:00
 
 
 
@@ -90,8 +90,8 @@ struct LazySegmentTree {
             ) : n(n), f(f), g(g), h(h), e(e), oe(oe) {
         sz = 1;
         while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
-        lazy.assign(2*sz, oe);
+        data.assign(2 * sz, e);
+        lazy.assign(2 * sz, oe);
     }
 
     /**
@@ -106,12 +106,12 @@ struct LazySegmentTree {
             data[i + sz] = v[i];
         }
         for (int i = sz-1; i > 0; --i) {
-            data[i] = f(data[2*i], data[2*i+1]);
+            data[i] = f(data[2 * i], data[2 * i + 1]);
         }
     }
 
     /**
-    * @brief 指定した区間に作用素x を作用させる.
+    * @brief 指定した区間に作用素x を作用させる. O(log n)
     * @param[in] l, r 区間[l, r) に作用させる.
     * @param[in] x 作用素モノイドの元.
     * @details 使い方
@@ -124,8 +124,9 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定した区間に取得クエリを実行する.
+    * @brief 指定した区間に取得クエリを実行する. O(log n)
     * @param[in] l, r 区間[l, r) を取得する.
+    * @return 取得した値.
     * @details 使い方
     *   e.g. Range Minimum
     *   int l, r; // 区間[l, r) のminを取得したい.
@@ -136,11 +137,12 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定したindexの要素を取得.
+    * @brief 指定したindexの要素を取得. O(1)
     * @param[in] i 取得したい要素のindex
+    * @return 取得した値.
     */
     M operator[](int i) {
-        return query(i, i+1);
+        return query(i, i + 1);
     }
 
     /**
@@ -169,8 +171,8 @@ private:
     void propagate(int k, int len) {
         if (lazy[k] == oe) return;
         if (k < sz) {
-            lazy[2*k  ] = h(lazy[2*k  ], lazy[k]);
-            lazy[2*k+1] = h(lazy[2*k+1], lazy[k]);
+            lazy[2 * k    ] = h(lazy[2 * k    ], lazy[k]);
+            lazy[2 * k + 1] = h(lazy[2 * k + 1], lazy[k]);
         }
         data[k] = g(data[k], lazy[k], len);
         lazy[k] = oe;
@@ -183,9 +185,9 @@ private:
             lazy[k] = h(lazy[k], x);
             propagate(k, r - l);
         } else {
-            update(a, b, x, 2*k,   l, (l+r)/2);
-            update(a, b, x, 2*k+1, (l+r)/2, r);
-            data[k] = f(data[2*k], data[2*k+1]);
+            update(a, b, x, 2 * k,     l, (l + r) >> 1);
+            update(a, b, x, 2 * k + 1, (l + r) >> 1, r);
+            data[k] = f(data[2 * k], data[2 * k + 1]);
         }
     }
 
@@ -194,8 +196,8 @@ private:
         if (r <= a or b <= l) return e;
         else if (a <= l and r <= b) return data[k];
         else return f(
-                query(a, b, 2*k,   l, (l+r)/2),
-                query(a, b, 2*k+1, (l+r)/2, r));
+                query(a, b, 2 * k,     l, (l + r) >> 1),
+                query(a, b, 2 * k + 1, (l + r) >> 1, r));
     }
 };
 
@@ -323,8 +325,8 @@ struct LazySegmentTree {
             ) : n(n), f(f), g(g), h(h), e(e), oe(oe) {
         sz = 1;
         while (sz < n) sz <<= 1;
-        data.assign(2*sz, e);
-        lazy.assign(2*sz, oe);
+        data.assign(2 * sz, e);
+        lazy.assign(2 * sz, oe);
     }
 
     /**
@@ -339,12 +341,12 @@ struct LazySegmentTree {
             data[i + sz] = v[i];
         }
         for (int i = sz-1; i > 0; --i) {
-            data[i] = f(data[2*i], data[2*i+1]);
+            data[i] = f(data[2 * i], data[2 * i + 1]);
         }
     }
 
     /**
-    * @brief 指定した区間に作用素x を作用させる.
+    * @brief 指定した区間に作用素x を作用させる. O(log n)
     * @param[in] l, r 区間[l, r) に作用させる.
     * @param[in] x 作用素モノイドの元.
     * @details 使い方
@@ -357,8 +359,9 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定した区間に取得クエリを実行する.
+    * @brief 指定した区間に取得クエリを実行する. O(log n)
     * @param[in] l, r 区間[l, r) を取得する.
+    * @return 取得した値.
     * @details 使い方
     *   e.g. Range Minimum
     *   int l, r; // 区間[l, r) のminを取得したい.
@@ -369,11 +372,12 @@ struct LazySegmentTree {
     }
 
     /**
-    * @brief 指定したindexの要素を取得.
+    * @brief 指定したindexの要素を取得. O(1)
     * @param[in] i 取得したい要素のindex
+    * @return 取得した値.
     */
     M operator[](int i) {
-        return query(i, i+1);
+        return query(i, i + 1);
     }
 
     /**
@@ -402,8 +406,8 @@ private:
     void propagate(int k, int len) {
         if (lazy[k] == oe) return;
         if (k < sz) {
-            lazy[2*k  ] = h(lazy[2*k  ], lazy[k]);
-            lazy[2*k+1] = h(lazy[2*k+1], lazy[k]);
+            lazy[2 * k    ] = h(lazy[2 * k    ], lazy[k]);
+            lazy[2 * k + 1] = h(lazy[2 * k + 1], lazy[k]);
         }
         data[k] = g(data[k], lazy[k], len);
         lazy[k] = oe;
@@ -416,9 +420,9 @@ private:
             lazy[k] = h(lazy[k], x);
             propagate(k, r - l);
         } else {
-            update(a, b, x, 2*k,   l, (l+r)/2);
-            update(a, b, x, 2*k+1, (l+r)/2, r);
-            data[k] = f(data[2*k], data[2*k+1]);
+            update(a, b, x, 2 * k,     l, (l + r) >> 1);
+            update(a, b, x, 2 * k + 1, (l + r) >> 1, r);
+            data[k] = f(data[2 * k], data[2 * k + 1]);
         }
     }
 
@@ -427,8 +431,8 @@ private:
         if (r <= a or b <= l) return e;
         else if (a <= l and r <= b) return data[k];
         else return f(
-                query(a, b, 2*k,   l, (l+r)/2),
-                query(a, b, 2*k+1, (l+r)/2, r));
+                query(a, b, 2 * k,     l, (l + r) >> 1),
+                query(a, b, 2 * k + 1, (l + r) >> 1, r));
     }
 };
 
