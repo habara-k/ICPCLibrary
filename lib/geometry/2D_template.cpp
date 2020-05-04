@@ -13,6 +13,13 @@ using Real = double;
 const Real PI = acos(-1);
 
 using Point = complex<Real>;
+namespace std {
+    bool operator<(const Point& a, const Point& b) {
+        if (a.real() == b.real()) return a.imag() < b.imag();
+        return a.real() < b.real();
+    }
+}
+
 struct Line {
     Point a, b;
     Line() {}
@@ -21,6 +28,7 @@ struct Line {
         return os << "[" << l.a << "," << l.b << "]";
     }
 };
+
 struct Segment : Line {
     Segment() {}
     // Segment() = default;
