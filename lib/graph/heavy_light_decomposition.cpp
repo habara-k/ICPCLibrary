@@ -69,7 +69,7 @@ struct HLDecomposition {
     *            // u, v 間のパスを小分けにした区間全体に
     *            // 第三引数の関数が実行される.
     */
-    template<typename UpdateQuery>
+    template<class UpdateQuery>
     void update(int u, int v, const UpdateQuery& q, bool edge = false) const {
         for (;; v = par[head[v]]) {
             if (depth[head[u]] > depth[head[v]]) swap(u, v);
@@ -90,6 +90,7 @@ struct HLDecomposition {
     * @param[in] f 小分けにした区間から取得した値をマージする方法.
     * @param[in] ident fの単位元.
     * @param[in] edge 辺クエリか頂点クエリか. デフォルトは頂点クエリ.
+    * @return 取得した値.
     *
     * @details 使い方
     *     e.g. Range Minimum Query
@@ -106,7 +107,7 @@ struct HLDecomposition {
     *            // 各区間から取得した値は, 第四引数の関数によってマージされる.
     *            // minの単位元INFを第五引数に渡す.
     */
-    template<typename Query, typename MergeFunc, typename T>
+    template<class Query, class MergeFunc, typename T>
     T query(int u, int v,
             const Query& q, const MergeFunc& f,
             const T& ident, bool edge = false) const {
