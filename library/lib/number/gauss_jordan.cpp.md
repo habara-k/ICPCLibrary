@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/gauss_jordan.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-05 02:14:29+09:00
 
 
 
@@ -52,8 +52,6 @@ layout: default
 {% raw %}
 ```cpp
 #include "../template.cpp"
-
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
 
 /**
  * @brief
@@ -179,8 +177,6 @@ int main() {
 
 
 #line 2 "lib/number/gauss_jordan.cpp"
-
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
 
 /**
  * @brief

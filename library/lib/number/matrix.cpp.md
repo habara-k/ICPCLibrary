@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-05 02:14:29+09:00
 
 
 
@@ -52,8 +52,6 @@ layout: default
 {% raw %}
 ```cpp
 #include "../template.cpp"
-
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
 
 /**
  * @brief
@@ -85,9 +83,10 @@ Matrix<T> operator*(const Matrix<T>& A, const Matrix<T>& B) {
 
 template<class T>
 Matrix<T> pow(Matrix<T> a, ll k) {
-    int n = a.size(), m = a[0].size();
-    Matrix<T> ret(n, vector<T>(m));
-    REP(i, n) ret[i][i] = 1;
+    assert(a.size() == a[0].size());
+    int n = a.size();
+    Matrix<T> ret(n, vector<T>(n));
+    for (int i = 0; i < n; ++i) ret[i][i] = 1;
     while (k) {
         if (k & 1) ret = ret * a;
         a = a * a; k >>= 1;
@@ -183,8 +182,6 @@ int main() {
 
 #line 2 "lib/number/matrix.cpp"
 
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
-
 /**
  * @brief
  * 行列累乗
@@ -215,9 +212,10 @@ Matrix<T> operator*(const Matrix<T>& A, const Matrix<T>& B) {
 
 template<class T>
 Matrix<T> pow(Matrix<T> a, ll k) {
-    int n = a.size(), m = a[0].size();
-    Matrix<T> ret(n, vector<T>(m));
-    REP(i, n) ret[i][i] = 1;
+    assert(a.size() == a[0].size());
+    int n = a.size();
+    Matrix<T> ret(n, vector<T>(n));
+    for (int i = 0; i < n; ++i) ret[i][i] = 1;
     while (k) {
         if (k & 1) ret = ret * a;
         a = a * a; k >>= 1;
