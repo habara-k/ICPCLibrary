@@ -38,6 +38,8 @@ layout: default
 
 ## Required by
 
+* :heavy_check_mark: <a href="geometry/2D_template.cpp.html"> <small>(lib/geometry/2D_template.cpp)</small></a>
+* :heavy_check_mark: <a href="geometry/polygon.cpp.html"> <small>(lib/geometry/polygon.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/dinic.cpp.html"> <small>(lib/graph/dinic.cpp)</small></a>
@@ -78,6 +80,23 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/circle_crosspoint.test.cpp.html">test/geometry/2D_template/circle_crosspoint.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/circle_intersection.test.cpp.html">test/geometry/2D_template/circle_intersection.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/circle_line_crosspoint.test.cpp.html">test/geometry/2D_template/circle_line_crosspoint.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/common_tangent.test.cpp.html">test/geometry/2D_template/common_tangent.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/counter_clockwise.test.cpp.html">test/geometry/2D_template/counter_clockwise.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/crosspoint.test.cpp.html">test/geometry/2D_template/crosspoint.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/distance.test.cpp.html">test/geometry/2D_template/distance.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/intersection.test.cpp.html">test/geometry/2D_template/intersection.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/parallel_orthogonal.test.cpp.html">test/geometry/2D_template/parallel_orthogonal.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/projection.test.cpp.html">test/geometry/2D_template/projection.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/2D_template/tangent.test.cpp.html">test/geometry/2D_template/tangent.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/area.test.cpp.html">test/geometry/polygon/area.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/contains.test.cpp.html">test/geometry/polygon/contains.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/convex_cut.test.cpp.html">test/geometry/polygon/convex_cut.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/convex_hull.test.cpp.html">test/geometry/polygon/convex_hull.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/diameter.test.cpp.html">test/geometry/polygon/diameter.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/polygon/is_convex.test.cpp.html">test/geometry/polygon/is_convex.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/bfs01.test.cpp.html">test/graph/bfs01.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/dijkstra.test.cpp.html">test/graph/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/graph/dinic.test.cpp.html">test/graph/dinic.test.cpp</a>
