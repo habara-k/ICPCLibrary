@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 
@@ -216,8 +216,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/warshall_floyd.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/warshall_floyd.cpp.html"> <small>(lib/graph/warshall_floyd.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
@@ -57,8 +57,7 @@ int main() {
     int V, E;
     cin >> V >> E;
 
-    const int INF = numeric_limits<int>::max();
-    vector<vector<int>> G(V, vector<int>(V, INF));
+    vector<vector<ll>> G(V, vector<ll>(V, LINF));
     for (int i = 0; i < V; ++i) G[i][i] = 0;
     for (int i = 0; i < E; ++i) {
         int x, y, z;
@@ -66,7 +65,7 @@ int main() {
         G[x][y] = z;
     }
 
-    warshall_floyd(G);
+    warshall_floyd(G, LINF);
     for (int i = 0; i < V; ++i) {
         if (G[i][i] < 0) {
             puts("NEGATIVE CYCLE");
@@ -76,7 +75,7 @@ int main() {
     for (int i = 0; i < V; ++i) {
         for (int j = 0; j < V; ++j) {
             if (j > 0) putchar(' ');
-            if (G[i][j] == INF) printf("INF");
+            if (G[i][j] == LINF) printf("INF");
             else printf("%d", G[i][j]);
         }
         putchar('\n');
@@ -182,8 +181,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>
@@ -192,14 +189,28 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "lib/graph/warshall_floyd.cpp"
 
+/**
+ * @brief
+ * 全点対間最短経路(ワーシャルフロイド)
+ * O(V^3)
+ * @author ?
+ * @date ?
+ *
+ * @param[in] g グラフ(隣接行列)
+ * @param[in] inf 到達不可能を表す無限値
+ * @param[out] g 最短距離(隣接行列)
+ *
+ * @details
+ * 2020/05/04 コメント追加, inf に使う値を明示的に渡す. by habara-k
+ */
+
 template<typename T>
-void warshall_floyd(vector<vector<T>> &g) {
-    const auto INF = numeric_limits<T>::max();
+void warshall_floyd(vector<vector<T>> &g, T inf) {
     int n = g.size();
-    for(int k = 0; k < n; k++) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                if(g[i][k] == INF || g[k][j] == INF) continue;
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (g[i][k] == inf or g[k][j] == inf) continue;
                 g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
             }
         }
@@ -211,8 +222,7 @@ int main() {
     int V, E;
     cin >> V >> E;
 
-    const int INF = numeric_limits<int>::max();
-    vector<vector<int>> G(V, vector<int>(V, INF));
+    vector<vector<ll>> G(V, vector<ll>(V, LINF));
     for (int i = 0; i < V; ++i) G[i][i] = 0;
     for (int i = 0; i < E; ++i) {
         int x, y, z;
@@ -220,7 +230,7 @@ int main() {
         G[x][y] = z;
     }
 
-    warshall_floyd(G);
+    warshall_floyd(G, LINF);
     for (int i = 0; i < V; ++i) {
         if (G[i][i] < 0) {
             puts("NEGATIVE CYCLE");
@@ -230,7 +240,7 @@ int main() {
     for (int i = 0; i < V; ++i) {
         for (int j = 0; j < V; ++j) {
             if (j > 0) putchar(' ');
-            if (G[i][j] == INF) printf("INF");
+            if (G[i][j] == LINF) printf("INF");
             else printf("%d", G[i][j]);
         }
         putchar('\n');

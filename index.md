@@ -59,7 +59,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :warning: <a href="library/lib/graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="library/lib/graph/twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
-* :heavy_check_mark: <a href="library/lib/graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/warshall_floyd.cpp.html"> <small>(lib/graph/warshall_floyd.cpp)</small></a>
 
 
 <div id="12cd94d703d26487f7477e7dcce25e7f"></div>

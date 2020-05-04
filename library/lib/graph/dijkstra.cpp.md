@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 
@@ -60,19 +60,20 @@ layout: default
  * 二分ヒープ(priority_queue)を使ってO((E+V)logV)
  * @author ?
  * @date 2019/12
- * 
+ *
  * @param[in] g グラフ
  * @param[in] s 始点
+ * @param[in] inf 到達不可能を表す無限値
  * @return vector<T> sからそれぞれの頂点への最短路
- * 
+ *
  * @details
  * 2020/04/07 コメント追加、テスト有無のチェック by Md
+ * 2020/05/04 inf に使う値を明示的に渡す. by haraba-k
  */
 
 template<typename T>
-vector<T> dijkstra(const Graph<T> &g, int s) {
-    const auto INF = numeric_limits<T>::max();
-    vector<T> d(g.size(), INF);
+vector<T> dijkstra(const Graph<T> &g, int s, T inf) {
+    vector<T> d(g.size(), inf);
 
     using Pi = pair<T, int>;
     priority_queue<Pi, vector<Pi>, greater<Pi>> que;
@@ -191,8 +192,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>
@@ -207,19 +206,20 @@ using Graph = vector<vector<edge<T>>>;
  * 二分ヒープ(priority_queue)を使ってO((E+V)logV)
  * @author ?
  * @date 2019/12
- * 
+ *
  * @param[in] g グラフ
  * @param[in] s 始点
+ * @param[in] inf 到達不可能を表す無限値
  * @return vector<T> sからそれぞれの頂点への最短路
- * 
+ *
  * @details
  * 2020/04/07 コメント追加、テスト有無のチェック by Md
+ * 2020/05/04 inf に使う値を明示的に渡す. by haraba-k
  */
 
 template<typename T>
-vector<T> dijkstra(const Graph<T> &g, int s) {
-    const auto INF = numeric_limits<T>::max();
-    vector<T> d(g.size(), INF);
+vector<T> dijkstra(const Graph<T> &g, int s, T inf) {
+    vector<T> d(g.size(), inf);
 
     using Pi = pair<T, int>;
     priority_queue<Pi, vector<Pi>, greater<Pi>> que;

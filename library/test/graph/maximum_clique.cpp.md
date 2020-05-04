@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/maximum_clique.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc002/tasks/abc002_4">https://atcoder.jp/contests/abc002/tasks/abc002_4</a>
@@ -166,8 +166,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>

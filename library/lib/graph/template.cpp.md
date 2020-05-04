@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 
@@ -54,7 +54,7 @@ layout: default
 * :heavy_check_mark: <a href="scc.cpp.html">lib/graph/scc.cpp</a>
 * :warning: <a href="topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
-* :heavy_check_mark: <a href="warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="warshall_floyd.cpp.html"> <small>(lib/graph/warshall_floyd.cpp)</small></a>
 * :warning: <a href="../../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="../../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 
@@ -85,8 +85,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>
@@ -190,8 +188,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>

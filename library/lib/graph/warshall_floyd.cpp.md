@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/graph/warshall_floyd.cpp
+# :heavy_check_mark:  <small>(lib/graph/warshall_floyd.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/warshall_floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-04 15:30:16+09:00
 
 
 
@@ -54,14 +54,28 @@ layout: default
 ```cpp
 #include "template.cpp"
 
+/**
+ * @brief
+ * 全点対間最短経路(ワーシャルフロイド)
+ * O(V^3)
+ * @author ?
+ * @date ?
+ *
+ * @param[in] g グラフ(隣接行列)
+ * @param[in] inf 到達不可能を表す無限値
+ * @param[out] g 最短距離(隣接行列)
+ *
+ * @details
+ * 2020/05/04 コメント追加, inf に使う値を明示的に渡す. by habara-k
+ */
+
 template<typename T>
-void warshall_floyd(vector<vector<T>> &g) {
-    const auto INF = numeric_limits<T>::max();
+void warshall_floyd(vector<vector<T>> &g, T inf) {
     int n = g.size();
-    for(int k = 0; k < n; k++) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                if(g[i][k] == INF || g[k][j] == INF) continue;
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (g[i][k] == inf or g[k][j] == inf) continue;
                 g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
             }
         }
@@ -164,8 +178,6 @@ template<typename T>
 struct edge {
     int src, to;
     T cost;
-    // edge(int src, int to, T cost): src(src), to(to), cost(cost) {}
-    // // G[i].push_back({src, to, cost}) requires no constructor
 };
 
 template<typename T>
@@ -174,14 +186,28 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "lib/graph/warshall_floyd.cpp"
 
+/**
+ * @brief
+ * 全点対間最短経路(ワーシャルフロイド)
+ * O(V^3)
+ * @author ?
+ * @date ?
+ *
+ * @param[in] g グラフ(隣接行列)
+ * @param[in] inf 到達不可能を表す無限値
+ * @param[out] g 最短距離(隣接行列)
+ *
+ * @details
+ * 2020/05/04 コメント追加, inf に使う値を明示的に渡す. by habara-k
+ */
+
 template<typename T>
-void warshall_floyd(vector<vector<T>> &g) {
-    const auto INF = numeric_limits<T>::max();
+void warshall_floyd(vector<vector<T>> &g, T inf) {
     int n = g.size();
-    for(int k = 0; k < n; k++) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                if(g[i][k] == INF || g[k][j] == INF) continue;
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (g[i][k] == inf or g[k][j] == inf) continue;
                 g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
             }
         }

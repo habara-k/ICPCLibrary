@@ -52,7 +52,7 @@ layout: default
 * :heavy_check_mark: <a href="graph/template.cpp.html">lib/graph/template.cpp</a>
 * :warning: <a href="graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="graph/twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
-* :heavy_check_mark: <a href="graph/warshall_floyd.cpp.html">lib/graph/warshall_floyd.cpp</a>
+* :heavy_check_mark: <a href="graph/warshall_floyd.cpp.html"> <small>(lib/graph/warshall_floyd.cpp)</small></a>
 * :heavy_check_mark: <a href="number/combination.cpp.html">lib/number/combination.cpp</a>
 * :heavy_check_mark: <a href="number/crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
 * :heavy_check_mark: <a href="number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
