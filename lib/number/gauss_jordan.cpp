@@ -1,7 +1,5 @@
 #include "../template.cpp"
 
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308
-
 /**
  * @brief
  * ガウスの消去法

@@ -1,7 +1,5 @@
 #include "../template.cpp"
 
-// verify: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2397
-
 /**
  * @brief
  * 行列累乗
@@ -32,9 +30,10 @@ Matrix<T> operator*(const Matrix<T>& A, const Matrix<T>& B) {
 
 template<class T>
 Matrix<T> pow(Matrix<T> a, ll k) {
-    int n = a.size(), m = a[0].size();
-    Matrix<T> ret(n, vector<T>(m));
-    REP(i, n) ret[i][i] = 1;
+    assert(a.size() == a[0].size());
+    int n = a.size();
+    Matrix<T> ret(n, vector<T>(n));
+    for (int i = 0; i < n; ++i) ret[i][i] = 1;
     while (k) {
         if (k & 1) ret = ret * a;
         a = a * a; k >>= 1;
