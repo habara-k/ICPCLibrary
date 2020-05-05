@@ -41,7 +41,7 @@ layout: default
 
 * :warning: <a href="../../lib/others/inversion.cpp.html">lib/others/inversion.cpp</a>
 * :heavy_check_mark: <a href="../../lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

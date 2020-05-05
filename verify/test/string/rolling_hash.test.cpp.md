@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/lib/string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

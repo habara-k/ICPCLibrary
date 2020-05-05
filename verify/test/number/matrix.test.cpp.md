@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/lib/number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
