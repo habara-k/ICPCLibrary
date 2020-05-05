@@ -20,8 +20,6 @@ struct RandomizedBinarySearchTree {
                 data(data) {}
     };
 
-    Node* root;
-
     RandomizedBinarySearchTree() : root(nullptr) {}
 
     /**
@@ -99,6 +97,8 @@ struct RandomizedBinarySearchTree {
     }
 
 protected:
+    Node* root;
+
     inline int size(Node* t) const { return t ? t->sz : 0; }
 
     Node* merge(Node *l, Node *r) {

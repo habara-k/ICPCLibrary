@@ -22,10 +22,6 @@ struct SegmentRBST {
     };
 
     using F = function<M(M,M)>;
-    const F f;
-    const M e;
-
-    Node* root;
 
     SegmentRBST(const F& f, M e) :
         f(f), e(e), root(nullptr) {}
@@ -115,6 +111,8 @@ struct SegmentRBST {
     }
 
 protected:
+    Node* root;
+
     inline int size(Node* t) const { return t ? t->sz : 0; }
     inline M sum(Node* t) const { return t ? t->sum : e; }
 
@@ -144,6 +142,9 @@ protected:
     }
 
 private:
+    const F f;
+    const M e;
+
     inline int xor128() {
         static int x = 123456789;
         static int y = 362436069;
