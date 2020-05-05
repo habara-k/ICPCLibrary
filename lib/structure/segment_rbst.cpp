@@ -7,6 +7,7 @@
  * モノイドが乗る. 区間取得をO(log n) で行う.
  * @author habara-k
  * @date 2020/05/05
+ * @details veirfy: https://code-festival-2014-exhibition-open.contest.atcoder.jp/tasks/code_festival_exhibition_b
  */
 
 template<typename M>

@@ -11,10 +11,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {
