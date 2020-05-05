@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#a2c5f8fc0f05060a960f2bd934b33f5f">test/geometry/2D_template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometry/2D_template/counter_clockwise.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-05 02:01:45+09:00
+    - Last commit date: 2020-05-06 01:41:24+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_C</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../../library/lib/geometry/2D_template.cpp.html"> <small>(lib/geometry/2D_template.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -106,10 +106,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {

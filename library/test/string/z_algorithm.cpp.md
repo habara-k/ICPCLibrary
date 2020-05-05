@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#e46c0047b1d14ef43eeaaf13f64d385f">test/string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/string/z_algorithm.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-06 01:41:24+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/abc141/tasks/abc141_e">https://atcoder.jp/contests/abc141/tasks/abc141_e</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -94,10 +94,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {

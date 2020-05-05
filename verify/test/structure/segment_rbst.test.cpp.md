@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/structure/segment_rbst.test.cpp
+# :x: test/structure/segment_rbst.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/segment_rbst.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-05 22:14:39+09:00
+    - Last commit date: 2020-05-06 01:41:24+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/structure/segment_rbst.cpp.html"> <small>(lib/structure/segment_rbst.cpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :x: <a href="../../../library/lib/structure/segment_rbst.cpp.html"> <small>(lib/structure/segment_rbst.cpp)</small></a>
+* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -100,10 +100,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {
@@ -175,6 +175,7 @@ int main() {
  * モノイドが乗る. 区間取得をO(log n) で行う.
  * @author habara-k
  * @date 2020/05/05
+ * @details veirfy: https://code-festival-2014-exhibition-open.contest.atcoder.jp/tasks/code_festival_exhibition_b
  */
 
 template<typename M>

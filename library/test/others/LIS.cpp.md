@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#387155223b8efcb396433364712bb3df">test/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/others/LIS.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-06 01:41:24+09:00
 
 
 * see: <a href="https://atcoder.jp/contests/tdpc/tasks/tdpc_target">https://atcoder.jp/contests/tdpc/tasks/tdpc_target</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../lib/others/LIS.cpp.html">lib/others/LIS.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -96,10 +96,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {

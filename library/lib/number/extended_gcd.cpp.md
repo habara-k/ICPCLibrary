@@ -25,31 +25,31 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/number/extended_gcd.cpp
+# :x: lib/number/extended_gcd.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/extended_gcd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-25 22:26:20+09:00
+    - Last commit date: 2020-05-06 01:41:24+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
+* :x: <a href="crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/number/crt.test.cpp.html">test/number/crt.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
+* :x: <a href="../../../verify/test/number/crt.test.cpp.html">test/number/crt.test.cpp</a>
+* :x: <a href="../../../verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 
 
 ## Code
@@ -88,10 +88,10 @@ using namespace std;
 #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
-#define all(x) (x).begin(),(x).end()
+#define ALL(x) (x).begin(),(x).end()
 
-#define dump(x) cerr<<#x<<" = "<<(x)<<endl
-#define debug(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
+#define DUMP(x) cerr<<#x<<" = "<<(x)<<endl
+#define DEBUG(x) cerr<<#x<<" = "<<(x)<<" (L"<<__LINE__<<")"<<endl;
 
 template<class T>
 ostream &operator<<(ostream &os, const vector <T> &v) {
