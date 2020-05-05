@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/structure/multi_set.test.cpp
+# :heavy_check_mark: test/structure/segment_rbst.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/structure/multi_set.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-05 20:20:45+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/structure/segment_rbst.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-05 22:14:39+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/structure/multi_set.cpp.html"> <small>(lib/structure/multi_set.cpp)</small></a>
-* :x: <a href="../../../library/lib/structure/randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
-* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/segment_rbst.cpp.html"> <small>(lib/structure/segment_rbst.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -48,21 +48,29 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include "../../lib/structure/multi_set.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508"
+
+#include "../../lib/structure/segment_rbst.cpp"
 
 int main() {
-    int Q; cin >> Q;
+    int n, q; cin >> n >> q;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) cin >> a[i];
 
-    MultiSet<int> tree;
+    SegmentRBST<int> tree([](int a,int b){return min(a,b);}, INF);
+    tree.build(a);
 
-    while (Q--) {
-        int t, x; cin >> t >> x;
-        if (t == 1) {
-            tree.insert_key(x);
+    while (q--) {
+        int x, y, z; cin >> x >> y >> z;
+        if (x == 0) {
+            int val = tree.erase(z);
+            tree.insert(y, val);
         }
-        else {
-            cout << tree[x-1] << endl;
-            tree.erase(x-1);
+        if (x == 1) {
+            cout << tree.query(y, z+1) << endl;
+        }
+        if (x == 2) {
+            tree.update(y, [&](int a){return z;});
         }
     }
 
@@ -75,6 +83,9 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+#line 1 "test/structure/segment_rbst.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508"
+
 #line 1 "lib/template.cpp"
 
 
@@ -155,36 +166,38 @@ int main() {
 */
 
 
-#line 2 "lib/structure/randomized_binary_search_tree.cpp"
+#line 2 "lib/structure/segment_rbst.cpp"
 
 /**
  * @brief
  * 列を管理する平衡二分木
  * 任意箇所の要素の更新・取得・挿入・削除をO(log n)で行う.
+ * モノイドが乗る. 区間取得をO(log n) で行う.
  * @author habara-k
  * @date 2020/05/05
  */
 
-template<typename T>
-struct RandomizedBinarySearchTree {
+template<typename M>
+struct SegmentRBST {
 
     struct Node {
         Node *lch, *rch;
         int sz;
-        T data;
-        Node(const T& data) :
+        M data, sum;
+        Node(const M& data) :
                 lch(nullptr), rch(nullptr), sz(1),
-                data(data) {}
+                data(data), sum(data) {}
     };
 
-    Node* root;
+    using F = function<M(M,M)>;
 
-    RandomizedBinarySearchTree() : root(nullptr) {}
+    SegmentRBST(const F& f, M e) :
+        f(f), e(e), root(nullptr) {}
 
     /**
     * @brief 配列で初期化する. O(n)
     */
-    void build(const vector<T>& v) { root = build(v, 0, v.size()); }
+    void build(const vector<M>& v) { root = build(v, 0, v.size()); }
 
     /**
     * @brief 木のサイズを返す. O(1)
@@ -203,7 +216,21 @@ struct RandomizedBinarySearchTree {
         auto p0 = split(root, i);
         auto p1 = split(p0.second, 1);
         p1.first->data = q(p1.first->data);
+        modify(p1.first);
         root = merge(p0.first, merge(p1.first, p1.second));
+    }
+
+    /**
+    * @brief 要素の取得を行う. O(log n)
+    * @param[in] a, b: 取得したい区間
+    * @return 取得した値
+    */
+    M query(int a, int b) {
+        auto p0 = split(root, a);
+        auto p1 = split(p0.second, b - a);
+        M ret = sum(p1.first);
+        root = merge(p0.first, merge(p1.first, p1.second));
+        return ret;
     }
 
     /**
@@ -211,12 +238,8 @@ struct RandomizedBinarySearchTree {
     * @param[in] i: 取得したい要素のindex
     * @return 取得した値
     */
-    T operator[](int i) {
-        auto p0 = split(root, i);
-        auto p1 = split(p0.second, 1);
-        T ret = p1.first->data;
-        root = merge(p0.first, merge(p1.first, p1.second));
-        return ret;
+    M operator[](int i) {
+        return query(i, i + 1);
     }
 
     /**
@@ -224,7 +247,7 @@ struct RandomizedBinarySearchTree {
     * @param[in] i: 挿入したいindex
     * @param[in] data: 挿入したい値
     */
-    void insert(int i, const T& data) {
+    void insert(int i, const M& data) {
         auto q = _new(data);
         auto p = split(root, i);
         root = merge(merge(p.first, q), p.second);
@@ -234,10 +257,10 @@ struct RandomizedBinarySearchTree {
     * @brief 要素の削除を行う. O(log n)
     * @param[in] i: 挿入したいindex
     */
-    T erase(int i) {
+    M erase(int i) {
         auto p = split(root, i);
         auto q = split(p.second, 1);
-        T ret = q.first->data;
+        M ret = q.first->data;
         root = merge(p.first, q.second);
         return ret;
     }
@@ -246,7 +269,7 @@ struct RandomizedBinarySearchTree {
     * @brief vector みたいに出力.
     */
     friend ostream& operator<<(ostream& os,
-                               RandomizedBinarySearchTree& tr) {
+                               SegmentRBST& tr) {
         os << "[";
         for (int i = 0; i < tr.size(); ++i) {
             if (i) os << " ";
@@ -256,7 +279,10 @@ struct RandomizedBinarySearchTree {
     }
 
 protected:
+    Node* root;
+
     inline int size(Node* t) const { return t ? t->sz : 0; }
+    inline M sum(Node* t) const { return t ? t->sum : e; }
 
     Node* merge(Node *l, Node *r) {
         if (!l) return r;
@@ -284,6 +310,9 @@ protected:
     }
 
 private:
+    const F f;
+    const M e;
+
     inline int xor128() {
         static int x = 123456789;
         static int y = 362436069;
@@ -298,88 +327,41 @@ private:
         return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
     }
 
-    Node* build(const vector<T>& v, int l, int r) {
+    Node* build(const vector<M>& v, int l, int r) {
         if (l + 1 >= r) return _new(v[l]);
         return merge(build(v, l, (l + r) >> 1),
                      build(v, (l + r) >> 1, r));
     }
 
-    inline Node* _new(const T& data) const { return new Node(data); }
+    inline Node* _new(const M& data) const { return new Node(data); }
 
     inline Node* modify(Node *t) {
         t->sz = size(t->lch) + size(t->rch) + 1;
+        t->sum = f(f(sum(t->lch), t->data), sum(t->rch));
         return t;
     }
 };
-#line 2 "lib/structure/multi_set.cpp"
-
-/**
- * @brief
- * 常に昇順にソートされた配列（マルチセット）
- * 任意箇所の要素の更新・取得・挿入・削除をO(log n)で行う.
- * 昇順を保ったまま値の挿入・削除をO(log n)で行う.
- * @author habara-k
- * @date 2020/05/05
- * @details verify: https://arc033.contest.atcoder.jp/tasks/arc033_3
- */
-
-template<typename T>
-struct MultiSet : RandomizedBinarySearchTree<T> {
-    using RBST = RandomizedBinarySearchTree<T>;
-    using Node = typename RBST::Node;
-
-    MultiSet() : RBST() {}
-
-    /**
-    * @brief 値の挿入を行う. O(log n)
-    * @param[in] key: 要素の値
-    */
-    void insert_key(const T& key) {
-        RBST::insert(lower_bound(this->root, key), key);
-    }
-
-    /**
-    * @brief 値の削除を行う. O(log n)
-    * @param[in] key: 要素の値
-    */
-    void erase_key(const T& key) {
-        if (count(this->root, key) == 0) return;
-        RBST::erase(lower_bound(this->root, key));
-    }
-
-private:
-    int lower_bound(Node *t, const T& key) {
-        if (!t) return 0;
-        if (key <= t->data) return lower_bound(t->lch, key);
-        return lower_bound(t->rch, key) + RBST::size(t->lch) + 1;
-    }
-
-    int upper_bound(Node *t, const T& key) {
-        if (!t) return 0;
-        if (key < t->data) return upper_bound(t->lch, key);
-        return upper_bound(t->rch, key) + RBST::size(t->lch) + 1;
-    }
-
-    int count(Node *t, const T& key) {
-        return upper_bound(t, key) - lower_bound(t, key);
-    }
-};
-
-#line 2 "test/structure/multi_set.test.cpp"
+#line 4 "test/structure/segment_rbst.test.cpp"
 
 int main() {
-    int Q; cin >> Q;
+    int n, q; cin >> n >> q;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) cin >> a[i];
 
-    MultiSet<int> tree;
+    SegmentRBST<int> tree([](int a,int b){return min(a,b);}, INF);
+    tree.build(a);
 
-    while (Q--) {
-        int t, x; cin >> t >> x;
-        if (t == 1) {
-            tree.insert_key(x);
+    while (q--) {
+        int x, y, z; cin >> x >> y >> z;
+        if (x == 0) {
+            int val = tree.erase(z);
+            tree.insert(y, val);
         }
-        else {
-            cout << tree[x-1] << endl;
-            tree.erase(x-1);
+        if (x == 1) {
+            cout << tree.query(y, z+1) << endl;
+        }
+        if (x == 2) {
+            tree.update(y, [&](int a){return z;});
         }
     }
 

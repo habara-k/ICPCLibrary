@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
-* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

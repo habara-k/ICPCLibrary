@@ -41,7 +41,7 @@ layout: default
 
 * :warning: <a href="../../lib/graph/maximum_clique.cpp.html">lib/graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="../../lib/graph/template.cpp.html">lib/graph/template.cpp</a>
-* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

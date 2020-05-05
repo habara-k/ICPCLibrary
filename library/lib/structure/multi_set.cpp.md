@@ -25,26 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x:  <small>(lib/structure/multi_set.cpp)</small>
+# :warning:  <small>(lib/structure/multi_set.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/structure/multi_set.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-05 20:20:45+09:00
+    - Last commit date: 2020-05-05 22:14:39+09:00
 
 
 
 
 ## Depends on
 
-* :x: <a href="randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../../verify/test/structure/multi_set.test.cpp.html">test/structure/multi_set.test.cpp</a>
+* :warning: <a href="randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -215,8 +210,6 @@ struct RandomizedBinarySearchTree {
                 data(data) {}
     };
 
-    Node* root;
-
     RandomizedBinarySearchTree() : root(nullptr) {}
 
     /**
@@ -294,6 +287,8 @@ struct RandomizedBinarySearchTree {
     }
 
 protected:
+    Node* root;
+
     inline int size(Node* t) const { return t ? t->sz : 0; }
 
     Node* merge(Node *l, Node *r) {

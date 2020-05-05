@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: lib/template.cpp
+# :heavy_check_mark: lib/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -66,10 +66,12 @@ layout: default
 * :heavy_check_mark: <a href="string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :warning: <a href="string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 * :heavy_check_mark: <a href="structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/lazy_segment_tree.cpp.html">遅延セグメント木 <small>(lib/structure/lazy_segment_tree.cpp)</small></a>
-* :x: <a href="structure/multi_set.cpp.html"> <small>(lib/structure/multi_set.cpp)</small></a>
+* :warning: <a href="structure/multi_set.cpp.html"> <small>(lib/structure/multi_set.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/persistent_segment_tree.cpp.html">完全永続セグメント木 <small>(lib/structure/persistent_segment_tree.cpp)</small></a>
-* :x: <a href="structure/randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
+* :warning: <a href="structure/randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
+* :heavy_check_mark: <a href="structure/segment_rbst.cpp.html"> <small>(lib/structure/segment_rbst.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/segment_tree.cpp.html">セグメント木 <small>(lib/structure/segment_tree.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
 * :heavy_check_mark: <a href="structure/weighted_union_find.cpp.html">lib/structure/weighted_union_find.cpp</a>
@@ -121,9 +123,10 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/number/matrix.test.cpp.html">test/number/matrix.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/structure/lazy_segment_rbst.test.cpp.html">test/structure/lazy_segment_rbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/lazy_segment_tree.test.cpp.html">test/structure/lazy_segment_tree.test.cpp</a>
-* :x: <a href="../../verify/test/structure/multi_set.test.cpp.html">test/structure/multi_set.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/persistent_segment_tree.test.cpp.html">test/structure/persistent_segment_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/structure/segment_rbst.test.cpp.html">test/structure/segment_rbst.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/segment_tree.test.cpp.html">test/structure/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/union_find.test.cpp.html">test/structure/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/structure/weighted_union_find.test.cpp.html">test/structure/weighted_union_find.test.cpp</a>
