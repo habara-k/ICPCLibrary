@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="randomized_binary_search_tree.cpp.html"> <small>(lib/structure/randomized_binary_search_tree.cpp)</small></a>
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

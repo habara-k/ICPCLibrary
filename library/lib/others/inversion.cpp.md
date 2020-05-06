@@ -38,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Required by

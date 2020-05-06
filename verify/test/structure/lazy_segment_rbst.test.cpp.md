@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/structure/lazy_segment_rbst.test.cpp
+# :heavy_check_mark: test/structure/lazy_segment_rbst.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
-* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

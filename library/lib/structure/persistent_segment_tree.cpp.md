@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: 完全永続セグメント木 <small>(lib/structure/persistent_segment_tree.cpp)</small>
+# :heavy_check_mark: 完全永続セグメント木 <small>(lib/structure/persistent_segment_tree.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/structure/persistent_segment_tree.test.cpp.html">test/structure/persistent_segment_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/structure/persistent_segment_tree.test.cpp.html">test/structure/persistent_segment_tree.test.cpp</a>
 
 
 ## Code

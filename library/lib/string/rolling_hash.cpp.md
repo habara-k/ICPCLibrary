@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: 文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small>
+# :heavy_check_mark: 文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
 
 
 ## Code

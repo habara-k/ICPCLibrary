@@ -39,8 +39,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="template.cpp.html">lib/graph/template.cpp</a>
-* :question: <a href="../structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../structure/union_find.cpp.html">lib/structure/union_find.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Verified with
