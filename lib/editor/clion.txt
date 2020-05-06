@@ -1,3 +1,5 @@
 // CMakeLists.txt
 
-set(CMAKE_CXX_FLAGS "-Wall -ftrapv")
+set(CMAKE_CXX_FLAGS "-Wuninitialized -ftrapv")
+// 初期化されていない変数をWarn
+// オーバーフロー検知
