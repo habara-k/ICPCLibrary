@@ -63,6 +63,7 @@ layout: default
 * :warning: <a href="library/lib/graph/lowlink.cpp.html">lib/graph/lowlink.cpp</a>
 * :warning: <a href="library/lib/graph/maximum_clique.cpp.html">lib/graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/primal_dual.cpp.html">lib/graph/primal_dual.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/re_rooting.cpp.html"> <small>(lib/graph/re_rooting.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/scc.cpp.html">lib/graph/scc.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :warning: <a href="library/lib/graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
@@ -79,7 +80,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
 * :heavy_check_mark: <a href="library/lib/number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
-* :heavy_check_mark: <a href="library/lib/number/mod.cpp.html">lib/number/mod.cpp</a>
+* :heavy_check_mark: <a href="library/lib/number/mod.cpp.html"> <small>(lib/number/mod.cpp)</small></a>
 
 
 <div id="2569b475fca6e8e7d428548d20016ff0"></div>
@@ -173,6 +174,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/kruskal.test.cpp.html">test/graph/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/lowest_common_ancestor.test.cpp.html">test/graph/lowest_common_ancestor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/primal_dual.test.cpp.html">test/graph/primal_dual.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/re_rooting.test.cpp.html">test/graph/re_rooting.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/scc.test.cpp.html">test/graph/scc.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/warshall_floyd.test.cpp.html">test/graph/warshall_floyd.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/number/Bell.test.cpp.html">test/number/Bell.test.cpp</a>
