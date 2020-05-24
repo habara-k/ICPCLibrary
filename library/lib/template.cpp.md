@@ -68,6 +68,7 @@ layout: default
 * :heavy_check_mark: <a href="string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :warning: <a href="string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 * :heavy_check_mark: <a href="structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :warning: <a href="structure/convex_hull_trick.cpp.html"> <small>(lib/structure/convex_hull_trick.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
 * :heavy_check_mark: <a href="structure/lazy_segment_tree.cpp.html">遅延セグメント木 <small>(lib/structure/lazy_segment_tree.cpp)</small></a>
 * :warning: <a href="structure/multi_set.cpp.html"> <small>(lib/structure/multi_set.cpp)</small></a>

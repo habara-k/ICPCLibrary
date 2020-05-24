@@ -105,6 +105,7 @@ layout: default
 ### lib/structure
 
 * :heavy_check_mark: <a href="library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :warning: <a href="library/lib/structure/convex_hull_trick.cpp.html"> <small>(lib/structure/convex_hull_trick.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/structure/lazy_segment_tree.cpp.html">遅延セグメント木 <small>(lib/structure/lazy_segment_tree.cpp)</small></a>
 * :warning: <a href="library/lib/structure/multi_set.cpp.html"> <small>(lib/structure/multi_set.cpp)</small></a>
