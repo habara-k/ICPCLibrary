@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/fft.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 00:21:46+09:00
+    - Last commit date: 2020-05-27 02:06:18+09:00
 
 
 
@@ -51,60 +51,62 @@ layout: default
 /**
 * @brief FFT
 * @author habara-k
-* @date 2020/05/19
-* @verify https://atcoder.jp/contests/atc001/submissions/13384565
+* @date 2020/05/27
+* @verify https://atcoder.jp/contests/atc001/submissions/13627626
 * @details 使い方
 *   e.g. 多項式の積
 *
-*   vector<complex<double>> a(n+1), b(n+1);
-*   auto A = FFT(a, 2*n+1).solve();
-*   auto B = FFT(b, 2*n+1).solve();
+*   vector<complex<double>> a(2*n+1), b(2*n+1);
+*
+*   auto A = FFT<double>(a).solve();
+*   auto B = FFT<double>(b).solve();
 *
 *   vector<complex<double>> C(A.size());
 *   REP(i, C.size()) C[i] = A[i] * B[i];
 *
-*   auto c = FFT(C, 2*n+1).solve(true);
+*   auto c = FFT<double>(C).solve(true);
 */
 
-struct FFT {
 
+template<typename T>
+struct FFT {
 
     /**
     * @brief コンストラクタ. O(n)
-    * @param[in] f_ 多項式の係数
-    * @param[in] n_ 必要な点の数
+    * @param[in] a_: 多項式の係数
     */
-    FFT(const vector<complex<double>>& f_, int n_) : f(f_), n(1) {
-        while (n < n_) n <<= 1;
-        f.resize(n);
+    FFT(const vector<complex<T>>& a_) : a(a_), n(1) {
+        while (n < a.size()) n <<= 1;
+        a.resize(n);
     }
 
     /**
     * @brief FFTの実行. O(nlog n)
-    * @param[in] inverse 逆変換のフラグ.
-    * @return f のFFT or inverse-FFT
+    * @param[in] inverse: 逆変換のフラグ.
+    * @return FFT or inverse-FFT
     */
-    vector<complex<double>> solve(bool inverse = false) {
+    vector<complex<T>> solve(bool inverse = false) {
         return fft(0, 0, inverse);
     }
 
 private:
-    vector<complex<double>> f;
+    vector<complex<T>> a;
     int n;
-    const double PI = acos(-1);
+    const T PI = acos(-1);
 
-    vector<complex<double>> fft(int d, int bit, bool inverse) {
+    vector<complex<T>> fft(int d, int bit, bool inverse) {
         int sz = n >> d;
-        if (sz == 1) return {f[bit] / (inverse ? (double)n : 1.0)};
+        if (sz == 1) return {a[bit] / (inverse ? static_cast<T>(n) : 1.0)};
 
-        auto F0 = fft(d+1, bit, inverse);
-        auto F1 = fft(d+1, bit | 1<<d, inverse);
-        vector<complex<double>> F(sz);
+        auto f0 = fft(d+1, bit, inverse);
+        auto f1 = fft(d+1, bit | 1<<d, inverse);
+        vector<complex<T>> f(sz);
         for (int i = 0; i < sz; ++i) {
-            F[i] = F0[i % (sz / 2)] +
-                    std::polar(1.0, 2*PI / sz * i * (inverse ? -1 : 1)) * F1[i % (sz / 2)];
+            f[i] = f0[i % (sz / 2)] +
+                   std::polar(1.0, 2*PI / sz * i * (inverse ? -1 : 1)) *
+                   f1[i % (sz / 2)];
         }
-        return F;
+        return f;
     }
 };
 
@@ -199,60 +201,62 @@ int main() {
 /**
 * @brief FFT
 * @author habara-k
-* @date 2020/05/19
-* @verify https://atcoder.jp/contests/atc001/submissions/13384565
+* @date 2020/05/27
+* @verify https://atcoder.jp/contests/atc001/submissions/13627626
 * @details 使い方
 *   e.g. 多項式の積
 *
-*   vector<complex<double>> a(n+1), b(n+1);
-*   auto A = FFT(a, 2*n+1).solve();
-*   auto B = FFT(b, 2*n+1).solve();
+*   vector<complex<double>> a(2*n+1), b(2*n+1);
+*
+*   auto A = FFT<double>(a).solve();
+*   auto B = FFT<double>(b).solve();
 *
 *   vector<complex<double>> C(A.size());
 *   REP(i, C.size()) C[i] = A[i] * B[i];
 *
-*   auto c = FFT(C, 2*n+1).solve(true);
+*   auto c = FFT<double>(C).solve(true);
 */
 
-struct FFT {
 
+template<typename T>
+struct FFT {
 
     /**
     * @brief コンストラクタ. O(n)
-    * @param[in] f_ 多項式の係数
-    * @param[in] n_ 必要な点の数
+    * @param[in] a_: 多項式の係数
     */
-    FFT(const vector<complex<double>>& f_, int n_) : f(f_), n(1) {
-        while (n < n_) n <<= 1;
-        f.resize(n);
+    FFT(const vector<complex<T>>& a_) : a(a_), n(1) {
+        while (n < a.size()) n <<= 1;
+        a.resize(n);
     }
 
     /**
     * @brief FFTの実行. O(nlog n)
-    * @param[in] inverse 逆変換のフラグ.
-    * @return f のFFT or inverse-FFT
+    * @param[in] inverse: 逆変換のフラグ.
+    * @return FFT or inverse-FFT
     */
-    vector<complex<double>> solve(bool inverse = false) {
+    vector<complex<T>> solve(bool inverse = false) {
         return fft(0, 0, inverse);
     }
 
 private:
-    vector<complex<double>> f;
+    vector<complex<T>> a;
     int n;
-    const double PI = acos(-1);
+    const T PI = acos(-1);
 
-    vector<complex<double>> fft(int d, int bit, bool inverse) {
+    vector<complex<T>> fft(int d, int bit, bool inverse) {
         int sz = n >> d;
-        if (sz == 1) return {f[bit] / (inverse ? (double)n : 1.0)};
+        if (sz == 1) return {a[bit] / (inverse ? static_cast<T>(n) : 1.0)};
 
-        auto F0 = fft(d+1, bit, inverse);
-        auto F1 = fft(d+1, bit | 1<<d, inverse);
-        vector<complex<double>> F(sz);
+        auto f0 = fft(d+1, bit, inverse);
+        auto f1 = fft(d+1, bit | 1<<d, inverse);
+        vector<complex<T>> f(sz);
         for (int i = 0; i < sz; ++i) {
-            F[i] = F0[i % (sz / 2)] +
-                    std::polar(1.0, 2*PI / sz * i * (inverse ? -1 : 1)) * F1[i % (sz / 2)];
+            f[i] = f0[i % (sz / 2)] +
+                   std::polar(1.0, 2*PI / sz * i * (inverse ? -1 : 1)) *
+                   f1[i % (sz / 2)];
         }
-        return F;
+        return f;
     }
 };
 
