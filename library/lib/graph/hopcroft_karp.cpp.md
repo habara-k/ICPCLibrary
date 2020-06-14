@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/hopcroft_karp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-06-14 10:29:43+09:00
 
 
 
@@ -59,7 +59,7 @@ layout: default
  * HopcroftKarp(二部グラフの最大マッチング)
  * O(|E| sqrt(|V|))
  * |最大マッチング| + |最小辺カバー| = |V|
- * |最大マッチング| = |最小点カバー|
+ * （二部グラフについて）|最大マッチング| = |最小点カバー|
  * |最大安定集合| + |最小点カバー| = |V|
  *
  * @author Md
@@ -239,7 +239,7 @@ using Graph = vector<vector<edge<T>>>;
  * HopcroftKarp(二部グラフの最大マッチング)
  * O(|E| sqrt(|V|))
  * |最大マッチング| + |最小辺カバー| = |V|
- * |最大マッチング| = |最小点カバー|
+ * （二部グラフについて）|最大マッチング| = |最小点カバー|
  * |最大安定集合| + |最小点カバー| = |V|
  *
  * @author Md
