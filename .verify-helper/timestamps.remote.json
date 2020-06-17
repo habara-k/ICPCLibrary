@@ -43,7 +43,7 @@
 "test/structure/lazy_segment_tree.test.cpp": "2020-05-06 01:41:24 +0900",
 "test/structure/persistent_segment_tree.test.cpp": "2020-05-06 01:41:24 +0900",
 "test/structure/segment_rbst.test.cpp": "2020-05-06 01:41:24 +0900",
-"test/structure/segment_tree.test.cpp": "2020-05-06 01:41:24 +0900",
+"test/structure/segment_tree.test.cpp": "2020-06-17 20:23:04 +0900",
 "test/structure/union_find.test.cpp": "2020-05-06 01:41:24 +0900",
 "test/structure/weighted_union_find.test.cpp": "2020-05-06 01:41:24 +0900"
 }
