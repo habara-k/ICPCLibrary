@@ -25,33 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/structure/binary_indexed_tree.cpp
+# :warning: test/structure/bit_range_add.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/structure/binary_indexed_tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+* category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/structure/bit_range_add.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-18 04:03:37+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
-
-
-## Required by
-
-* :warning: <a href="../others/inversion.cpp.html">lib/others/inversion.cpp</a>
-* :warning: <a href="bit_range_add.cpp.html">lib/structure/bit_range_add.cpp</a>
-* :warning: <a href="../../test/others/inversion.cpp.html">test/others/inversion.cpp</a>
-* :warning: <a href="../../test/structure/bit_range_add.cpp.html">test/structure/bit_range_add.cpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../../verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :warning: <a href="../../lib/structure/bit_range_add.cpp.html">lib/structure/bit_range_add.cpp</a>
+* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -59,30 +49,35 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include "../template.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp"
 
-template<typename T>
-struct BIT {
-    vector<T> bit;
-    int sz;
-    BIT(int n) : sz(n+1), bit(n+1) {}
-    void add(int i, T x) {
-        i += 1;
-        while (i < sz) { bit[i] += x; i += i & -i; }
-    }
-    T sum(int i) {
-        i += 1; T s = 0;
-        while (i > 0) { s += bit[i]; i -= i & -i; }
-        return s;
-    }
-};
+#include "../../lib/structure/bit_range_add.cpp"
 
+int main() {
+  int n, q; cin >> n >> q;
+  RangeAdd<ll> bit(n);
+  REP(_, q) {
+    int t; cin >> t;
+    if(t == 0) {
+      int l, r, x; cin >> l >> r >> x;
+      l--;
+      bit.add(l, r, x);
+    } else {
+      int i; cin >> i;
+      i--;
+      cout << bit.sum(i) - bit.sum(i-1) << endl;
+    }
+  }
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+#line 1 "test/structure/bit_range_add.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp"
+
 #line 1 "lib/template.cpp"
 
 
@@ -180,6 +175,51 @@ struct BIT {
         return s;
     }
 };
+#line 2 "lib/structure/bit_range_add.cpp"
+
+/**
+ * 区間add区間sum
+ */
+
+template<typename T>
+struct RangeAdd {
+  BIT<T> bit1, bit2;
+
+  RangeAdd(int n): bit1(BIT<T>(n+1)), bit2(BIT<T>(n+1)) {
+  }
+
+  // [l, r)にvalを加算
+  void add(int l, int r, T val) {
+    bit1.add(l, -l*val);
+    bit1.add(r, r*val);
+    bit2.add(l, val);
+    bit2.add(r, -val);
+  }
+
+  // [0, idx)の和を取得
+  T sum(int idx) {
+    idx++;
+    return bit1.sum(idx) + idx * bit2.sum(idx);
+  }
+};
+#line 4 "test/structure/bit_range_add.cpp"
+
+int main() {
+  int n, q; cin >> n >> q;
+  RangeAdd<ll> bit(n);
+  REP(_, q) {
+    int t; cin >> t;
+    if(t == 0) {
+      int l, r, x; cin >> l >> r >> x;
+      l--;
+      bit.add(l, r, x);
+    } else {
+      int i; cin >> i;
+      i--;
+      cout << bit.sum(i) - bit.sum(i-1) << endl;
+    }
+  }
+}
 
 ```
 {% endraw %}

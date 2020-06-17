@@ -105,6 +105,7 @@ layout: default
 ### lib/structure
 
 * :heavy_check_mark: <a href="library/lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
+* :warning: <a href="library/lib/structure/bit_range_add.cpp.html">lib/structure/bit_range_add.cpp</a>
 * :warning: <a href="library/lib/structure/convex_hull_trick.cpp.html"> <small>(lib/structure/convex_hull_trick.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/structure/lazy_segment_rbst.cpp.html"> <small>(lib/structure/lazy_segment_rbst.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/structure/lazy_segment_tree.cpp.html">遅延セグメント木 <small>(lib/structure/lazy_segment_tree.cpp)</small></a>
@@ -146,6 +147,13 @@ layout: default
 ### test/string
 
 * :warning: <a href="library/test/string/z_algorithm.cpp.html">test/string/z_algorithm.cpp</a>
+
+
+<div id="2c7aa83aa7981015c539598d29afdf98"></div>
+
+### test/structure
+
+* :warning: <a href="library/test/structure/bit_range_add.cpp.html">test/structure/bit_range_add.cpp</a>
 
 
 ## Verify Files
