@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2c7aa83aa7981015c539598d29afdf98">test/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/structure/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-06-17 20:23:04+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
@@ -56,11 +56,12 @@ int main() {
     int N, Q;
     cin >> N >> Q;
     SegmentTree<int> seg(N, [](int a,int b){return min(a,b);},
+            [](int a, int b){return b;},
             (1ll<<31)-1);
     while (Q--) {
         int T, X, Y;
         cin >> T >> X >> Y;
-        if (T == 0) seg.update(X, [&](int a){return Y;});
+        if(T == 0) seg.update(X, Y);
         else printf("%d\n", seg.query(X, Y + 1));
     }
 }
@@ -158,8 +159,8 @@ int main() {
 
 /**
 * @brief セグメント木
-* @author habara-k
-* @date ?
+* @author habara-k, Md
+* @date 2020/06/17
 */
 
 template<typename M>
@@ -168,20 +169,23 @@ struct SegmentTree {
     /**
     * @brief コンストラクタ. O(n)
     * @param[in] n セグ木のサイズ.
-    * @param[in] f モノイドの演算.
+    * @param[in] f モノイドの演算(query).
+    * @param[in] g モノイドの演算(update).
     * @param[in] e モノイドの単位元.
     * @details 使い方
-    *   e.g. Range Minimum
+    *   e.g. Update and Range Minimum
     *   SegmentTree<int> segt(
     *            n,
     *            [](int a,int b){ return min(a+b); },
+    *            [](int a, int b){ return b; },
     *            INF);
     *               // 全て単位元で初期化される.
     */
     SegmentTree(
             int n,
             const function<M(M,M)>& f,
-            const M& e) : n(n), f(f), e(e) {
+            const function<M(M, M)>& g,
+            const M& e) : n(n), f(f), g(g), e(e) {
         sz = 1;
         while (sz < n) sz <<= 1;
         data.assign(2 * sz, e);
@@ -204,25 +208,16 @@ struct SegmentTree {
     }
 
     /**
-    * @brief 指定した位置に更新クエリを実行する. O(log n)
-    * @param[in] k 位置k の要素に作用させる.
-    * @param[in] q 値x をq(x) で更新する.
-    * @details 使い方
-    *   e.g. Add Query
-    *   int i, x; // 位置i をx を足したい.
-    *   segt.update(i, [&](int a){ return a + x; });
-    *
-    *   e.g. Update Query
-    *   int i, x; // 位置i をx に更新したい.
-    *   segt.update(i, [&](int a){ return x; });
-    */
-    template<class UpdateQuery>
-    void update(int k, const UpdateQuery &q) {
-        k += sz;
-        data[k] = q(data[k]);
-        while (k >>= 1) {
-            data[k] = f(data[2 * k], data[2 * k + 1]);
-        }
+     * @brief 指定した位置に更新クエリを実行する O(log n)
+     * @param[in] idx 位置idxに作用させる
+     * @param[in] val 値xをg(data[idx+sz], val)で更新する
+     */
+    void update(int idx, M val) {
+      idx += sz;
+      data[idx] = g(data[idx], val);
+      while(idx >>= 1) {
+        data[idx] = f(data[2*idx], data[2*idx+1]);
+      }
     }
 
     /**
@@ -262,7 +257,7 @@ struct SegmentTree {
 private:
     int n, sz;
     vector<M> data;
-    const function<M(M,M)> f;
+    const function<M(M,M)> f, g;
     const M e;
 
     M query(int a, int b, int k, int l, int r) const {
@@ -282,11 +277,12 @@ int main() {
     int N, Q;
     cin >> N >> Q;
     SegmentTree<int> seg(N, [](int a,int b){return min(a,b);},
+            [](int a, int b){return b;},
             (1ll<<31)-1);
     while (Q--) {
         int T, X, Y;
         cin >> T >> X >> Y;
-        if (T == 0) seg.update(X, [&](int a){return Y;});
+        if(T == 0) seg.update(X, Y);
         else printf("%d\n", seg.query(X, Y + 1));
     }
 }
