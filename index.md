@@ -89,6 +89,7 @@ layout: default
 ### lib/others
 
 * :warning: <a href="library/lib/others/LIS.cpp.html">lib/others/LIS.cpp</a>
+* :warning: <a href="library/lib/others/dice.cpp.html">lib/others/dice.cpp</a>
 * :warning: <a href="library/lib/others/inversion.cpp.html">lib/others/inversion.cpp</a>
 
 
@@ -139,6 +140,7 @@ layout: default
 ### test/others
 
 * :warning: <a href="library/test/others/LIS.cpp.html">test/others/LIS.cpp</a>
+* :warning: <a href="library/test/others/dice.cpp.html">test/others/dice.cpp</a>
 * :warning: <a href="library/test/others/inversion.cpp.html">test/others/inversion.cpp</a>
 
 

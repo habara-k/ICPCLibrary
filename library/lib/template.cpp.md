@@ -64,6 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
 * :heavy_check_mark: <a href="number/mod.cpp.html"> <small>(lib/number/mod.cpp)</small></a>
 * :warning: <a href="others/LIS.cpp.html">lib/others/LIS.cpp</a>
+* :warning: <a href="others/dice.cpp.html">lib/others/dice.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">lib/others/inversion.cpp</a>
 * :heavy_check_mark: <a href="string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :warning: <a href="string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
@@ -82,6 +83,7 @@ layout: default
 * :warning: <a href="../test/graph/maximum_clique.cpp.html">test/graph/maximum_clique.cpp</a>
 * :warning: <a href="../test/graph/topological_sort.cpp.html">test/graph/topological_sort.cpp</a>
 * :warning: <a href="../test/others/LIS.cpp.html">test/others/LIS.cpp</a>
+* :warning: <a href="../test/others/dice.cpp.html">test/others/dice.cpp</a>
 * :warning: <a href="../test/others/inversion.cpp.html">test/others/inversion.cpp</a>
 * :warning: <a href="../test/string/z_algorithm.cpp.html">test/string/z_algorithm.cpp</a>
 * :warning: <a href="../test/structure/bit_range_add.cpp.html">test/structure/bit_range_add.cpp</a>
