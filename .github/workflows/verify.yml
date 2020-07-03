@@ -21,6 +21,11 @@ jobs:
         GH_PAT: ${{ secrets.GH_PAT }}
       run: oj-verify all
 
+    - name: Create live-template files
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: git checkout master && python3 clion/src/main.py
+
     - name: Create LeTeX file
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
