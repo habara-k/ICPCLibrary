@@ -22,9 +22,16 @@
 
 `*.test.cpp`に従うファイルは [Online Judge Verify Helper](https://github.com/kmyk/online-judge-verify-helper) が自動でテストしてくれる。
 
-- ### PDFコンパイル
+- ### LaTeXのPDF出力
 
 [Action](https://github.com/habara-k/ICPCLibrary/actions)でpassしてる最新のActionを開いて、Artifactsのmain.pdfを確認する。
+
+- ### CLionのライブテンプレート
+
+`clion/live_template/C_C__.xml`に生成される。
+
+Macだと`~/Library/Application Support/JetBrains/CLion2020.1/templates/C_C__.xml`のファイルをこれに置き換えれば動くはず。
+
 
 
 
