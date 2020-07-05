@@ -98,6 +98,7 @@ layout: default
 ### lib/string
 
 * :heavy_check_mark: <a href="library/lib/string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
+* :heavy_check_mark: <a href="library/lib/string/rolling_hash_2D.cpp.html">2次元文字列のハッシュ化 <small>(lib/string/rolling_hash_2D.cpp)</small></a>
 * :warning: <a href="library/lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 
 
@@ -199,6 +200,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/number/gauss_jordan.test.cpp.html">test/number/gauss_jordan.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/number/matrix.test.cpp.html">test/number/matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/string/rolling_hash_2D.test.cpp.html">test/string/rolling_hash_2D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/structure/lazy_segment_rbst.test.cpp.html">test/structure/lazy_segment_rbst.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/structure/lazy_segment_tree.test.cpp.html">test/structure/lazy_segment_tree.test.cpp</a>
