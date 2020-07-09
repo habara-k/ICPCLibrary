@@ -66,6 +66,7 @@ layout: default
 * :warning: <a href="others/LIS.cpp.html">lib/others/LIS.cpp</a>
 * :warning: <a href="others/dice.cpp.html">lib/others/dice.cpp</a>
 * :warning: <a href="others/inversion.cpp.html">lib/others/inversion.cpp</a>
+* :warning: <a href="string/manacher.cpp.html">文字列の各位置を中心とする回文長をO(|S|)で求める <small>(lib/string/manacher.cpp)</small></a>
 * :heavy_check_mark: <a href="string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :heavy_check_mark: <a href="string/rolling_hash_2D.cpp.html">2次元文字列のハッシュ化 <small>(lib/string/rolling_hash_2D.cpp)</small></a>
 * :warning: <a href="string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
