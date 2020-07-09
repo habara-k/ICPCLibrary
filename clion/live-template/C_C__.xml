@@ -144,6 +144,11 @@
       <option name="cpp" value="true" />
     </context>
   </template>
+  <template name="manacher" value="&#10;/*&#10; * @brief 文字列の各位置を中心とする回文長をO(|S|)で求める&#10; * @detail 偶数長の回文について同じことをしたいときははabcde -&gt; $a$b$c$d$e$ みたいな変換をして使う&#10; * @author Md&#10; * @date 2020/07/10&#10; */&#10;vi Manacher(string s) {&#10;  int c = 0, n = SZ(s); // c: すでに見つけた回文のうち、右端が最も右に有るようなもの&#10;  vi r(n, 1);&#10;  REP(i, n) {&#10;    int l = c - (i - c);&#10;    if(i + r[l] &lt; c + r[c]) { // 位置cの回文に位置lの回文が含まれていれば、r[l]とr[i]は一致する&#10;      r[i] = r[l];&#10;    } else {&#10;      int j = c + r[c] - i; // cに含まれている部分は大丈夫(そうでなければif節に行くはず&#10;      while(i - j &gt;= 0 &amp;&amp; i + j &lt; n &amp;&amp; s[i-j] == s[i+j]) ++j; // 愚直に求める&#10;      r[i] = j;&#10;      c = i;&#10;    }&#10;  }&#10;  return r;&#10;}&#10;" description="manacher" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
   <template name="z_algorithm" value="&#10;// GET A[i]: the longest common prefix size of S and S[i:n-1]&#10;template&lt;typename S&gt;&#10;void z_algorithm(const S&amp; s, vector&lt;int&gt;&amp; A) {&#10;    int n = s.size();&#10;    A.resize(n);&#10;    A[0] = n;&#10;    int i = 1, j = 0;&#10;    while (i &lt; n) {&#10;        while (i+j &lt; n &amp;&amp; s[j] == s[i+j]) ++j;&#10;        A[i] = j;&#10;        if (j == 0) { ++i; continue; }&#10;        int k = 1;&#10;        while (i+k &lt; n &amp;&amp; k+A[k] &lt; j) { A[i+k] = A[k]; ++k; }&#10;        i += k; j -= k;&#10;    }&#10;}&#10;" description="z_algorithm" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="cpp" value="true" />
