@@ -25,25 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x:  <small>(lib/number/ntt.cpp)</small>
+# :warning:  <small>(lib/number/ntt.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#12cd94d703d26487f7477e7dcce25e7f">lib/number</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/number/ntt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-11 00:14:30+09:00
+    - Last commit date: 2020-07-11 00:18:50+09:00
 
 
 
 
 ## Depends on
 
-* :question: <a href="../template.cpp.html">lib/template.cpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../../verify/test/number/ntt.test.cpp.html">test/number/ntt.test.cpp</a>
+* :heavy_check_mark: <a href="../template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
@@ -58,6 +53,7 @@ layout: default
  * Number Theoretic Transform
  * @author habara-k
  * @date 2020/07/11
+ * @verify https://atcoder.jp/contests/atc001/submissions/15125563
  */
 
 template<ll mod=998244353, ll primitive=3>
@@ -218,6 +214,7 @@ int main() {
  * Number Theoretic Transform
  * @author habara-k
  * @date 2020/07/11
+ * @verify https://atcoder.jp/contests/atc001/submissions/15125563
  */
 
 template<ll mod=998244353, ll primitive=3>

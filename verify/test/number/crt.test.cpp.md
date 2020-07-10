@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/lib/number/crt.cpp.html"> <small>(lib/number/crt.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/number/extended_gcd.cpp.html">lib/number/extended_gcd.cpp</a>
-* :question: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code
