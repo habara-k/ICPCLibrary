@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../lib/structure/binary_indexed_tree.cpp.html">lib/structure/binary_indexed_tree.cpp</a>
 * :warning: <a href="../../lib/structure/bit_range_add.cpp.html">lib/structure/bit_range_add.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

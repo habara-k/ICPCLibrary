@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../lib/others/dice.cpp.html">lib/others/dice.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

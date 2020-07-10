@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="../../lib/others/LIS.cpp.html">lib/others/LIS.cpp</a>
-* :heavy_check_mark: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="../../lib/template.cpp.html">lib/template.cpp</a>
 
 
 ## Code

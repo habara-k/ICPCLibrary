@@ -38,7 +38,7 @@ layout: default
 
 ### lib
 
-* :heavy_check_mark: <a href="library/lib/template.cpp.html">lib/template.cpp</a>
+* :question: <a href="library/lib/template.cpp.html">lib/template.cpp</a>
 
 
 <div id="7096d029078708cdbb96f2303d66dee8"></div>
@@ -82,6 +82,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/number/mod.cpp.html"> <small>(lib/number/mod.cpp)</small></a>
+* :x: <a href="library/lib/number/ntt.cpp.html"> <small>(lib/number/ntt.cpp)</small></a>
 
 
 <div id="2569b475fca6e8e7d428548d20016ff0"></div>
@@ -200,6 +201,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/number/extended_gcd.test.cpp.html">test/number/extended_gcd.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/number/gauss_jordan.test.cpp.html">test/number/gauss_jordan.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/number/matrix.test.cpp.html">test/number/matrix.test.cpp</a>
+* :x: <a href="verify/test/number/ntt.test.cpp.html">test/number/ntt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/string/rolling_hash.test.cpp.html">test/string/rolling_hash.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/string/rolling_hash_2D.test.cpp.html">test/string/rolling_hash_2D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/structure/binary_indexed_tree.test.cpp.html">test/structure/binary_indexed_tree.test.cpp</a>
