@@ -5,6 +5,7 @@
  * Number Theoretic Transform
  * @author habara-k
  * @date 2020/07/11
+ * @verify https://atcoder.jp/contests/atc001/submissions/15125563
  */
 
 template<ll mod=998244353, ll primitive=3>
