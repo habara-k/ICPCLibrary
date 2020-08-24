@@ -67,6 +67,18 @@ def insert_source_code(file):
             file.write('\lstinputlisting{../' + src_path + '}\n\n')
             continue
 
+
+        snippet_only = False
+        with open(src_path,'r') as src:
+
+            for row in src:
+                if re.match('#define SNIPPET_ONLY', row):
+                    snippet_only = True
+
+        if snippet_only:
+            continue
+
+
         dir = os.path.dirname(src_path)[len('lib/'):]
 
         if dir not in src_dirs:

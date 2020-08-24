@@ -64,6 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="number/gauss_jordan.cpp.html"> <small>(lib/number/gauss_jordan.cpp)</small></a>
 * :heavy_check_mark: <a href="number/matrix.cpp.html"> <small>(lib/number/matrix.cpp)</small></a>
 * :heavy_check_mark: <a href="number/mod.cpp.html"> <small>(lib/number/mod.cpp)</small></a>
+* :warning: <a href="number/modint.cpp.html">lib/number/modint.cpp</a>
 * :warning: <a href="number/ntt.cpp.html"> <small>(lib/number/ntt.cpp)</small></a>
 * :warning: <a href="others/LIS.cpp.html">lib/others/LIS.cpp</a>
 * :warning: <a href="others/dice.cpp.html">lib/others/dice.cpp</a>
