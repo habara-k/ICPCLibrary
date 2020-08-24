@@ -28,18 +28,21 @@
 
 - ### CLionのライブテンプレート
 
-`clion/live-template/C_C__.xml`に生成される。
 
-Macだと`~/Library/Application Support/JetBrains/CLion2020.1/templates/C_C__.xml`のファイルをこれに置き換えれば動くはず。
+[Action](https://github.com/habara-k/ICPCLibrary/actions)でpassしてる最新のActionを開いて、ArtifactsのC_C__.xmlをダウンロードする。
 
 
+Macだと`~/Library/Application Support/JetBrains/CLion2020.1/templates/C_C__.xml`
+Linuxだと `~/.config/JetBrains/CLion2020.2/templates/C_C__.xml`
+
+のファイルをこれに置き換える。
 
 
 ## Contribute
 
 - `lib` 以下にライブラリを書いてください。
 
--　`test` 以下にテストコードを書いてください。AOJは大体対応してるはず。書き方は既存のテストファイルを見てね
+- `test` 以下にテストコードを書いてください。AOJは大体対応してるはず。書き方は既存のテストファイルを見てね
 
 ## Coding規約
 
