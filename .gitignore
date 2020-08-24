@@ -2,6 +2,9 @@ a.out
 *.aux
 *.dvi
 *.log
+*.fdb_latexmk
+*.fls
+*.pdf
 .idea/
 tex/main.tex
-.verify-helper/timestamps.remote.json
+clion/C_C__.xml
