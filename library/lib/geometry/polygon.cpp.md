@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#7096d029078708cdbb96f2303d66dee8">lib/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometry/polygon.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-08-24 14:09:03+09:00
 
 
 
@@ -66,12 +66,7 @@ layout: default
  * @date 2020/05/05
  */
 
-// template {{{
-
 using Polygon = vector<Point>;
-
-// }}}
-
 
 /**
 * @brief 符号付き面積を求める(反時計回りで正).
@@ -180,6 +175,7 @@ Polygon convex_cut(const Polygon& U, const Line& l) {
     }
     return ret;
 }
+
 
 ```
 {% endraw %}
@@ -276,8 +272,6 @@ int main() {
  * @date 2020/05/05
  */
 
-// template {{{
-
 using Real = double;
 const Real PI = acos(-1);
 
@@ -300,17 +294,11 @@ struct Line {
 
 struct Segment : Line {
     Segment() {}
-    // Segment() = default;
 
     Segment(const Point& a, const Point& b) : Line(a, b) {}
 };
 
 inline bool eq(Real a, Real b) { return abs(b - a) < eps; }
-
-// }}}
-
-
-// utils {{{
 
 Real radian_to_degree(Real r) {
     return r * 180.0 / PI;
@@ -331,8 +319,6 @@ Real cross(const Point& a, const Point& b) {
 Real dot(const Point& a, const Point& b) {
     return a.real() * b.real() + a.imag() * b.imag();
 }
-
-// }}}
 
 
 /**
@@ -379,8 +365,6 @@ int ccw(const Point& a, Point b, Point c) {
 }
 
 
-// 交差 {{{
-
 /**
 * @brief 直線と点の交差判定
 */
@@ -420,10 +404,6 @@ Point crosspoint(const Line& l1, const Line& l2) {
     return (A * l1.b + B * l1.a) / (A + B);
 }
 
-// }}}
-
-
-// 距離 {{{
 
 /**
 * @brief 直線と点の距離
@@ -458,11 +438,6 @@ Real distance(const Segment& s1, const Segment& s2) {
                  distance(s2, s1.a), distance(s2, s1.b) });
 }
 
-// }}}
-
-
-
-// 円 {{{
 
 struct Circle {
     Point p;
@@ -550,7 +525,6 @@ vector<Line> common_tangent(const Circle& c1, const Circle& c2) {
     return lines;
 }
 
-// }}}
 #line 2 "lib/geometry/polygon.cpp"
 
 /**
@@ -560,12 +534,7 @@ vector<Line> common_tangent(const Circle& c1, const Circle& c2) {
  * @date 2020/05/05
  */
 
-// template {{{
-
 using Polygon = vector<Point>;
-
-// }}}
-
 
 /**
 * @brief 符号付き面積を求める(反時計回りで正).
@@ -674,6 +643,7 @@ Polygon convex_cut(const Polygon& U, const Line& l) {
     }
     return ret;
 }
+
 
 ```
 {% endraw %}

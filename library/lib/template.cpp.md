@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="geometry/2D_template.cpp.html"> <small>(lib/geometry/2D_template.cpp)</small></a>
+* :warning: <a href="geometry/3D_template.cpp.html">lib/geometry/3D_template.cpp</a>
 * :heavy_check_mark: <a href="geometry/polygon.cpp.html"> <small>(lib/geometry/polygon.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="graph/dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>

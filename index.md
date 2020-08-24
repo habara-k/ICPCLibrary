@@ -34,6 +34,13 @@ layout: default
 
 ## Library Files
 
+<div id="ed6a026ddead4378a6f388dc9d849bf0"></div>
+
+### clion/src
+
+* :warning: <a href="library/clion/src/main.py.html">clion/src/main.py</a>
+
+
 <div id="e8acc63b1e238f3255c900eed37254b8"></div>
 
 ### lib
@@ -46,6 +53,7 @@ layout: default
 ### lib/geometry
 
 * :heavy_check_mark: <a href="library/lib/geometry/2D_template.cpp.html"> <small>(lib/geometry/2D_template.cpp)</small></a>
+* :warning: <a href="library/lib/geometry/3D_template.cpp.html">lib/geometry/3D_template.cpp</a>
 * :heavy_check_mark: <a href="library/lib/geometry/polygon.cpp.html"> <small>(lib/geometry/polygon.cpp)</small></a>
 
 
@@ -159,6 +167,13 @@ layout: default
 ### test/structure
 
 * :warning: <a href="library/test/structure/bit_range_add.cpp.html">test/structure/bit_range_add.cpp</a>
+
+
+<div id="a027bd23603dcb83d224b0c0ea5ce216"></div>
+
+### tex/src
+
+* :warning: <a href="library/tex/src/main.py.html">tex/src/main.py</a>
 
 
 ## Verify Files

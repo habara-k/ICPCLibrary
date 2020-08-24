@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#a2c5f8fc0f05060a960f2bd934b33f5f">test/geometry/2D_template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometry/2D_template/tangent.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-08-24 14:09:03+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_F">https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_F</a>
@@ -171,8 +171,6 @@ int main() {
  * @date 2020/05/05
  */
 
-// template {{{
-
 using Real = double;
 const Real PI = acos(-1);
 
@@ -195,17 +193,11 @@ struct Line {
 
 struct Segment : Line {
     Segment() {}
-    // Segment() = default;
 
     Segment(const Point& a, const Point& b) : Line(a, b) {}
 };
 
 inline bool eq(Real a, Real b) { return abs(b - a) < eps; }
-
-// }}}
-
-
-// utils {{{
 
 Real radian_to_degree(Real r) {
     return r * 180.0 / PI;
@@ -226,8 +218,6 @@ Real cross(const Point& a, const Point& b) {
 Real dot(const Point& a, const Point& b) {
     return a.real() * b.real() + a.imag() * b.imag();
 }
-
-// }}}
 
 
 /**
@@ -274,8 +264,6 @@ int ccw(const Point& a, Point b, Point c) {
 }
 
 
-// 交差 {{{
-
 /**
 * @brief 直線と点の交差判定
 */
@@ -315,10 +303,6 @@ Point crosspoint(const Line& l1, const Line& l2) {
     return (A * l1.b + B * l1.a) / (A + B);
 }
 
-// }}}
-
-
-// 距離 {{{
 
 /**
 * @brief 直線と点の距離
@@ -353,11 +337,6 @@ Real distance(const Segment& s1, const Segment& s2) {
                  distance(s2, s1.a), distance(s2, s1.b) });
 }
 
-// }}}
-
-
-
-// 円 {{{
 
 struct Circle {
     Point p;
@@ -445,7 +424,6 @@ vector<Line> common_tangent(const Circle& c1, const Circle& c2) {
     return lines;
 }
 
-// }}}
 #line 5 "test/geometry/2D_template/tangent.test.cpp"
 
 int main()
