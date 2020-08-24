@@ -32,8 +32,8 @@
 [Action](https://github.com/habara-k/ICPCLibrary/actions)でpassしてる最新のActionを開いて、ArtifactsのC_C__.xmlをダウンロードする。
 
 
-Macだと`~/Library/Application Support/JetBrains/CLion2020.1/templates/C_C__.xml`
-Linuxだと `~/.config/JetBrains/CLion2020.2/templates/C_C__.xml`
+- Macだと`~/Library/Application Support/JetBrains/CLion2020.1/templates/C_C__.xml`
+- Linuxだと `~/.config/JetBrains/CLion2020.2/templates/C_C__.xml`
 
 のファイルをこれに置き換える。
 
