@@ -11,7 +11,7 @@ def find_all_files(directory):
 
 
 def create_live_template():
-    LIVE_TEMPLATE_FILE = 'clion/live-template/C_C__.xml'
+    LIVE_TEMPLATE_FILE = 'clion/C_C__.xml'
 
     with open(LIVE_TEMPLATE_FILE,'w') as file:
         file.write('<templateSet group="C/C++">\n')

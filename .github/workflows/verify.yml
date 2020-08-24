@@ -26,6 +26,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: git checkout master && python3 clion/src/main.py
 
+    - name: Upload live-template
+      uses: actions/upload-artifact@master
+      with:
+        name: C_C__.xml
+        path: clion/C_C__.xml
+      if: always()
+
     - name: Create LeTeX file
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
