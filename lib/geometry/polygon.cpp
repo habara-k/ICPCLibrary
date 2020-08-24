@@ -7,12 +7,7 @@
  * @date 2020/05/05
  */
 
-// template {{{
-
 using Polygon = vector<Point>;
-
-// }}}
-
 
 /**
 * @brief 符号付き面積を求める(反時計回りで正).
@@ -121,3 +116,4 @@ Polygon convex_cut(const Polygon& U, const Line& l) {
     }
     return ret;
 }
+
