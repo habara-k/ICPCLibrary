@@ -1,5 +1,7 @@
 #include "../template.cpp"
 
+#define SNIPPET_ONLY
+
 template<int64_t mod>
 class modint {
     int64_t x;
