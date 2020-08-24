@@ -72,7 +72,7 @@ layout: default
 * :warning: <a href="library/lib/graph/maximum_clique.cpp.html">lib/graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/primal_dual.cpp.html">lib/graph/primal_dual.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/re_rooting.cpp.html"> <small>(lib/graph/re_rooting.cpp)</small></a>
-* :heavy_check_mark: <a href="library/lib/graph/scc.cpp.html">lib/graph/scc.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/scc.cpp.html"> <small>(lib/graph/scc.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :warning: <a href="library/lib/graph/topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="library/lib/graph/twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>

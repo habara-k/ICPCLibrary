@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/graph/scc.cpp
+# :heavy_check_mark:  <small>(lib/graph/scc.cpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/scc.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-08-24 14:33:03+09:00
 
 
 
@@ -54,98 +54,69 @@ layout: default
 ```cpp
 #include "template.cpp"
 
-template<typename T>
-struct SCC {
-    int sz, cnt, num;
-    vi post, comp;
-    vector<pair<int, int>> vp;
-    vector<bool> sel;
-    Graph<T> revg;
+/**
+ * @brief
+ * 強連結成分分解
+ * @author habara-k
+ * @date 2020/08
+ *
+ * @param[in] g グラフ
+ *
+ * @details
+ * comp: vertex -> component_id
+ * graph: graph of components
+ */
 
-    SCC(const Graph<T> &g) {
-        sz = g.size();
-        cnt = 0;
-        num = 0;
-        post.resize(sz, -1);
-        comp.resize(sz, -1);
-        sel.resize(sz, false);
-        revg.resize(sz);
-    }
+struct StronglyConnectedComponents {
+    int n;
+    vector<vector<int>> g, rg, graph;
+    vector<int> ord, used, comp;
 
-    void build(const Graph<T> &g) {
-        for(int i=0;i<sz;++i) {
-            if(sel[i]) continue;
-            sel[i] = true;
-            dfs1(g, i);
-        }
-
-        rev(g, revg);
-
-        for(int i=0;i<sz;++i) {
-            vp.emplace_back(make_pair(post[i], i));
-        }
-        sort(vp.begin(), vp.end());
-        reverse(vp.begin(), vp.end());
-        sel.clear();
-        sel.resize(sz, false);
-        for(int i=0;i<sz;++i) {
-            if(sel[vp[i].second]) continue;
-            sel[vp[i].second] = true;
-            comp[vp[i].second] = num;
-            dfs2(revg, vp[i].second);
-            num++;
-        }
-    }
-
-    vi get_comp() {return comp;}
-
-    Graph<T> build_graph(const Graph<T> &g) {
-        build(g);
-        vector<set<int>> s(sz);
-        Graph<T> res(sz);
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                s[comp[i]].insert(comp[g[i][j].to]);
-            }
-        }
-        for(int i=0;i<sz;++i) {
-            for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
-            }
-        }
-        return res;
-    }
-
-    void dfs1(const Graph<T> &g, int now) {
-        for(int i=0;i<(int)(g[now].size());++i) {
-            int nxt = g[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            dfs1(g, nxt);
-        }
-        post[now] = cnt;
-        cnt++;
-    }
-
-    void rev(const Graph<T> &g, Graph<T> &revg) {
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                revg[g[i][j].to].push_back({
-                        g[i][j].to, g[i][j].src, g[i][j].cost});
+    StronglyConnectedComponents(const vector<vector<int>>& g) :
+            n(g.size()), g(g), rg(n), used(n), comp(n, -1)
+    {
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                rg[to].push_back(i);
             }
         }
     }
 
-    void dfs2(const Graph<T> &revg, int now) {
-        for(int i=0;i<(int)(revg[now].size());++i) {
-            int nxt = revg[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            comp[nxt] = num;
-            dfs2(revg, nxt);
+    void build() {
+        for (int i = 0; i < n; ++i) dfs(i);
+        reverse(ord.begin(), ord.end());
+        int ptr = 0;
+        for (int i : ord) if (comp[i] == -1) rdfs(i, ptr), ptr++;
+
+        graph.resize(ptr);
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                int x = comp[i], y = comp[to];
+                if (x == y) continue;
+                graph[x].push_back(y);
+            }
         }
+        for (auto& v : graph) {
+            sort(v.begin(), v.end());
+            v.erase(unique(v.begin(), v.end()), v.end());
+        }
+    }
+
+private:
+    void dfs(int idx) {
+        if (used[idx]) return;
+        used[idx] = true;
+        for (int to : g[idx]) dfs(to);
+        ord.push_back(idx);
+    }
+
+    void rdfs(int idx, int cnt) {
+        if (comp[idx] != -1) return;
+        comp[idx] = cnt;
+        for (int to : rg[idx]) rdfs(to, cnt);
     }
 };
+
 
 ```
 {% endraw %}
@@ -251,98 +222,69 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "lib/graph/scc.cpp"
 
-template<typename T>
-struct SCC {
-    int sz, cnt, num;
-    vi post, comp;
-    vector<pair<int, int>> vp;
-    vector<bool> sel;
-    Graph<T> revg;
+/**
+ * @brief
+ * 強連結成分分解
+ * @author habara-k
+ * @date 2020/08
+ *
+ * @param[in] g グラフ
+ *
+ * @details
+ * comp: vertex -> component_id
+ * graph: graph of components
+ */
 
-    SCC(const Graph<T> &g) {
-        sz = g.size();
-        cnt = 0;
-        num = 0;
-        post.resize(sz, -1);
-        comp.resize(sz, -1);
-        sel.resize(sz, false);
-        revg.resize(sz);
-    }
+struct StronglyConnectedComponents {
+    int n;
+    vector<vector<int>> g, rg, graph;
+    vector<int> ord, used, comp;
 
-    void build(const Graph<T> &g) {
-        for(int i=0;i<sz;++i) {
-            if(sel[i]) continue;
-            sel[i] = true;
-            dfs1(g, i);
-        }
-
-        rev(g, revg);
-
-        for(int i=0;i<sz;++i) {
-            vp.emplace_back(make_pair(post[i], i));
-        }
-        sort(vp.begin(), vp.end());
-        reverse(vp.begin(), vp.end());
-        sel.clear();
-        sel.resize(sz, false);
-        for(int i=0;i<sz;++i) {
-            if(sel[vp[i].second]) continue;
-            sel[vp[i].second] = true;
-            comp[vp[i].second] = num;
-            dfs2(revg, vp[i].second);
-            num++;
-        }
-    }
-
-    vi get_comp() {return comp;}
-
-    Graph<T> build_graph(const Graph<T> &g) {
-        build(g);
-        vector<set<int>> s(sz);
-        Graph<T> res(sz);
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                s[comp[i]].insert(comp[g[i][j].to]);
-            }
-        }
-        for(int i=0;i<sz;++i) {
-            for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
-            }
-        }
-        return res;
-    }
-
-    void dfs1(const Graph<T> &g, int now) {
-        for(int i=0;i<(int)(g[now].size());++i) {
-            int nxt = g[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            dfs1(g, nxt);
-        }
-        post[now] = cnt;
-        cnt++;
-    }
-
-    void rev(const Graph<T> &g, Graph<T> &revg) {
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                revg[g[i][j].to].push_back({
-                        g[i][j].to, g[i][j].src, g[i][j].cost});
+    StronglyConnectedComponents(const vector<vector<int>>& g) :
+            n(g.size()), g(g), rg(n), used(n), comp(n, -1)
+    {
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                rg[to].push_back(i);
             }
         }
     }
 
-    void dfs2(const Graph<T> &revg, int now) {
-        for(int i=0;i<(int)(revg[now].size());++i) {
-            int nxt = revg[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            comp[nxt] = num;
-            dfs2(revg, nxt);
+    void build() {
+        for (int i = 0; i < n; ++i) dfs(i);
+        reverse(ord.begin(), ord.end());
+        int ptr = 0;
+        for (int i : ord) if (comp[i] == -1) rdfs(i, ptr), ptr++;
+
+        graph.resize(ptr);
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                int x = comp[i], y = comp[to];
+                if (x == y) continue;
+                graph[x].push_back(y);
+            }
         }
+        for (auto& v : graph) {
+            sort(v.begin(), v.end());
+            v.erase(unique(v.begin(), v.end()), v.end());
+        }
+    }
+
+private:
+    void dfs(int idx) {
+        if (used[idx]) return;
+        used[idx] = true;
+        for (int to : g[idx]) dfs(to);
+        ord.push_back(idx);
+    }
+
+    void rdfs(int idx, int cnt) {
+        if (comp[idx] != -1) return;
+        comp[idx] = cnt;
+        for (int to : rg[idx]) rdfs(to, cnt);
     }
 };
+
 
 ```
 {% endraw %}

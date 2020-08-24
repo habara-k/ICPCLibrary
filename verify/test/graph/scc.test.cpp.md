@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/scc.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 01:41:24+09:00
+    - Last commit date: 2020-08-24 14:43:53+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/scc.cpp.html">lib/graph/scc.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/scc.cpp.html"> <small>(lib/graph/scc.cpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/lib/graph/template.cpp.html">lib/graph/template.cpp</a>
 * :heavy_check_mark: <a href="../../../library/lib/template.cpp.html">lib/template.cpp</a>
 
@@ -56,18 +56,20 @@ layout: default
 int main() {
     int V, E, Q;
     cin >> V >> E;
-    Graph<int> g(V);
-    for (int i = 0; i < E; i++) {
+    vector<vector<int>> G(V);
+    for (int i = 0; i < E; ++i) {
         int a, b; cin >> a >> b;
-        g[a].push_back({a, b, 0});
+        G[a].push_back(b);
     }
-    SCC<int> scc(g);
-    scc.build(g);
-    vector<int> comp = scc.get_comp();
+
+    StronglyConnectedComponents scc(G);
+    scc.build();
+
     cin >> Q;
     while (Q--) {
-        int a, b; cin >> a >> b;
-        puts(comp[a] == comp[b] ? "1" : "0");
+        int a, b;
+        cin >> a >> b;
+        cout << (scc.comp[a] == scc.comp[b] ? "1" : "0") << endl;
     }
 }
 
@@ -178,115 +180,88 @@ using Graph = vector<vector<edge<T>>>;
 
 #line 2 "lib/graph/scc.cpp"
 
-template<typename T>
-struct SCC {
-    int sz, cnt, num;
-    vi post, comp;
-    vector<pair<int, int>> vp;
-    vector<bool> sel;
-    Graph<T> revg;
+/**
+ * @brief
+ * 強連結成分分解
+ * @author habara-k
+ * @date 2020/08
+ *
+ * @param[in] g グラフ
+ *
+ * @details
+ * comp: vertex -> component_id
+ * graph: graph of components
+ */
 
-    SCC(const Graph<T> &g) {
-        sz = g.size();
-        cnt = 0;
-        num = 0;
-        post.resize(sz, -1);
-        comp.resize(sz, -1);
-        sel.resize(sz, false);
-        revg.resize(sz);
-    }
+struct StronglyConnectedComponents {
+    int n;
+    vector<vector<int>> g, rg, graph;
+    vector<int> ord, used, comp;
 
-    void build(const Graph<T> &g) {
-        for(int i=0;i<sz;++i) {
-            if(sel[i]) continue;
-            sel[i] = true;
-            dfs1(g, i);
-        }
-
-        rev(g, revg);
-
-        for(int i=0;i<sz;++i) {
-            vp.emplace_back(make_pair(post[i], i));
-        }
-        sort(vp.begin(), vp.end());
-        reverse(vp.begin(), vp.end());
-        sel.clear();
-        sel.resize(sz, false);
-        for(int i=0;i<sz;++i) {
-            if(sel[vp[i].second]) continue;
-            sel[vp[i].second] = true;
-            comp[vp[i].second] = num;
-            dfs2(revg, vp[i].second);
-            num++;
-        }
-    }
-
-    vi get_comp() {return comp;}
-
-    Graph<T> build_graph(const Graph<T> &g) {
-        build(g);
-        vector<set<int>> s(sz);
-        Graph<T> res(sz);
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                s[comp[i]].insert(comp[g[i][j].to]);
-            }
-        }
-        for(int i=0;i<sz;++i) {
-            for(auto j: s[i]) {
-                if(i != j) res[i].push_back(edge<int>({i, j, 1}));
-            }
-        }
-        return res;
-    }
-
-    void dfs1(const Graph<T> &g, int now) {
-        for(int i=0;i<(int)(g[now].size());++i) {
-            int nxt = g[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            dfs1(g, nxt);
-        }
-        post[now] = cnt;
-        cnt++;
-    }
-
-    void rev(const Graph<T> &g, Graph<T> &revg) {
-        for(int i=0;i<sz;++i) {
-            for(int j=0;j<(int)(g[i].size());++j) {
-                revg[g[i][j].to].push_back({
-                        g[i][j].to, g[i][j].src, g[i][j].cost});
+    StronglyConnectedComponents(const vector<vector<int>>& g) :
+            n(g.size()), g(g), rg(n), used(n), comp(n, -1)
+    {
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                rg[to].push_back(i);
             }
         }
     }
 
-    void dfs2(const Graph<T> &revg, int now) {
-        for(int i=0;i<(int)(revg[now].size());++i) {
-            int nxt = revg[now][i].to;
-            if(sel[nxt]) continue;
-            sel[nxt] = true;
-            comp[nxt] = num;
-            dfs2(revg, nxt);
+    void build() {
+        for (int i = 0; i < n; ++i) dfs(i);
+        reverse(ord.begin(), ord.end());
+        int ptr = 0;
+        for (int i : ord) if (comp[i] == -1) rdfs(i, ptr), ptr++;
+
+        graph.resize(ptr);
+        for (int i = 0; i < n; ++i) {
+            for (int to : g[i]) {
+                int x = comp[i], y = comp[to];
+                if (x == y) continue;
+                graph[x].push_back(y);
+            }
         }
+        for (auto& v : graph) {
+            sort(v.begin(), v.end());
+            v.erase(unique(v.begin(), v.end()), v.end());
+        }
+    }
+
+private:
+    void dfs(int idx) {
+        if (used[idx]) return;
+        used[idx] = true;
+        for (int to : g[idx]) dfs(to);
+        ord.push_back(idx);
+    }
+
+    void rdfs(int idx, int cnt) {
+        if (comp[idx] != -1) return;
+        comp[idx] = cnt;
+        for (int to : rg[idx]) rdfs(to, cnt);
     }
 };
+
 #line 4 "test/graph/scc.test.cpp"
 
 int main() {
     int V, E, Q;
     cin >> V >> E;
-    Graph<int> g(V);
-    for (int i = 0; i < E; i++) {
+    vector<vector<int>> G(V);
+    for (int i = 0; i < E; ++i) {
         int a, b; cin >> a >> b;
-        g[a].push_back({a, b, 0});
+        G[a].push_back(b);
     }
-    SCC<int> scc(g);
-    scc.build(g);
-    vector<int> comp = scc.get_comp();
+
+    StronglyConnectedComponents scc(G);
+    scc.build();
+
     cin >> Q;
     while (Q--) {
-        int a, b; cin >> a >> b;
-        puts(comp[a] == comp[b] ? "1" : "0");
+        int a, b;
+        cin >> a >> b;
+        cout << (scc.comp[a] == scc.comp[b] ? "1" : "0") << endl;
     }
 }
 

@@ -51,7 +51,7 @@ layout: default
 * :warning: <a href="lowlink.cpp.html">lib/graph/lowlink.cpp</a>
 * :warning: <a href="maximum_clique.cpp.html">lib/graph/maximum_clique.cpp</a>
 * :heavy_check_mark: <a href="primal_dual.cpp.html">lib/graph/primal_dual.cpp</a>
-* :heavy_check_mark: <a href="scc.cpp.html">lib/graph/scc.cpp</a>
+* :heavy_check_mark: <a href="scc.cpp.html"> <small>(lib/graph/scc.cpp)</small></a>
 * :warning: <a href="topological_sort.cpp.html">lib/graph/topological_sort.cpp</a>
 * :warning: <a href="twoconnectedcomponents.cpp.html">lib/graph/twoconnectedcomponents.cpp</a>
 * :heavy_check_mark: <a href="warshall_floyd.cpp.html"> <small>(lib/graph/warshall_floyd.cpp)</small></a>
