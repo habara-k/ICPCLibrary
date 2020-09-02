@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#2569b475fca6e8e7d428548d20016ff0">lib/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/others/enumerate_bit.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-03 08:17:41+09:00
+    - Last commit date: 2020-09-03 08:26:44+09:00
 
 
 
@@ -41,7 +41,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 集合Sの部分集合を列挙 (SとTを列挙するときにこれをつかうと4^nから3^nになる）
+for(int T=S; ;T = (T - 1) & S) {
+  // hoge
+  if(T == 0) break;
+}
 
+// n個からk個えらんだ集合を列挙
+for (int x = (1 << k) - 1; x < (1 << n); ) {
+    ...
+    int t = x | (x - 1);
+    x = (t + 1) | (((~ t & - ~ t) - 1) >> (__builtin_ctz(x) + 1));
+}
 
 ```
 {% endraw %}
@@ -50,7 +61,18 @@ layout: default
 {% raw %}
 ```cpp
 #line 1 "lib/others/enumerate_bit.cpp"
+// 集合Sの部分集合を列挙 (SとTを列挙するときにこれをつかうと4^nから3^nになる）
+for(int T=S; ;T = (T - 1) & S) {
+  // hoge
+  if(T == 0) break;
+}
 
+// n個からk個えらんだ集合を列挙
+for (int x = (1 << k) - 1; x < (1 << n); ) {
+    ...
+    int t = x | (x - 1);
+    x = (t + 1) | (((~ t & - ~ t) - 1) >> (__builtin_ctz(x) + 1));
+}
 
 ```
 {% endraw %}
