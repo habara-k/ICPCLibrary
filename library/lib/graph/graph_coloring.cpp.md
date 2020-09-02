@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/graph_coloring.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-02 09:34:59+09:00
+    - Last commit date: 2020-09-02 10:27:46+09:00
 
 
 
@@ -44,6 +44,9 @@ layout: default
 // https://ei1333.github.io/luzhiled/snippets/graph/chromatic-number.html
 // ↑のものです
 // 追加: Md
+
+template<typename T>
+using Matrix<T> = vector<vector<T>>;
 
 int chromatic_number(const Matrix< bool > &g) {
   int N = (int) g.size();
@@ -85,6 +88,9 @@ int chromatic_number(const Matrix< bool > &g) {
 // https://ei1333.github.io/luzhiled/snippets/graph/chromatic-number.html
 // ↑のものです
 // 追加: Md
+
+template<typename T>
+using Matrix<T> = vector<vector<T>>;
 
 int chromatic_number(const Matrix< bool > &g) {
   int N = (int) g.size();
