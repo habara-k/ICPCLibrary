@@ -21,7 +21,6 @@ struct RangeAdd {
 
   // [0, idx)の和を取得
   T sum(int idx) {
-    idx++;
     return bit1.sum(idx) + idx * bit2.sum(idx);
   }
 };
