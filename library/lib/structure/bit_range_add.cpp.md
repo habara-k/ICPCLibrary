@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#c4d905b3311a5371af1ce28a5d3ead13">lib/structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/structure/bit_range_add.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-18 04:03:37+09:00
+    - Last commit date: 2020-09-02 09:09:59+09:00
 
 
 
@@ -75,10 +75,10 @@ struct RangeAdd {
 
   // [0, idx)の和を取得
   T sum(int idx) {
-    idx++;
     return bit1.sum(idx) + idx * bit2.sum(idx);
   }
 };
+
 ```
 {% endraw %}
 
@@ -205,7 +205,6 @@ struct RangeAdd {
 
   // [0, idx)の和を取得
   T sum(int idx) {
-    idx++;
     return bit1.sum(idx) + idx * bit2.sum(idx);
   }
 };
