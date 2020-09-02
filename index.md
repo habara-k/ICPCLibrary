@@ -64,6 +64,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/graph/bfs01.cpp.html"> <small>(lib/graph/bfs01.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/dijkstra.cpp.html"> <small>(lib/graph/dijkstra.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/dinic.cpp.html"> <small>(lib/graph/dinic.cpp)</small></a>
+* :warning: <a href="library/lib/graph/graph_coloring.cpp.html">lib/graph/graph_coloring.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/heavy_light_decomposition.cpp.html">HL分解 <small>(lib/graph/heavy_light_decomposition.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/hopcroft_karp.cpp.html"> <small>(lib/graph/hopcroft_karp.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/graph/kruskal.cpp.html"> <small>(lib/graph/kruskal.cpp)</small></a>
