@@ -2,6 +2,9 @@
 // ↑のものです
 // 追加: Md
 
+template<typename T>
+using Matrix<T> = vector<vector<T>>
+
 int chromatic_number(const Matrix< bool > &g) {
   int N = (int) g.size();
   vector< int > es(N);
