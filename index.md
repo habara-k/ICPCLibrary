@@ -113,6 +113,7 @@ layout: default
 * :warning: <a href="library/lib/string/manacher.cpp.html">文字列の各位置を中心とする回文長をO(|S|)で求める <small>(lib/string/manacher.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/string/rolling_hash.cpp.html">文字列のハッシュ化 <small>(lib/string/rolling_hash.cpp)</small></a>
 * :heavy_check_mark: <a href="library/lib/string/rolling_hash_2D.cpp.html">2次元文字列のハッシュ化 <small>(lib/string/rolling_hash_2D.cpp)</small></a>
+* :warning: <a href="library/lib/string/suffix_automaton.cpp.html">lib/string/suffix_automaton.cpp</a>
 * :warning: <a href="library/lib/string/z_algorithm.cpp.html">lib/string/z_algorithm.cpp</a>
 
 
