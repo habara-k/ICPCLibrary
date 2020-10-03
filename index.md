@@ -87,6 +87,12 @@ data:
       path: lib/number/extended_gcd.cpp
       title: lib/number/extended_gcd.cpp
     - icon: ':warning:'
+      path: lib/number/fast-mobius.cpp
+      title: "\u9AD8\u901F\u30E1\u30D3\u30A6\u30B9\u5909\u63DB"
+    - icon: ':warning:'
+      path: lib/number/fast-zeta.cpp
+      title: "\u9AD8\u901F\u30BC\u30FC\u30BF\u5909\u63DB"
+    - icon: ':warning:'
       path: lib/number/fft.cpp
       title: FFT
     - icon: ':heavy_check_mark:'
