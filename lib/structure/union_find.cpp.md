@@ -10,15 +10,14 @@ data:
     title: lib/graph/kruskal.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/structure/union_find.test.cpp
-    title: test/structure/union_find.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/structure/union_find.test.cpp
+    title: test/structure/union_find.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\

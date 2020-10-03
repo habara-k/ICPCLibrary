@@ -7,15 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/structure/lazy_segment_tree.test.cpp
-    title: test/structure/lazy_segment_tree.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/heavy_light_decomposition/hld.test.cpp
     title: test/graph/heavy_light_decomposition/hld.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/structure/lazy_segment_tree.test.cpp
+    title: test/structure/lazy_segment_tree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\

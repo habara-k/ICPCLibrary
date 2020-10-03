@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6587\u5B57\u5217\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\

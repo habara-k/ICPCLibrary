@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
@@ -33,39 +32,43 @@ data:
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/comb.cpp\"\
     \n\n#define SNIPPET_ONLY\n\ntemplate<typename Field>\nstruct Combination {\n \
-    \   vector<Field> _fact, _rfact, _inv;\n\n    Combination(int n) : _fact(n), _rfact(n),\
-    \ _inv(n) {\n        _fact[0] = _rfact[n-1] = 1;\n        for (int i = 1; i <\
-    \ n; ++i) _fact[i] = _fact[i-1] * i;\n        _rfact[n-1] /= _fact[n-1];\n   \
-    \     for (int i = n-1; i > 0; --i) _rfact[i-1] = _rfact[i] * i;\n        for\
-    \ (int i = 1; i < n; ++i) _inv[i] = _rfact[i] * _fact[i-1];\n    }\n\n    inline\
-    \ Field fact(int k) const { return _fact.at(k); }\n\n    inline Field rfact(int\
-    \ k) const { return _rfact.at(k); }\n\n    inline Field inv(int k) const { assert(k\
-    \ != 0); return _inv.at(k); }\n\n    Field P(int n, int r) const {\n        if\
-    \ (r < 0 or n < r) return 0;\n        return fact(n) * rfact(n-r);\n    }\n\n\
-    \    Field C(int n, int r) const {\n        if (r < 0 or n < r) return 0;\n  \
-    \      return fact(n) * rfact(r) * rfact(n-r);\n    }\n\n    Field H (int n, int\
-    \ r) const {\n        return (n == 0 and r == 0) ? 1 : C(n+r-1, r);\n    }\n};\n\
-    \n"
+    \   int _n = 1;\n    vector<Field> _fact{1}, _rfact{1}, _inv{1};\n\n    void extend(int\
+    \ n) {\n        _fact.resize(n);\n        _rfact.resize(n);\n        _inv.resize(n);\n\
+    \        for (int i = _n; i < n; ++i) _fact[i] = _fact[i - 1] * i;\n        _rfact[n\
+    \ - 1] = 1 / _fact[n - 1];\n        for (int i = n - 1; i > _n; --i) _rfact[i\
+    \ - 1] = _rfact[i] * i;\n        for (int i = _n; i < n; ++i) _inv[i] = _rfact[i]\
+    \ * _fact[i - 1];\n        _n = n;\n    }\n\n    Field fact(int k) {\n       \
+    \ if (_n <= k) extend(k + 1);\n        return _fact.at(k);\n    }\n\n    Field\
+    \ rfact(int k) {\n        if (_n <= k) extend(k + 1);\n        return _rfact.at(k);\n\
+    \    }\n\n    Field inv(int k) {\n        assert(k != 0);\n        if (_n <= k)\
+    \ extend(k + 1);\n        return _inv.at(k);\n    }\n\n    Field P(int n, int\
+    \ r) {\n        if (r < 0 or n < r) return 0;\n        return fact(n) * rfact(n\
+    \ - r);\n    }\n\n    Field C(int n, int r) {\n        if (r < 0 or n < r) return\
+    \ 0;\n        return fact(n) * rfact(r) * rfact(n - r);\n    }\n\n    Field H(int\
+    \ n, int r) {\n        return (n == 0 and r == 0) ? 1 : C(n + r - 1, r);\n   \
+    \ }\n};\n\n"
   code: "#include \"../template.cpp\"\n\n#define SNIPPET_ONLY\n\ntemplate<typename\
-    \ Field>\nstruct Combination {\n    vector<Field> _fact, _rfact, _inv;\n\n   \
-    \ Combination(int n) : _fact(n), _rfact(n), _inv(n) {\n        _fact[0] = _rfact[n-1]\
-    \ = 1;\n        for (int i = 1; i < n; ++i) _fact[i] = _fact[i-1] * i;\n     \
-    \   _rfact[n-1] /= _fact[n-1];\n        for (int i = n-1; i > 0; --i) _rfact[i-1]\
-    \ = _rfact[i] * i;\n        for (int i = 1; i < n; ++i) _inv[i] = _rfact[i] *\
-    \ _fact[i-1];\n    }\n\n    inline Field fact(int k) const { return _fact.at(k);\
-    \ }\n\n    inline Field rfact(int k) const { return _rfact.at(k); }\n\n    inline\
-    \ Field inv(int k) const { assert(k != 0); return _inv.at(k); }\n\n    Field P(int\
-    \ n, int r) const {\n        if (r < 0 or n < r) return 0;\n        return fact(n)\
-    \ * rfact(n-r);\n    }\n\n    Field C(int n, int r) const {\n        if (r < 0\
-    \ or n < r) return 0;\n        return fact(n) * rfact(r) * rfact(n-r);\n    }\n\
-    \n    Field H (int n, int r) const {\n        return (n == 0 and r == 0) ? 1 :\
-    \ C(n+r-1, r);\n    }\n};\n\n"
+    \ Field>\nstruct Combination {\n    int _n = 1;\n    vector<Field> _fact{1}, _rfact{1},\
+    \ _inv{1};\n\n    void extend(int n) {\n        _fact.resize(n);\n        _rfact.resize(n);\n\
+    \        _inv.resize(n);\n        for (int i = _n; i < n; ++i) _fact[i] = _fact[i\
+    \ - 1] * i;\n        _rfact[n - 1] = 1 / _fact[n - 1];\n        for (int i = n\
+    \ - 1; i > _n; --i) _rfact[i - 1] = _rfact[i] * i;\n        for (int i = _n; i\
+    \ < n; ++i) _inv[i] = _rfact[i] * _fact[i - 1];\n        _n = n;\n    }\n\n  \
+    \  Field fact(int k) {\n        if (_n <= k) extend(k + 1);\n        return _fact.at(k);\n\
+    \    }\n\n    Field rfact(int k) {\n        if (_n <= k) extend(k + 1);\n    \
+    \    return _rfact.at(k);\n    }\n\n    Field inv(int k) {\n        assert(k !=\
+    \ 0);\n        if (_n <= k) extend(k + 1);\n        return _inv.at(k);\n    }\n\
+    \n    Field P(int n, int r) {\n        if (r < 0 or n < r) return 0;\n       \
+    \ return fact(n) * rfact(n - r);\n    }\n\n    Field C(int n, int r) {\n     \
+    \   if (r < 0 or n < r) return 0;\n        return fact(n) * rfact(r) * rfact(n\
+    \ - r);\n    }\n\n    Field H(int n, int r) {\n        return (n == 0 and r ==\
+    \ 0) ? 1 : C(n + r - 1, r);\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/comb.cpp
   requiredBy: []
-  timestamp: '2020-08-24 17:28:09+09:00'
+  timestamp: '2020-10-03 18:19:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/number/comb.cpp

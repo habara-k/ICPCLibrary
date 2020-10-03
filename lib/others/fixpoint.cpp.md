@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - http://koturn.hatenablog.com/entry/2018/06/10/060000
   bundledCode: "#line 1 \"lib/others/fixpoint.cpp\"\n// \u30E9\u30E0\u30C0\u518D\u5E30\

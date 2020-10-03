@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF O(n)"
     links:
     - https://onlinejudge.u-aizu.ac.jp/services/review.html#rupc2014_whiteboard/4508173

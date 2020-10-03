@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://codeforces.com/gym/102428/submission/90057804
     - https://w.atwiki.jp/uwicoder/pages/2842.html

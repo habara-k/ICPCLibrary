@@ -6,17 +6,17 @@ data:
     title: lib/template.cpp
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: test/structure/bit_range_add.cpp
-    title: test/structure/bit_range_add.cpp
-  - icon: ':warning:'
-    path: test/others/inversion.cpp
-    title: test/others/inversion.cpp
+    path: lib/others/inversion.cpp
+    title: lib/others/inversion.cpp
   - icon: ':warning:'
     path: lib/structure/bit_range_add.cpp
     title: lib/structure/bit_range_add.cpp
   - icon: ':warning:'
-    path: lib/others/inversion.cpp
-    title: lib/others/inversion.cpp
+    path: test/others/inversion.cpp
+    title: test/others/inversion.cpp
+  - icon: ':warning:'
+    path: test/structure/bit_range_add.cpp
+    title: test/structure/bit_range_add.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/structure/binary_indexed_tree.test.cpp
@@ -24,7 +24,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\

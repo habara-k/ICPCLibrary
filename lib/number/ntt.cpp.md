@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
     links:
     - https://atcoder.jp/contests/atc001/submissions/15125563

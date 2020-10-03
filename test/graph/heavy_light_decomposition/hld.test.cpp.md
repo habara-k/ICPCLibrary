@@ -5,11 +5,11 @@ data:
     path: lib/graph/heavy_light_decomposition.cpp
     title: "HL\u5206\u89E3"
   - icon: ':heavy_check_mark:'
-    path: lib/template.cpp
-    title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_tree.cpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+  - icon: ':heavy_check_mark:'
+    path: lib/template.cpp
+    title: lib/template.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp

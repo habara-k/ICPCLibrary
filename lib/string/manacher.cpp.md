@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6587\u5B57\u5217\u306E\u5404\u4F4D\u7F6E\u3092\u4E2D\u5FC3\u3068\
       \u3059\u308B\u56DE\u6587\u9577\u3092O(|S|)\u3067\u6C42\u3081\u308B"
     links: []

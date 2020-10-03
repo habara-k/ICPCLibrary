@@ -6,8 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B
   bundledCode: "#line 1 \"test/graph/lowlink/bridge.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_B\"\

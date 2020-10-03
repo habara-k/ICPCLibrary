@@ -12,8 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/challenges/search/titles/1290
     links:
     - https://onlinejudge.u-aizu.ac.jp/challenges/search/titles/1290
   bundledCode: "#line 1 \"test/others/dice.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/challenges/search/titles/1290\"\

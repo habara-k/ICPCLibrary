@@ -5,11 +5,11 @@ data:
     path: lib/others/inversion.cpp
     title: lib/others/inversion.cpp
   - icon: ':heavy_check_mark:'
-    path: lib/template.cpp
-    title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
     path: lib/structure/binary_indexed_tree.cpp
     title: lib/structure/binary_indexed_tree.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/template.cpp
+    title: lib/template.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
@@ -18,8 +18,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/agc034/tasks/agc034_b
     links:
     - https://atcoder.jp/contests/agc034/tasks/agc034_b
   bundledCode: "#line 1 \"test/others/inversion.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/agc034/tasks/agc034_b\"\

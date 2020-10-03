@@ -15,8 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc002/tasks/abc002_4
     links:
     - https://atcoder.jp/contests/abc002/tasks/abc002_4
   bundledCode: "#line 1 \"test/graph/maximum_clique.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc002/tasks/abc002_4\"\

@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
     links:
     - https://code-festival-2014-exhibition-open.contest.atcoder.jp/tasks/code_festival_exhibition_b

@@ -5,77 +5,76 @@ data:
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/bfs01.cpp
+    title: lib/graph/bfs01.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/dijkstra.cpp
+    title: lib/graph/dijkstra.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/dinic.cpp
+    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/hopcroft_karp.cpp
+    title: lib/graph/hopcroft_karp.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/kruskal.cpp
+    title: lib/graph/kruskal.cpp
+  - icon: ':warning:'
+    path: lib/graph/lowlink.cpp
+    title: lib/graph/lowlink.cpp
+  - icon: ':warning:'
+    path: lib/graph/maximum_clique.cpp
+    title: lib/graph/maximum_clique.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/primal_dual.cpp
+    title: lib/graph/primal_dual.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/scc.cpp
+    title: lib/graph/scc.cpp
+  - icon: ':warning:'
+    path: lib/graph/topological_sort.cpp
+    title: lib/graph/topological_sort.cpp
+  - icon: ':warning:'
+    path: lib/graph/twoconnectedcomponents.cpp
+    title: lib/graph/twoconnectedcomponents.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/warshall_floyd.cpp
+    title: lib/graph/warshall_floyd.cpp
   - icon: ':warning:'
     path: test/graph/maximum_clique.cpp
     title: test/graph/maximum_clique.cpp
   - icon: ':warning:'
     path: test/graph/topological_sort.cpp
     title: test/graph/topological_sort.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/kruskal.cpp
-    title: lib/graph/kruskal.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/bfs01.cpp
-    title: lib/graph/bfs01.cpp
-  - icon: ':warning:'
-    path: lib/graph/maximum_clique.cpp
-    title: lib/graph/maximum_clique.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/dinic.cpp
-    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"
-  - icon: ':warning:'
-    path: lib/graph/topological_sort.cpp
-    title: lib/graph/topological_sort.cpp
-  - icon: ':warning:'
-    path: lib/graph/lowlink.cpp
-    title: lib/graph/lowlink.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/scc.cpp
-    title: lib/graph/scc.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/hopcroft_karp.cpp
-    title: lib/graph/hopcroft_karp.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/dijkstra.cpp
-    title: lib/graph/dijkstra.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/primal_dual.cpp
-    title: lib/graph/primal_dual.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/warshall_floyd.cpp
-    title: lib/graph/warshall_floyd.cpp
-  - icon: ':warning:'
-    path: lib/graph/twoconnectedcomponents.cpp
-    title: lib/graph/twoconnectedcomponents.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/graph/warshall_floyd.test.cpp
-    title: test/graph/warshall_floyd.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/hopcroft_karp.test.cpp
-    title: test/graph/hopcroft_karp.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/bfs01.test.cpp
     title: test/graph/bfs01.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/scc.test.cpp
-    title: test/graph/scc.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/dijkstra.test.cpp
     title: test/graph/dijkstra.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/primal_dual.test.cpp
-    title: test/graph/primal_dual.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/dinic.test.cpp
     title: test/graph/dinic.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/hopcroft_karp.test.cpp
+    title: test/graph/hopcroft_karp.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/primal_dual.test.cpp
+    title: test/graph/primal_dual.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/scc.test.cpp
+    title: test/graph/scc.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/warshall_floyd.test.cpp
+    title: test/graph/warshall_floyd.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/graph/template.cpp\"\n\n\n\n#line 1 \"lib/template.cpp\"\
     \n\n\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define REP(i, n)\

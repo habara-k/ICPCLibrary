@@ -15,7 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"
     links: []
   bundledCode: "#line 1 \"lib/graph/template.cpp\"\n\n\n\n#line 1 \"lib/template.cpp\"\

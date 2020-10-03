@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/others/enumerate_bit.cpp\"\n// \u96C6\u5408S\u306E\u90E8\
     \u5206\u96C6\u5408\u3092\u5217\u6319 (S\u3068T\u3092\u5217\u6319\u3059\u308B\u3068\

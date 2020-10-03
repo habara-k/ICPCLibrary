@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/template.cpp
-    title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
     path: lib/structure/binary_indexed_tree.cpp
     title: lib/structure/binary_indexed_tree.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/template.cpp
+    title: lib/template.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
@@ -18,7 +18,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\

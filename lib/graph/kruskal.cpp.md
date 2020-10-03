@@ -5,11 +5,11 @@ data:
     path: lib/graph/template.cpp
     title: lib/graph/template.cpp
   - icon: ':heavy_check_mark:'
-    path: lib/template.cpp
-    title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
     path: lib/structure/union_find.cpp
     title: lib/structure/union_find.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/template.cpp
+    title: lib/template.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
@@ -21,7 +21,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"lib/graph/template.cpp\"\n\n\n\n#line 1 \"lib/template.cpp\"\
     \n\n\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define REP(i, n)\

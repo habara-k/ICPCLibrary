@@ -11,11 +11,38 @@ data:
       \u8A08\u56DE\u308A\u3067\u6B63)."
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/convex_cut.test.cpp
-    title: test/geometry/polygon/convex_cut.test.cpp
+    path: test/geometry/2D_template/circle_crosspoint.test.cpp
+    title: test/geometry/2D_template/circle_crosspoint.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/convex_hull.test.cpp
-    title: test/geometry/polygon/convex_hull.test.cpp
+    path: test/geometry/2D_template/circle_intersection.test.cpp
+    title: test/geometry/2D_template/circle_intersection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/circle_line_crosspoint.test.cpp
+    title: test/geometry/2D_template/circle_line_crosspoint.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/common_tangent.test.cpp
+    title: test/geometry/2D_template/common_tangent.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/counter_clockwise.test.cpp
+    title: test/geometry/2D_template/counter_clockwise.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/crosspoint.test.cpp
+    title: test/geometry/2D_template/crosspoint.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/distance.test.cpp
+    title: test/geometry/2D_template/distance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/intersection.test.cpp
+    title: test/geometry/2D_template/intersection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/parallel_orthogonal.test.cpp
+    title: test/geometry/2D_template/parallel_orthogonal.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/projection.test.cpp
+    title: test/geometry/2D_template/projection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/2D_template/tangent.test.cpp
+    title: test/geometry/2D_template/tangent.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/polygon/area.test.cpp
     title: test/geometry/polygon/area.test.cpp
@@ -23,48 +50,20 @@ data:
     path: test/geometry/polygon/contains.test.cpp
     title: test/geometry/polygon/contains.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/is_convex.test.cpp
-    title: test/geometry/polygon/is_convex.test.cpp
+    path: test/geometry/polygon/convex_cut.test.cpp
+    title: test/geometry/polygon/convex_cut.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/polygon/convex_hull.test.cpp
+    title: test/geometry/polygon/convex_hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/polygon/diameter.test.cpp
     title: test/geometry/polygon/diameter.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/circle_line_crosspoint.test.cpp
-    title: test/geometry/2D_template/circle_line_crosspoint.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/intersection.test.cpp
-    title: test/geometry/2D_template/intersection.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/circle_crosspoint.test.cpp
-    title: test/geometry/2D_template/circle_crosspoint.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/crosspoint.test.cpp
-    title: test/geometry/2D_template/crosspoint.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/tangent.test.cpp
-    title: test/geometry/2D_template/tangent.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/parallel_orthogonal.test.cpp
-    title: test/geometry/2D_template/parallel_orthogonal.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/circle_intersection.test.cpp
-    title: test/geometry/2D_template/circle_intersection.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/counter_clockwise.test.cpp
-    title: test/geometry/2D_template/counter_clockwise.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/common_tangent.test.cpp
-    title: test/geometry/2D_template/common_tangent.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/distance.test.cpp
-    title: test/geometry/2D_template/distance.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/2D_template/projection.test.cpp
-    title: test/geometry/2D_template/projection.test.cpp
+    path: test/geometry/polygon/is_convex.test.cpp
+    title: test/geometry/polygon/is_convex.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u70B9p \u306E\u76F4\u7DDAl \u3078\u306E\u5C04\u5F71\u3092\u6C42\
       \u3081\u308B."
     links: []

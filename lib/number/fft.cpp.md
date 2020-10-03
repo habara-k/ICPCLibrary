@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: FFT
     links:
     - https://atcoder.jp/contests/atc001/submissions/13627626

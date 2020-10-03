@@ -11,27 +11,26 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/convex_cut.test.cpp
-    title: test/geometry/polygon/convex_cut.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/convex_hull.test.cpp
-    title: test/geometry/polygon/convex_hull.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/geometry/polygon/area.test.cpp
     title: test/geometry/polygon/area.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/polygon/contains.test.cpp
     title: test/geometry/polygon/contains.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometry/polygon/is_convex.test.cpp
-    title: test/geometry/polygon/is_convex.test.cpp
+    path: test/geometry/polygon/convex_cut.test.cpp
+    title: test/geometry/polygon/convex_cut.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/polygon/convex_hull.test.cpp
+    title: test/geometry/polygon/convex_hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/polygon/diameter.test.cpp
     title: test/geometry/polygon/diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/polygon/is_convex.test.cpp
+    title: test/geometry/polygon/is_convex.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u7B26\u53F7\u4ED8\u304D\u9762\u7A4D\u3092\u6C42\u3081\u308B\
       (\u53CD\u6642\u8A08\u56DE\u308A\u3067\u6B63)."
     links: []

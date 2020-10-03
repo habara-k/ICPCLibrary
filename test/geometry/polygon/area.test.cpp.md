@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/geometry/polygon.cpp
-    title: "\u7B26\u53F7\u4ED8\u304D\u9762\u7A4D\u3092\u6C42\u3081\u308B(\u53CD\u6642\
-      \u8A08\u56DE\u308A\u3067\u6B63)."
-  - icon: ':heavy_check_mark:'
     path: lib/geometry/2D_template.cpp
     title: "\u70B9p \u306E\u76F4\u7DDAl \u3078\u306E\u5C04\u5F71\u3092\u6C42\u3081\
       \u308B."
+  - icon: ':heavy_check_mark:'
+    path: lib/geometry/polygon.cpp
+    title: "\u7B26\u53F7\u4ED8\u304D\u9762\u7A4D\u3092\u6C42\u3081\u308B(\u53CD\u6642\
+      \u8A08\u56DE\u308A\u3067\u6B63)."
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp

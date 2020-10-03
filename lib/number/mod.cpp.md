@@ -10,24 +10,23 @@ data:
     title: lib/number/combination.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/number/C.test.cpp
-    title: test/number/C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/number/Stirling.test.cpp
-    title: test/number/Stirling.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/number/Bell.test.cpp
     title: test/number/Bell.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/C.test.cpp
+    title: test/number/C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/number/Partition1.test.cpp
     title: test/number/Partition1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/number/Partition2.test.cpp
     title: test/number/Partition2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Stirling.test.cpp
+    title: test/number/Stirling.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc042/submissions/13372745
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\

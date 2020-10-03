@@ -12,8 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc141/tasks/abc141_e
     links:
     - https://atcoder.jp/contests/abc141/tasks/abc141_e
   bundledCode: "#line 1 \"test/string/z_algorithm.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc141/tasks/abc141_e\"\

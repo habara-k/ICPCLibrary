@@ -7,15 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/structure/persistent_segment_tree.test.cpp
-    title: test/structure/persistent_segment_tree.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/lowest_common_ancestor.test.cpp
     title: test/graph/lowest_common_ancestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/structure/persistent_segment_tree.test.cpp
+    title: test/structure/persistent_segment_tree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\

@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
-    path: lib/structure/bit_range_add.cpp
-    title: lib/structure/bit_range_add.cpp
   - icon: ':heavy_check_mark:'
     path: lib/structure/binary_indexed_tree.cpp
     title: lib/structure/binary_indexed_tree.cpp
+  - icon: ':warning:'
+    path: lib/structure/bit_range_add.cpp
+    title: lib/structure/bit_range_add.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
@@ -15,8 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp
   bundledCode: "#line 1 \"test/structure/bit_range_add.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E&lang=jp\"\

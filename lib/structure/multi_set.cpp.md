@@ -12,7 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5024\u306E\u633F\u5165\u3092\u884C\u3046. O(log n)"
     links:
     - https://arc033.contest.atcoder.jp/tasks/arc033_3

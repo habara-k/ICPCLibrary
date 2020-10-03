@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://ei1333.github.io/luzhiled/snippets/graph/chromatic-number.html
   bundledCode: "#line 1 \"lib/graph/graph_coloring.cpp\"\n// https://ei1333.github.io/luzhiled/snippets/graph/chromatic-number.html\n\

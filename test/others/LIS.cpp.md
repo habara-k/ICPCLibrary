@@ -12,8 +12,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/tdpc/tasks/tdpc_target
     links:
     - https://atcoder.jp/contests/tdpc/tasks/tdpc_target
   bundledCode: "#line 1 \"test/others/LIS.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/tdpc/tasks/tdpc_target\"\

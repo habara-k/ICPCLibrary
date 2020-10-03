@@ -8,11 +8,11 @@ data:
     path: lib/graph/template.cpp
     title: lib/graph/template.cpp
   - icon: ':heavy_check_mark:'
-    path: lib/template.cpp
-    title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
     path: lib/structure/union_find.cpp
     title: lib/structure/union_find.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/template.cpp
+    title: lib/template.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp

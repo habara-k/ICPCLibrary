@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: lib/graph/lowest_common_ancestor.cpp
+    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
+  - icon: ':heavy_check_mark:'
     path: lib/structure/persistent_segment_tree.cpp
     title: "\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/lowest_common_ancestor.cpp
-    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp

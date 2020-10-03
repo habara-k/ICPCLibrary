@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
-    path: lib/graph/topological_sort.cpp
-    title: lib/graph/topological_sort.cpp
   - icon: ':heavy_check_mark:'
     path: lib/graph/template.cpp
     title: lib/graph/template.cpp
+  - icon: ':warning:'
+    path: lib/graph/topological_sort.cpp
+    title: lib/graph/topological_sort.cpp
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
@@ -15,8 +15,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B
   bundledCode: "#line 1 \"test/graph/topological_sort.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B\"\
