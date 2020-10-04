@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mod.cpp
     title: lib/number/mod.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Bell.test.cpp
     title: test/number/Bell.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/C.test.cpp
     title: test/number/C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Partition1.test.cpp
     title: test/number/Partition1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Partition2.test.cpp
     title: test/number/Partition2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Stirling.test.cpp
     title: test/number/Stirling.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -100,8 +100,8 @@ data:
     \u3087\u3093\u3055\u3093\u306E\u5199\u50CF12\u76F8\u30D6\u30ED\u30B0\nvector<ll>\
     \ P2;\nvoid partition_fast(ll n, ll m) {\n    P2[0] = 1;\n    for(int i=1;i<100;++i)\
     \ {\n        for(int j=1, sign = 1; i - (j*j*3-j)/2 >= 0; ++j, sign *= -1) {\n\
-    \            P2[i] += P[i-(j*j*3-j)/2] * sign;\n            if(i - (j*j*3+j)/2\
-    \ >= 0) P[i] += P[i-(j*j*3+j)/2] * sign;\n        }\n    }\n}\n"
+    \            P2[i] += P2[i-(j*j*3-j)/2] * sign;\n            if(i - (j*j*3+j)/2\
+    \ >= 0) P2[i] += P2[i-(j*j*3+j)/2] * sign;\n        }\n    }\n}\n"
   code: "#include \"mod.cpp\"\n\nvector<ll> fact;\nvoid init_fact(int n, ll m) {\n\
     \    fact.assign(n+1, 1);\n    for (int i = 2; i <= n; ++i) {\n        (fact[i]\
     \ = fact[i-1] * i) %= m;\n    }\n}\n\n// require init_fact(GREATER THAN OR EQUAL\
@@ -140,17 +140,17 @@ data:
     // \u3051\u3093\u3061\u3087\u3093\u3055\u3093\u306E\u5199\u50CF12\u76F8\u30D6\u30ED\
     \u30B0\nvector<ll> P2;\nvoid partition_fast(ll n, ll m) {\n    P2[0] = 1;\n  \
     \  for(int i=1;i<100;++i) {\n        for(int j=1, sign = 1; i - (j*j*3-j)/2 >=\
-    \ 0; ++j, sign *= -1) {\n            P2[i] += P[i-(j*j*3-j)/2] * sign;\n     \
-    \       if(i - (j*j*3+j)/2 >= 0) P[i] += P[i-(j*j*3+j)/2] * sign;\n        }\n\
-    \    }\n}\n"
+    \ 0; ++j, sign *= -1) {\n            P2[i] += P2[i-(j*j*3-j)/2] * sign;\n    \
+    \        if(i - (j*j*3+j)/2 >= 0) P2[i] += P2[i-(j*j*3+j)/2] * sign;\n       \
+    \ }\n    }\n}\n"
   dependsOn:
   - lib/number/mod.cpp
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/combination.cpp
   requiredBy: []
-  timestamp: '2020-10-05 04:39:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-05 05:06:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/number/C.test.cpp
   - test/number/Stirling.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/binary_indexed_tree.cpp
     title: lib/structure/binary_indexed_tree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:

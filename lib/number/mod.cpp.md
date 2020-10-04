@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/combination.cpp
     title: lib/number/combination.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Bell.test.cpp
     title: test/number/Bell.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/C.test.cpp
     title: test/number/C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Partition1.test.cpp
     title: test/number/Partition1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Partition2.test.cpp
     title: test/number/Partition2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/number/Stirling.test.cpp
     title: test/number/Stirling.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://atcoder.jp/contests/arc042/submissions/13372745
@@ -83,7 +83,7 @@ data:
   requiredBy:
   - lib/number/combination.cpp
   timestamp: '2020-05-18 18:10:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/number/C.test.cpp
   - test/number/Stirling.test.cpp

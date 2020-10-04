@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/combination.cpp
     title: lib/number/combination.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mod.cpp
     title: lib/number/mod.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J
@@ -91,8 +91,8 @@ data:
     \u5316\u5F0F\u3067O(n * sqrt(n))\n// \u3051\u3093\u3061\u3087\u3093\u3055\u3093\
     \u306E\u5199\u50CF12\u76F8\u30D6\u30ED\u30B0\nvector<ll> P2;\nvoid partition_fast(ll\
     \ n, ll m) {\n    P2[0] = 1;\n    for(int i=1;i<100;++i) {\n        for(int j=1,\
-    \ sign = 1; i - (j*j*3-j)/2 >= 0; ++j, sign *= -1) {\n            P2[i] += P[i-(j*j*3-j)/2]\
-    \ * sign;\n            if(i - (j*j*3+j)/2 >= 0) P[i] += P[i-(j*j*3+j)/2] * sign;\n\
+    \ sign = 1; i - (j*j*3-j)/2 >= 0; ++j, sign *= -1) {\n            P2[i] += P2[i-(j*j*3-j)/2]\
+    \ * sign;\n            if(i - (j*j*3+j)/2 >= 0) P2[i] += P2[i-(j*j*3+j)/2] * sign;\n\
     \        }\n    }\n}\n#line 4 \"test/number/Partition1.test.cpp\"\n\nint main()\
     \ {\n    ll n, k; cin >> n >> k;\n    const ll mod = 1e9+7;\n\n    init_partition(k,\
     \ n, mod);\n\n    cout << Part[k][n] << endl;\n}\n"
@@ -107,8 +107,8 @@ data:
   isVerificationFile: true
   path: test/number/Partition1.test.cpp
   requiredBy: []
-  timestamp: '2020-10-05 04:39:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-05 05:06:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/number/Partition1.test.cpp
 layout: document

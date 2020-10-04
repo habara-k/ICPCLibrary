@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_rbst.cpp
     title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
