@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: lib/string/z_algorithm.cpp
     title: lib/string/z_algorithm.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

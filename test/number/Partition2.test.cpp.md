@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/number/combination.cpp
     title: lib/number/combination.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/number/mod.cpp
     title: lib/number/mod.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_L
@@ -57,28 +57,45 @@ data:
     \ n, ll m) {\n    fact.assign(n+1, 1);\n    for (int i = 2; i <= n; ++i) {\n \
     \       (fact[i] = fact[i-1] * i) %= m;\n    }\n}\n\n// require init_fact(GREATER\
     \ THAN OR EQUAL TO n, m)\nll C(ll n, ll r, ll m) {\n    return (fact[n] * invm((fact[r]\
-    \ * fact[n-r]) % m, m)) % m;\n}\n\n// Stirling number\n// Stirling(n, k) := the\
-    \ number of cases\n//            to split n balls(distinguished)\n//         \
-    \   into k boxes(not distinguished)\n//            s.t. each box contains at least\
-    \ one ball.\n//\n// require init_fact(GREATER THAN OR EQUAL TO k, m)\nll Stirling(ll\
-    \ n, ll k, ll m) {\n    ll ret = 0;\n    for (ll l = 0; l <= k; ++l) {\n     \
-    \   ll tmp = (C(k, l, m) * powm((k-l) % m, n, m)) % m;\n        if (l & 1) tmp\
-    \ = (-tmp + m) % m;\n        (ret += tmp) %= m;\n    }\n    return (ret *= invm(fact[k],\
-    \ m)) %= m;\n}\n\n// Bell number\n// Bell(n, k) := the number of cases\n//   \
-    \         to split n balls(distinguished)\n//            into k boxes(not distinguished)\n\
-    //\n// require init_fact(GREATER THAN OR EQUAL TO k, m)\nll Bell(ll n, ll k, ll\
-    \ m) {\n    ll ret = 0;\n    for (ll l = 0; l <= k; ++l) {\n        (ret += Stirling(n,\
-    \ l, m)) %= m;\n    }\n    return ret;\n}\n\n// Partition function\n// Partition[k][n]\
-    \ := the number of cases\n//            to split n balls(not distinguished)\n\
-    //            into k boxes(not distinguished)\nvector<vector<ll>> Part;\nvoid\
-    \ init_partition(ll k, ll n, ll m) {\n    Part.assign(k+1, vector<ll>(n+1, 0));\n\
-    \    Part[0][0] = 1;\n    for (int i = 1; i <= k; ++i) {\n        for (int j =\
-    \ 0; j <= n; ++j) {\n            if (j-i >= 0) {\n                Part[i][j] =\
-    \ (Part[i-1][j] + Part[i][j-i]) % m;\n            } else {\n                Part[i][j]\
-    \ = Part[i-1][j];\n            }\n        }\n    }\n}\n#line 4 \"test/number/Partition2.test.cpp\"\
-    \n\nint main() {\n    ll n, k; cin >> n >> k;\n    const ll mod = 1e9+7;\n\n \
-    \   init_partition(k, n, mod);\n\n    cout << (Part[k][n] - Part[k-1][n] + mod)\
-    \ % mod << endl;\n}\n"
+    \ * fact[n-r]) % m, m)) % m;\n}\n\n// Stirling number O(klogn)\n// Stirling(n,\
+    \ k) := the number of cases\n//            to split n balls(distinguished)\n//\
+    \            into k boxes(not distinguished)\n//            s.t. each box contains\
+    \ at least one ball.\n//\n// S(n, k) = S(n-1, k-1) + k * S(n-1, k) : n, k\u307E\
+    \u3067\u306E\u30C6\u30FC\u30D6\u30EB\u3092\u4F5C\u308A\u305F\u3044\u3068\u304D\
+    \u306F\u3053\u3063\u3061\n//\n// require init_fact(GREATER THAN OR EQUAL TO k,\
+    \ m)\nll Stirling(ll n, ll k, ll m) {\n    ll ret = 0;\n    for (ll l = 0; l <=\
+    \ k; ++l) {\n        ll tmp = (C(k, l, m) * powm((k-l) % m, n, m)) % m;\n    \
+    \    if (l & 1) tmp = (-tmp + m) % m;\n        (ret += tmp) %= m;\n    }\n   \
+    \ return (ret *= invm(fact[k], m)) %= m;\n}\n\n// \u30B9\u30BF\u30FC\u30EA\u30F3\
+    \u30B0\u6570\u306E\u5FDC\u7528(\u3051\u3093\u3061\u3087\u3093\u3055\u3093\u306E\
+    \u5199\u50CF12\u76F8\u306E\u30D6\u30ED\u30B0\uFF09\n// \u30FB\u300C\u5404\u30B0\
+    \u30EB\u30FC\u30D7\u306B\u3064\u304Dr\u500B\u4EE5\u4E0A\u300D\u306E\u5236\u9650\
+    \u304C\u3042\u308B\u5834\u5408\n// S'(n, k) = C(n-1, r-1) * S'(n-r, k-1) + k *\
+    \ S'(n-1, k)\n// \n// \u30FB\u7389\u304Cn\u500B\u3042\u308B\u3046\u3061\u306E\u3044\
+    \u304F\u3064\u304B\u3092\u9078\u3093\u3067k\u30B0\u30EB\u30FC\u30D7\u306B\u5206\
+    \u3051\u308B\u5834\u5408\n// S'(n, k) = S'(n-1, k-1) + (k+1) * S'(n-1, k)\n\n\
+    // Bell number O(n^2)\n// Bell(n, k) := the number of cases\n//            to\
+    \ split n balls(distinguished)\n//            into k boxes(not distinguished)\n\
+    //\n// B(n, k) = S(n, 0) + S(n, 1) + ... + S(n, k)\n//\n// B(n+1) := B(n+1, n+1)\
+    \ = \u03A3[i=0; n]{C(n, i) * B(i)}\n//\n// require init_fact(GREATER THAN OR EQUAL\
+    \ TO k, m)\nll Bell(ll n, ll k, ll m) {\n    ll ret = 0;\n    for (ll l = 0; l\
+    \ <= k; ++l) {\n        (ret += Stirling(n, l, m)) %= m;\n    }\n    return ret;\n\
+    }\n\n// Partition function O(nk)\n// Partition[k][n] := the number of cases\n\
+    //            to split n balls(not distinguished)\n//            into k boxes(not\
+    \ distinguished)\n//\n// P(n, k) = P(n, k-1) + P(n-k, k)\nvector<vector<ll>> Part;\n\
+    void init_partition(ll k, ll n, ll m) {\n    Part.assign(k+1, vector<ll>(n+1,\
+    \ 0));\n    Part[0][0] = 1;\n    for (int i = 1; i <= k; ++i) {\n        for (int\
+    \ j = 0; j <= n; ++j) {\n            if (j-i >= 0) {\n                Part[i][j]\
+    \ = (Part[i-1][j] + Part[i][j-i]) % m;\n            } else {\n               \
+    \ Part[i][j] = Part[i-1][j];\n            }\n        }\n    }\n}\n\n// \u8B0E\u6F38\
+    \u5316\u5F0F\u3067O(n * sqrt(n))\n// \u3051\u3093\u3061\u3087\u3093\u3055\u3093\
+    \u306E\u5199\u50CF12\u76F8\u30D6\u30ED\u30B0\nvector<ll> P2;\nvoid partition_fast(ll\
+    \ n, ll m) {\n    P2[0] = 1;\n    for(int i=1;i<100;++i) {\n        for(int j=1,\
+    \ sign = 1; i - (j*j*3-j)/2 >= 0; ++j, sign *= -1) {\n            P2[i] += P[i-(j*j*3-j)/2]\
+    \ * sign;\n            if(i - (j*j*3+j)/2 >= 0) P[i] += P[i-(j*j*3+j)/2] * sign;\n\
+    \        }\n    }\n}\n#line 4 \"test/number/Partition2.test.cpp\"\n\nint main()\
+    \ {\n    ll n, k; cin >> n >> k;\n    const ll mod = 1e9+7;\n\n    init_partition(k,\
+    \ n, mod);\n\n    cout << (Part[k][n] - Part[k-1][n] + mod) % mod << endl;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_L\"\
     \n\n#include \"../../lib/number/combination.cpp\"\n\nint main() {\n    ll n, k;\
     \ cin >> n >> k;\n    const ll mod = 1e9+7;\n\n    init_partition(k, n, mod);\n\
@@ -90,8 +107,8 @@ data:
   isVerificationFile: true
   path: test/number/Partition2.test.cpp
   requiredBy: []
-  timestamp: '2020-05-18 18:10:40+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-05 04:39:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/number/Partition2.test.cpp
 layout: document

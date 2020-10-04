@@ -67,7 +67,7 @@ data:
   - icon: ':warning:'
     path: lib/number/comb.cpp
     title: lib/number/comb.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/number/combination.cpp
     title: lib/number/combination.cpp
   - icon: ':heavy_check_mark:'
@@ -91,7 +91,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/number/mod.cpp
     title: lib/number/mod.cpp
   - icon: ':warning:'
@@ -279,19 +279,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/warshall_floyd.test.cpp
     title: test/graph/warshall_floyd.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/number/Bell.test.cpp
     title: test/number/Bell.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/number/C.test.cpp
     title: test/number/C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/number/Partition1.test.cpp
     title: test/number/Partition1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/number/Partition2.test.cpp
     title: test/number/Partition2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/number/Stirling.test.cpp
     title: test/number/Stirling.test.cpp
   - icon: ':heavy_check_mark:'
@@ -340,7 +340,7 @@ data:
     path: test/structure/weighted_union_find.test.cpp
     title: test/structure/weighted_union_find.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -450,7 +450,7 @@ data:
   - lib/graph/twoconnectedcomponents.cpp
   - lib/graph/re_rooting.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/structure/union_find.test.cpp
   - test/structure/weighted_union_find.test.cpp
