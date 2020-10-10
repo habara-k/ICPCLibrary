@@ -146,3 +146,54 @@ private:
                 query(a, b, 2 * k + 1, (l + r) >> 1, r));
     }
 };
+
+/* Usage
+ *
+ * Range Add Range Sum
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return a+b; },
+ *            [](int a,int b,int w){ return a + b*w; },
+ *            [](int a,int b){ return a+b; },
+ *            0, 0);
+ *
+ * Range Update Range Sum
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return a+b; },
+ *            [](int a,int b,int w){ return b; },
+ *            [](int a,int b){ return b; },
+ *            0, INF);
+ *
+ * Range Add Range min
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return min(a, b); },
+ *            [](int a,int b,int w){ return a + b*w; },
+ *            [](int a,int b){ return a+b; },
+ *            INF, 0);
+ *
+ * Range Update Range min
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return min(a, b); },
+ *            [](int a,int b,int w){ return b; },
+ *            [](int a,int b){ return b; },
+ *            INF, INF);
+ *
+ * Range Add Range max
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return max(a, b); },
+ *            [](int a,int b,int w){ return a + b*w; },
+ *            [](int a,int b){ return a+b; },
+ *            -INF, 0);
+ *
+ * Range Update Range max
+ * LazySegmentTree<int> segt(
+ *            n,
+ *            [](int a,int b){ return max(a, b); },
+ *            [](int a,int b,int w){ return b; },
+ *            [](int a,int b){ return b; },
+ *            -INF, INF);
+ */
