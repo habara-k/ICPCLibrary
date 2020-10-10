@@ -103,16 +103,35 @@ data:
     \ b, int k, int l, int r) {\n        propagate(k, r - l);\n        if (r <= a\
     \ or b <= l) return e;\n        else if (a <= l and r <= b) return data[k];\n\
     \        else return f(\n                query(a, b, 2 * k,     l, (l + r) >>\
-    \ 1),\n                query(a, b, 2 * k + 1, (l + r) >> 1, r));\n    }\n};\n\
-    #line 4 \"test/structure/lazy_segment_tree.test.cpp\"\n\nint main() {\n    int\
-    \ N, Q;\n    cin >> N >> Q;\n    LazySegmentTree<ll> seg(\n            N,\n  \
-    \          [](ll a, ll b){ return a+b; },\n            [](ll a, ll b, ll w){ return\
-    \ a + b*w; },\n            [](ll a, ll b){ return a+b; },\n            0, 0);\n\
-    \n    while (Q--) {\n        int C; cin >> C;\n        if (C == 0) {\n       \
-    \     int S, T; ll X;\n            cin >> S >> T >> X;\n            --S, --T;\n\
-    \            seg.update(S, T+1, X);\n        } else {\n            int S, T;\n\
-    \            cin >> S >> T;\n            --S, --T;\n            cout << seg.query(S,\
-    \ T+1) << endl;\n        }\n    }\n}\n"
+    \ 1),\n                query(a, b, 2 * k + 1, (l + r) >> 1, r));\n    }\n};\n\n\
+    /* Usage\n *\n * Range Add Range Sum\n * LazySegmentTree<int> segt(\n *      \
+    \      n,\n *            [](int a,int b){ return a+b; },\n *            [](int\
+    \ a,int b,int w){ return a + b*w; },\n *            [](int a,int b){ return a+b;\
+    \ },\n *            0, 0);\n *\n * Range Update Range Sum\n * LazySegmentTree<int>\
+    \ segt(\n *            n,\n *            [](int a,int b){ return a+b; },\n * \
+    \           [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
+    \ return b; },\n *            0, INF);\n *\n * Range Add Range min\n * LazySegmentTree<int>\
+    \ segt(\n *            n,\n *            [](int a,int b){ return min(a, b); },\n\
+    \ *            [](int a,int b,int w){ return a + b*w; },\n *            [](int\
+    \ a,int b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range\
+    \ min\n * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int\
+    \ b){ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n\
+    \ *            [](int a,int b){ return b; },\n *            INF, INF);\n *\n *\
+    \ Range Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *   \
+    \         [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int\
+    \ w){ return a + b*w; },\n *            [](int a,int b){ return a+b; },\n *  \
+    \          -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
+    \ *            n,\n *            [](int a,int b){ return max(a, b); },\n *   \
+    \         [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
+    \ return b; },\n *            -INF, INF);\n */\n#line 4 \"test/structure/lazy_segment_tree.test.cpp\"\
+    \n\nint main() {\n    int N, Q;\n    cin >> N >> Q;\n    LazySegmentTree<ll> seg(\n\
+    \            N,\n            [](ll a, ll b){ return a+b; },\n            [](ll\
+    \ a, ll b, ll w){ return a + b*w; },\n            [](ll a, ll b){ return a+b;\
+    \ },\n            0, 0);\n\n    while (Q--) {\n        int C; cin >> C;\n    \
+    \    if (C == 0) {\n            int S, T; ll X;\n            cin >> S >> T >>\
+    \ X;\n            --S, --T;\n            seg.update(S, T+1, X);\n        } else\
+    \ {\n            int S, T;\n            cin >> S >> T;\n            --S, --T;\n\
+    \            cout << seg.query(S, T+1) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G\"\
     \n\n#include \"../../lib/structure/lazy_segment_tree.cpp\"\n\nint main() {\n \
     \   int N, Q;\n    cin >> N >> Q;\n    LazySegmentTree<ll> seg(\n            N,\n\
@@ -129,7 +148,7 @@ data:
   isVerificationFile: true
   path: test/structure/lazy_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-10 20:35:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/structure/lazy_segment_tree.test.cpp

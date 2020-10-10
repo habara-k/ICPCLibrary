@@ -56,8 +56,8 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/number/crt.test.cpp
   - test/number/extended_gcd.test.cpp
+  - test/number/crt.test.cpp
 documentation_of: lib/number/extended_gcd.cpp
 layout: document
 redirect_from:

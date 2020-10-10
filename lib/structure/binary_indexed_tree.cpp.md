@@ -61,10 +61,10 @@ data:
   isVerificationFile: false
   path: lib/structure/binary_indexed_tree.cpp
   requiredBy:
-  - test/structure/bit_range_add.cpp
-  - test/others/inversion.cpp
   - lib/structure/bit_range_add.cpp
   - lib/others/inversion.cpp
+  - test/structure/bit_range_add.cpp
+  - test/others/inversion.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -241,8 +241,8 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/heavy_light_decomposition/hld.test.cpp
   - test/graph/heavy_light_decomposition/lca.test.cpp
+  - test/graph/heavy_light_decomposition/hld.test.cpp
 documentation_of: lib/graph/heavy_light_decomposition.cpp
 layout: document
 redirect_from:

@@ -206,19 +206,38 @@ data:
     \ b, int k, int l, int r) {\n        propagate(k, r - l);\n        if (r <= a\
     \ or b <= l) return e;\n        else if (a <= l and r <= b) return data[k];\n\
     \        else return f(\n                query(a, b, 2 * k,     l, (l + r) >>\
-    \ 1),\n                query(a, b, 2 * k + 1, (l + r) >> 1, r));\n    }\n};\n\
-    #line 5 \"test/graph/heavy_light_decomposition/hld.test.cpp\"\n\nint main()\n\
-    {\n    int n; cin >> n;\n    vector<vector<int>> g(n);\n    for (int i = 0; i\
-    \ < n; ++i) {\n        int k; cin >> k;\n        g[i].resize(k);\n        for\
-    \ (int j = 0; j < k; ++j) {\n            cin >> g[i][j];\n        }\n    }\n\n\
-    \    HLDecomposition hld(g);\n    hld.build();\n\n    LazySegmentTree<ll> segt(\n\
-    \            n,\n            [](ll a,ll b){ return a+b; },\n            [](ll\
-    \ a,ll b,int w){ return a+b*w; },\n            [](ll a,ll b){ return a+b; },\n\
-    \            0, 0);\n\n    int q; cin >> q;\n    for (int t = 0; t < q; ++t) {\n\
-    \        int c; cin >> c;\n        if (c == 0) {\n            int v, w; cin >>\
-    \ v >> w;\n            hld.update(0, v, [&](ll a,ll b){ segt.update(a,b,w); },\
-    \ true);\n        }\n        if (c == 1) {\n            int v; cin >> v;\n   \
-    \         ll ret = hld.query(0, v,\n                    [&](ll a,ll b){ return\
+    \ 1),\n                query(a, b, 2 * k + 1, (l + r) >> 1, r));\n    }\n};\n\n\
+    /* Usage\n *\n * Range Add Range Sum\n * LazySegmentTree<int> segt(\n *      \
+    \      n,\n *            [](int a,int b){ return a+b; },\n *            [](int\
+    \ a,int b,int w){ return a + b*w; },\n *            [](int a,int b){ return a+b;\
+    \ },\n *            0, 0);\n *\n * Range Update Range Sum\n * LazySegmentTree<int>\
+    \ segt(\n *            n,\n *            [](int a,int b){ return a+b; },\n * \
+    \           [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
+    \ return b; },\n *            0, INF);\n *\n * Range Add Range min\n * LazySegmentTree<int>\
+    \ segt(\n *            n,\n *            [](int a,int b){ return min(a, b); },\n\
+    \ *            [](int a,int b,int w){ return a + b*w; },\n *            [](int\
+    \ a,int b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range\
+    \ min\n * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int\
+    \ b){ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n\
+    \ *            [](int a,int b){ return b; },\n *            INF, INF);\n *\n *\
+    \ Range Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *   \
+    \         [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int\
+    \ w){ return a + b*w; },\n *            [](int a,int b){ return a+b; },\n *  \
+    \          -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
+    \ *            n,\n *            [](int a,int b){ return max(a, b); },\n *   \
+    \         [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
+    \ return b; },\n *            -INF, INF);\n */\n#line 5 \"test/graph/heavy_light_decomposition/hld.test.cpp\"\
+    \n\nint main()\n{\n    int n; cin >> n;\n    vector<vector<int>> g(n);\n    for\
+    \ (int i = 0; i < n; ++i) {\n        int k; cin >> k;\n        g[i].resize(k);\n\
+    \        for (int j = 0; j < k; ++j) {\n            cin >> g[i][j];\n        }\n\
+    \    }\n\n    HLDecomposition hld(g);\n    hld.build();\n\n    LazySegmentTree<ll>\
+    \ segt(\n            n,\n            [](ll a,ll b){ return a+b; },\n         \
+    \   [](ll a,ll b,int w){ return a+b*w; },\n            [](ll a,ll b){ return a+b;\
+    \ },\n            0, 0);\n\n    int q; cin >> q;\n    for (int t = 0; t < q; ++t)\
+    \ {\n        int c; cin >> c;\n        if (c == 0) {\n            int v, w; cin\
+    \ >> v >> w;\n            hld.update(0, v, [&](ll a,ll b){ segt.update(a,b,w);\
+    \ }, true);\n        }\n        if (c == 1) {\n            int v; cin >> v;\n\
+    \            ll ret = hld.query(0, v,\n                    [&](ll a,ll b){ return\
     \ segt.query(a,b); },\n                    [&](ll a,ll b){ return a+b; }, 0LL,\
     \ true);\n            cout << ret << endl;\n        }\n    }\n\n    return 0;\n\
     }\n"
@@ -246,7 +265,7 @@ data:
   isVerificationFile: true
   path: test/graph/heavy_light_decomposition/hld.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-10 20:35:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/heavy_light_decomposition/hld.test.cpp
