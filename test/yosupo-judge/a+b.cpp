@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../lib/template.cpp"
 
