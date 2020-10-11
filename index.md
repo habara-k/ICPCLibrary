@@ -389,5 +389,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/weighted_union_find.test.cpp
       title: test/structure/weighted_union_find.test.cpp
+  - name: test/yosupo-judge
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/a+b.test.cpp
+      title: test/yosupo-judge/a+b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/many_a+b.test.cpp
+      title: test/yosupo-judge/many_a+b.test.cpp
 layout: toppage
 ---

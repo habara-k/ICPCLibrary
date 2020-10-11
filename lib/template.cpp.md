@@ -339,6 +339,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/structure/weighted_union_find.test.cpp
     title: test/structure/weighted_union_find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/a+b.test.cpp
+    title: test/yosupo-judge/a+b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/many_a+b.test.cpp
+    title: test/yosupo-judge/many_a+b.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -452,6 +458,8 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/many_a+b.test.cpp
+  - test/yosupo-judge/a+b.test.cpp
   - test/string/rolling_hash_2D.test.cpp
   - test/string/rolling_hash.test.cpp
   - test/number/extended_gcd.test.cpp
