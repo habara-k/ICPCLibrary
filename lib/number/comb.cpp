@@ -44,7 +44,17 @@ struct Combination {
     // O(k logn)
     // スターリング数
     // Stirling(n, k) := n 個の区別できるボールを k 個の区別できない箱にいれる場合の数
-    //                   それぞれの箱には少なくとも一つボールをいれる
+    //                   それぞれの箱には1個以上ボールをいれる
+    // ---
+    // S(n, k) = S(n-1, k-1) + k * S(n-1, k)
+    // * 特定の1個だけで1個の箱にいれる場合は S(n-1, k-1)
+    // * そうでない場合は S(n-1, k) 通りに対して特定の1個をいれるのが k 通り
+    // ---
+    // 各グループにつきr個以上, の制限がある場合
+    // S(n, k) = C(n-1, r-1) * S(n-r, k-1) + k * S(n-1, k)
+    // ---
+    // 玉がn個あるうちのいくつかを選んでkグループに分ける場合
+    // S(n, k) = S(n-1, k-1) + (k+1) * S(n-1, k)
     T Stirling(ll n, int k) {
         T ret = 0;
         for (int l = 0; l <= k; ++l) {
@@ -67,19 +77,15 @@ struct Combination {
 };
 
 
-// O(kn)
-// Partition[k][n] := n 個の区別できないボールを k 個の区別できない箱にいれる場合の数
+// O(nk)
+// Partition[n][k] := n 個の区別できないボールを k 個の区別できない箱にいれる場合の数
 template<typename T>
-vector<vector<T>> Partition(int k, int n) {
-    vector<vector<T>> ret(k+1, vector<T>(n+1));
+vector<vector<T>> Partition(int n, int k) {
+    vector<vector<T>> ret(n+1, vector<T>(k+1));
     ret[0][0] = 1;
-    for (int i = 1; i <= k; ++i) {
-        for (int j = 0; j <= n; ++j) {
-            if (j-i >= 0) {
-                ret[i][j] = ret[i-1][j] + ret[i][j-i];
-            } else {
-                ret[i][j] = ret[i-1][j];
-            }
+    for (int i = 0; i <= n; ++i) {
+        for (int j = 1; j <= k; ++j) {
+            ret[i][j] = ret[i][j-1] + (i-j >= 0 ? ret[i-j][j] : 0);
         }
     }
     return ret;
