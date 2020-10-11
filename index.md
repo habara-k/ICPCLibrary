@@ -228,6 +228,11 @@ data:
     - icon: ':warning:'
       path: test/structure/bit_range_add.cpp
       title: test/structure/bit_range_add.cpp
+  - name: test/yosupo-judge
+    pages:
+    - icon: ':warning:'
+      path: test/yosupo-judge/test-template.cpp
+      title: test/yosupo-judge/test-template.cpp
   - name: tex/src
     pages:
     - icon: ':warning:'
@@ -398,10 +403,25 @@ data:
       path: test/yosupo-judge/a+b.test.cpp
       title: test/yosupo-judge/a+b.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/associative_array.test.cpp
+      title: test/yosupo-judge/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/many_a+b.test.cpp
       title: test/yosupo-judge/many_a+b.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/montmort_number.test.cpp
       title: test/yosupo-judge/montmort_number.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/point_add_range_sum.test.cpp
+      title: test/yosupo-judge/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/static_range_sum.test.cpp
+      title: test/yosupo-judge/static_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/static_rmq.test.cpp
+      title: test/yosupo-judge/static_rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/union_find.test.cpp
+      title: test/yosupo-judge/union_find.test.cpp
 layout: toppage
 ---

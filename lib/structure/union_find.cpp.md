@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/structure/union_find.test.cpp
     title: test/structure/union_find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/union_find.test.cpp
+    title: test/yosupo-judge/union_find.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -66,6 +69,7 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/union_find.test.cpp
   - test/structure/union_find.test.cpp
   - test/graph/kruskal.test.cpp
 documentation_of: lib/structure/union_find.cpp

@@ -188,6 +188,9 @@ data:
   - icon: ':warning:'
     path: test/structure/bit_range_add.cpp
     title: test/structure/bit_range_add.cpp
+  - icon: ':warning:'
+    path: test/yosupo-judge/test-template.cpp
+    title: test/yosupo-judge/test-template.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/geometry/2D_template/circle_crosspoint.test.cpp
@@ -346,11 +349,26 @@ data:
     path: test/yosupo-judge/a+b.test.cpp
     title: test/yosupo-judge/a+b.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/associative_array.test.cpp
+    title: test/yosupo-judge/associative_array.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/many_a+b.test.cpp
     title: test/yosupo-judge/many_a+b.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/montmort_number.test.cpp
     title: test/yosupo-judge/montmort_number.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_add_range_sum.test.cpp
+    title: test/yosupo-judge/point_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/static_range_sum.test.cpp
+    title: test/yosupo-judge/static_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/static_rmq.test.cpp
+    title: test/yosupo-judge/static_rmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/union_find.test.cpp
+    title: test/yosupo-judge/union_find.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -454,6 +472,7 @@ data:
   - lib/others/dice.cpp
   - lib/others/inversion.cpp
   - lib/others/inversion.cpp
+  - test/yosupo-judge/test-template.cpp
   - test/string/z_algorithm.cpp
   - test/structure/bit_range_add.cpp
   - test/graph/maximum_clique.cpp
@@ -465,9 +484,14 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/static_rmq.test.cpp
   - test/yosupo-judge/many_a+b.test.cpp
   - test/yosupo-judge/montmort_number.test.cpp
+  - test/yosupo-judge/point_add_range_sum.test.cpp
+  - test/yosupo-judge/static_range_sum.test.cpp
   - test/yosupo-judge/a+b.test.cpp
+  - test/yosupo-judge/associative_array.test.cpp
+  - test/yosupo-judge/union_find.test.cpp
   - test/string/rolling_hash_2D.test.cpp
   - test/string/rolling_hash.test.cpp
   - test/number/extended_gcd.test.cpp

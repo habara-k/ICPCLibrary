@@ -9,6 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/structure/segment_tree.test.cpp
     title: test/structure/segment_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_add_range_sum.test.cpp
+    title: test/yosupo-judge/point_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/static_rmq.test.cpp
+    title: test/yosupo-judge/static_rmq.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -138,6 +144,8 @@ data:
   timestamp: '2020-06-17 20:23:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/static_rmq.test.cpp
+  - test/yosupo-judge/point_add_range_sum.test.cpp
   - test/structure/segment_tree.test.cpp
 documentation_of: lib/structure/segment_tree.cpp
 layout: document
