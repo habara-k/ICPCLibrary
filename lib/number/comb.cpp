@@ -66,6 +66,11 @@ struct Combination {
     // O(k^2 logn)
     // ベル数
     // Bell(n, k) := n 個の区別できるボールを k 個の区別できない箱にいれる場合の数
+    // ---
+    // B(n+1) := Bell(n+1, n+1) = n 個の区別できるボールの分割の総数
+    // B(n+1) = \sum_{i=0}^n C(n,i) * B(i)
+    // * 特定の1個が属するグループに, 他のボールがn-i 個入っているとき,
+    // * 残りi 個の並べ方はB(i)
     T Bell(ll n, int k) {
         T ret = 0;
         for (int l = 0; l <= k; ++l) {
@@ -76,9 +81,10 @@ struct Combination {
 
 };
 
-
 // O(nk)
 // Partition[n][k] := n 個の区別できないボールを k 個の区別できない箱にいれる場合の数
+// ---
+// 各グループにつき1個以上, の制限がある場合, Part[n][k] - Part[n][k-1]
 template<typename T>
 vector<vector<T>> Partition(int n, int k) {
     vector<vector<T>> ret(n+1, vector<T>(k+1));
