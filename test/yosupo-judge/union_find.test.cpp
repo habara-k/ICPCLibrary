@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #include "../../lib/structure/union_find.cpp"
 
