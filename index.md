@@ -74,7 +74,7 @@ data:
       title: lib/graph/warshall_floyd.cpp
   - name: lib/number
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/number/comb.cpp
       title: lib/number/comb.cpp
     - icon: ':heavy_check_mark:'
@@ -101,15 +101,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/number/matrix.cpp
       title: lib/number/matrix.cpp
+    - icon: ':warning:'
+      path: lib/number/mint.cpp
+      title: lib/number/mint.cpp
     - icon: ':heavy_check_mark:'
       path: lib/number/mod.cpp
       title: lib/number/mod.cpp
     - icon: ':warning:'
-      path: lib/number/modint.cpp
-      title: lib/number/modint.cpp
-    - icon: ':warning:'
       path: lib/number/ntt.cpp
       title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
+    - icon: ':heavy_check_mark:'
+      path: lib/number/rmint.cpp
+      title: lib/number/rmint.cpp
   - name: lib/others
     pages:
     - icon: ':warning:'
@@ -397,5 +400,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/many_a+b.test.cpp
       title: test/yosupo-judge/many_a+b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/montmort_number.test.cpp
+      title: test/yosupo-judge/montmort_number.test.cpp
 layout: toppage
 ---

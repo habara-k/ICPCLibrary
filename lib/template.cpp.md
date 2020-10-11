@@ -64,7 +64,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/warshall_floyd.cpp
     title: lib/graph/warshall_floyd.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/comb.cpp
     title: lib/number/comb.cpp
   - icon: ':heavy_check_mark:'
@@ -91,15 +91,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
+  - icon: ':warning:'
+    path: lib/number/mint.cpp
+    title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
     path: lib/number/mod.cpp
     title: lib/number/mod.cpp
   - icon: ':warning:'
-    path: lib/number/modint.cpp
-    title: lib/number/modint.cpp
-  - icon: ':warning:'
     path: lib/number/ntt.cpp
     title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
+  - icon: ':heavy_check_mark:'
+    path: lib/number/rmint.cpp
+    title: lib/number/rmint.cpp
   - icon: ':warning:'
     path: lib/others/LIS.cpp
     title: lib/others/LIS.cpp
@@ -345,6 +348,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/many_a+b.test.cpp
     title: test/yosupo-judge/many_a+b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/montmort_number.test.cpp
+    title: test/yosupo-judge/montmort_number.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -400,7 +406,9 @@ data:
   - lib/string/rolling_hash_2D.cpp
   - lib/string/manacher.cpp
   - lib/number/ntt.cpp
+  - lib/number/rmint.cpp
   - lib/number/fast-zeta.cpp
+  - lib/number/mint.cpp
   - lib/number/matrix.cpp
   - lib/number/crt.cpp
   - lib/number/fft.cpp
@@ -409,7 +417,6 @@ data:
   - lib/number/comb.cpp
   - lib/number/fast-mobius.cpp
   - lib/number/gauss_jordan.cpp
-  - lib/number/modint.cpp
   - lib/number/extended_gcd.cpp
   - lib/structure/lazy_segment_tree.cpp
   - lib/structure/randomized_binary_search_tree.cpp
@@ -459,6 +466,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/many_a+b.test.cpp
+  - test/yosupo-judge/montmort_number.test.cpp
   - test/yosupo-judge/a+b.test.cpp
   - test/string/rolling_hash_2D.test.cpp
   - test/string/rolling_hash.test.cpp
