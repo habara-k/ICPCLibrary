@@ -13,6 +13,9 @@ data:
     path: test/yosupo-judge/point_add_range_sum.test.cpp
     title: test/yosupo-judge/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_set_range_composite.test.cpp
+    title: test/yosupo-judge/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/static_rmq.test.cpp
     title: test/yosupo-judge/static_rmq.test.cpp
   _pathExtension: cpp
@@ -146,6 +149,7 @@ data:
   verifiedWith:
   - test/yosupo-judge/static_rmq.test.cpp
   - test/yosupo-judge/point_add_range_sum.test.cpp
+  - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/structure/segment_tree.test.cpp
 documentation_of: lib/structure/segment_tree.cpp
 layout: document

@@ -91,7 +91,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -361,6 +361,12 @@ data:
     path: test/yosupo-judge/point_add_range_sum.test.cpp
     title: test/yosupo-judge/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_set_range_composite.test.cpp
+    title: test/yosupo-judge/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_set_range_composite.test.cpp
+    title: test/yosupo-judge/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/static_range_sum.test.cpp
     title: test/yosupo-judge/static_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -491,6 +497,8 @@ data:
   - test/yosupo-judge/static_range_sum.test.cpp
   - test/yosupo-judge/a+b.test.cpp
   - test/yosupo-judge/associative_array.test.cpp
+  - test/yosupo-judge/point_set_range_composite.test.cpp
+  - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/union_find.test.cpp
   - test/string/rolling_hash_2D.test.cpp
   - test/string/rolling_hash.test.cpp

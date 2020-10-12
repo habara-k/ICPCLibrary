@@ -5,9 +5,12 @@ data:
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/point_set_range_composite.test.cpp
+    title: test/yosupo-judge/point_set_range_composite.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -63,8 +66,9 @@ data:
   path: lib/number/mint.cpp
   requiredBy: []
   timestamp: '2020-10-12 01:33:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo-judge/point_set_range_composite.test.cpp
 documentation_of: lib/number/mint.cpp
 layout: document
 redirect_from:
