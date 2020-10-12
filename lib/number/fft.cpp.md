@@ -10,8 +10,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     document_title: FFT
-    links:
-    - https://atcoder.jp/contests/atc001/submissions/13627626
+    links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
     \ n) for (int i=(int)(n)-1; i>=0; --i)\n#define FOR(i, a, n) for (int i=(a); i<(n);\
@@ -33,55 +32,54 @@ data:
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/fft.cpp\"\
-    \n\n/**\n* @brief FFT\n* @author habara-k\n* @date 2020/05/27\n* @verify https://atcoder.jp/contests/atc001/submissions/13627626\n\
-    * @details \u4F7F\u3044\u65B9\n*   e.g. \u591A\u9805\u5F0F\u306E\u7A4D\n*\n* \
-    \  vector<complex<double>> a(2*n+1), b(2*n+1);\n*\n*   auto A = FFT<double>(a).solve();\n\
-    *   auto B = FFT<double>(b).solve();\n*\n*   vector<complex<double>> C(A.size());\n\
-    *   REP(i, C.size()) C[i] = A[i] * B[i];\n*\n*   auto c = FFT<double>(C).solve(true);\n\
-    */\n\n\ntemplate<typename T>\nstruct FFT {\n\n    /**\n    * @brief \u30B3\u30F3\
-    \u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in] a_: \u591A\u9805\u5F0F\u306E\
-    \u4FC2\u6570\n    */\n    FFT(const vector<complex<T>>& a_) : a(a_), n(1) {\n\
-    \        while (n < a.size()) n <<= 1;\n        a.resize(n);\n    }\n\n    /**\n\
-    \    * @brief FFT\u306E\u5B9F\u884C. O(nlog n)\n    * @param[in] inverse: \u9006\
-    \u5909\u63DB\u306E\u30D5\u30E9\u30B0.\n    * @return FFT or inverse-FFT\n    */\n\
-    \    vector<complex<T>> solve(bool inverse = false) {\n        return fft(0, 0,\
-    \ inverse);\n    }\n\nprivate:\n    vector<complex<T>> a;\n    int n;\n    const\
-    \ T PI = acos(-1);\n\n    vector<complex<T>> fft(int d, int bit, bool inverse)\
-    \ {\n        int sz = n >> d;\n        if (sz == 1) return {a[bit] / (inverse\
-    \ ? static_cast<T>(n) : 1.0)};\n\n        auto f0 = fft(d+1, bit, inverse);\n\
-    \        auto f1 = fft(d+1, bit | 1<<d, inverse);\n        vector<complex<T>>\
-    \ f(sz);\n        for (int i = 0; i < sz; ++i) {\n            f[i] = f0[i % (sz\
-    \ / 2)] +\n                   std::polar(1.0, 2*PI / sz * i * (inverse ? -1 :\
-    \ 1)) *\n                   f1[i % (sz / 2)];\n        }\n        return f;\n\
-    \    }\n};\n"
-  code: "#include \"../template.cpp\"\n\n/**\n* @brief FFT\n* @author habara-k\n*\
-    \ @date 2020/05/27\n* @verify https://atcoder.jp/contests/atc001/submissions/13627626\n\
-    * @details \u4F7F\u3044\u65B9\n*   e.g. \u591A\u9805\u5F0F\u306E\u7A4D\n*\n* \
-    \  vector<complex<double>> a(2*n+1), b(2*n+1);\n*\n*   auto A = FFT<double>(a).solve();\n\
-    *   auto B = FFT<double>(b).solve();\n*\n*   vector<complex<double>> C(A.size());\n\
-    *   REP(i, C.size()) C[i] = A[i] * B[i];\n*\n*   auto c = FFT<double>(C).solve(true);\n\
-    */\n\n\ntemplate<typename T>\nstruct FFT {\n\n    /**\n    * @brief \u30B3\u30F3\
-    \u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in] a_: \u591A\u9805\u5F0F\u306E\
-    \u4FC2\u6570\n    */\n    FFT(const vector<complex<T>>& a_) : a(a_), n(1) {\n\
-    \        while (n < a.size()) n <<= 1;\n        a.resize(n);\n    }\n\n    /**\n\
-    \    * @brief FFT\u306E\u5B9F\u884C. O(nlog n)\n    * @param[in] inverse: \u9006\
-    \u5909\u63DB\u306E\u30D5\u30E9\u30B0.\n    * @return FFT or inverse-FFT\n    */\n\
-    \    vector<complex<T>> solve(bool inverse = false) {\n        return fft(0, 0,\
-    \ inverse);\n    }\n\nprivate:\n    vector<complex<T>> a;\n    int n;\n    const\
-    \ T PI = acos(-1);\n\n    vector<complex<T>> fft(int d, int bit, bool inverse)\
-    \ {\n        int sz = n >> d;\n        if (sz == 1) return {a[bit] / (inverse\
-    \ ? static_cast<T>(n) : 1.0)};\n\n        auto f0 = fft(d+1, bit, inverse);\n\
-    \        auto f1 = fft(d+1, bit | 1<<d, inverse);\n        vector<complex<T>>\
-    \ f(sz);\n        for (int i = 0; i < sz; ++i) {\n            f[i] = f0[i % (sz\
-    \ / 2)] +\n                   std::polar(1.0, 2*PI / sz * i * (inverse ? -1 :\
-    \ 1)) *\n                   f1[i % (sz / 2)];\n        }\n        return f;\n\
-    \    }\n};\n"
+    \n\n/**\n * @brief FFT\n * @author habara-k\n * @usage\n *   FFT<int> fft;\n *\
+    \   vector<int> a, b;\n *   auto c = fft.multiply(a, b);\n */\n\ntemplate<typename\
+    \ T>\nstruct FFT {\n    using C = complex<double>;\n    vector<T> multiply(vector<T>\
+    \ a, vector<T> b) {\n        int need = SZ(a) + SZ(b) - 1;\n        ensure(need);\n\
+    \        assert((n & (n-1)) == 0);\n\n        vector<C> fa, fb;\n        for (T\
+    \ e : a) fa.emplace_back(e, 0);\n        for (T e : b) fb.emplace_back(e, 0);\n\
+    \        fa.resize(n);\n        fb.resize(n);\n        fft(fa);\n        fft(fb);\n\
+    \n        vector<C> fc(n);\n        for (int i = 0; i < n; ++i) fc[i] = fa[i]\
+    \ * fb[i] / (double)n;\n        reverse(fc.begin() + 1, fc.end());\n        fft(fc);\n\
+    \        vector<T> c;\n        for (C e : fc) {\n            assert(abs(e.imag())\
+    \ < eps);\n            c.emplace_back(round(e.real()));\n        }\n        c.resize(need);\n\
+    \        return c;\n    }\n\nprivate:\n    int n;\n    const double PI = acos(-1);\n\
+    \n    void ensure(int need) {\n        n = 1;\n        while (n < need) n <<=\
+    \ 1;\n    }\n\n    void fft(vector<C>& a) {\n        int p = 0;\n        for (int\
+    \ i = 1; i < n - 1; ++i) {\n            for (int k = n >> 1; k > (p ^= k); k >>=\
+    \ 1);\n            if (i < p) swap(a[i], a[p]);\n        }\n        for (int k\
+    \ = 1; k < n; k <<= 1) {\n            for (int j = 0; j < k; ++j) {\n        \
+    \        C z = polar(1.0, PI / k * j);\n                for (int i = j; i < n;\
+    \ i += 2*k) {\n                    C u = a[i], v = a[i+k] * z;\n             \
+    \       a[i] = u + v;\n                    a[i+k] = u - v;\n                }\n\
+    \            }\n        }\n    }\n};\n\n"
+  code: "#include \"../template.cpp\"\n\n/**\n * @brief FFT\n * @author habara-k\n\
+    \ * @usage\n *   FFT<int> fft;\n *   vector<int> a, b;\n *   auto c = fft.multiply(a,\
+    \ b);\n */\n\ntemplate<typename T>\nstruct FFT {\n    using C = complex<double>;\n\
+    \    vector<T> multiply(vector<T> a, vector<T> b) {\n        int need = SZ(a)\
+    \ + SZ(b) - 1;\n        ensure(need);\n        assert((n & (n-1)) == 0);\n\n \
+    \       vector<C> fa, fb;\n        for (T e : a) fa.emplace_back(e, 0);\n    \
+    \    for (T e : b) fb.emplace_back(e, 0);\n        fa.resize(n);\n        fb.resize(n);\n\
+    \        fft(fa);\n        fft(fb);\n\n        vector<C> fc(n);\n        for (int\
+    \ i = 0; i < n; ++i) fc[i] = fa[i] * fb[i] / (double)n;\n        reverse(fc.begin()\
+    \ + 1, fc.end());\n        fft(fc);\n        vector<T> c;\n        for (C e :\
+    \ fc) {\n            assert(abs(e.imag()) < eps);\n            c.emplace_back(round(e.real()));\n\
+    \        }\n        c.resize(need);\n        return c;\n    }\n\nprivate:\n  \
+    \  int n;\n    const double PI = acos(-1);\n\n    void ensure(int need) {\n  \
+    \      n = 1;\n        while (n < need) n <<= 1;\n    }\n\n    void fft(vector<C>&\
+    \ a) {\n        int p = 0;\n        for (int i = 1; i < n - 1; ++i) {\n      \
+    \      for (int k = n >> 1; k > (p ^= k); k >>= 1);\n            if (i < p) swap(a[i],\
+    \ a[p]);\n        }\n        for (int k = 1; k < n; k <<= 1) {\n            for\
+    \ (int j = 0; j < k; ++j) {\n                C z = polar(1.0, PI / k * j);\n \
+    \               for (int i = j; i < n; i += 2*k) {\n                    C u =\
+    \ a[i], v = a[i+k] * z;\n                    a[i] = u + v;\n                 \
+    \   a[i+k] = u - v;\n                }\n            }\n        }\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/fft.cpp
   requiredBy: []
-  timestamp: '2020-05-27 02:06:18+09:00'
+  timestamp: '2020-10-13 02:22:34+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/number/fft.cpp

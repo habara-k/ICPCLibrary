@@ -56,25 +56,26 @@ data:
     \ l, mint r) { return l /= r; }\n    mint pow(ll n) {\n        mint ret = 1, tmp\
     \ = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n        \
     \    tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n    friend ostream\
-    \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n};\n\n\
-    #line 2 \"lib/structure/segment_tree.cpp\"\n\n/**\n* @brief \u30BB\u30B0\u30E1\
-    \u30F3\u30C8\u6728\n* @author habara-k, Md\n* @date 2020/06/17\n*/\n\ntemplate<typename\
-    \ M>\nstruct SegmentTree {\n\n    /**\n    * @brief \u30B3\u30F3\u30B9\u30C8\u30E9\
-    \u30AF\u30BF. O(n)\n    * @param[in] n \u30BB\u30B0\u6728\u306E\u30B5\u30A4\u30BA\
-    .\n    * @param[in] f \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\u7B97(query).\n   \
-    \ * @param[in] g \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\u7B97(update).\n    * @param[in]\
-    \ e \u30E2\u30CE\u30A4\u30C9\u306E\u5358\u4F4D\u5143.\n    * @details \u4F7F\u3044\
-    \u65B9\n    *   e.g. Update and Range Minimum\n    *   SegmentTree<int> segt(\n\
-    \    *            n,\n    *            [](int a,int b){ return min(a+b); },\n\
-    \    *            [](int a, int b){ return b; },\n    *            INF);\n   \
-    \ *               // \u5168\u3066\u5358\u4F4D\u5143\u3067\u521D\u671F\u5316\u3055\
-    \u308C\u308B.\n    */\n    SegmentTree(\n            int n,\n            const\
-    \ function<M(M,M)>& f,\n            const function<M(M, M)>& g,\n            const\
-    \ M& e) : n(n), f(f), g(g), e(e) {\n        sz = 1;\n        while (sz < n) sz\
-    \ <<= 1;\n        data.assign(2 * sz, e);\n    }\n\n    /**\n    * @brief \u5168\
-    \u4F53\u306B\u521D\u671F\u5024\u3092\u5165\u308C\u308B. O(n)\n    * @param[in]\
-    \ v \u8981\u7D20\u30E2\u30CE\u30A4\u30C9\u306Evector. \u521D\u671F\u5316\u3059\
-    \u308B.\n    * @details \u4F7F\u3044\u65B9\n    *   segt.build(vector<int>(n,\
+    \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n    friend\
+    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> a.x; return\
+    \ is;\n    }\n};\n\n#line 2 \"lib/structure/segment_tree.cpp\"\n\n/**\n* @brief\
+    \ \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n* @author habara-k, Md\n* @date 2020/06/17\n\
+    */\n\ntemplate<typename M>\nstruct SegmentTree {\n\n    /**\n    * @brief \u30B3\
+    \u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in] n \u30BB\u30B0\u6728\
+    \u306E\u30B5\u30A4\u30BA.\n    * @param[in] f \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\
+    \u7B97(query).\n    * @param[in] g \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\u7B97\
+    (update).\n    * @param[in] e \u30E2\u30CE\u30A4\u30C9\u306E\u5358\u4F4D\u5143\
+    .\n    * @details \u4F7F\u3044\u65B9\n    *   e.g. Update and Range Minimum\n\
+    \    *   SegmentTree<int> segt(\n    *            n,\n    *            [](int\
+    \ a,int b){ return min(a+b); },\n    *            [](int a, int b){ return b;\
+    \ },\n    *            INF);\n    *               // \u5168\u3066\u5358\u4F4D\u5143\
+    \u3067\u521D\u671F\u5316\u3055\u308C\u308B.\n    */\n    SegmentTree(\n      \
+    \      int n,\n            const function<M(M,M)>& f,\n            const function<M(M,\
+    \ M)>& g,\n            const M& e) : n(n), f(f), g(g), e(e) {\n        sz = 1;\n\
+    \        while (sz < n) sz <<= 1;\n        data.assign(2 * sz, e);\n    }\n\n\
+    \    /**\n    * @brief \u5168\u4F53\u306B\u521D\u671F\u5024\u3092\u5165\u308C\u308B\
+    . O(n)\n    * @param[in] v \u8981\u7D20\u30E2\u30CE\u30A4\u30C9\u306Evector. \u521D\
+    \u671F\u5316\u3059\u308B.\n    * @details \u4F7F\u3044\u65B9\n    *   segt.build(vector<int>(n,\
     \ 0));\n    */\n    void build(const vector<M>& v) {\n        assert(v.size()\
     \ <= n);\n        for (int i = 0; i < v.size(); ++i) {\n            data[i + sz]\
     \ = v[i];\n        }\n        for (int i = sz-1; i > 0; --i) {\n            data[i]\
@@ -136,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-10-12 14:55:19+09:00'
+  timestamp: '2020-10-13 02:22:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/point_set_range_composite.test.cpp

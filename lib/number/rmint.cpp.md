@@ -48,7 +48,8 @@ data:
     \ n) {\n        rmint ret = 1, tmp = *this;\n        while (n) {\n           \
     \ if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n      \
     \  return ret;\n    }\n    friend ostream &operator<<(ostream &os, rmint a) {\n\
-    \        return os << a.x;\n    }\n};\n\n"
+    \        return os << a.x;\n    }\n    friend istream &operator>>(istream &is,\
+    \ rmint& a) {\n        ll x; is >> a.x; return is;\n    }\n};\n\n"
   code: "#include \"../template.cpp\"\n\ntemplate<typename T>\nstruct rmint {\n  \
     \  static T &m() {\n        static T m = 0;\n        return m;\n    }\n    static\
     \ void set_mod(T md) { m() = md; }\n    T x;\n    rmint(T x = 0) : x(((x % m())\
@@ -63,13 +64,14 @@ data:
     \ { return l /= r; }\n    rmint pow(T n) {\n        rmint ret = 1, tmp = *this;\n\
     \        while (n) {\n            if (n & 1) ret *= tmp;\n            tmp *= tmp,\
     \ n >>= 1;\n        }\n        return ret;\n    }\n    friend ostream &operator<<(ostream\
-    \ &os, rmint a) {\n        return os << a.x;\n    }\n};\n\n"
+    \ &os, rmint a) {\n        return os << a.x;\n    }\n    friend istream &operator>>(istream\
+    \ &is, rmint& a) {\n        ll x; is >> a.x; return is;\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/rmint.cpp
   requiredBy: []
-  timestamp: '2020-10-12 01:33:37+09:00'
+  timestamp: '2020-10-13 02:22:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/montmort_number.test.cpp

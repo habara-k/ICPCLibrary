@@ -5,13 +5,15 @@ data:
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/convolution.test.cpp
+    title: test/yosupo-judge/convolution.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
-    links:
-    - https://atcoder.jp/contests/atc001/submissions/15125563
+    document_title: NTT
+    links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
     \ n) for (int i=(int)(n)-1; i>=0; --i)\n#define FOR(i, a, n) for (int i=(a); i<(n);\
@@ -33,70 +35,58 @@ data:
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/ntt.cpp\"\
-    \n\n/**\n * @brief\n * Number Theoretic Transform\n * @author habara-k\n * @date\
-    \ 2020/07/11\n * @verify https://atcoder.jp/contests/atc001/submissions/15125563\n\
-    \ */\n\ntemplate<ll mod=998244353, ll primitive=3>\nstruct NTT {\n\n    /**\n\
-    \    * @brief \u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)\n    * @require\
-    \ n <= 2^23\n    * @param[in] a, b: \u7573\u307F\u8FBC\u307F\u305F\u3044\u914D\
-    \u5217\n    * @return \u7573\u307F\u8FBC\u307F\u3057\u305F\u7D50\u679C\n    *\
-    \ @usage\n    *   vector<ll> a(2*n+1), b(2*n+1);\n    *   vector<ll> c = NTT<>::multiply(a,\
-    \ b);\n    */\n    static vector<ll> multiply(const vector<ll>& a, const vector<ll>&\
-    \ b) {\n        auto A = NTT(a).solve();\n        auto B = NTT(b).solve();\n\n\
-    \        vector<ll> C(A.size());\n        REP(i, C.size()) C[i] = (A[i] * B[i])\
-    \ % 998244353;\n\n        return NTT(C).solve(true);\n    }\n\nprivate:\n    int\
-    \ n;\n    vector<ll> a;\n    ll inv_n, root, inv_root;\n\n    NTT(const vector<ll>&\
-    \ a) : n(1), a(a) {\n        while (n < a.size()) n <<= 1;\n        this->a.resize(n);\n\
-    \        inv_n = modpow(n, mod-2);\n        root = modpow(primitive, (mod-1) /\
-    \ n);\n        inv_root = modpow(root, mod-2);\n    }\n\n    vector<ll> solve(bool\
-    \ inverse = false) {\n        return ntt(0, 0, inverse, inverse ? inv_root : root);\n\
-    \    }\n\n    vector<ll> ntt(int d, int bit, bool inverse, ll base) {\n      \
-    \  int sz = n >> d;\n        if (sz == 1) return {(a[bit] * (inverse ? inv_n :\
-    \ 1)) % mod};\n\n        auto f0 = ntt(d+1, bit, inverse, (base * base) % mod);\n\
-    \        auto f1 = ntt(d+1, bit | 1<<d, inverse, (base * base) % mod);\n     \
-    \   vector<ll> f(sz);\n        ll tmp = 1;\n        for (int i = 0; i < sz; ++i)\
-    \ {\n            f[i] = (f0[i % (sz / 2)] + tmp * f1[i % (sz / 2)]) % mod;\n \
-    \           (tmp *= base) %= mod;\n        }\n        return f;\n    }\n\n   \
-    \ ll modpow(ll a, ll p) {\n        ll ret = 1;\n        while (p) {\n        \
-    \    if (p & 1) (ret *= a) %= mod;\n            (a *= a) %= mod;\n           \
-    \ p >>= 1;\n        }\n        return ret;\n    }\n};\n"
-  code: "#include \"../template.cpp\"\n\n/**\n * @brief\n * Number Theoretic Transform\n\
-    \ * @author habara-k\n * @date 2020/07/11\n * @verify https://atcoder.jp/contests/atc001/submissions/15125563\n\
-    \ */\n\ntemplate<ll mod=998244353, ll primitive=3>\nstruct NTT {\n\n    /**\n\
-    \    * @brief \u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)\n    * @require\
-    \ n <= 2^23\n    * @param[in] a, b: \u7573\u307F\u8FBC\u307F\u305F\u3044\u914D\
-    \u5217\n    * @return \u7573\u307F\u8FBC\u307F\u3057\u305F\u7D50\u679C\n    *\
-    \ @usage\n    *   vector<ll> a(2*n+1), b(2*n+1);\n    *   vector<ll> c = NTT<>::multiply(a,\
-    \ b);\n    */\n    static vector<ll> multiply(const vector<ll>& a, const vector<ll>&\
-    \ b) {\n        auto A = NTT(a).solve();\n        auto B = NTT(b).solve();\n\n\
-    \        vector<ll> C(A.size());\n        REP(i, C.size()) C[i] = (A[i] * B[i])\
-    \ % 998244353;\n\n        return NTT(C).solve(true);\n    }\n\nprivate:\n    int\
-    \ n;\n    vector<ll> a;\n    ll inv_n, root, inv_root;\n\n    NTT(const vector<ll>&\
-    \ a) : n(1), a(a) {\n        while (n < a.size()) n <<= 1;\n        this->a.resize(n);\n\
-    \        inv_n = modpow(n, mod-2);\n        root = modpow(primitive, (mod-1) /\
-    \ n);\n        inv_root = modpow(root, mod-2);\n    }\n\n    vector<ll> solve(bool\
-    \ inverse = false) {\n        return ntt(0, 0, inverse, inverse ? inv_root : root);\n\
-    \    }\n\n    vector<ll> ntt(int d, int bit, bool inverse, ll base) {\n      \
-    \  int sz = n >> d;\n        if (sz == 1) return {(a[bit] * (inverse ? inv_n :\
-    \ 1)) % mod};\n\n        auto f0 = ntt(d+1, bit, inverse, (base * base) % mod);\n\
-    \        auto f1 = ntt(d+1, bit | 1<<d, inverse, (base * base) % mod);\n     \
-    \   vector<ll> f(sz);\n        ll tmp = 1;\n        for (int i = 0; i < sz; ++i)\
-    \ {\n            f[i] = (f0[i % (sz / 2)] + tmp * f1[i % (sz / 2)]) % mod;\n \
-    \           (tmp *= base) %= mod;\n        }\n        return f;\n    }\n\n   \
-    \ ll modpow(ll a, ll p) {\n        ll ret = 1;\n        while (p) {\n        \
-    \    if (p & 1) (ret *= a) %= mod;\n            (a *= a) %= mod;\n           \
-    \ p >>= 1;\n        }\n        return ret;\n    }\n};\n"
+    \n\n/**\n * @brief NTT\n * @author habara-k\n * @usage\n *   vector<NTT<>::Int>\
+    \ a, b;\n *   NTT<> ntt;\n *   auto c = ntt.multiply(a, b);\n */\n\ntemplate<ll\
+    \ mod=998244353, ll primitive=3>\nstruct NTT {\n    using Int = mint<mod>;\n \
+    \   vector<Int> multiply(vector<Int> a, vector<Int> b) {\n        int need = SZ(a)\
+    \ + SZ(b) - 1;\n        ensure(need);\n        assert((n & (n-1)) == 0);\n   \
+    \     a.resize(n);\n        b.resize(n);\n        ntt(a);\n        ntt(b);\n\n\
+    \        vector<Int> c(n);\n        for (int i = 0; i < n; ++i) c[i] = a[i] *\
+    \ b[i] / n;\n        reverse(c.begin() + 1, c.end());\n        ntt(c); c.resize(need);\n\
+    \        return c;\n    }\n\nprivate:\n    int n;\n    Int root;\n\n    void ensure(int\
+    \ need) {\n        n = 1;\n        while (n < need) n <<= 1;\n        root = Int{primitive}.pow((mod-1)\
+    \ / n);\n    }\n\n    void ntt(vector<Int>& a) {\n        int p = 0;\n       \
+    \ for (int i = 1; i < n - 1; ++i) {\n            for (int k = n >> 1; k > (p ^=\
+    \ k); k >>= 1);\n            if (i < p) swap(a[i], a[p]);\n        }\n       \
+    \ for (int k = 1; k < n; k <<= 1) {\n            Int base = root.pow(n / (2*k));\n\
+    \            Int z = 1;\n            for (int j = 0; j < k; ++j) {\n         \
+    \       for (int i = j; i < n; i += 2*k) {\n                    Int u = a[i],\
+    \ v = a[i+k] * z;\n                    a[i] = u + v;\n                    a[i+k]\
+    \ = u - v;\n                }\n                z *= base;\n            }\n   \
+    \     }\n    }\n};\n\n"
+  code: "#include \"../template.cpp\"\n\n/**\n * @brief NTT\n * @author habara-k\n\
+    \ * @usage\n *   vector<NTT<>::Int> a, b;\n *   NTT<> ntt;\n *   auto c = ntt.multiply(a,\
+    \ b);\n */\n\ntemplate<ll mod=998244353, ll primitive=3>\nstruct NTT {\n    using\
+    \ Int = mint<mod>;\n    vector<Int> multiply(vector<Int> a, vector<Int> b) {\n\
+    \        int need = SZ(a) + SZ(b) - 1;\n        ensure(need);\n        assert((n\
+    \ & (n-1)) == 0);\n        a.resize(n);\n        b.resize(n);\n        ntt(a);\n\
+    \        ntt(b);\n\n        vector<Int> c(n);\n        for (int i = 0; i < n;\
+    \ ++i) c[i] = a[i] * b[i] / n;\n        reverse(c.begin() + 1, c.end());\n   \
+    \     ntt(c); c.resize(need);\n        return c;\n    }\n\nprivate:\n    int n;\n\
+    \    Int root;\n\n    void ensure(int need) {\n        n = 1;\n        while (n\
+    \ < need) n <<= 1;\n        root = Int{primitive}.pow((mod-1) / n);\n    }\n\n\
+    \    void ntt(vector<Int>& a) {\n        int p = 0;\n        for (int i = 1; i\
+    \ < n - 1; ++i) {\n            for (int k = n >> 1; k > (p ^= k); k >>= 1);\n\
+    \            if (i < p) swap(a[i], a[p]);\n        }\n        for (int k = 1;\
+    \ k < n; k <<= 1) {\n            Int base = root.pow(n / (2*k));\n           \
+    \ Int z = 1;\n            for (int j = 0; j < k; ++j) {\n                for (int\
+    \ i = j; i < n; i += 2*k) {\n                    Int u = a[i], v = a[i+k] * z;\n\
+    \                    a[i] = u + v;\n                    a[i+k] = u - v;\n    \
+    \            }\n                z *= base;\n            }\n        }\n    }\n\
+    };\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/ntt.cpp
   requiredBy: []
-  timestamp: '2020-07-11 00:18:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-13 02:22:34+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo-judge/convolution.test.cpp
 documentation_of: lib/number/ntt.cpp
 layout: document
 redirect_from:
 - /library/lib/number/ntt.cpp
 - /library/lib/number/ntt.cpp.html
-title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
+title: NTT
 ---

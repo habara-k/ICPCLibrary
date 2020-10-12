@@ -107,9 +107,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/number/mod.cpp
       title: lib/number/mod.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/number/ntt.cpp
-      title: "\u7573\u307F\u8FBC\u307F\u306E\u5B9F\u884C. O(nlog n)"
+      title: NTT
     - icon: ':heavy_check_mark:'
       path: lib/number/rmint.cpp
       title: lib/number/rmint.cpp
@@ -405,6 +405,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/associative_array.test.cpp
       title: test/yosupo-judge/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/convolution.test.cpp
+      title: test/yosupo-judge/convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/many_a+b.test.cpp
       title: test/yosupo-judge/many_a+b.test.cpp

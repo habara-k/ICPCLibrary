@@ -142,7 +142,8 @@ data:
     \      mint ret = 1, tmp = *this;\n        while (n) {\n            if (n & 1)\
     \ ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n        return ret;\n\
     \    }\n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
-    \ os << a.x;\n    }\n};\n\n#line 5 \"test/yosupo-judge/range_affine_range_sum.test.cpp\"\
+    \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, mint& a) {\n\
+    \        ll x; is >> a.x; return is;\n    }\n};\n\n#line 5 \"test/yosupo-judge/range_affine_range_sum.test.cpp\"\
     \n\n\nusing Mint = mint<998244353>;\n\nstruct S {\n    Mint val;\n};\n\nstruct\
     \ T {\n    Mint b;\n    Mint c;\n\n    bool operator==(const T &rhs) const {\n\
     \        return b.x == rhs.b.x && c.x == rhs.c.x;\n    }\n};\n\nint main() {\n\
@@ -181,7 +182,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-12 13:05:40+09:00'
+  timestamp: '2020-10-13 02:22:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/range_affine_range_sum.test.cpp
