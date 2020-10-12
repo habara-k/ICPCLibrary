@@ -52,6 +52,7 @@
 "test/yosupo-judge/many_a+b.test.cpp": "2020-10-11 13:03:27 +0900",
 "test/yosupo-judge/montmort_number.test.cpp": "2020-10-12 01:33:37 +0900",
 "test/yosupo-judge/point_add_range_sum.test.cpp": "2020-10-11 14:17:05 +0900",
+"test/yosupo-judge/point_set_range_composite.test.cpp": "2020-10-12 14:50:56 +0900",
 "test/yosupo-judge/static_range_sum.test.cpp": "2020-10-11 13:40:30 +0900",
 "test/yosupo-judge/static_rmq.test.cpp": "2020-10-11 14:06:56 +0900",
 "test/yosupo-judge/union_find.test.cpp": "2020-10-12 01:39:14 +0900"
