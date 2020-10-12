@@ -32,7 +32,7 @@ struct mint {
         return os << a.x;
     }
     friend istream &operator>>(istream &is, mint& a) {
-        is >> a.x; return is;
+        ll x; is >> x; a = x; return is;
     }
 };
 
