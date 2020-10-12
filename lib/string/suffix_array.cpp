@@ -1,5 +1,12 @@
 #include "../template.cpp"
 
+/**
+ * @brief 接尾辞配列 O(n(logn)^2) ありほんのやつそのまま
+ * @detail construct_saにstringを投げると接尾辞配列が帰ってくる
+ * @author Md
+ * @date 2020/10/12
+ */
+
 namespace SA {
   static const int ma = 1000000;
   int n, k;
