@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/point_set_range_composite.test.cpp
     title: test/yosupo-judge/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/range_affine_range_sum.test.cpp
+    title: test/yosupo-judge/range_affine_range_sum.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -68,6 +71,7 @@ data:
   timestamp: '2020-10-12 01:33:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/point_set_range_composite.test.cpp
 documentation_of: lib/number/mint.cpp
 layout: document
