@@ -1,74 +1,61 @@
 #include "../template.cpp"
 
 /**
- * @brief
- * Number Theoretic Transform
+ * @brief NTT
  * @author habara-k
- * @date 2020/07/11
- * @verify https://atcoder.jp/contests/atc001/submissions/15125563
+ * @usage
+ *   vector<NTT<>::Int> a, b;
+ *   NTT<> ntt;
+ *   auto c = ntt.multiply(a, b);
  */
 
 template<ll mod=998244353, ll primitive=3>
 struct NTT {
+    using Int = mint<mod>;
+    vector<Int> multiply(vector<Int> a, vector<Int> b) {
+        int need = SZ(a) + SZ(b) - 1;
+        ensure(need);
+        assert((n & (n-1)) == 0);
+        a.resize(n);
+        b.resize(n);
+        ntt(a);
+        ntt(b);
 
-    /**
-    * @brief 畳み込みの実行. O(nlog n)
-    * @require n <= 2^23
-    * @param[in] a, b: 畳み込みたい配列
-    * @return 畳み込みした結果
-    * @usage
-    *   vector<ll> a(2*n+1), b(2*n+1);
-    *   vector<ll> c = NTT<>::multiply(a, b);
-    */
-    static vector<ll> multiply(const vector<ll>& a, const vector<ll>& b) {
-        auto A = NTT(a).solve();
-        auto B = NTT(b).solve();
-
-        vector<ll> C(A.size());
-        REP(i, C.size()) C[i] = (A[i] * B[i]) % 998244353;
-
-        return NTT(C).solve(true);
+        vector<Int> c(n);
+        for (int i = 0; i < n; ++i) c[i] = a[i] * b[i] / n;
+        reverse(c.begin() + 1, c.end());
+        ntt(c); c.resize(need);
+        return c;
     }
 
 private:
     int n;
-    vector<ll> a;
-    ll inv_n, root, inv_root;
+    Int root;
 
-    NTT(const vector<ll>& a) : n(1), a(a) {
-        while (n < a.size()) n <<= 1;
-        this->a.resize(n);
-        inv_n = modpow(n, mod-2);
-        root = modpow(primitive, (mod-1) / n);
-        inv_root = modpow(root, mod-2);
+    void ensure(int need) {
+        n = 1;
+        while (n < need) n <<= 1;
+        root = Int{primitive}.pow((mod-1) / n);
     }
 
-    vector<ll> solve(bool inverse = false) {
-        return ntt(0, 0, inverse, inverse ? inv_root : root);
-    }
-
-    vector<ll> ntt(int d, int bit, bool inverse, ll base) {
-        int sz = n >> d;
-        if (sz == 1) return {(a[bit] * (inverse ? inv_n : 1)) % mod};
-
-        auto f0 = ntt(d+1, bit, inverse, (base * base) % mod);
-        auto f1 = ntt(d+1, bit | 1<<d, inverse, (base * base) % mod);
-        vector<ll> f(sz);
-        ll tmp = 1;
-        for (int i = 0; i < sz; ++i) {
-            f[i] = (f0[i % (sz / 2)] + tmp * f1[i % (sz / 2)]) % mod;
-            (tmp *= base) %= mod;
+    void ntt(vector<Int>& a) {
+        int p = 0;
+        for (int i = 1; i < n - 1; ++i) {
+            for (int k = n >> 1; k > (p ^= k); k >>= 1);
+            if (i < p) swap(a[i], a[p]);
         }
-        return f;
-    }
-
-    ll modpow(ll a, ll p) {
-        ll ret = 1;
-        while (p) {
-            if (p & 1) (ret *= a) %= mod;
-            (a *= a) %= mod;
-            p >>= 1;
+        for (int k = 1; k < n; k <<= 1) {
+            Int base = root.pow(n / (2*k));
+            Int z = 1;
+            for (int j = 0; j < k; ++j) {
+                for (int i = j; i < n; i += 2*k) {
+                    Int u = a[i], v = a[i+k] * z;
+                    a[i] = u + v;
+                    a[i+k] = u - v;
+                }
+                z *= base;
+            }
         }
-        return ret;
     }
 };
+

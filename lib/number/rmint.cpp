@@ -36,5 +36,8 @@ struct rmint {
     friend ostream &operator<<(ostream &os, rmint a) {
         return os << a.x;
     }
+    friend istream &operator>>(istream &is, rmint& a) {
+        ll x; is >> a.x; return is;
+    }
 };
 

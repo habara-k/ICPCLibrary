@@ -1,63 +1,68 @@
 #include "../template.cpp"
 
 /**
-* @brief FFT
-* @author habara-k
-* @date 2020/05/27
-* @verify https://atcoder.jp/contests/atc001/submissions/13627626
-* @details 使い方
-*   e.g. 多項式の積
-*
-*   vector<complex<double>> a(2*n+1), b(2*n+1);
-*
-*   auto A = FFT<double>(a).solve();
-*   auto B = FFT<double>(b).solve();
-*
-*   vector<complex<double>> C(A.size());
-*   REP(i, C.size()) C[i] = A[i] * B[i];
-*
-*   auto c = FFT<double>(C).solve(true);
-*/
-
+ * @brief FFT
+ * @author habara-k
+ * @usage
+ *   FFT<int> fft;
+ *   vector<int> a, b;
+ *   auto c = fft.multiply(a, b);
+ */
 
 template<typename T>
 struct FFT {
+    using C = complex<double>;
+    vector<T> multiply(vector<T> a, vector<T> b) {
+        int need = SZ(a) + SZ(b) - 1;
+        ensure(need);
+        assert((n & (n-1)) == 0);
 
-    /**
-    * @brief コンストラクタ. O(n)
-    * @param[in] a_: 多項式の係数
-    */
-    FFT(const vector<complex<T>>& a_) : a(a_), n(1) {
-        while (n < a.size()) n <<= 1;
-        a.resize(n);
-    }
+        vector<C> fa, fb;
+        for (T e : a) fa.emplace_back(e, 0);
+        for (T e : b) fb.emplace_back(e, 0);
+        fa.resize(n);
+        fb.resize(n);
+        fft(fa);
+        fft(fb);
 
-    /**
-    * @brief FFTの実行. O(nlog n)
-    * @param[in] inverse: 逆変換のフラグ.
-    * @return FFT or inverse-FFT
-    */
-    vector<complex<T>> solve(bool inverse = false) {
-        return fft(0, 0, inverse);
+        vector<C> fc(n);
+        for (int i = 0; i < n; ++i) fc[i] = fa[i] * fb[i] / (double)n;
+        reverse(fc.begin() + 1, fc.end());
+        fft(fc);
+        vector<T> c;
+        for (C e : fc) {
+            assert(abs(e.imag()) < eps);
+            c.emplace_back(round(e.real()));
+        }
+        c.resize(need);
+        return c;
     }
 
 private:
-    vector<complex<T>> a;
     int n;
-    const T PI = acos(-1);
+    const double PI = acos(-1);
 
-    vector<complex<T>> fft(int d, int bit, bool inverse) {
-        int sz = n >> d;
-        if (sz == 1) return {a[bit] / (inverse ? static_cast<T>(n) : 1.0)};
+    void ensure(int need) {
+        n = 1;
+        while (n < need) n <<= 1;
+    }
 
-        auto f0 = fft(d+1, bit, inverse);
-        auto f1 = fft(d+1, bit | 1<<d, inverse);
-        vector<complex<T>> f(sz);
-        for (int i = 0; i < sz; ++i) {
-            f[i] = f0[i % (sz / 2)] +
-                   std::polar(1.0, 2*PI / sz * i * (inverse ? -1 : 1)) *
-                   f1[i % (sz / 2)];
+    void fft(vector<C>& a) {
+        int p = 0;
+        for (int i = 1; i < n - 1; ++i) {
+            for (int k = n >> 1; k > (p ^= k); k >>= 1);
+            if (i < p) swap(a[i], a[p]);
         }
-        return f;
+        for (int k = 1; k < n; k <<= 1) {
+            for (int j = 0; j < k; ++j) {
+                C z = polar(1.0, PI / k * j);
+                for (int i = j; i < n; i += 2*k) {
+                    C u = a[i], v = a[i+k] * z;
+                    a[i] = u + v;
+                    a[i+k] = u - v;
+                }
+            }
+        }
     }
 };
+
