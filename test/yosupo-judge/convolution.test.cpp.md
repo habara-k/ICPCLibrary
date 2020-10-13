@@ -54,7 +54,7 @@ data:
     \ = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n        \
     \    tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n    friend ostream\
     \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n    friend\
-    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> a.x; return\
+    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> x; a = x; return\
     \ is;\n    }\n};\n\n#line 2 \"lib/number/ntt.cpp\"\n\n/**\n * @brief NTT\n * @author\
     \ habara-k\n * @usage\n *   vector<NTT<>::Int> a, b;\n *   NTT<> ntt;\n *   auto\
     \ c = ntt.multiply(a, b);\n */\n\ntemplate<ll mod=998244353, ll primitive=3>\n\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/convolution.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 02:22:34+09:00'
+  timestamp: '2020-10-13 20:06:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/convolution.test.cpp

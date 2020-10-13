@@ -57,7 +57,7 @@ data:
     \ *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n        return ret;\n\
     \    }\n    friend ostream &operator<<(ostream &os, rmint a) {\n        return\
     \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, rmint& a) {\n\
-    \        ll x; is >> a.x; return is;\n    }\n};\n\n#line 2 \"lib/number/comb.cpp\"\
+    \        ll x; is >> x; a = x; return is;\n    }\n};\n\n#line 2 \"lib/number/comb.cpp\"\
     \n\n#define SNIPPET_ONLY\n\ntemplate<typename T>\nstruct Combination {\n    int\
     \ _n = 1;\n    vector<T> _fact{1}, _rfact{1};\n\n    void extend(int n) {\n  \
     \      if (n <= _n) return;\n        _fact.resize(n);\n        _rfact.resize(n);\n\
@@ -128,7 +128,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/montmort_number.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 02:22:34+09:00'
+  timestamp: '2020-10-13 20:06:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/montmort_number.test.cpp

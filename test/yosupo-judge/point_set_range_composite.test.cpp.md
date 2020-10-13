@@ -57,7 +57,7 @@ data:
     \ = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n        \
     \    tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n    friend ostream\
     \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n    friend\
-    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> a.x; return\
+    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> x; a = x; return\
     \ is;\n    }\n};\n\n#line 2 \"lib/structure/segment_tree.cpp\"\n\n/**\n* @brief\
     \ \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n* @author habara-k, Md\n* @date 2020/06/17\n\
     */\n\ntemplate<typename M>\nstruct SegmentTree {\n\n    /**\n    * @brief \u30B3\
@@ -137,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 02:22:34+09:00'
+  timestamp: '2020-10-13 20:06:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/point_set_range_composite.test.cpp
