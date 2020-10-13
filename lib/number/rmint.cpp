@@ -37,7 +37,7 @@ struct rmint {
         return os << a.x;
     }
     friend istream &operator>>(istream &is, rmint& a) {
-        ll x; is >> a.x; return is;
+        ll x; is >> x; a = x; return is;
     }
 };
 
