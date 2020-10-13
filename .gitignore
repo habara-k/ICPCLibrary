@@ -8,3 +8,4 @@ a.out
 .idea/
 tex/main.tex
 clion/C_C__.xml
+cmake-build-debug/

@@ -2,7 +2,11 @@
 
 /**
  * @brief 接尾辞配列 O(n(logn)^2) ありほんのやつそのまま
- * @detail construct_saにstringを投げると接尾辞配列が帰ってくる
+ * @detail
+ *  construct_saにstringを投げると接尾辞配列が帰ってくる(1-indexed)
+ *  construct_lcpにstringとsuffix_arrayを投げるとLCPの配列が帰ってくる(1-indexed)
+ *
+ *  配列サイズ(ma)に注意（文字列の長さ+1以上）
  * @author Md
  * @date 2020/10/12
  */
@@ -11,6 +15,7 @@ namespace SA {
   static const int ma = 1000000;
   int n, k;
   int rank[ma];
+  int rank_lcp[ma];
   int tmp[ma];
 
   bool compare_sa(int i, int j) {
@@ -44,4 +49,27 @@ namespace SA {
 
     return sa;
   }
+
+  std::vector<int> construct_lcp(const std::string &s, const std::vector<int> &sa) {
+    int n = s.length();
+    std::vector<int> lcp(n+1);
+
+    for(int i=0;i<=n;++i) rank_lcp[sa[i]] = i;
+
+    int h = 0;
+    lcp[0] = 0;
+    for(int i=0;i<n;++i) {
+      int j = sa[rank_lcp[i] - 1];
+
+      if(h > 0) h--;
+      for(; j + h < n && i + h < n; h++) {
+        if(s[j+h] != s[i+h]) break;
+      }
+
+      lcp[rank_lcp[i] - 1] = h;
+    }
+
+    return lcp;
+  }
+
 };
