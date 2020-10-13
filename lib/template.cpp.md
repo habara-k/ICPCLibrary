@@ -125,6 +125,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/string/rolling_hash_2D.cpp
     title: "2\u6B21\u5143\u6587\u5B57\u5217\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
+  - icon: ':heavy_check_mark:'
+    path: lib/string/suffix_array.cpp
+    title: "\u63A5\u5C3E\u8F9E\u914D\u5217 O(n(logn)^2) \u3042\u308A\u307B\u3093\u306E\
+      \u3084\u3064\u305D\u306E\u307E\u307E"
   - icon: ':warning:'
     path: lib/string/z_algorithm.cpp
     title: lib/string/z_algorithm.cpp
@@ -319,6 +323,12 @@ data:
     path: test/string/rolling_hash_2D.test.cpp
     title: test/string/rolling_hash_2D.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/suffix_array.test.cpp
+    title: test/string/suffix_array.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/suffix_array_2.test.cpp
+    title: test/string/suffix_array_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/structure/binary_indexed_tree.test.cpp
     title: test/structure/binary_indexed_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -434,6 +444,7 @@ data:
   isVerificationFile: false
   path: lib/template.cpp
   requiredBy:
+  - lib/string/suffix_array.cpp
   - lib/string/z_algorithm.cpp
   - lib/string/rolling_hash.cpp
   - lib/string/rolling_hash_2D.cpp
@@ -513,6 +524,8 @@ data:
   - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/union_find.test.cpp
   - test/string/rolling_hash_2D.test.cpp
+  - test/string/suffix_array.test.cpp
+  - test/string/suffix_array_2.test.cpp
   - test/string/rolling_hash.test.cpp
   - test/number/extended_gcd.test.cpp
   - test/number/matrix.test.cpp
