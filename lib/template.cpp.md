@@ -168,6 +168,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/weighted_union_find.cpp
     title: lib/structure/weighted_union_find.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/tree/centroid.cpp
+    title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
+  - icon: ':heavy_check_mark:'
+    path: lib/tree/tree_hash.cpp
+    title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
   - icon: ':warning:'
     path: test/graph/maximum_clique.cpp
     title: test/graph/maximum_clique.cpp
@@ -356,6 +362,12 @@ data:
     path: test/structure/weighted_union_find.test.cpp
     title: test/structure/weighted_union_find.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/tree/tree_hash.test.cpp
+    title: test/tree/tree_hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/tree_hash.test.cpp
+    title: test/tree/tree_hash.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/a+b.test.cpp
     title: test/yosupo-judge/a+b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -462,6 +474,8 @@ data:
   - lib/number/fast-mobius.cpp
   - lib/number/gauss_jordan.cpp
   - lib/number/extended_gcd.cpp
+  - lib/tree/centroid.cpp
+  - lib/tree/tree_hash.cpp
   - lib/structure/lazy_segment_tree.cpp
   - lib/structure/randomized_binary_search_tree.cpp
   - lib/structure/weighted_union_find.cpp
@@ -536,6 +550,8 @@ data:
   - test/number/crt.test.cpp
   - test/number/Stirling.test.cpp
   - test/number/Bell.test.cpp
+  - test/tree/tree_hash.test.cpp
+  - test/tree/tree_hash.test.cpp
   - test/structure/binary_indexed_tree.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
   - test/structure/segment_rbst.test.cpp

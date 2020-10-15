@@ -6,24 +6,16 @@ data:
     title: lib/template.cpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/kruskal.cpp
-    title: lib/graph/kruskal.cpp
+    path: lib/tree/tree_hash.cpp
+    title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/graph/kruskal.test.cpp
-    title: test/graph/kruskal.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/structure/union_find.test.cpp
-    title: test/structure/union_find.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/tree/tree_hash.test.cpp
     title: test/tree/tree_hash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo-judge/union_find.test.cpp
-    title: test/yosupo-judge/union_find.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
@@ -45,41 +37,38 @@ data:
     const ll MOD = 1e9 + 7;\nconst int INF = INT_MAX / 2;\nconst ll LINF = LLONG_MAX\
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
-    \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/structure/union_find.cpp\"\
-    \n\nstruct UnionFind\n{\n    vector<int> par, sz;\n    UnionFind(int n) : par(n),\
-    \ sz(n, 1) {\n        for (int i = 0; i < n; ++i) par[i] = i;\n    }\n    int\
-    \ root(int x) {\n        if (par[x] == x) return x;\n        return par[x] = root(par[x]);\n\
-    \    }\n    void merge(int x, int y) {\n        x = root(x);\n        y = root(y);\n\
-    \        if (x == y) return;\n        if (sz[x] < sz[y]) swap(x, y);\n       \
-    \ par[y] = x;\n        sz[x] += sz[y];\n        sz[y] = 0;\n    }\n    bool issame(int\
-    \ x, int y) {\n        return root(x) == root(y);\n    }\n    int size(int x)\
-    \ {\n        return sz[root(x)];\n    }\n};\n"
-  code: "#include \"../template.cpp\"\n\nstruct UnionFind\n{\n    vector<int> par,\
-    \ sz;\n    UnionFind(int n) : par(n), sz(n, 1) {\n        for (int i = 0; i <\
-    \ n; ++i) par[i] = i;\n    }\n    int root(int x) {\n        if (par[x] == x)\
-    \ return x;\n        return par[x] = root(par[x]);\n    }\n    void merge(int\
-    \ x, int y) {\n        x = root(x);\n        y = root(y);\n        if (x == y)\
-    \ return;\n        if (sz[x] < sz[y]) swap(x, y);\n        par[y] = x;\n     \
-    \   sz[x] += sz[y];\n        sz[y] = 0;\n    }\n    bool issame(int x, int y)\
-    \ {\n        return root(x) == root(y);\n    }\n    int size(int x) {\n      \
-    \  return sz[root(x)];\n    }\n};\n"
+    \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/tree/centroid.cpp\"\
+    \n\n/**\n * @brief \u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)\n * @author habara-k\n\
+    \ * @date 2020/10/14\n */\nvector<int> centroid(const vector<vector<int>>& g)\
+    \ {\n    const int n = g.size();\n    vector<int> sz(n,1), ret;\n    function<int(int,int)>\
+    \ dfs = [&](int u,int p) {\n        bool isCent = true;\n        for (int v :\
+    \ g[u]) {\n            if (v == p) continue;\n            sz[u] += dfs(v, u);\n\
+    \            if (sz[v] > n / 2) isCent = false;\n        }\n        if (n - sz[u]\
+    \ > n / 2) isCent = false;\n        if (isCent) ret.emplace_back(u);\n       \
+    \ return sz[u];\n    };\n    dfs(0, -1);\n    return ret;\n}\n\n"
+  code: "#include \"../template.cpp\"\n\n/**\n * @brief \u6728\u306E\u91CD\u5FC3\u5217\
+    \u6319. O(n)\n * @author habara-k\n * @date 2020/10/14\n */\nvector<int> centroid(const\
+    \ vector<vector<int>>& g) {\n    const int n = g.size();\n    vector<int> sz(n,1),\
+    \ ret;\n    function<int(int,int)> dfs = [&](int u,int p) {\n        bool isCent\
+    \ = true;\n        for (int v : g[u]) {\n            if (v == p) continue;\n \
+    \           sz[u] += dfs(v, u);\n            if (sz[v] > n / 2) isCent = false;\n\
+    \        }\n        if (n - sz[u] > n / 2) isCent = false;\n        if (isCent)\
+    \ ret.emplace_back(u);\n        return sz[u];\n    };\n    dfs(0, -1);\n    return\
+    \ ret;\n}\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
-  path: lib/structure/union_find.cpp
+  path: lib/tree/centroid.cpp
   requiredBy:
-  - lib/graph/kruskal.cpp
-  timestamp: '2020-05-06 01:41:24+09:00'
+  - lib/tree/tree_hash.cpp
+  timestamp: '2020-10-15 21:18:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/union_find.test.cpp
   - test/tree/tree_hash.test.cpp
-  - test/structure/union_find.test.cpp
-  - test/graph/kruskal.test.cpp
-documentation_of: lib/structure/union_find.cpp
+documentation_of: lib/tree/centroid.cpp
 layout: document
 redirect_from:
-- /library/lib/structure/union_find.cpp
-- /library/lib/structure/union_find.cpp.html
-title: lib/structure/union_find.cpp
+- /library/lib/tree/centroid.cpp
+- /library/lib/tree/centroid.cpp.html
+title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
 ---

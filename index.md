@@ -195,6 +195,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/template.cpp
       title: lib/template.cpp
+  - name: lib/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/tree/centroid.cpp
+      title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
+    - icon: ':heavy_check_mark:'
+      path: lib/tree/tree_hash.cpp
+      title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
   - name: test/graph/lowlink
     pages:
     - icon: ':warning:'
@@ -407,6 +415,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/weighted_union_find.test.cpp
       title: test/structure/weighted_union_find.test.cpp
+  - name: test/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/tree/tree_hash.test.cpp
+      title: test/tree/tree_hash.test.cpp
   - name: test/yosupo-judge
     pages:
     - icon: ':heavy_check_mark:'
