@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C"
 
-#include "../../lib/graph/lowest_common_ancestor.cpp"
+#include "../../lib/tree/lowest_common_ancestor.cpp"
 
 int main() {
     int N, Q;
