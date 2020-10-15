@@ -16,7 +16,7 @@ struct HLDecomposition {
     * @param[in] g: 無向木
     * @param[in] root: 根
     */
-    HLDecomposition(const vector<vector<int>>& g, int root) :
+    HLDecomposition(const vector<vector<int>>& g, int root=0) :
             g(g), par(g.size()), size(g.size()), depth(g.size()),
             head(g.size()), vid(g.size()) {
         dfs(root, -1, 0);
@@ -92,9 +92,9 @@ struct HLDecomposition {
     *          [&](int a,int b){ return min(a,b); }, INF);
     *       // u, v 間のパス上にある全ての頂点の値のminを取得する.
     */
-    template<class Query, typename T>
+    template<class Query, class MergeFunc, typename T>
     T query(int u, int v,
-            const Query& q, const function<T(T,T)>& f,
+            const Query& q, const MergeFunc& f,
             const T& ident, bool edge = false) const {
         T ret = ident;
         for (;; v = par[head[v]]) {
