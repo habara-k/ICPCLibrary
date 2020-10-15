@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_C"
 
-#include "../../../lib/graph/heavy_light_decomposition.cpp"
+#include "../../../lib/tree/heavy_light_decomposition.cpp"
 
 int main() {
     int N, Q;
@@ -15,7 +15,6 @@ int main() {
     }
 
     HLDecomposition hld(g);
-    hld.build(0);
 
     cin >> Q;
     while (Q--) {
