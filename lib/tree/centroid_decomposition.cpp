@@ -1,7 +1,7 @@
 #include "../template.cpp"
 
 /**
- * @brief 木の重心分解. O(nlogn)
+ * @brief 木の重心分解. O(VlogV)
  * @author habara-k
  * @date 2020/10/14
  * @details
