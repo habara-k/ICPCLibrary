@@ -7,11 +7,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/heavy_light_decomposition/hld.test.cpp
-    title: test/graph/heavy_light_decomposition/hld.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/structure/lazy_segment_tree.test.cpp
     title: test/structure/lazy_segment_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/heavy_light_decomposition/hld.test.cpp
+    title: test/tree/heavy_light_decomposition/hld.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
@@ -220,8 +220,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/range_affine_range_sum.test.cpp
+  - test/tree/heavy_light_decomposition/hld.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
-  - test/graph/heavy_light_decomposition/hld.test.cpp
 documentation_of: lib/structure/lazy_segment_tree.cpp
 layout: document
 redirect_from:

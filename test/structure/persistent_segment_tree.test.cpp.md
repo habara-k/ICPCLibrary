@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/lowest_common_ancestor.cpp
-    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
-  - icon: ':heavy_check_mark:'
     path: lib/structure/persistent_segment_tree.cpp
     title: "\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
@@ -13,6 +10,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/tree/lowest_common_ancestor.cpp
+    title: LCA
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -101,43 +101,39 @@ data:
     \    }\n\n    M query(Node* t, int a, int b, int l, int r) const {\n        if\
     \ (r <= a or b <= l) return e;\n        if (a <= l and r <= b) return t->data;\n\
     \        return f(query(t->l, a, b, l, (l + r) >> 1),\n                 query(t->r,\
-    \ a, b, (l + r) >> 1, r));\n    }\n};\n#line 2 \"lib/graph/lowest_common_ancestor.cpp\"\
-    \n\n/**\n * @brief\n * \u6700\u5C0F\u5171\u901A\u7956\u5148\uFF08\u30C0\u30D6\u30EA\
-    \u30F3\u30B0\uFF09\n * \u69CB\u7BC9O(VlogV), \u30AF\u30A8\u30EAO(logV)\n *\n *\
-    \ LCA(G, root)\u3067\u69CB\u7BC9\uFF08\u7121\u5411\u6728G\u3092\u3001root\u3092\
-    \u6839\u3068\u3057\u3066\u5411\u304D\u3065\u3051\u3057\u305F\u3068\u304D\u306E\
-    LCA\u3092\u69CB\u7BC9\uFF09\n * query(u, v)\u3067\u53D6\u5F97\n *\n * @author\
-    \ \u3086\u304D\u306E\u3093\uFF1F\n * @date 2019/12\n */\n\nstruct LCA {\n\n  \
-    \  /**\n    * @brief \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)\n \
-    \   * @param[in] G \u7121\u5411\u6728.\n    * @param[in] root \u6307\u5B9A\u3057\
-    \u305F\u6839.\n    */\n    LCA(const vector<vector<int>>& G, int root = 0) :\n\
-    \            n(G.size()), log2_n(log2(n)), depth(n),\n            par(log2_n+1,\
-    \ vector<int>(n,-1)) {\n\n        dfs(G, root, -1, 0);\n\n        for (int k =\
-    \ 0; k < log2_n; ++k) {\n            for (int v = 0; v < n; ++v) {\n         \
-    \       if (par[k][v] != -1) {\n                    par[k+1][v] = par[k][par[k][v]];\n\
-    \                }\n            }\n        }\n    }\n\n    /**\n    * @brief lca\
-    \ \u3092\u53D6\u5F97\u3059\u308B. O(log n);\n    * @param[in] u, v: lca \u3092\
-    \u6C42\u3081\u305F\u30442\u9802\u70B9.\n    * @return u, v \u306Elca.\n    */\n\
-    \    int query(int u, int v) {\n        if (depth[u] > depth[v]) swap(u, v);\n\
-    \n        for (int k = 0; k <= log2_n; ++k) {\n            if ((depth[v] - depth[u])\
-    \ >> k & 1) {\n                v = par[k][v];\n            }\n        }\n    \
-    \    if (u == v) return u;\n\n        for (int k = log2_n; k >= 0; --k) {\n  \
-    \          if (par[k][u] != par[k][v]) {\n                u = par[k][u];\n   \
-    \             v = par[k][v];\n            }\n        }\n        return par[0][u];\n\
-    \    }\n\nprivate:\n    int n, log2_n;\n    vector<int> depth;\n    vector<vector<int>>\
-    \ par;\n\n    void dfs(const vector<vector<int>>& G, int v, int p, int d) {\n\
-    \        depth[v] = d;\n        par[0][v] = p;\n        for (auto to : G[v]) {\n\
-    \            if (to != p) dfs(G, to, v, d+1);\n        }\n    }\n};\n#line 5 \"\
-    test/structure/persistent_segment_tree.test.cpp\"\n\nint main()\n{\n    int N,\
-    \ Q;\n    cin >> N >> Q;\n    vector<int> x(N);\n    for (int i = 0; i < N; ++i)\
-    \ {\n        cin >> x[i];\n    }\n\n    vector<vector<int>> G(N);\n    for (int\
-    \ i = 0; i < N-1; ++i) {\n        int a, b; cin >> a >> b;\n        --a, --b;\n\
-    \        G[a].push_back(b);\n        G[b].push_back(a);\n    }\n\n    // compress\n\
-    \    map<int,int> comp, comp_inv;\n    for (auto X : x) comp[X] = -1;\n    int\
-    \ comp_size = 0;\n    for (auto &p : comp) {\n        p.second = comp_size++;\n\
-    \    }\n    for (auto p : comp) {\n        comp_inv[p.second] = p.first;\n   \
-    \ }\n\n    // lca\n    auto lca = LCA(G);\n\n    // persistent segtree\n    PersistentSegmentTree<int>\
-    \ segt(\n            comp.size(), [](int a,int b){ return a+b; }, 0);\n\n    map<int,PersistentSegmentTree<int>::Node*>\
+    \ a, b, (l + r) >> 1, r));\n    }\n};\n#line 2 \"lib/tree/lowest_common_ancestor.cpp\"\
+    \n\n/**\n * @brief LCA\n * @author habara-k\n * @date 2020/10/15\n */\nstruct\
+    \ LCA {\n\n    /**\n     * @brief \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF.\
+    \ O(VlogV)\n     * @param[in] g \u7121\u5411\u6728\n     * @param[in] root \u6839\
+    \n     */\n    LCA(const vector<vector<int>> &g, int root = 0) :\n           \
+    \ n(g.size()), m(log2(n)), depth(n),\n            g(g), par(m + 1, vector<int>(n,\
+    \ -1)) {\n\n        dfs(root, -1, 0);\n\n        for (int k = 0; k < m; ++k) {\n\
+    \            for (int v = 0; v < n; ++v) {\n                if (par[k][v] != -1)\
+    \ {\n                    par[k + 1][v] = par[k][par[k][v]];\n                }\n\
+    \            }\n        }\n    }\n\n    /**\n     * @brief lca \u3092\u53D6\u5F97\
+    \u3059\u308B. O(logV)\n     */\n    int query(int u, int v) {\n        if (depth[u]\
+    \ > depth[v]) swap(u, v);\n        for (int k = 0; k <= m; ++k) {\n          \
+    \  if ((depth[v] - depth[u]) >> k & 1) {\n                v = par[k][v];\n   \
+    \         }\n        }\n        if (u == v) return u;\n        for (int k = m;\
+    \ k >= 0; --k) {\n            if (par[k][u] != par[k][v]) {\n                u\
+    \ = par[k][u];\n                v = par[k][v];\n            }\n        }\n   \
+    \     return par[0][u];\n    }\n\n    /**\n     * @brief \u9802\u70B9u,v\u9593\
+    \u306E\u8DDD\u96E2\u3092\u53D6\u5F97\u3059\u308B. O(logV)\n     */\n    int dist(int\
+    \ u, int v) {\n        return depth[u] + depth[v] - 2 * depth[query(u,v)];\n \
+    \   }\n\nprivate:\n    int n, m;\n    vector<int> depth;\n    vector<vector<int>>\
+    \ g, par;\n\n    void dfs(int u, int p, int d) {\n        depth[u] = d;\n    \
+    \    par[0][u] = p;\n        for (auto v : g[u]) {\n            if (v != p) dfs(v,\
+    \ u, d + 1);\n        }\n    }\n};\n\n#line 5 \"test/structure/persistent_segment_tree.test.cpp\"\
+    \n\nint main()\n{\n    int N, Q;\n    cin >> N >> Q;\n    vector<int> x(N);\n\
+    \    for (int i = 0; i < N; ++i) {\n        cin >> x[i];\n    }\n\n    vector<vector<int>>\
+    \ G(N);\n    for (int i = 0; i < N-1; ++i) {\n        int a, b; cin >> a >> b;\n\
+    \        --a, --b;\n        G[a].push_back(b);\n        G[b].push_back(a);\n \
+    \   }\n\n    // compress\n    map<int,int> comp, comp_inv;\n    for (auto X :\
+    \ x) comp[X] = -1;\n    int comp_size = 0;\n    for (auto &p : comp) {\n     \
+    \   p.second = comp_size++;\n    }\n    for (auto p : comp) {\n        comp_inv[p.second]\
+    \ = p.first;\n    }\n\n    // lca\n    auto lca = LCA(G);\n\n    // persistent\
+    \ segtree\n    PersistentSegmentTree<int> segt(\n            comp.size(), [](int\
+    \ a,int b){ return a+b; }, 0);\n\n    map<int,PersistentSegmentTree<int>::Node*>\
     \ root;\n    vector<int> par(N);\n\n    function<void(int,int)> dfs = [&](int\
     \ v, int p) {\n        par[v] = p;\n        root[v] = segt.update(root[p],\n \
     \               comp[x[v]], [](int a){ return a+1; });\n        for (int u : G[v])\
@@ -155,7 +151,7 @@ data:
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270\"\
     \n\n#include \"../../lib/structure/persistent_segment_tree.cpp\"\n#include \"\
-    ../../lib/graph/lowest_common_ancestor.cpp\"\n\nint main()\n{\n    int N, Q;\n\
+    ../../lib/tree/lowest_common_ancestor.cpp\"\n\nint main()\n{\n    int N, Q;\n\
     \    cin >> N >> Q;\n    vector<int> x(N);\n    for (int i = 0; i < N; ++i) {\n\
     \        cin >> x[i];\n    }\n\n    vector<vector<int>> G(N);\n    for (int i\
     \ = 0; i < N-1; ++i) {\n        int a, b; cin >> a >> b;\n        --a, --b;\n\
@@ -183,12 +179,12 @@ data:
   dependsOn:
   - lib/structure/persistent_segment_tree.cpp
   - lib/template.cpp
-  - lib/graph/lowest_common_ancestor.cpp
+  - lib/tree/lowest_common_ancestor.cpp
   - lib/template.cpp
   isVerificationFile: true
   path: test/structure/persistent_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-16 15:26:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/structure/persistent_segment_tree.test.cpp

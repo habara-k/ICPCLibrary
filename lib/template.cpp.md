@@ -23,9 +23,6 @@ data:
     path: lib/graph/dinic.cpp
     title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/heavy_light_decomposition.cpp
-    title: "HL\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
     path: lib/graph/hopcroft_karp.cpp
     title: lib/graph/hopcroft_karp.cpp
   - icon: ':heavy_check_mark:'
@@ -34,7 +31,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/kruskal.cpp
     title: lib/graph/kruskal.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: lib/graph/lowest_common_ancestor.cpp
     title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
   - icon: ':warning:'
@@ -171,6 +168,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/tree/centroid.cpp
     title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
+  - icon: ':warning:'
+    path: lib/tree/centroid_decomposition.cpp
+    title: "\u6728\u306E\u91CD\u5FC3\u5206\u89E3. O(VlogV)"
+  - icon: ':heavy_check_mark:'
+    path: lib/tree/heavy_light_decomposition.cpp
+    title: "HL\u5206\u89E3"
+  - icon: ':heavy_check_mark:'
+    path: lib/tree/lowest_common_ancestor.cpp
+    title: LCA
   - icon: ':heavy_check_mark:'
     path: lib/tree/tree_hash.cpp
     title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
@@ -263,15 +269,6 @@ data:
     path: test/graph/dinic.test.cpp
     title: test/graph/dinic.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/heavy_light_decomposition/hld.test.cpp
-    title: test/graph/heavy_light_decomposition/hld.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/heavy_light_decomposition/hld.test.cpp
-    title: test/graph/heavy_light_decomposition/hld.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/heavy_light_decomposition/lca.test.cpp
-    title: test/graph/heavy_light_decomposition/lca.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/hopcroft_karp.test.cpp
     title: test/graph/hopcroft_karp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -280,9 +277,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/lowest_common_ancestor.test.cpp
-    title: test/graph/lowest_common_ancestor.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/primal_dual.test.cpp
     title: test/graph/primal_dual.test.cpp
@@ -361,6 +355,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/structure/weighted_union_find.test.cpp
     title: test/structure/weighted_union_find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/heavy_light_decomposition/hld.test.cpp
+    title: test/tree/heavy_light_decomposition/hld.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/heavy_light_decomposition/hld.test.cpp
+    title: test/tree/heavy_light_decomposition/hld.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/heavy_light_decomposition/lca.test.cpp
+    title: test/tree/heavy_light_decomposition/lca.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/lowest_common_ancestor.test.cpp
+    title: test/tree/lowest_common_ancestor.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/tree/tree_hash.test.cpp
     title: test/tree/tree_hash.test.cpp
@@ -474,8 +480,11 @@ data:
   - lib/number/fast-mobius.cpp
   - lib/number/gauss_jordan.cpp
   - lib/number/extended_gcd.cpp
+  - lib/tree/lowest_common_ancestor.cpp
   - lib/tree/centroid.cpp
   - lib/tree/tree_hash.cpp
+  - lib/tree/centroid_decomposition.cpp
+  - lib/tree/heavy_light_decomposition.cpp
   - lib/structure/lazy_segment_tree.cpp
   - lib/structure/randomized_binary_search_tree.cpp
   - lib/structure/weighted_union_find.cpp
@@ -500,7 +509,6 @@ data:
   - lib/graph/kruskal.cpp
   - lib/graph/dinic.cpp
   - lib/graph/topological_sort.cpp
-  - lib/graph/heavy_light_decomposition.cpp
   - lib/graph/primal_dual.cpp
   - lib/graph/template.cpp
   - lib/graph/twoconnectedcomponents.cpp
@@ -552,6 +560,10 @@ data:
   - test/number/Bell.test.cpp
   - test/tree/tree_hash.test.cpp
   - test/tree/tree_hash.test.cpp
+  - test/tree/heavy_light_decomposition/lca.test.cpp
+  - test/tree/heavy_light_decomposition/hld.test.cpp
+  - test/tree/heavy_light_decomposition/hld.test.cpp
+  - test/tree/lowest_common_ancestor.test.cpp
   - test/structure/binary_indexed_tree.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
   - test/structure/segment_rbst.test.cpp
@@ -565,15 +577,11 @@ data:
   - test/graph/bfs01.test.cpp
   - test/graph/warshall_floyd.test.cpp
   - test/graph/dinic.test.cpp
-  - test/graph/heavy_light_decomposition/lca.test.cpp
-  - test/graph/heavy_light_decomposition/hld.test.cpp
-  - test/graph/heavy_light_decomposition/hld.test.cpp
   - test/graph/scc.test.cpp
   - test/graph/hopcroft_karp.test.cpp
   - test/graph/kruskal.test.cpp
   - test/graph/kruskal.test.cpp
   - test/graph/re_rooting.test.cpp
-  - test/graph/lowest_common_ancestor.test.cpp
   - test/graph/primal_dual.test.cpp
   - test/geometry/2D_template/intersection.test.cpp
   - test/geometry/2D_template/projection.test.cpp

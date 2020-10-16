@@ -34,15 +34,12 @@ data:
       path: lib/graph/graph_coloring.cpp
       title: lib/graph/graph_coloring.cpp
     - icon: ':heavy_check_mark:'
-      path: lib/graph/heavy_light_decomposition.cpp
-      title: "HL\u5206\u89E3"
-    - icon: ':heavy_check_mark:'
       path: lib/graph/hopcroft_karp.cpp
       title: lib/graph/hopcroft_karp.cpp
     - icon: ':heavy_check_mark:'
       path: lib/graph/kruskal.cpp
       title: lib/graph/kruskal.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/graph/lowest_common_ancestor.cpp
       title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
     - icon: ':warning:'
@@ -200,6 +197,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/tree/centroid.cpp
       title: "\u6728\u306E\u91CD\u5FC3\u5217\u6319. O(n)"
+    - icon: ':warning:'
+      path: lib/tree/centroid_decomposition.cpp
+      title: "\u6728\u306E\u91CD\u5FC3\u5206\u89E3. O(VlogV)"
+    - icon: ':heavy_check_mark:'
+      path: lib/tree/heavy_light_decomposition.cpp
+      title: "HL\u5206\u89E3"
+    - icon: ':heavy_check_mark:'
+      path: lib/tree/lowest_common_ancestor.cpp
+      title: LCA
     - icon: ':heavy_check_mark:'
       path: lib/tree/tree_hash.cpp
       title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
@@ -324,9 +330,6 @@ data:
       path: test/graph/kruskal.test.cpp
       title: test/graph/kruskal.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/graph/lowest_common_ancestor.test.cpp
-      title: test/graph/lowest_common_ancestor.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/graph/primal_dual.test.cpp
       title: test/graph/primal_dual.test.cpp
     - icon: ':heavy_check_mark:'
@@ -338,14 +341,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/warshall_floyd.test.cpp
       title: test/graph/warshall_floyd.test.cpp
-  - name: test/graph/heavy_light_decomposition
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/graph/heavy_light_decomposition/hld.test.cpp
-      title: test/graph/heavy_light_decomposition/hld.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/graph/heavy_light_decomposition/lca.test.cpp
-      title: test/graph/heavy_light_decomposition/lca.test.cpp
   - name: test/number
     pages:
     - icon: ':heavy_check_mark:'
@@ -415,8 +410,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/weighted_union_find.test.cpp
       title: test/structure/weighted_union_find.test.cpp
+  - name: test/tree/heavy_light_decomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/tree/heavy_light_decomposition/hld.test.cpp
+      title: test/tree/heavy_light_decomposition/hld.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/tree/heavy_light_decomposition/lca.test.cpp
+      title: test/tree/heavy_light_decomposition/lca.test.cpp
   - name: test/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/tree/lowest_common_ancestor.test.cpp
+      title: test/tree/lowest_common_ancestor.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/tree/tree_hash.test.cpp
       title: test/tree/tree_hash.test.cpp
