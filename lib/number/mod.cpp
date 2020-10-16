@@ -107,7 +107,7 @@ ll logm(ll x, ll y, ll m) {
 
 /**
  * @brief
- * 平方剰余 O(sqrt(m))
+ * 平方剰余 O(log(p)^2) ?
  * http://kirika-comp.hatenablog.com/entry/2018/03/12/210446
  * @author habara-k
  * @date 2020/10/16
