@@ -45,6 +45,9 @@ data:
     - icon: ':warning:'
       path: lib/graph/lowlink.cpp
       title: lib/graph/lowlink.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/max_flow_with_lower_limit.cpp
+      title: lib/graph/max_flow_with_lower_limit.cpp
     - icon: ':warning:'
       path: lib/graph/maximum_clique.cpp
       title: lib/graph/maximum_clique.cpp
@@ -329,6 +332,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/kruskal.test.cpp
       title: test/graph/kruskal.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/max_flow_with_lower_limit.test.cpp
+      title: test/graph/max_flow_with_lower_limit.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/primal_dual.test.cpp
       title: test/graph/primal_dual.test.cpp
