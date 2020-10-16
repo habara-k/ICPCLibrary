@@ -149,7 +149,7 @@ data:
     - icon: ':warning:'
       path: lib/string/suffix_automaton.cpp
       title: lib/string/suffix_automaton.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/string/z_algorithm.cpp
       title: lib/string/z_algorithm.cpp
   - name: lib/structure
@@ -470,5 +470,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/union_find.test.cpp
       title: test/yosupo-judge/union_find.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/z_algorithm.test.cpp
+      title: test/yosupo-judge/z_algorithm.test.cpp
 layout: toppage
 ---

@@ -10,17 +10,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
     links:
-    - https://atcoder.jp/contests/abc141/tasks/abc141_e
-  bundledCode: "#line 1 \"test/string/z_algorithm.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc141/tasks/abc141_e\"\
-    \n\n#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i, n) for\
-    \ (int i=(int)(n)-1; i>=0; --i)\n#define FOR(i, a, n) for (int i=(a); i<(n); ++i)\n\
-    #define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)\n\n#define SZ(x) ((int)(x).size())\n\
-    #define ALL(x) (x).begin(),(x).end()\n\n#define DUMP(x) cerr<<#x<<\" = \"<<(x)<<endl\n\
-    #define DEBUG(x) cerr<<#x<<\" = \"<<(x)<<\" (L\"<<__LINE__<<\")\"<<endl;\n\ntemplate<class\
+    - https://judge.yosupo.jp/problem/zalgorithm
+  bundledCode: "#line 1 \"test/yosupo-judge/z_algorithm.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/zalgorithm\"\r\n\r\n#line 1 \"lib/template.cpp\"\
+    \n\n\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define REP(i, n)\
+    \ for (int i=0; i<(n); ++i)\n#define RREP(i, n) for (int i=(int)(n)-1; i>=0; --i)\n\
+    #define FOR(i, a, n) for (int i=(a); i<(n); ++i)\n#define RFOR(i, a, n) for (int\
+    \ i=(int)(n)-1; i>=(a); --i)\n\n#define SZ(x) ((int)(x).size())\n#define ALL(x)\
+    \ (x).begin(),(x).end()\n\n#define DUMP(x) cerr<<#x<<\" = \"<<(x)<<endl\n#define\
+    \ DEBUG(x) cerr<<#x<<\" = \"<<(x)<<\" (L\"<<__LINE__<<\")\"<<endl;\n\ntemplate<class\
     \ T>\nostream &operator<<(ostream &os, const vector <T> &v) {\n    os << \"[\"\
     ;\n    REP(i, SZ(v)) {\n        if (i) os << \", \";\n        os << v[i];\n  \
     \  }\n    return os << \"]\";\n}\n\ntemplate<class T, class U>\nostream &operator<<(ostream\
@@ -41,32 +44,28 @@ data:
     \    A[0] = n;\n    int i = 1, j = 0;\n    while (i < n) {\n        while (i+j\
     \ < n && s[j] == s[i+j]) ++j;\n        A[i] = j;\n        if (j == 0) { ++i; continue;\
     \ }\n        int k = 1;\n        while (i+k < n && k+A[k] < j) { A[i+k] = A[k];\
-    \ ++k; }\n        i += k; j -= k;\n    }\n}\n#line 4 \"test/string/z_algorithm.cpp\"\
-    \n\nint main() {\n    int n; cin >> n;\n    string s; cin >> s;\n\n    int ans\
-    \ = 0;\n\n    for (int i = 0; i < n; ++i) {\n        vector<int> a;\n        z_algorithm(s.substr(i,\
-    \ n-i), a);\n        for (int j = 0; j < a.size(); ++j) {\n            if (a[j]\
-    \ <= j) {\n                ans = max(ans, a[j]);\n            }\n        }\n \
-    \   }\n\n    cout << ans << endl;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/abc141/tasks/abc141_e\"\n\n\
-    #include \"../../lib/string/z_algorithm.cpp\"\n\nint main() {\n    int n; cin\
-    \ >> n;\n    string s; cin >> s;\n\n    int ans = 0;\n\n    for (int i = 0; i\
-    \ < n; ++i) {\n        vector<int> a;\n        z_algorithm(s.substr(i, n-i), a);\n\
-    \        for (int j = 0; j < a.size(); ++j) {\n            if (a[j] <= j) {\n\
-    \                ans = max(ans, a[j]);\n            }\n        }\n    }\n\n  \
-    \  cout << ans << endl;\n}\n"
+    \ ++k; }\n        i += k; j -= k;\n    }\n}\n#line 4 \"test/yosupo-judge/z_algorithm.test.cpp\"\
+    \n\r\nint main() {\r\n  string s; cin >> s;\r\n  vi a(SZ(s));\r\n  z_algorithm(s,\
+    \ a);\r\n  REP(i, SZ(s)) {\r\n    cout << a[i];\r\n    if(i == SZ(s)-1) cout <<\
+    \ endl;\r\n    else cout << \" \";\r\n  }\r\n}\r\n\r\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\r\n\r\n#include\
+    \ \"../../lib/string/z_algorithm.cpp\"\r\n\r\nint main() {\r\n  string s; cin\
+    \ >> s;\r\n  vi a(SZ(s));\r\n  z_algorithm(s, a);\r\n  REP(i, SZ(s)) {\r\n   \
+    \ cout << a[i];\r\n    if(i == SZ(s)-1) cout << endl;\r\n    else cout << \" \"\
+    ;\r\n  }\r\n}\r\n\r\n"
   dependsOn:
   - lib/string/z_algorithm.cpp
   - lib/template.cpp
-  isVerificationFile: false
-  path: test/string/z_algorithm.cpp
+  isVerificationFile: true
+  path: test/yosupo-judge/z_algorithm.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2020-10-17 05:27:18+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/string/z_algorithm.cpp
+documentation_of: test/yosupo-judge/z_algorithm.test.cpp
 layout: document
 redirect_from:
-- /library/test/string/z_algorithm.cpp
-- /library/test/string/z_algorithm.cpp.html
-title: test/string/z_algorithm.cpp
+- /verify/test/yosupo-judge/z_algorithm.test.cpp
+- /verify/test/yosupo-judge/z_algorithm.test.cpp.html
+title: test/yosupo-judge/z_algorithm.test.cpp
 ---

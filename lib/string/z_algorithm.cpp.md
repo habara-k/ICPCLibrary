@@ -8,9 +8,12 @@ data:
   - icon: ':warning:'
     path: test/string/z_algorithm.cpp
     title: test/string/z_algorithm.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/z_algorithm.test.cpp
+    title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -54,8 +57,9 @@ data:
   requiredBy:
   - test/string/z_algorithm.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo-judge/z_algorithm.test.cpp
 documentation_of: lib/string/z_algorithm.cpp
 layout: document
 redirect_from:

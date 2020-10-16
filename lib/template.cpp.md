@@ -129,7 +129,7 @@ data:
     path: lib/string/suffix_array.cpp
     title: "\u63A5\u5C3E\u8F9E\u914D\u5217 O(n(logn)^2) \u3042\u308A\u307B\u3093\u306E\
       \u3084\u3064\u305D\u306E\u307E\u307E"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: lib/string/z_algorithm.cpp
     title: lib/string/z_algorithm.cpp
   - icon: ':heavy_check_mark:'
@@ -421,6 +421,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/union_find.test.cpp
     title: test/yosupo-judge/union_find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/z_algorithm.test.cpp
+    title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -547,6 +550,7 @@ data:
   - test/yosupo-judge/many_a+b.test.cpp
   - test/yosupo-judge/montmort_number.test.cpp
   - test/yosupo-judge/point_add_range_sum.test.cpp
+  - test/yosupo-judge/z_algorithm.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/static_range_sum.test.cpp
