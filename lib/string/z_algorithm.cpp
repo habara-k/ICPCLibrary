@@ -1,10 +1,14 @@
 #include "../template.cpp"
 
-// GET A[i]: the longest common prefix size of S and S[i:n-1]
-template<typename S>
-void z_algorithm(const S& s, vector<int>& A) {
+/**
+ * @brief Z Algorithm O(|s|)
+ * @param s: 文字列(or vector)
+ * @return A[i]: SとS[i:n] のLCPの長さ
+ */
+template<typename T>
+vector<int> z_algorithm(const T& s) {
     int n = s.size();
-    A.resize(n);
+    vector<int> A(n);
     A[0] = n;
     int i = 1, j = 0;
     while (i < n) {
@@ -15,4 +19,6 @@ void z_algorithm(const S& s, vector<int>& A) {
         while (i+k < n && k+A[k] < j) { A[i+k] = A[k]; ++k; }
         i += k; j -= k;
     }
+    return A;
 }
+
