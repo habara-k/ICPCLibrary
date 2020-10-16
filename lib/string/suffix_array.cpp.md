@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/suffix_array_2.test.cpp
     title: test/string/suffix_array_2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/number_of_substrings.test.cpp
+    title: test/yosupo-judge/number_of_substrings.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -97,6 +100,7 @@ data:
   timestamp: '2020-10-13 17:48:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/number_of_substrings.test.cpp
   - test/string/suffix_array.test.cpp
   - test/string/suffix_array_2.test.cpp
 documentation_of: lib/string/suffix_array.cpp

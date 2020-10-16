@@ -444,6 +444,9 @@ data:
       path: test/yosupo-judge/montmort_number.test.cpp
       title: test/yosupo-judge/montmort_number.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/number_of_substrings.test.cpp
+      title: test/yosupo-judge/number_of_substrings.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/point_add_range_sum.test.cpp
       title: test/yosupo-judge/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
