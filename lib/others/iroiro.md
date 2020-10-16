@@ -37,3 +37,17 @@ S = i + b / 2 - 1
 
 - 文字列Sがあって、S[0,i]の最小の周期をすべてのiについて求めよ  
   KMPして、各位置では(0-indexedで)i + 1 - KMP[i]がこたえ
+  
+- GCCでつかえる魔法の呪文
+  - \#pragma GCC target("avx2")
+  - \#pragma GCC optimize("O3")
+  - \#pragma GCC optimize("unroll-loops")
+  
+- pb_ds  
+    \#include <ext/pb_ds/assoc_container.hpp>  
+    \#include <ext/pb_ds/tree_policy.hpp>  
+    
+    二分木  
+    tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> s;
+    
+
