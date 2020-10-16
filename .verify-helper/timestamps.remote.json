@@ -62,5 +62,6 @@
 "test/yosupo-judge/range_affine_range_sum.test.cpp": "2020-10-13 20:06:34 +0900",
 "test/yosupo-judge/static_range_sum.test.cpp": "2020-10-12 01:47:14 +0900",
 "test/yosupo-judge/static_rmq.test.cpp": "2020-10-12 01:47:14 +0900",
-"test/yosupo-judge/union_find.test.cpp": "2020-10-12 01:47:14 +0900"
+"test/yosupo-judge/union_find.test.cpp": "2020-10-12 01:47:14 +0900",
+"test/yosupo-judge/z_algorithm.test.cpp": "2020-10-17 05:27:18 +0900"
 }
