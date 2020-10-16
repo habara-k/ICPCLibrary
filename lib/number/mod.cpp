@@ -105,3 +105,40 @@ ll logm(ll x, ll y, ll m) {
     else return ret + K;
 }
 
+/**
+ * @brief
+ * 平方剰余 O(sqrt(m))
+ * http://kirika-comp.hatenablog.com/entry/2018/03/12/210446
+ * @author habara-k
+ * @date 2020/10/16
+ * @return x^2 == a mod p を満たすx (なければ-1)
+ * @require p: 素数
+ */
+ll modsqrt(ll a, ll p) {
+    a %= p;
+    auto legendre = [&](ll a) {
+        return powm(a, (p-1)/2, p);
+    };
+    if (a == 0) return 0;
+    if (p == 2) return a;
+    if (legendre(a) != 1) return -1;
+    ll q = p-1, s = 0;
+    while (q % 2 == 0) q >>= 1, ++s;
+    mt19937 mt;
+    ll z;
+    do {z = mt() % p;} while (legendre(z) != p-1);
+
+    ll m = s, c = powm(z, q, p), t = powm(a, q, p), r = powm(a, (q+1)/2, p);
+    while (m > 1) {
+        ll k = 0, tmp = t;
+        while (tmp != 1) (tmp *= tmp) %= p, ++k;
+        assert(k < m);
+        (t *= powm(c, 1ll<<(m-k), p)) %= p;
+        (r *= powm(c, 1ll<<(m-k-1), p)) %= p;
+        c = powm(c, 1ll<<(m-k), p);
+        m = k;
+    }
+    assert((r * r) % p == a);
+    return r;
+}
+
