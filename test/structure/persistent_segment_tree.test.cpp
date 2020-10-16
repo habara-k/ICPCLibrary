@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2270"
 
 #include "../../lib/structure/persistent_segment_tree.cpp"
-#include "../../lib/graph/lowest_common_ancestor.cpp"
+#include "../../lib/tree/lowest_common_ancestor.cpp"
 
 int main()
 {
