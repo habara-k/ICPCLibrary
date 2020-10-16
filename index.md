@@ -106,7 +106,7 @@ data:
       title: lib/number/mint.cpp
     - icon: ':heavy_check_mark:'
       path: lib/number/mod.cpp
-      title: lib/number/mod.cpp
+      title: "\u96E2\u6563\u5BFE\u6570 BSGS O(sqrt(m))"
     - icon: ':heavy_check_mark:'
       path: lib/number/ntt.cpp
       title: NTT
@@ -374,8 +374,14 @@ data:
       path: test/number/gauss_jordan.test.cpp
       title: test/number/gauss_jordan.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/number/logm.test.cpp
+      title: test/number/logm.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/number/matrix.test.cpp
       title: test/number/matrix.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/modsqrt.test.cpp
+      title: test/number/modsqrt.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'
