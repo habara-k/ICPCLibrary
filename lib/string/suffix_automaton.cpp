@@ -46,3 +46,52 @@ void sa_extend(char c) {
   }
   last = cur;
 }
+
+/* つかいかた
+ *
+int main() {
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  cout << fixed << setprecision(10);
+
+  sa_init();
+  string c;
+  cin >> c;
+  REP(i, SZ(c)) {
+    sa_extend(c[i]);
+  }
+
+  int n;
+  cin >> n;
+  REP(i, n) {
+    int pos = 0;
+    int cnt = 1;
+    string s;
+    cin >> s;
+
+    bool linked = true;
+    bool ok = true;
+    REP(j, SZ(s)) {
+      if (!ok) break;
+      FOR(k, j, SZ(s)) {
+        if (st[pos].next[s[k]] == 0) {
+          if (pos == 0) {
+            ok = false;
+          }
+          cnt++;
+          pos = 0;
+          j = k - 1;
+          break;
+        } else {
+          pos = st[pos].next[s[k]];
+          if (k == SZ(s) - 1) j = k;
+        }
+      }
+    }
+    if (!ok) cout << -1 << endl;
+    else cout << cnt << endl;
+  }
+
+
+}
+ */
