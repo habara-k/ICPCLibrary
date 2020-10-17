@@ -51,6 +51,9 @@ data:
     - icon: ':warning:'
       path: lib/graph/maximum_clique.cpp
       title: lib/graph/maximum_clique.cpp
+    - icon: ':question:'
+      path: lib/graph/maximum_independent_set.cpp
+      title: lib/graph/maximum_independent_set.cpp
     - icon: ':heavy_check_mark:'
       path: lib/graph/primal_dual.cpp
       title: lib/graph/primal_dual.cpp
@@ -339,6 +342,9 @@ data:
       path: test/graph/max_flow_with_lower_limit.test.cpp
       title: test/graph/max_flow_with_lower_limit.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/maximum_independent_set.test.cpp
+      title: test/graph/maximum_independent_set.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/primal_dual.test.cpp
       title: test/graph/primal_dual.test.cpp
     - icon: ':heavy_check_mark:'
@@ -458,6 +464,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/many_a+b.test.cpp
       title: test/yosupo-judge/many_a+b.test.cpp
+    - icon: ':x:'
+      path: test/yosupo-judge/maximum_independent_set.test.cpp
+      title: test/yosupo-judge/maximum_independent_set.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/montmort_number.test.cpp
       title: test/yosupo-judge/montmort_number.test.cpp

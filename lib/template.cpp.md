@@ -43,6 +43,9 @@ data:
   - icon: ':warning:'
     path: lib/graph/maximum_clique.cpp
     title: lib/graph/maximum_clique.cpp
+  - icon: ':question:'
+    path: lib/graph/maximum_independent_set.cpp
+    title: lib/graph/maximum_independent_set.cpp
   - icon: ':heavy_check_mark:'
     path: lib/graph/primal_dual.cpp
     title: lib/graph/primal_dual.cpp
@@ -287,6 +290,9 @@ data:
     path: test/graph/max_flow_with_lower_limit.test.cpp
     title: test/graph/max_flow_with_lower_limit.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/maximum_independent_set.test.cpp
+    title: test/graph/maximum_independent_set.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/primal_dual.test.cpp
     title: test/graph/primal_dual.test.cpp
   - icon: ':heavy_check_mark:'
@@ -403,6 +409,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/many_a+b.test.cpp
     title: test/yosupo-judge/many_a+b.test.cpp
+  - icon: ':x:'
+    path: test/yosupo-judge/maximum_independent_set.test.cpp
+    title: test/yosupo-judge/maximum_independent_set.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/montmort_number.test.cpp
     title: test/yosupo-judge/montmort_number.test.cpp
@@ -539,6 +548,7 @@ data:
   - lib/graph/template.cpp
   - lib/graph/twoconnectedcomponents.cpp
   - lib/graph/warshall_floyd.cpp
+  - lib/graph/maximum_independent_set.cpp
   - lib/geometry/3D_template.cpp
   - lib/geometry/polygon.cpp
   - lib/geometry/2D_template.cpp
@@ -568,6 +578,7 @@ data:
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/static_range_sum.test.cpp
   - test/yosupo-judge/a+b.test.cpp
+  - test/yosupo-judge/maximum_independent_set.test.cpp
   - test/yosupo-judge/associative_array.test.cpp
   - test/yosupo-judge/number_of_substrings.test.cpp
   - test/yosupo-judge/point_set_range_composite.test.cpp
@@ -612,6 +623,7 @@ data:
   - test/graph/hopcroft_karp.test.cpp
   - test/graph/kruskal.test.cpp
   - test/graph/kruskal.test.cpp
+  - test/graph/maximum_independent_set.test.cpp
   - test/graph/re_rooting.test.cpp
   - test/graph/max_flow_with_lower_limit.test.cpp
   - test/graph/primal_dual.test.cpp
