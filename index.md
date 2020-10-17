@@ -136,6 +136,9 @@ data:
     - icon: ':warning:'
       path: lib/others/inversion.cpp
       title: lib/others/inversion.cpp
+    - icon: ':warning:'
+      path: lib/others/xorshift.cpp
+      title: lib/others/xorshift.cpp
   - name: lib/string
     pages:
     - icon: ':warning:'
