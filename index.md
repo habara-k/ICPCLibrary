@@ -51,7 +51,7 @@ data:
     - icon: ':warning:'
       path: lib/graph/maximum_clique.cpp
       title: lib/graph/maximum_clique.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/maximum_independent_set.cpp
       title: lib/graph/maximum_independent_set.cpp
     - icon: ':heavy_check_mark:'
@@ -69,6 +69,9 @@ data:
     - icon: ':warning:'
       path: lib/graph/topological_sort.cpp
       title: lib/graph/topological_sort.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/two_sat.cpp
+      title: lib/graph/two_sat.cpp
     - icon: ':warning:'
       path: lib/graph/twoconnectedcomponents.cpp
       title: lib/graph/twoconnectedcomponents.cpp
@@ -155,7 +158,7 @@ data:
     - icon: ':warning:'
       path: lib/string/suffix_automaton.cpp
       title: lib/string/suffix_automaton.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/string/z_algorithm.cpp
       title: Z Algorithm O(|s|)
   - name: lib/structure
@@ -198,7 +201,7 @@ data:
       title: lib/structure/weighted_union_find.cpp
   - name: lib
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/template.cpp
       title: lib/template.cpp
   - name: lib/tree
@@ -354,6 +357,9 @@ data:
       path: test/graph/scc.test.cpp
       title: test/graph/scc.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/two_sat.test.cpp
+      title: test/graph/two_sat.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/warshall_floyd.test.cpp
       title: test/graph/warshall_floyd.test.cpp
   - name: test/number
@@ -464,7 +470,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/many_a+b.test.cpp
       title: test/yosupo-judge/many_a+b.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/maximum_independent_set.test.cpp
       title: test/yosupo-judge/maximum_independent_set.test.cpp
     - icon: ':heavy_check_mark:'
@@ -489,9 +495,12 @@ data:
       path: test/yosupo-judge/static_rmq.test.cpp
       title: test/yosupo-judge/static_rmq.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/two_sat.test.cpp
+      title: test/yosupo-judge/two_sat.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/union_find.test.cpp
       title: test/yosupo-judge/union_find.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/z_algorithm.test.cpp
       title: test/yosupo-judge/z_algorithm.test.cpp
 layout: toppage

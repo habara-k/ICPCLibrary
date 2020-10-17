@@ -9,7 +9,7 @@ data:
     path: lib/geometry/polygon.cpp
     title: "\u7B26\u53F7\u4ED8\u304D\u9762\u7A4D\u3092\u6C42\u3081\u308B(\u53CD\u6642\
       \u8A08\u56DE\u308A\u3067\u6B63)."
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: lib/graph/topological_sort.cpp
     title: lib/graph/topological_sort.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

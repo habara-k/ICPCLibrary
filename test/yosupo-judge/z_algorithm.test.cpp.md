@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/string/z_algorithm.cpp
     title: Z Algorithm O(|s|)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -47,22 +47,22 @@ data:
     \ continue; }\n        int k = 1;\n        while (i+k < n && k+A[k] < j) { A[i+k]\
     \ = A[k]; ++k; }\n        i += k; j -= k;\n    }\n    return A;\n}\n\n#line 4\
     \ \"test/yosupo-judge/z_algorithm.test.cpp\"\n\r\nint main() {\r\n  string s;\
-    \ cin >> s;\r\n  vi a(SZ(s));\r\n  z_algorithm(s, a);\r\n  REP(i, SZ(s)) {\r\n\
-    \    cout << a[i];\r\n    if(i == SZ(s)-1) cout << endl;\r\n    else cout << \"\
-    \ \";\r\n  }\r\n}\r\n\r\n"
+    \ cin >> s;\r\n  auto a = z_algorithm(s);\r\n  REP(i, SZ(s)) {\r\n    cout <<\
+    \ a[i];\r\n    if(i == SZ(s)-1) cout << endl;\r\n    else cout << \" \";\r\n \
+    \ }\r\n}\r\n\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\r\n\r\n#include\
     \ \"../../lib/string/z_algorithm.cpp\"\r\n\r\nint main() {\r\n  string s; cin\
-    \ >> s;\r\n  vi a(SZ(s));\r\n  z_algorithm(s, a);\r\n  REP(i, SZ(s)) {\r\n   \
-    \ cout << a[i];\r\n    if(i == SZ(s)-1) cout << endl;\r\n    else cout << \" \"\
-    ;\r\n  }\r\n}\r\n\r\n"
+    \ >> s;\r\n  auto a = z_algorithm(s);\r\n  REP(i, SZ(s)) {\r\n    cout << a[i];\r\
+    \n    if(i == SZ(s)-1) cout << endl;\r\n    else cout << \" \";\r\n  }\r\n}\r\n\
+    \r\n"
   dependsOn:
   - lib/string/z_algorithm.cpp
   - lib/template.cpp
   isVerificationFile: true
   path: test/yosupo-judge/z_algorithm.test.cpp
   requiredBy: []
-  timestamp: '2020-10-17 10:09:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-17 11:25:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/z_algorithm.test.cpp
 layout: document

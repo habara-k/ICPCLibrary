@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
@@ -15,11 +15,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/run_enumerate.test.cpp
     title: test/string/run_enumerate.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Z Algorithm O(|s|)
     links: []
@@ -67,7 +67,7 @@ data:
   - lib/string/run_enumerate.cpp
   - test/string/z_algorithm.cpp
   timestamp: '2020-10-17 10:09:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/z_algorithm.test.cpp
   - test/string/run_enumerate.test.cpp

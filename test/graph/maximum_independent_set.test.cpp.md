@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/maximum_independent_set.cpp
     title: lib/graph/maximum_independent_set.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

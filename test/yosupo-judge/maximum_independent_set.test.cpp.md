@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/maximum_independent_set.cpp
     title: lib/graph/maximum_independent_set.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
@@ -57,17 +57,17 @@ data:
     \ 4 \"test/yosupo-judge/maximum_independent_set.test.cpp\"\n\r\n\r\nint main()\
     \ {\r\n  int n, m; cin >> n >> m;\r\n  vector<ll> g(n);\r\n  REP(i, m) {\r\n \
     \   int u, v; cin >> u >> v;\r\n    g[u] |= 1ll<<v;\r\n    g[v] |= 1ll<<u;\r\n\
-    \  }\r\n  MaximumIndependentSet mid(g);\r\n  int sz = mid.maximum_independent_set();\r\
-    \n  vi ans;\r\n  REP(i, n) {\r\n    if((mid.ans>>i)&1) {\r\n      ans.push_back(i);\r\
-    \n    }\r\n  }\r\n  cout << sz << endl;\r\n  for(auto &e: ans) {\r\n    cout <<\
-    \ e << \" \";\r\n  }\r\n  cout << endl;\r\n}\r\n\r\n"
+    \  }\r\n  ll ans = maximum_independent_set(n, (1ll<<n)-1, g);\r\n  vi ansv;\r\n\
+    \  REP(i, n) {\r\n    if((ans>>i)&1) {\r\n      ansv.push_back(i);\r\n    }\r\n\
+    \  }\r\n  cout << SZ(ansv) << endl;\r\n  for(auto &e: ansv) {\r\n    cout << e\
+    \ << \" \";\r\n  }\r\n  cout << endl;\r\n}\r\n\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\
     \r\n\r\n#include \"../../lib/graph/maximum_independent_set.cpp\"\r\n\r\n\r\nint\
     \ main() {\r\n  int n, m; cin >> n >> m;\r\n  vector<ll> g(n);\r\n  REP(i, m)\
     \ {\r\n    int u, v; cin >> u >> v;\r\n    g[u] |= 1ll<<v;\r\n    g[v] |= 1ll<<u;\r\
-    \n  }\r\n  MaximumIndependentSet mid(g);\r\n  int sz = mid.maximum_independent_set();\r\
-    \n  vi ans;\r\n  REP(i, n) {\r\n    if((mid.ans>>i)&1) {\r\n      ans.push_back(i);\r\
-    \n    }\r\n  }\r\n  cout << sz << endl;\r\n  for(auto &e: ans) {\r\n    cout <<\
+    \n  }\r\n  ll ans = maximum_independent_set(n, (1ll<<n)-1, g);\r\n  vi ansv;\r\
+    \n  REP(i, n) {\r\n    if((ans>>i)&1) {\r\n      ansv.push_back(i);\r\n    }\r\
+    \n  }\r\n  cout << SZ(ansv) << endl;\r\n  for(auto &e: ansv) {\r\n    cout <<\
     \ e << \" \";\r\n  }\r\n  cout << endl;\r\n}\r\n\r\n"
   dependsOn:
   - lib/graph/maximum_independent_set.cpp
@@ -75,8 +75,8 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/maximum_independent_set.test.cpp
   requiredBy: []
-  timestamp: '2020-10-17 10:05:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-17 11:25:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/maximum_independent_set.test.cpp
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/maximum_independent_set.test.cpp
     title: test/graph/maximum_independent_set.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/maximum_independent_set.test.cpp
     title: test/yosupo-judge/maximum_independent_set.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -74,7 +74,7 @@ data:
   path: lib/graph/maximum_independent_set.cpp
   requiredBy: []
   timestamp: '2020-10-17 10:05:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/maximum_independent_set.test.cpp
   - test/graph/maximum_independent_set.test.cpp

@@ -43,7 +43,7 @@ data:
   - icon: ':warning:'
     path: lib/graph/maximum_clique.cpp
     title: lib/graph/maximum_clique.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/maximum_independent_set.cpp
     title: lib/graph/maximum_independent_set.cpp
   - icon: ':heavy_check_mark:'
@@ -61,6 +61,9 @@ data:
   - icon: ':warning:'
     path: lib/graph/topological_sort.cpp
     title: lib/graph/topological_sort.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/two_sat.cpp
+    title: lib/graph/two_sat.cpp
   - icon: ':warning:'
     path: lib/graph/twoconnectedcomponents.cpp
     title: lib/graph/twoconnectedcomponents.cpp
@@ -135,7 +138,7 @@ data:
     path: lib/string/suffix_array.cpp
     title: "\u63A5\u5C3E\u8F9E\u914D\u5217 O(n(logn)^2) \u3042\u308A\u307B\u3093\u306E\
       \u3084\u3064\u305D\u306E\u307E\u307E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/string/z_algorithm.cpp
     title: Z Algorithm O(|s|)
   - icon: ':heavy_check_mark:'
@@ -302,6 +305,9 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/two_sat.test.cpp
+    title: test/graph/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/warshall_floyd.test.cpp
     title: test/graph/warshall_floyd.test.cpp
   - icon: ':heavy_check_mark:'
@@ -409,7 +415,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/many_a+b.test.cpp
     title: test/yosupo-judge/many_a+b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/maximum_independent_set.test.cpp
     title: test/yosupo-judge/maximum_independent_set.test.cpp
   - icon: ':heavy_check_mark:'
@@ -440,13 +446,16 @@ data:
     path: test/yosupo-judge/static_rmq.test.cpp
     title: test/yosupo-judge/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/two_sat.test.cpp
+    title: test/yosupo-judge/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/union_find.test.cpp
     title: test/yosupo-judge/union_find.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -544,6 +553,7 @@ data:
   - lib/graph/kruskal.cpp
   - lib/graph/dinic.cpp
   - lib/graph/topological_sort.cpp
+  - lib/graph/two_sat.cpp
   - lib/graph/primal_dual.cpp
   - lib/graph/template.cpp
   - lib/graph/twoconnectedcomponents.cpp
@@ -566,9 +576,10 @@ data:
   - test/others/inversion.cpp
   - test/others/inversion.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/static_rmq.test.cpp
+  - test/yosupo-judge/two_sat.test.cpp
   - test/yosupo-judge/convolution.test.cpp
   - test/yosupo-judge/many_a+b.test.cpp
   - test/yosupo-judge/montmort_number.test.cpp
@@ -615,6 +626,7 @@ data:
   - test/structure/lazy_segment_rbst.test.cpp
   - test/structure/weighted_union_find.test.cpp
   - test/structure/union_find.test.cpp
+  - test/graph/two_sat.test.cpp
   - test/graph/dijkstra.test.cpp
   - test/graph/bfs01.test.cpp
   - test/graph/warshall_floyd.test.cpp

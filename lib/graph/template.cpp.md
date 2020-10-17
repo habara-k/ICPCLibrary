@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
@@ -38,6 +38,9 @@ data:
   - icon: ':warning:'
     path: lib/graph/topological_sort.cpp
     title: lib/graph/topological_sort.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/two_sat.cpp
+    title: lib/graph/two_sat.cpp
   - icon: ':warning:'
     path: lib/graph/twoconnectedcomponents.cpp
     title: lib/graph/twoconnectedcomponents.cpp
@@ -76,8 +79,14 @@ data:
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/two_sat.test.cpp
+    title: test/graph/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/warshall_floyd.test.cpp
     title: test/graph/warshall_floyd.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/two_sat.test.cpp
+    title: test/yosupo-judge/two_sat.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -124,6 +133,7 @@ data:
   - lib/graph/kruskal.cpp
   - lib/graph/dinic.cpp
   - lib/graph/topological_sort.cpp
+  - lib/graph/two_sat.cpp
   - lib/graph/primal_dual.cpp
   - lib/graph/twoconnectedcomponents.cpp
   - lib/graph/warshall_floyd.cpp
@@ -132,6 +142,8 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/two_sat.test.cpp
+  - test/graph/two_sat.test.cpp
   - test/graph/dijkstra.test.cpp
   - test/graph/bfs01.test.cpp
   - test/graph/warshall_floyd.test.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/warshall_floyd.cpp
     title: lib/graph/warshall_floyd.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
