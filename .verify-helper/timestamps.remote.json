@@ -39,7 +39,7 @@
 "test/number/modsqrt.test.cpp": "2020-10-17 08:43:46 +0900",
 "test/string/rolling_hash.test.cpp": "2020-05-06 01:41:24 +0900",
 "test/string/rolling_hash_2D.test.cpp": "2020-07-05 15:39:35 +0900",
-"test/string/run_enumerate.test.cpp": "2020-10-16 16:35:45 +0900",
+"test/string/run_enumerate.test.cpp": "2020-10-17 10:09:22 +0900",
 "test/string/suffix_array.test.cpp": "2020-10-13 17:48:14 +0900",
 "test/string/suffix_array_2.test.cpp": "2020-10-13 17:48:14 +0900",
 "test/structure/binary_indexed_tree.test.cpp": "2020-05-06 01:41:24 +0900",
@@ -65,6 +65,5 @@
 "test/yosupo-judge/range_affine_range_sum.test.cpp": "2020-10-13 20:06:34 +0900",
 "test/yosupo-judge/static_range_sum.test.cpp": "2020-10-12 01:47:14 +0900",
 "test/yosupo-judge/static_rmq.test.cpp": "2020-10-12 01:47:14 +0900",
-"test/yosupo-judge/union_find.test.cpp": "2020-10-12 01:47:14 +0900",
-"test/yosupo-judge/z_algorithm.test.cpp": "2020-10-17 05:27:18 +0900"
+"test/yosupo-judge/union_find.test.cpp": "2020-10-12 01:47:14 +0900"
 }
