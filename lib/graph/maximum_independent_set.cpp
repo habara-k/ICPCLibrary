@@ -19,7 +19,7 @@ ll maximum_independent_set(int n, ll now, const vector<ll> &g) {
   int argma = -1;
   REP(i, n) {
     if((now>>i)&1) {
-      bool upd = chmax(max_degree, __builtin_popcountll(g[i]));
+      bool upd = chmax(max_degree, __builtin_popcountll(g[i] & now));
       if(upd) argma = i;
     }
   }
