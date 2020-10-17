@@ -1,20 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: lib/string/run_enumerate.cpp
+    title: "Run\u5217\u6319"
   - icon: ':warning:'
     path: test/string/z_algorithm.cpp
     title: test/string/z_algorithm.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/string/run_enumerate.test.cpp
+    title: test/string/run_enumerate.test.cpp
+  - icon: ':x:'
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
+    document_title: Z Algorithm O(|s|)
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
@@ -37,33 +44,37 @@ data:
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/string/z_algorithm.cpp\"\
-    \n\n// GET A[i]: the longest common prefix size of S and S[i:n-1]\ntemplate<typename\
-    \ S>\nvoid z_algorithm(const S& s, vector<int>& A) {\n    int n = s.size();\n\
-    \    A.resize(n);\n    A[0] = n;\n    int i = 1, j = 0;\n    while (i < n) {\n\
-    \        while (i+j < n && s[j] == s[i+j]) ++j;\n        A[i] = j;\n        if\
-    \ (j == 0) { ++i; continue; }\n        int k = 1;\n        while (i+k < n && k+A[k]\
-    \ < j) { A[i+k] = A[k]; ++k; }\n        i += k; j -= k;\n    }\n}\n"
-  code: "#include \"../template.cpp\"\n\n// GET A[i]: the longest common prefix size\
-    \ of S and S[i:n-1]\ntemplate<typename S>\nvoid z_algorithm(const S& s, vector<int>&\
-    \ A) {\n    int n = s.size();\n    A.resize(n);\n    A[0] = n;\n    int i = 1,\
-    \ j = 0;\n    while (i < n) {\n        while (i+j < n && s[j] == s[i+j]) ++j;\n\
+    \n\n/**\n * @brief Z Algorithm O(|s|)\n * @param s: \u6587\u5B57\u5217(or vector)\n\
+    \ * @return A[i]: S\u3068S[i:n] \u306ELCP\u306E\u9577\u3055\n */\ntemplate<typename\
+    \ T>\nvector<int> z_algorithm(const T& s) {\n    int n = s.size();\n    vector<int>\
+    \ A(n);\n    A[0] = n;\n    int i = 1, j = 0;\n    while (i < n) {\n        while\
+    \ (i+j < n && s[j] == s[i+j]) ++j;\n        A[i] = j;\n        if (j == 0) { ++i;\
+    \ continue; }\n        int k = 1;\n        while (i+k < n && k+A[k] < j) { A[i+k]\
+    \ = A[k]; ++k; }\n        i += k; j -= k;\n    }\n    return A;\n}\n\n"
+  code: "#include \"../template.cpp\"\n\n/**\n * @brief Z Algorithm O(|s|)\n * @param\
+    \ s: \u6587\u5B57\u5217(or vector)\n * @return A[i]: S\u3068S[i:n] \u306ELCP\u306E\
+    \u9577\u3055\n */\ntemplate<typename T>\nvector<int> z_algorithm(const T& s) {\n\
+    \    int n = s.size();\n    vector<int> A(n);\n    A[0] = n;\n    int i = 1, j\
+    \ = 0;\n    while (i < n) {\n        while (i+j < n && s[j] == s[i+j]) ++j;\n\
     \        A[i] = j;\n        if (j == 0) { ++i; continue; }\n        int k = 1;\n\
     \        while (i+k < n && k+A[k] < j) { A[i+k] = A[k]; ++k; }\n        i += k;\
-    \ j -= k;\n    }\n}\n"
+    \ j -= k;\n    }\n    return A;\n}\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/string/z_algorithm.cpp
   requiredBy:
+  - lib/string/run_enumerate.cpp
   - test/string/z_algorithm.cpp
-  timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-17 10:09:22+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo-judge/z_algorithm.test.cpp
+  - test/string/run_enumerate.test.cpp
 documentation_of: lib/string/z_algorithm.cpp
 layout: document
 redirect_from:
 - /library/lib/string/z_algorithm.cpp
 - /library/lib/string/z_algorithm.cpp.html
-title: lib/string/z_algorithm.cpp
+title: Z Algorithm O(|s|)
 ---

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/extended_gcd.cpp
     title: lib/number/extended_gcd.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

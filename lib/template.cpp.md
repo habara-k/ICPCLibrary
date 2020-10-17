@@ -126,12 +126,15 @@ data:
     path: lib/string/rolling_hash_2D.cpp
     title: "2\u6B21\u5143\u6587\u5B57\u5217\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
   - icon: ':heavy_check_mark:'
+    path: lib/string/run_enumerate.cpp
+    title: "Run\u5217\u6319"
+  - icon: ':heavy_check_mark:'
     path: lib/string/suffix_array.cpp
     title: "\u63A5\u5C3E\u8F9E\u914D\u5217 O(n(logn)^2) \u3042\u308A\u307B\u3093\u306E\
       \u3084\u3064\u305D\u306E\u307E\u307E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/string/z_algorithm.cpp
-    title: lib/string/z_algorithm.cpp
+    title: Z Algorithm O(|s|)
   - icon: ':heavy_check_mark:'
     path: lib/structure/binary_indexed_tree.cpp
     title: lib/structure/binary_indexed_tree.cpp
@@ -335,6 +338,9 @@ data:
     path: test/string/rolling_hash_2D.test.cpp
     title: test/string/rolling_hash_2D.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/run_enumerate.test.cpp
+    title: test/string/run_enumerate.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/suffix_array.test.cpp
     title: test/string/suffix_array.test.cpp
   - icon: ':heavy_check_mark:'
@@ -427,11 +433,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/union_find.test.cpp
     title: test/yosupo-judge/union_find.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -484,6 +490,7 @@ data:
   - lib/string/z_algorithm.cpp
   - lib/string/rolling_hash.cpp
   - lib/string/rolling_hash_2D.cpp
+  - lib/string/run_enumerate.cpp
   - lib/string/manacher.cpp
   - lib/number/ntt.cpp
   - lib/number/rmint.cpp
@@ -549,7 +556,7 @@ data:
   - test/others/inversion.cpp
   - test/others/inversion.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo-judge/static_rmq.test.cpp
   - test/yosupo-judge/convolution.test.cpp
@@ -569,6 +576,7 @@ data:
   - test/string/rolling_hash_2D.test.cpp
   - test/string/suffix_array.test.cpp
   - test/string/suffix_array_2.test.cpp
+  - test/string/run_enumerate.test.cpp
   - test/string/rolling_hash.test.cpp
   - test/number/extended_gcd.test.cpp
   - test/number/modsqrt.test.cpp
