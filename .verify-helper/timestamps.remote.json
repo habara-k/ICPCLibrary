@@ -56,6 +56,7 @@
 "test/yosupo-judge/associative_array.test.cpp": "2020-10-12 01:47:14 +0900",
 "test/yosupo-judge/convolution.test.cpp": "2020-10-13 20:06:34 +0900",
 "test/yosupo-judge/many_a+b.test.cpp": "2020-10-11 13:03:27 +0900",
+"test/yosupo-judge/maximum_independent_set.test.cpp": "2020-10-17 08:36:25 +0900",
 "test/yosupo-judge/montmort_number.test.cpp": "2020-10-13 20:06:34 +0900",
 "test/yosupo-judge/number_of_substrings.test.cpp": "2020-10-17 03:31:52 +0900",
 "test/yosupo-judge/point_add_range_sum.test.cpp": "2020-10-12 01:47:14 +0900",
