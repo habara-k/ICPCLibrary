@@ -13,7 +13,11 @@ struct Lowlink {
     ord.resize(n, INF);
     low.resize(n, INF);
 
-    dfs(0, -1);
+    REP(i, n) {
+      if(ord[i] == INF) {
+        dfs(i, -1);
+      }
+    }
   }
 
   void dfs(int now, int prev) {
@@ -34,7 +38,7 @@ struct Lowlink {
           else bridge.emplace_back(nxt, now);
         }
       } else {
-        chmin(low[now], low[nxt]);
+        chmin(low[now], ord[nxt]);
       }
     }
     ar |= prev == -1 && d >= 2;
