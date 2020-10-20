@@ -1,5 +1,13 @@
 #include "./template.cpp"
 
+/**
+ * @brief
+ * 橋と関節点をO(n+m)で列挙
+ * コンストラクタにグラフを投げ込むとbridgeとarticulationが更新される
+ * @author Md
+ * @date 2020/10/20
+ */
+
 struct Lowlink {
   vvi g;
   int n;
