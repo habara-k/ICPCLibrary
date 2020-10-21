@@ -201,6 +201,7 @@ protected:
  * @data 2020/10/22
  * @details
  * copy-and-paste ができる.
+ * WARNING: POOLはできるだけ大きくとる(メモリ制約を確認)
  * WARNING: クエリの終わりに必ず if (full()) rebuild() を呼ぶ.
  */
 template<
