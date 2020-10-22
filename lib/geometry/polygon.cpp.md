@@ -258,12 +258,12 @@ data:
   timestamp: '2020-08-24 14:09:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/polygon/convex_hull.test.cpp
+  - test/geometry/polygon/diameter.test.cpp
   - test/geometry/polygon/area.test.cpp
-  - test/geometry/polygon/convex_cut.test.cpp
+  - test/geometry/polygon/convex_hull.test.cpp
   - test/geometry/polygon/contains.test.cpp
   - test/geometry/polygon/is_convex.test.cpp
-  - test/geometry/polygon/diameter.test.cpp
+  - test/geometry/polygon/convex_cut.test.cpp
 documentation_of: lib/geometry/polygon.cpp
 layout: document
 redirect_from:

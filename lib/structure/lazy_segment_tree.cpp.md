@@ -220,8 +220,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/range_affine_range_sum.test.cpp
-  - test/tree/heavy_light_decomposition/hld.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
+  - test/tree/heavy_light_decomposition/hld.test.cpp
 documentation_of: lib/structure/lazy_segment_tree.cpp
 layout: document
 redirect_from:

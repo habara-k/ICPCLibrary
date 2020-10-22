@@ -64,13 +64,13 @@ data:
   isVerificationFile: false
   path: lib/string/z_algorithm.cpp
   requiredBy:
-  - lib/string/run_enumerate.cpp
   - test/string/z_algorithm.cpp
+  - lib/string/run_enumerate.cpp
   timestamp: '2020-10-17 10:09:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/z_algorithm.test.cpp
   - test/string/run_enumerate.test.cpp
+  - test/yosupo-judge/z_algorithm.test.cpp
 documentation_of: lib/string/z_algorithm.cpp
 layout: document
 redirect_from:

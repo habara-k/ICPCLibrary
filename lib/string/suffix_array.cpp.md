@@ -100,9 +100,9 @@ data:
   timestamp: '2020-10-13 17:48:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/number_of_substrings.test.cpp
-  - test/string/suffix_array.test.cpp
   - test/string/suffix_array_2.test.cpp
+  - test/string/suffix_array.test.cpp
+  - test/yosupo-judge/number_of_substrings.test.cpp
 documentation_of: lib/string/suffix_array.cpp
 layout: document
 redirect_from:

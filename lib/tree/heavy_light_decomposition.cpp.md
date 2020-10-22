@@ -198,8 +198,8 @@ data:
   timestamp: '2020-10-16 15:26:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/heavy_light_decomposition/lca.test.cpp
   - test/tree/heavy_light_decomposition/hld.test.cpp
+  - test/tree/heavy_light_decomposition/lca.test.cpp
 documentation_of: lib/tree/heavy_light_decomposition.cpp
 layout: document
 redirect_from:

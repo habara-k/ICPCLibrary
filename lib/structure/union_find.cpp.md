@@ -73,9 +73,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/union_find.test.cpp
-  - test/tree/tree_hash.test.cpp
-  - test/structure/union_find.test.cpp
   - test/graph/kruskal.test.cpp
+  - test/structure/union_find.test.cpp
+  - test/tree/tree_hash.test.cpp
 documentation_of: lib/structure/union_find.cpp
 layout: document
 redirect_from:

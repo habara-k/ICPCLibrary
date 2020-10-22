@@ -124,7 +124,7 @@ data:
     - icon: ':warning:'
       path: lib/others/LIS.cpp
       title: lib/others/LIS.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/others/dice.cpp
       title: lib/others/dice.cpp
     - icon: ':warning:'
@@ -245,9 +245,6 @@ data:
     - icon: ':warning:'
       path: test/others/LIS.cpp
       title: test/others/LIS.cpp
-    - icon: ':warning:'
-      path: test/others/dice.cpp
-      title: test/others/dice.cpp
     - icon: ':warning:'
       path: test/others/inversion.cpp
       title: test/others/inversion.cpp
@@ -400,6 +397,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/number/modsqrt.test.cpp
       title: test/number/modsqrt.test.cpp
+  - name: test/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/others/dice.test.cpp
+      title: test/others/dice.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

@@ -76,9 +76,9 @@ data:
   timestamp: '2020-10-13 20:06:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/convolution.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
-  - test/yosupo-judge/point_set_range_composite.test.cpp
 documentation_of: lib/number/mint.cpp
 layout: document
 redirect_from:

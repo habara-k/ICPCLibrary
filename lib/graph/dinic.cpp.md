@@ -117,8 +117,8 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/dinic.test.cpp
   - test/graph/max_flow_with_lower_limit.test.cpp
+  - test/graph/dinic.test.cpp
 documentation_of: lib/graph/dinic.cpp
 layout: document
 redirect_from:

@@ -90,8 +90,8 @@ data:
   timestamp: '2020-10-16 15:26:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/lowest_common_ancestor.test.cpp
   - test/structure/persistent_segment_tree.test.cpp
+  - test/tree/lowest_common_ancestor.test.cpp
 documentation_of: lib/tree/lowest_common_ancestor.cpp
 layout: document
 redirect_from:

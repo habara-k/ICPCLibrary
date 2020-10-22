@@ -162,13 +162,13 @@ data:
   timestamp: '2020-10-17 08:43:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/number/modsqrt.test.cpp
-  - test/number/logm.test.cpp
-  - test/number/Partition2.test.cpp
-  - test/number/C.test.cpp
-  - test/number/Partition1.test.cpp
   - test/number/Stirling.test.cpp
+  - test/number/Partition2.test.cpp
+  - test/number/Partition1.test.cpp
+  - test/number/logm.test.cpp
+  - test/number/C.test.cpp
   - test/number/Bell.test.cpp
+  - test/number/modsqrt.test.cpp
 documentation_of: lib/number/mod.cpp
 layout: document
 redirect_from:
