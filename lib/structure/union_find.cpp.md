@@ -13,11 +13,17 @@ data:
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/two_edge_connected_components.test.cpp
+    title: test/graph/two_edge_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/structure/union_find.test.cpp
     title: test/structure/union_find.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/tree/tree_hash.test.cpp
     title: test/tree/tree_hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/two_edge_connected_components.test.cpp
+    title: test/yosupo-judge/two_edge_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/union_find.test.cpp
     title: test/yosupo-judge/union_find.test.cpp
@@ -73,7 +79,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/union_find.test.cpp
+  - test/yosupo-judge/two_edge_connected_components.test.cpp
   - test/graph/kruskal.test.cpp
+  - test/graph/two_edge_connected_components.test.cpp
   - test/structure/union_find.test.cpp
   - test/tree/tree_hash.test.cpp
 documentation_of: lib/structure/union_find.cpp

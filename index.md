@@ -24,6 +24,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/bfs01.cpp
       title: lib/graph/bfs01.cpp
+    - icon: ':warning:'
+      path: lib/graph/block_cut_tree.cpp
+      title: lib/graph/block_cut_tree.cpp
     - icon: ':heavy_check_mark:'
       path: lib/graph/dijkstra.cpp
       title: lib/graph/dijkstra.cpp
@@ -42,7 +45,7 @@ data:
     - icon: ':warning:'
       path: lib/graph/lowest_common_ancestor.cpp
       title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/lowlink.cpp
       title: lib/graph/lowlink.cpp
     - icon: ':heavy_check_mark:'
@@ -70,11 +73,11 @@ data:
       path: lib/graph/topological_sort.cpp
       title: lib/graph/topological_sort.cpp
     - icon: ':heavy_check_mark:'
+      path: lib/graph/two_edge_connected_components.cpp
+      title: lib/graph/two_edge_connected_components.cpp
+    - icon: ':heavy_check_mark:'
       path: lib/graph/two_sat.cpp
       title: lib/graph/two_sat.cpp
-    - icon: ':warning:'
-      path: lib/graph/twoconnectedcomponents.cpp
-      title: lib/graph/twoconnectedcomponents.cpp
     - icon: ':heavy_check_mark:'
       path: lib/graph/warshall_floyd.cpp
       title: lib/graph/warshall_floyd.cpp
@@ -224,14 +227,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/tree/tree_hash.cpp
       title: "\u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
-  - name: test/graph/lowlink
-    pages:
-    - icon: ':warning:'
-      path: test/graph/lowlink/articulation.cpp
-      title: test/graph/lowlink/articulation.cpp
-    - icon: ':warning:'
-      path: test/graph/lowlink/bridge.cpp
-      title: test/graph/lowlink/bridge.cpp
   - name: test/graph
     pages:
     - icon: ':warning:'
@@ -357,11 +352,22 @@ data:
       path: test/graph/scc.test.cpp
       title: test/graph/scc.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/two_edge_connected_components.test.cpp
+      title: test/graph/two_edge_connected_components.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/two_sat.test.cpp
       title: test/graph/two_sat.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/warshall_floyd.test.cpp
       title: test/graph/warshall_floyd.test.cpp
+  - name: test/graph/lowlink
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/lowlink/articulation.test.cpp
+      title: test/graph/lowlink/articulation.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/lowlink/bridge.test.cpp
+      title: test/graph/lowlink/bridge.test.cpp
   - name: test/number
     pages:
     - icon: ':heavy_check_mark:'
@@ -499,6 +505,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/static_rmq.test.cpp
       title: test/yosupo-judge/static_rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-judge/two_edge_connected_components.test.cpp
+      title: test/yosupo-judge/two_edge_connected_components.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/two_sat.test.cpp
       title: test/yosupo-judge/two_sat.test.cpp

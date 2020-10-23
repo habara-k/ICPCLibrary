@@ -16,6 +16,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/bfs01.cpp
     title: lib/graph/bfs01.cpp
+  - icon: ':warning:'
+    path: lib/graph/block_cut_tree.cpp
+    title: lib/graph/block_cut_tree.cpp
   - icon: ':heavy_check_mark:'
     path: lib/graph/dijkstra.cpp
     title: lib/graph/dijkstra.cpp
@@ -34,7 +37,7 @@ data:
   - icon: ':warning:'
     path: lib/graph/lowest_common_ancestor.cpp
     title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/lowlink.cpp
     title: lib/graph/lowlink.cpp
   - icon: ':heavy_check_mark:'
@@ -62,11 +65,11 @@ data:
     path: lib/graph/topological_sort.cpp
     title: lib/graph/topological_sort.cpp
   - icon: ':heavy_check_mark:'
+    path: lib/graph/two_edge_connected_components.cpp
+    title: lib/graph/two_edge_connected_components.cpp
+  - icon: ':heavy_check_mark:'
     path: lib/graph/two_sat.cpp
     title: lib/graph/two_sat.cpp
-  - icon: ':warning:'
-    path: lib/graph/twoconnectedcomponents.cpp
-    title: lib/graph/twoconnectedcomponents.cpp
   - icon: ':heavy_check_mark:'
     path: lib/graph/warshall_floyd.cpp
     title: lib/graph/warshall_floyd.cpp
@@ -290,6 +293,12 @@ data:
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/lowlink/articulation.test.cpp
+    title: test/graph/lowlink/articulation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/lowlink/bridge.test.cpp
+    title: test/graph/lowlink/bridge.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/max_flow_with_lower_limit.test.cpp
     title: test/graph/max_flow_with_lower_limit.test.cpp
   - icon: ':heavy_check_mark:'
@@ -304,6 +313,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/scc.test.cpp
     title: test/graph/scc.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/two_edge_connected_components.test.cpp
+    title: test/graph/two_edge_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/two_edge_connected_components.test.cpp
+    title: test/graph/two_edge_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/two_sat.test.cpp
     title: test/graph/two_sat.test.cpp
@@ -449,6 +464,12 @@ data:
     path: test/yosupo-judge/static_rmq.test.cpp
     title: test/yosupo-judge/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/two_edge_connected_components.test.cpp
+    title: test/yosupo-judge/two_edge_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-judge/two_edge_connected_components.test.cpp
+    title: test/yosupo-judge/two_edge_connected_components.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/two_sat.test.cpp
     title: test/yosupo-judge/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
@@ -530,12 +551,13 @@ data:
   - lib/graph/hopcroft_karp.cpp
   - lib/graph/primal_dual.cpp
   - lib/graph/dinic.cpp
+  - lib/graph/two_edge_connected_components.cpp
   - lib/graph/scc.cpp
   - lib/graph/dijkstra.cpp
   - lib/graph/kruskal.cpp
   - lib/graph/kruskal.cpp
   - lib/graph/lowest_common_ancestor.cpp
-  - lib/graph/twoconnectedcomponents.cpp
+  - lib/graph/block_cut_tree.cpp
   - lib/graph/lowlink.cpp
   - lib/graph/maximum_clique.cpp
   - lib/graph/warshall_floyd.cpp
@@ -601,9 +623,13 @@ data:
   - test/yosupo-judge/a+b.test.cpp
   - test/yosupo-judge/z_algorithm.test.cpp
   - test/yosupo-judge/static_rmq.test.cpp
+  - test/yosupo-judge/two_edge_connected_components.test.cpp
+  - test/yosupo-judge/two_edge_connected_components.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/montmort_number.test.cpp
+  - test/graph/lowlink/articulation.test.cpp
+  - test/graph/lowlink/bridge.test.cpp
   - test/graph/warshall_floyd.test.cpp
   - test/graph/dijkstra.test.cpp
   - test/graph/max_flow_with_lower_limit.test.cpp
@@ -616,6 +642,8 @@ data:
   - test/graph/kruskal.test.cpp
   - test/graph/bfs01.test.cpp
   - test/graph/dinic.test.cpp
+  - test/graph/two_edge_connected_components.test.cpp
+  - test/graph/two_edge_connected_components.test.cpp
   - test/graph/scc.test.cpp
   - test/number/matrix.test.cpp
   - test/number/Stirling.test.cpp
