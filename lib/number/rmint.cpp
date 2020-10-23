@@ -15,11 +15,11 @@ struct rmint {
         return *this;
     }
     rmint &operator-=(rmint r) {
-        if ((x -= r.x) < 0) x += m;
+        if ((x -= r.x) < 0) x += m();
         return *this;
     }
     rmint &operator*=(rmint r) {
-        x = ((ll)x * r.x) % m;
+        x = ((ll)x * r.x) % m();
         return *this;
     }
     rmint inv() {
