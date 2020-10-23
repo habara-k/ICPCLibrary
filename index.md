@@ -194,6 +194,9 @@ data:
       path: lib/structure/randomized_binary_search_tree.cpp
       title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
     - icon: ':heavy_check_mark:'
+      path: lib/structure/rbtree.cpp
+      title: lib/structure/rbtree.cpp
+    - icon: ':heavy_check_mark:'
       path: lib/structure/segment_rbst.cpp
       title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
     - icon: ':heavy_check_mark:'
@@ -451,6 +454,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/weighted_union_find.test.cpp
       title: test/structure/weighted_union_find.test.cpp
+  - name: test/structure/rbtree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/structure/rbtree/range_affine_range_sum.test.cpp
+      title: test/structure/rbtree/range_affine_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/structure/rbtree/shift_rmq.test.cpp
+      title: test/structure/rbtree/shift_rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/structure/rbtree/static_rmq.test.cpp
+      title: test/structure/rbtree/static_rmq.test.cpp
   - name: test/tree/heavy_light_decomposition
     pages:
     - icon: ':heavy_check_mark:'

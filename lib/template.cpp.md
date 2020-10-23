@@ -172,6 +172,9 @@ data:
     path: lib/structure/randomized_binary_search_tree.cpp
     title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
   - icon: ':heavy_check_mark:'
+    path: lib/structure/rbtree.cpp
+    title: lib/structure/rbtree.cpp
+  - icon: ':heavy_check_mark:'
     path: lib/structure/segment_rbst.cpp
     title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
   - icon: ':heavy_check_mark:'
@@ -392,6 +395,15 @@ data:
     path: test/structure/persistent_segment_tree.test.cpp
     title: test/structure/persistent_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/structure/rbtree/range_affine_range_sum.test.cpp
+    title: test/structure/rbtree/range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/structure/rbtree/shift_rmq.test.cpp
+    title: test/structure/rbtree/shift_rmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/structure/rbtree/static_rmq.test.cpp
+    title: test/structure/rbtree/static_rmq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/structure/segment_rbst.test.cpp
     title: test/structure/segment_rbst.test.cpp
   - icon: ':heavy_check_mark:'
@@ -583,6 +595,7 @@ data:
   - lib/structure/persistent_segment_tree.cpp
   - lib/structure/union_find.cpp
   - lib/structure/segment_rbst.cpp
+  - lib/structure/rbtree.cpp
   - lib/structure/binary_indexed_tree.cpp
   - lib/structure/convex_hull_trick.cpp
   - lib/structure/weighted_union_find.cpp
@@ -663,6 +676,9 @@ data:
   - test/structure/segment_rbst.test.cpp
   - test/structure/persistent_segment_tree.test.cpp
   - test/structure/persistent_segment_tree.test.cpp
+  - test/structure/rbtree/shift_rmq.test.cpp
+  - test/structure/rbtree/static_rmq.test.cpp
+  - test/structure/rbtree/range_affine_range_sum.test.cpp
   - test/structure/lazy_segment_rbst.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
   - test/tree/tree_hash.test.cpp
