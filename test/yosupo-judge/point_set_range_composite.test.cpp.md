@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
     path: lib/structure/segment_tree.cpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
@@ -44,59 +44,64 @@ data:
     \ int INF = INT_MAX / 2;\nconst ll LINF = LLONG_MAX / 2;\nconst ld eps = 1e-9;\n\
     \n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n    cout\
     \ << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n    // cin.rdbuf(in.rdbuf());\n\
-    \n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/mint.cpp\"\n\ntemplate<ll m>\n\
-    struct mint {\n    ll x;\n    mint(ll x = 0) : x(((x % m) + m) % m) {}\n    mint\
-    \ operator-() { return x ? m-x : 0; }\n    mint &operator+=(mint r) {\n      \
-    \  if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n    mint &operator-=(mint\
-    \ r) { return *this += -r; }\n    mint &operator*=(mint r) {\n        (x *= r.x)\
-    \ %= m;\n        return *this;\n    }\n    mint &operator/=(mint r) { return *this\
-    \ *= r.pow(m-2); }\n\n    friend mint operator+(mint l, mint r) { return l +=\
-    \ r; }\n    friend mint operator-(mint l, mint r) { return l -= r; }\n    friend\
-    \ mint operator*(mint l, mint r) { return l *= r; }\n    friend mint operator/(mint\
-    \ l, mint r) { return l /= r; }\n    mint pow(ll n) {\n        mint ret = 1, tmp\
-    \ = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n        \
-    \    tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n    friend ostream\
-    \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n    friend\
-    \ istream &operator>>(istream &is, mint& a) {\n        ll x; is >> x; a = x; return\
-    \ is;\n    }\n};\n\n#line 2 \"lib/structure/segment_tree.cpp\"\n\n/**\n* @brief\
-    \ \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n* @author habara-k, Md\n* @date 2020/06/17\n\
-    */\n\ntemplate<typename M>\nstruct SegmentTree {\n\n    /**\n    * @brief \u30B3\
-    \u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in] n \u30BB\u30B0\u6728\
-    \u306E\u30B5\u30A4\u30BA.\n    * @param[in] f \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\
-    \u7B97(query).\n    * @param[in] g \u30E2\u30CE\u30A4\u30C9\u306E\u6F14\u7B97\
-    (update).\n    * @param[in] e \u30E2\u30CE\u30A4\u30C9\u306E\u5358\u4F4D\u5143\
-    .\n    * @details \u4F7F\u3044\u65B9\n    *   e.g. Update and Range Minimum\n\
-    \    *   SegmentTree<int> segt(\n    *            n,\n    *            [](int\
-    \ a,int b){ return min(a+b); },\n    *            [](int a, int b){ return b;\
-    \ },\n    *            INF);\n    *               // \u5168\u3066\u5358\u4F4D\u5143\
-    \u3067\u521D\u671F\u5316\u3055\u308C\u308B.\n    */\n    SegmentTree(\n      \
-    \      int n,\n            const function<M(M,M)>& f,\n            const function<M(M,\
-    \ M)>& g,\n            const M& e) : n(n), f(f), g(g), e(e) {\n        sz = 1;\n\
-    \        while (sz < n) sz <<= 1;\n        data.assign(2 * sz, e);\n    }\n\n\
-    \    /**\n    * @brief \u5168\u4F53\u306B\u521D\u671F\u5024\u3092\u5165\u308C\u308B\
-    . O(n)\n    * @param[in] v \u8981\u7D20\u30E2\u30CE\u30A4\u30C9\u306Evector. \u521D\
-    \u671F\u5316\u3059\u308B.\n    * @details \u4F7F\u3044\u65B9\n    *   segt.build(vector<int>(n,\
-    \ 0));\n    */\n    void build(const vector<M>& v) {\n        assert(v.size()\
-    \ <= n);\n        for (int i = 0; i < v.size(); ++i) {\n            data[i + sz]\
-    \ = v[i];\n        }\n        for (int i = sz-1; i > 0; --i) {\n            data[i]\
-    \ = f(data[2 * i], data[2 * i + 1]);\n        }\n    }\n\n    /**\n     * @brief\
-    \ \u6307\u5B9A\u3057\u305F\u4F4D\u7F6E\u306B\u66F4\u65B0\u30AF\u30A8\u30EA\u3092\
-    \u5B9F\u884C\u3059\u308B O(log n)\n     * @param[in] idx \u4F4D\u7F6Eidx\u306B\
-    \u4F5C\u7528\u3055\u305B\u308B\n     * @param[in] val \u5024x\u3092g(data[idx+sz],\
-    \ val)\u3067\u66F4\u65B0\u3059\u308B\n     */\n    void update(int idx, M val)\
-    \ {\n      idx += sz;\n      data[idx] = g(data[idx], val);\n      while(idx >>=\
-    \ 1) {\n        data[idx] = f(data[2*idx], data[2*idx+1]);\n      }\n    }\n\n\
-    \    /**\n    * @brief \u6307\u5B9A\u3057\u305F\u533A\u9593\u306B\u53D6\u5F97\u30AF\
-    \u30A8\u30EA\u3092\u5B9F\u884C\u3059\u308B. O(log n)\n    * @param[in] l, r \u533A\
-    \u9593[l, r) \u3092\u53D6\u5F97\u3059\u308B.\n    * @return \u53D6\u5F97\u3057\
-    \u305F\u5024.\n    * @details \u4F7F\u3044\u65B9\n    *   e.g. Range Minimum\n\
-    \    *   int l, r; // \u533A\u9593[l, r) \u306Emin\u3092\u53D6\u5F97\u3057\u305F\
-    \u3044.\n    *   cout << segt.query(l, r) << endl;\n    */\n    M query(int a,\
-    \ int b) const {\n        return query(a, b, 1, 0, sz);\n    }\n\n    /**\n  \
-    \  * @brief \u6307\u5B9A\u3057\u305Findex\u306E\u8981\u7D20\u3092\u53D6\u5F97\
-    . O(1)\n    * @param[in] i \u53D6\u5F97\u3057\u305F\u3044\u8981\u7D20\u306Eindex\n\
-    \    * @return \u53D6\u5F97\u3057\u305F\u5024.\n    */\n    M operator[](int k)\
-    \ const {\n        return data[k + sz];\n    }\n\n    /**\n    * @brief vector\
+    \n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/mint.cpp\"\n\ntemplate<int m>\n\
+    struct mint {\n    int x;\n    mint(int x = 0) : x(((x % m) + m) % m) {}\n   \
+    \ mint operator-() { return x ? m-x : 0; }\n    mint &operator+=(mint r) {\n \
+    \       if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n    mint &operator-=(mint\
+    \ r) {\n        if ((x -= r.x) < 0) x += m;\n        return *this;\n    }\n  \
+    \  mint &operator*=(mint r) {\n        x = ((ll)x * r.x) % m;\n        return\
+    \ *this;\n    }\n    mint inv() {\n        int a = x, b = m, u = 1, v = 0, t;\n\
+    \        while (b > 0) {\n            t = a / b;\n            swap(a -= t * b,\
+    \ b);\n            swap(u -= t * v, v);\n        }\n        return u;\n    }\n\
+    \    mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend mint\
+    \ operator+(mint l, mint r) { return l += r; }\n    friend mint operator-(mint\
+    \ l, mint r) { return l -= r; }\n    friend mint operator*(mint l, mint r) { return\
+    \ l *= r; }\n    friend mint operator/(mint l, mint r) { return l /= r; }\n  \
+    \  mint pow(ll n) {\n        mint ret = 1, tmp = *this;\n        while (n) {\n\
+    \            if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n      \
+    \  }\n        return ret;\n    }\n    friend bool operator==(mint l, mint r) {\
+    \ return l.x == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x\
+    \ != r.x; }\n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
+    \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, mint& a) {\n\
+    \        int x; is >> x; a = x; return is;\n    }\n};\n#line 2 \"lib/structure/segment_tree.cpp\"\
+    \n\n/**\n* @brief \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n* @author habara-k, Md\n\
+    * @date 2020/06/17\n*/\n\ntemplate<typename M>\nstruct SegmentTree {\n\n    /**\n\
+    \    * @brief \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in]\
+    \ n \u30BB\u30B0\u6728\u306E\u30B5\u30A4\u30BA.\n    * @param[in] f \u30E2\u30CE\
+    \u30A4\u30C9\u306E\u6F14\u7B97(query).\n    * @param[in] g \u30E2\u30CE\u30A4\u30C9\
+    \u306E\u6F14\u7B97(update).\n    * @param[in] e \u30E2\u30CE\u30A4\u30C9\u306E\
+    \u5358\u4F4D\u5143.\n    * @details \u4F7F\u3044\u65B9\n    *   e.g. Update and\
+    \ Range Minimum\n    *   SegmentTree<int> segt(\n    *            n,\n    *  \
+    \          [](int a,int b){ return min(a+b); },\n    *            [](int a, int\
+    \ b){ return b; },\n    *            INF);\n    *               // \u5168\u3066\
+    \u5358\u4F4D\u5143\u3067\u521D\u671F\u5316\u3055\u308C\u308B.\n    */\n    SegmentTree(\n\
+    \            int n,\n            const function<M(M,M)>& f,\n            const\
+    \ function<M(M, M)>& g,\n            const M& e) : n(n), f(f), g(g), e(e) {\n\
+    \        sz = 1;\n        while (sz < n) sz <<= 1;\n        data.assign(2 * sz,\
+    \ e);\n    }\n\n    /**\n    * @brief \u5168\u4F53\u306B\u521D\u671F\u5024\u3092\
+    \u5165\u308C\u308B. O(n)\n    * @param[in] v \u8981\u7D20\u30E2\u30CE\u30A4\u30C9\
+    \u306Evector. \u521D\u671F\u5316\u3059\u308B.\n    * @details \u4F7F\u3044\u65B9\
+    \n    *   segt.build(vector<int>(n, 0));\n    */\n    void build(const vector<M>&\
+    \ v) {\n        assert(v.size() <= n);\n        for (int i = 0; i < v.size();\
+    \ ++i) {\n            data[i + sz] = v[i];\n        }\n        for (int i = sz-1;\
+    \ i > 0; --i) {\n            data[i] = f(data[2 * i], data[2 * i + 1]);\n    \
+    \    }\n    }\n\n    /**\n     * @brief \u6307\u5B9A\u3057\u305F\u4F4D\u7F6E\u306B\
+    \u66F4\u65B0\u30AF\u30A8\u30EA\u3092\u5B9F\u884C\u3059\u308B O(log n)\n     *\
+    \ @param[in] idx \u4F4D\u7F6Eidx\u306B\u4F5C\u7528\u3055\u305B\u308B\n     * @param[in]\
+    \ val \u5024x\u3092g(data[idx+sz], val)\u3067\u66F4\u65B0\u3059\u308B\n     */\n\
+    \    void update(int idx, M val) {\n      idx += sz;\n      data[idx] = g(data[idx],\
+    \ val);\n      while(idx >>= 1) {\n        data[idx] = f(data[2*idx], data[2*idx+1]);\n\
+    \      }\n    }\n\n    /**\n    * @brief \u6307\u5B9A\u3057\u305F\u533A\u9593\u306B\
+    \u53D6\u5F97\u30AF\u30A8\u30EA\u3092\u5B9F\u884C\u3059\u308B. O(log n)\n    *\
+    \ @param[in] l, r \u533A\u9593[l, r) \u3092\u53D6\u5F97\u3059\u308B.\n    * @return\
+    \ \u53D6\u5F97\u3057\u305F\u5024.\n    * @details \u4F7F\u3044\u65B9\n    *  \
+    \ e.g. Range Minimum\n    *   int l, r; // \u533A\u9593[l, r) \u306Emin\u3092\u53D6\
+    \u5F97\u3057\u305F\u3044.\n    *   cout << segt.query(l, r) << endl;\n    */\n\
+    \    M query(int a, int b) const {\n        return query(a, b, 1, 0, sz);\n  \
+    \  }\n\n    /**\n    * @brief \u6307\u5B9A\u3057\u305Findex\u306E\u8981\u7D20\u3092\
+    \u53D6\u5F97. O(1)\n    * @param[in] i \u53D6\u5F97\u3057\u305F\u3044\u8981\u7D20\
+    \u306Eindex\n    * @return \u53D6\u5F97\u3057\u305F\u5024.\n    */\n    M operator[](int\
+    \ k) const {\n        return data[k + sz];\n    }\n\n    /**\n    * @brief vector\
     \ \u307F\u305F\u3044\u306B\u51FA\u529B.\n    */\n    friend ostream& operator<<(ostream&\
     \ os, SegmentTree& s) {\n        os << \"[\";\n        for (int i = 0; i < s.n;\
     \ ++i) {\n            if (i) os << \" \";\n            os << s[i];\n        }\n\
@@ -137,7 +142,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-10-13 20:06:34+09:00'
+  timestamp: '2020-10-23 18:09:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/point_set_range_composite.test.cpp

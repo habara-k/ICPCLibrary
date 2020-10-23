@@ -105,12 +105,15 @@ data:
       path: lib/number/fft.cpp
       title: FFT
     - icon: ':heavy_check_mark:'
+      path: lib/number/fps.cpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
+    - icon: ':heavy_check_mark:'
       path: lib/number/gauss_jordan.cpp
       title: lib/number/gauss_jordan.cpp
     - icon: ':heavy_check_mark:'
       path: lib/number/matrix.cpp
       title: lib/number/matrix.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/number/mint.cpp
       title: lib/number/mint.cpp
     - icon: ':heavy_check_mark:'
@@ -181,7 +184,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/structure/lazy_segment_rbst.cpp
       title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/structure/lazy_segment_tree.cpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':warning:'
@@ -210,7 +213,7 @@ data:
       title: lib/structure/weighted_union_find.cpp
   - name: lib
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/template.cpp
       title: lib/template.cpp
   - name: lib/tree
@@ -406,6 +409,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/number/modsqrt.test.cpp
       title: test/number/modsqrt.test.cpp
+  - name: test/number/fps
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/number/fps/exp.test.cpp
+      title: test/number/fps/exp.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/fps/inv.test.cpp
+      title: test/number/fps/inv.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/fps/log.test.cpp
+      title: test/number/fps/log.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/fps/pow.test.cpp
+      title: test/number/fps/pow.test.cpp
   - name: test/others
     pages:
     - icon: ':heavy_check_mark:'
@@ -510,7 +527,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-judge/point_set_range_composite.test.cpp
       title: test/yosupo-judge/point_set_range_composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo-judge/range_affine_range_sum.test.cpp
       title: test/yosupo-judge/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'

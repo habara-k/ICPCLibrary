@@ -95,12 +95,15 @@ data:
     path: lib/number/fft.cpp
     title: FFT
   - icon: ':heavy_check_mark:'
+    path: lib/number/fps.cpp
+    title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
+  - icon: ':heavy_check_mark:'
     path: lib/number/gauss_jordan.cpp
     title: lib/number/gauss_jordan.cpp
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -159,7 +162,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_rbst.cpp
     title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/structure/lazy_segment_tree.cpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':warning:'
@@ -350,6 +353,18 @@ data:
     path: test/number/extended_gcd.test.cpp
     title: test/number/extended_gcd.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/number/fps/exp.test.cpp
+    title: test/number/fps/exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/fps/inv.test.cpp
+    title: test/number/fps/inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/fps/log.test.cpp
+    title: test/number/fps/log.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/fps/pow.test.cpp
+    title: test/number/fps/pow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/number/gauss_jordan.test.cpp
     title: test/number/gauss_jordan.test.cpp
   - icon: ':heavy_check_mark:'
@@ -463,10 +478,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/point_set_range_composite.test.cpp
     title: test/yosupo-judge/point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -491,7 +506,7 @@ data:
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -584,6 +599,7 @@ data:
   - lib/number/rmint.cpp
   - lib/number/gauss_jordan.cpp
   - lib/number/fast-zeta.cpp
+  - lib/number/fps.cpp
   - lib/number/combination.cpp
   - lib/number/extended_gcd.cpp
   - lib/number/fast-mobius.cpp
@@ -614,7 +630,7 @@ data:
   - lib/geometry/3D_template.cpp
   - lib/geometry/2D_template.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/string/suffix_array_2.test.cpp
   - test/string/rolling_hash_2D.test.cpp
@@ -669,6 +685,10 @@ data:
   - test/number/C.test.cpp
   - test/number/Bell.test.cpp
   - test/number/modsqrt.test.cpp
+  - test/number/fps/pow.test.cpp
+  - test/number/fps/exp.test.cpp
+  - test/number/fps/inv.test.cpp
+  - test/number/fps/log.test.cpp
   - test/structure/weighted_union_find.test.cpp
   - test/structure/segment_tree.test.cpp
   - test/structure/binary_indexed_tree.test.cpp
