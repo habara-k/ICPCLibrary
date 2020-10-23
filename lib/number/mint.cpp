@@ -1,20 +1,32 @@
 #include "../template.cpp"
 
-template<ll m>
+template<int m>
 struct mint {
-    ll x;
-    mint(ll x = 0) : x(((x % m) + m) % m) {}
+    int x;
+    mint(int x = 0) : x(((x % m) + m) % m) {}
     mint operator-() { return x ? m-x : 0; }
     mint &operator+=(mint r) {
         if ((x += r.x) >= m) x -= m;
         return *this;
     }
-    mint &operator-=(mint r) { return *this += -r; }
-    mint &operator*=(mint r) {
-        (x *= r.x) %= m;
+    mint &operator-=(mint r) {
+        if ((x -= r.x) < 0) x += m;
         return *this;
     }
-    mint &operator/=(mint r) { return *this *= r.pow(m-2); }
+    mint &operator*=(mint r) {
+        x = ((ll)x * r.x) % m;
+        return *this;
+    }
+    mint inv() {
+        int a = x, b = m, u = 1, v = 0, t;
+        while (b > 0) {
+            t = a / b;
+            swap(a -= t * b, b);
+            swap(u -= t * v, v);
+        }
+        return u;
+    }
+    mint &operator/=(mint r) { return *this *= r.inv(); }
 
     friend mint operator+(mint l, mint r) { return l += r; }
     friend mint operator-(mint l, mint r) { return l -= r; }
@@ -28,11 +40,12 @@ struct mint {
         }
         return ret;
     }
+    friend bool operator==(mint l, mint r) { return l.x == r.x; }
+    friend bool operator!=(mint l, mint r) { return l.x != r.x; }
     friend ostream &operator<<(ostream &os, mint a) {
         return os << a.x;
     }
     friend istream &operator>>(istream &is, mint& a) {
-        ll x; is >> x; a = x; return is;
+        int x; is >> x; a = x; return is;
     }
 };
-
