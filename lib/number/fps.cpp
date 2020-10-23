@@ -9,6 +9,10 @@
  * @date 2020/10/23
  * @details
  * 多項式の累乗がO(nlog n)でできる最低限の実装にしてある
+ * @usage
+ *     vector<FPS<>::Int> a(n);
+ *     REP(i, n) cin >> a[i];
+ *     auto ans = FPS(a).pow(m).a;
  */
 template<int mod=998244353, int root=3>
 struct FPS {
