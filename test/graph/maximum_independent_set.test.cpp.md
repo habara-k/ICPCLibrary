@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/maximum_independent_set.cpp
     title: lib/graph/maximum_independent_set.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

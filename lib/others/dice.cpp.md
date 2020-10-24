@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/others/dice.test.cpp
     title: test/others/dice.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -35,73 +35,70 @@ data:
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/others/dice.cpp\"\
     \n\n// 0: \u4E0A, 1: \u624B\u524D, 2: \u5DE6, 3: \u5965, 4: \u53F3, 5: \u4E0B\n\
-    struct Dice {\n  vi face = {1, 3, 2, 4, 5, 6};\n\n  vvi cand = {\n      {1, 2,\
-    \ 4, 5, 3, 6},\n      {1, 3, 2, 4, 5, 6},\n      {1, 4, 5, 3, 2, 6},\n      {1,\
-    \ 5, 3, 2, 4, 6},\n      {2, 1, 3, 6, 4, 5},\n      {2, 3, 6, 4, 1, 5},\n    \
-    \  {2, 4, 1, 3, 6, 5},\n      {2, 6, 4, 1, 3, 5},\n      {3, 1, 5, 6, 2, 4},\n\
-    \      {3, 2, 1, 5, 6, 4},\n      {3, 5, 6, 2, 1, 4},\n      {3, 6, 2, 1, 5, 4},\n\
-    \      {4, 1, 2, 6, 5, 3},\n      {4, 2, 6, 5, 1, 3},\n      {4, 5, 1, 2, 6, 3},\n\
-    \      {4, 6, 5, 1, 2, 3},\n      {5, 1, 4, 6, 3, 2},\n      {5, 3, 1, 4, 6, 2},\n\
-    \      {5, 4, 6, 3, 1, 2},\n      {5, 6, 3, 1, 4, 2},\n      {6, 2, 3, 5, 4, 1},\n\
-    \      {6, 3, 5, 4, 2, 1},\n      {6, 4, 2, 3, 5, 1},\n      {6, 5, 4, 2, 3, 1}\n\
-    \  };\n\n  void init(vi v) {\n    swap(face, v);\n  }\n\n  // \u4E0A\u3068\u624B\
-    \u524D\u306E\u5024\u304B\u3089\u69CB\u7BC9\n  bool init(int val0, int val1) {\n\
-    \    if(val0 == val1 || val0 + val1 == 7) return false;\n    for(auto &v: cand)\
-    \ {\n      if(val0 == v[0] && val1 == v[1]) {\n        face = v;\n        break;\n\
-    \      }\n    }\n    return true;\n  }\n\n  // \u5DE6\u306B\u8EE2\u304C\u3059\n\
-    \  void rotl() {\n    vi newface = {face[4], face[1], face[0], face[3], face[5],\
-    \ face[2]};\n    swap(face, newface);\n  }\n\n  // \u53F3\u306B\u8EE2\u304C\u3059\
-    \n  void rotr() {\n    vi newface = {face[2], face[1], face[5], face[3], face[0],\
-    \ face[4]};\n    swap(face, newface);\n  }\n\n  // \u5965\u306B\u8EE2\u304C\u3059\
-    \n  void rotu() {\n    vi newface = {face[1], face[5], face[2], face[0], face[4],\
-    \ face[3]};\n    swap(face, newface);\n  }\n\n  // \u624B\u524D\u306B\u8EE2\u304C\
-    \u3059\n  void rotd() {\n    vi newface = {face[3], face[0], face[2], face[5],\
-    \ face[4], face[1]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\
-    \u5DE6\u9762\u3078\n  void kaitenl() {\n    vi newface = {face[0], face[4], face[1],\
-    \ face[2], face[3], face[5]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\
-    \u3092\u53F3\u9762\u3078\n  void kaitenr() {\n    vi newface = {face[0], face[2],\
-    \ face[3], face[4], face[1], face[5]};\n    swap(face, newface);\n  }\n\n  bool\
-    \ operator==(const Dice &d) const {\n    return face == d.face;\n  }\n\n  bool\
-    \ operator<(const Dice &d) const {\n    return face < d.face;\n  }\n\n  int& operator[](int\
-    \ i) {\n    return face[i];\n  }\n};\n"
+    struct Dice {\n  vi face = {1, 3, 2, 4, 5, 6};\n\n  vector<string> cand = {\n\
+    \      \"124536\",\n      \"132456\",\n      \"145326\",\n      \"153246\",\n\
+    \      \"213645\",\n      \"236415\",\n      \"241365\",\n      \"264135\",\n\
+    \      \"315624\",\n      \"321564\",\n      \"356214\",\n      \"362154\",\n\
+    \      \"412653\",\n      \"426513\",\n      \"451263\",\n      \"465123\",\n\
+    \      \"514632\",\n      \"531462\",\n      \"546312\",\n      \"563142\",\n\
+    \      \"623541\",\n      \"635421\",\n      \"642351\",\n      \"654231\"\n \
+    \ };\n\n  void init(vi v) {\n    swap(face, v);\n  }\n\n  // \u4E0A\u3068\u624B\
+    \u524D\u306E\u5024\u304B\u3089\u69CB\u7BC9\n  bool init(int top, int front) {\n\
+    \    if(top == front || top + front == 7) return false;\n    for(auto &v: cand)\
+    \ {\n      if(top == v[0] - '0' && front == v[1] - '0') {\n        REP(i, 6) {\n\
+    \          face[i] = v[i] - '0';\n        }\n        break;\n      }\n    }\n\
+    \    return true;\n  }\n\n  // \u5DE6\u306B\u8EE2\u304C\u3059\n  void rotl() {\n\
+    \    vi newface = {face[4], face[1], face[0], face[3], face[5], face[2]};\n  \
+    \  swap(face, newface);\n  }\n\n  // \u53F3\u306B\u8EE2\u304C\u3059\n  void rotr()\
+    \ {\n    vi newface = {face[2], face[1], face[5], face[3], face[0], face[4]};\n\
+    \    swap(face, newface);\n  }\n\n  // \u5965\u306B\u8EE2\u304C\u3059\n  void\
+    \ rotb() {\n    vi newface = {face[1], face[5], face[2], face[0], face[4], face[3]};\n\
+    \    swap(face, newface);\n  }\n\n  // \u624B\u524D\u306B\u8EE2\u304C\u3059\n\
+    \  void rotf() {\n    vi newface = {face[3], face[0], face[2], face[5], face[4],\
+    \ face[1]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\u5DE6\u9762\
+    \u3078\n  void kaitenl() {\n    vi newface = {face[0], face[4], face[1], face[2],\
+    \ face[3], face[5]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\
+    \u53F3\u9762\u3078\n  void kaitenr() {\n    vi newface = {face[0], face[2], face[3],\
+    \ face[4], face[1], face[5]};\n    swap(face, newface);\n  }\n\n  bool operator==(const\
+    \ Dice &d) const {\n    return face == d.face;\n  }\n\n  bool operator<(const\
+    \ Dice &d) const {\n    return face < d.face;\n  }\n\n  int& operator[](int i)\
+    \ {\n    return face[i];\n  }\n};\n"
   code: "#include \"../template.cpp\"\n\n// 0: \u4E0A, 1: \u624B\u524D, 2: \u5DE6\
     , 3: \u5965, 4: \u53F3, 5: \u4E0B\nstruct Dice {\n  vi face = {1, 3, 2, 4, 5,\
-    \ 6};\n\n  vvi cand = {\n      {1, 2, 4, 5, 3, 6},\n      {1, 3, 2, 4, 5, 6},\n\
-    \      {1, 4, 5, 3, 2, 6},\n      {1, 5, 3, 2, 4, 6},\n      {2, 1, 3, 6, 4, 5},\n\
-    \      {2, 3, 6, 4, 1, 5},\n      {2, 4, 1, 3, 6, 5},\n      {2, 6, 4, 1, 3, 5},\n\
-    \      {3, 1, 5, 6, 2, 4},\n      {3, 2, 1, 5, 6, 4},\n      {3, 5, 6, 2, 1, 4},\n\
-    \      {3, 6, 2, 1, 5, 4},\n      {4, 1, 2, 6, 5, 3},\n      {4, 2, 6, 5, 1, 3},\n\
-    \      {4, 5, 1, 2, 6, 3},\n      {4, 6, 5, 1, 2, 3},\n      {5, 1, 4, 6, 3, 2},\n\
-    \      {5, 3, 1, 4, 6, 2},\n      {5, 4, 6, 3, 1, 2},\n      {5, 6, 3, 1, 4, 2},\n\
-    \      {6, 2, 3, 5, 4, 1},\n      {6, 3, 5, 4, 2, 1},\n      {6, 4, 2, 3, 5, 1},\n\
-    \      {6, 5, 4, 2, 3, 1}\n  };\n\n  void init(vi v) {\n    swap(face, v);\n \
-    \ }\n\n  // \u4E0A\u3068\u624B\u524D\u306E\u5024\u304B\u3089\u69CB\u7BC9\n  bool\
-    \ init(int val0, int val1) {\n    if(val0 == val1 || val0 + val1 == 7) return\
-    \ false;\n    for(auto &v: cand) {\n      if(val0 == v[0] && val1 == v[1]) {\n\
-    \        face = v;\n        break;\n      }\n    }\n    return true;\n  }\n\n\
-    \  // \u5DE6\u306B\u8EE2\u304C\u3059\n  void rotl() {\n    vi newface = {face[4],\
-    \ face[1], face[0], face[3], face[5], face[2]};\n    swap(face, newface);\n  }\n\
-    \n  // \u53F3\u306B\u8EE2\u304C\u3059\n  void rotr() {\n    vi newface = {face[2],\
-    \ face[1], face[5], face[3], face[0], face[4]};\n    swap(face, newface);\n  }\n\
-    \n  // \u5965\u306B\u8EE2\u304C\u3059\n  void rotu() {\n    vi newface = {face[1],\
-    \ face[5], face[2], face[0], face[4], face[3]};\n    swap(face, newface);\n  }\n\
-    \n  // \u624B\u524D\u306B\u8EE2\u304C\u3059\n  void rotd() {\n    vi newface =\
-    \ {face[3], face[0], face[2], face[5], face[4], face[1]};\n    swap(face, newface);\n\
-    \  }\n\n  // \u6B63\u9762\u3092\u5DE6\u9762\u3078\n  void kaitenl() {\n    vi\
-    \ newface = {face[0], face[4], face[1], face[2], face[3], face[5]};\n    swap(face,\
-    \ newface);\n  }\n\n  // \u6B63\u9762\u3092\u53F3\u9762\u3078\n  void kaitenr()\
-    \ {\n    vi newface = {face[0], face[2], face[3], face[4], face[1], face[5]};\n\
-    \    swap(face, newface);\n  }\n\n  bool operator==(const Dice &d) const {\n \
-    \   return face == d.face;\n  }\n\n  bool operator<(const Dice &d) const {\n \
-    \   return face < d.face;\n  }\n\n  int& operator[](int i) {\n    return face[i];\n\
-    \  }\n};"
+    \ 6};\n\n  vector<string> cand = {\n      \"124536\",\n      \"132456\",\n   \
+    \   \"145326\",\n      \"153246\",\n      \"213645\",\n      \"236415\",\n   \
+    \   \"241365\",\n      \"264135\",\n      \"315624\",\n      \"321564\",\n   \
+    \   \"356214\",\n      \"362154\",\n      \"412653\",\n      \"426513\",\n   \
+    \   \"451263\",\n      \"465123\",\n      \"514632\",\n      \"531462\",\n   \
+    \   \"546312\",\n      \"563142\",\n      \"623541\",\n      \"635421\",\n   \
+    \   \"642351\",\n      \"654231\"\n  };\n\n  void init(vi v) {\n    swap(face,\
+    \ v);\n  }\n\n  // \u4E0A\u3068\u624B\u524D\u306E\u5024\u304B\u3089\u69CB\u7BC9\
+    \n  bool init(int top, int front) {\n    if(top == front || top + front == 7)\
+    \ return false;\n    for(auto &v: cand) {\n      if(top == v[0] - '0' && front\
+    \ == v[1] - '0') {\n        REP(i, 6) {\n          face[i] = v[i] - '0';\n   \
+    \     }\n        break;\n      }\n    }\n    return true;\n  }\n\n  // \u5DE6\u306B\
+    \u8EE2\u304C\u3059\n  void rotl() {\n    vi newface = {face[4], face[1], face[0],\
+    \ face[3], face[5], face[2]};\n    swap(face, newface);\n  }\n\n  // \u53F3\u306B\
+    \u8EE2\u304C\u3059\n  void rotr() {\n    vi newface = {face[2], face[1], face[5],\
+    \ face[3], face[0], face[4]};\n    swap(face, newface);\n  }\n\n  // \u5965\u306B\
+    \u8EE2\u304C\u3059\n  void rotb() {\n    vi newface = {face[1], face[5], face[2],\
+    \ face[0], face[4], face[3]};\n    swap(face, newface);\n  }\n\n  // \u624B\u524D\
+    \u306B\u8EE2\u304C\u3059\n  void rotf() {\n    vi newface = {face[3], face[0],\
+    \ face[2], face[5], face[4], face[1]};\n    swap(face, newface);\n  }\n\n  //\
+    \ \u6B63\u9762\u3092\u5DE6\u9762\u3078\n  void kaitenl() {\n    vi newface = {face[0],\
+    \ face[4], face[1], face[2], face[3], face[5]};\n    swap(face, newface);\n  }\n\
+    \n  // \u6B63\u9762\u3092\u53F3\u9762\u3078\n  void kaitenr() {\n    vi newface\
+    \ = {face[0], face[2], face[3], face[4], face[1], face[5]};\n    swap(face, newface);\n\
+    \  }\n\n  bool operator==(const Dice &d) const {\n    return face == d.face;\n\
+    \  }\n\n  bool operator<(const Dice &d) const {\n    return face < d.face;\n \
+    \ }\n\n  int& operator[](int i) {\n    return face[i];\n  }\n};"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/others/dice.cpp
   requiredBy: []
-  timestamp: '2020-10-20 11:12:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-10-24 19:57:42+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/others/dice.test.cpp
 documentation_of: lib/others/dice.cpp
