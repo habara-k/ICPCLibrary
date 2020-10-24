@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
     path: lib/structure/segment_tree.cpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
@@ -45,25 +45,23 @@ data:
     \n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n    cout\
     \ << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n    // cin.rdbuf(in.rdbuf());\n\
     \n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/mint.cpp\"\n\ntemplate<int m>\n\
-    struct mint {\n    int x;\n    mint(int x = 0) : x(((x % m) + m) % m) {}\n   \
-    \ mint operator-() { return x ? m-x : 0; }\n    mint &operator+=(mint r) {\n \
-    \       if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n    mint &operator-=(mint\
-    \ r) {\n        if ((x -= r.x) < 0) x += m;\n        return *this;\n    }\n  \
-    \  mint &operator*=(mint r) {\n        x = ((ll)x * r.x) % m;\n        return\
-    \ *this;\n    }\n    mint inv() {\n        int a = x, b = m, u = 1, v = 0, t;\n\
-    \        while (b > 0) {\n            t = a / b;\n            swap(a -= t * b,\
-    \ b);\n            swap(u -= t * v, v);\n        }\n        return u;\n    }\n\
-    \    mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend mint\
-    \ operator+(mint l, mint r) { return l += r; }\n    friend mint operator-(mint\
-    \ l, mint r) { return l -= r; }\n    friend mint operator*(mint l, mint r) { return\
-    \ l *= r; }\n    friend mint operator/(mint l, mint r) { return l /= r; }\n  \
-    \  mint pow(ll n) {\n        mint ret = 1, tmp = *this;\n        while (n) {\n\
-    \            if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n      \
-    \  }\n        return ret;\n    }\n    friend bool operator==(mint l, mint r) {\
-    \ return l.x == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x\
-    \ != r.x; }\n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
-    \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, mint& a) {\n\
-    \        int x; is >> x; a = x; return is;\n    }\n};\n#line 2 \"lib/structure/segment_tree.cpp\"\
+    struct mint {\n    int x;\n    mint(ll x = 0) : x(((x % m) + m) % m) {}\n    mint\
+    \ operator-() const { return x ? m-x : 0; }\n    mint &operator+=(mint r) {\n\
+    \        if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n    mint\
+    \ &operator-=(mint r) {\n        if ((x -= r.x) < 0) x += m;\n        return *this;\n\
+    \    }\n    mint &operator*=(mint r) {\n        x = ((ll)x * r.x) % m;\n     \
+    \   return *this;\n    }\n    mint inv() const { return pow(m-2); }\n    mint\
+    \ &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend mint operator+(mint\
+    \ l, mint r) { return l += r; }\n    friend mint operator-(mint l, mint r) { return\
+    \ l -= r; }\n    friend mint operator*(mint l, mint r) { return l *= r; }\n  \
+    \  friend mint operator/(mint l, mint r) { return l /= r; }\n    mint pow(ll n)\
+    \ const {\n        mint ret = 1, tmp = *this;\n        while (n) {\n         \
+    \   if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n    \
+    \    return ret;\n    }\n    friend bool operator==(mint l, mint r) { return l.x\
+    \ == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x != r.x; }\n\
+    \    friend ostream &operator<<(ostream &os, mint a) {\n        return os << a.x;\n\
+    \    }\n    friend istream &operator>>(istream &is, mint& a) {\n        ll x;\
+    \ is >> x; a = x; return is;\n    }\n};\n\n#line 2 \"lib/structure/segment_tree.cpp\"\
     \n\n/**\n* @brief \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n* @author habara-k, Md\n\
     * @date 2020/06/17\n*/\n\ntemplate<typename M>\nstruct SegmentTree {\n\n    /**\n\
     \    * @brief \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(n)\n    * @param[in]\
@@ -142,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2020-10-23 18:09:04+09:00'
+  timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/point_set_range_composite.test.cpp

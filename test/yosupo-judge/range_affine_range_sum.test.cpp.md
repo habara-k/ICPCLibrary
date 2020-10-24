@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_tree.cpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -130,25 +130,23 @@ data:
     \ *            n,\n *            [](int a,int b){ return max(a, b); },\n *   \
     \         [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
     \ return b; },\n *            -INF, INF);\n */\n#line 2 \"lib/number/mint.cpp\"\
-    \n\ntemplate<int m>\nstruct mint {\n    int x;\n    mint(int x = 0) : x(((x %\
-    \ m) + m) % m) {}\n    mint operator-() { return x ? m-x : 0; }\n    mint &operator+=(mint\
+    \n\ntemplate<int m>\nstruct mint {\n    int x;\n    mint(ll x = 0) : x(((x % m)\
+    \ + m) % m) {}\n    mint operator-() const { return x ? m-x : 0; }\n    mint &operator+=(mint\
     \ r) {\n        if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n \
     \   mint &operator-=(mint r) {\n        if ((x -= r.x) < 0) x += m;\n        return\
     \ *this;\n    }\n    mint &operator*=(mint r) {\n        x = ((ll)x * r.x) % m;\n\
-    \        return *this;\n    }\n    mint inv() {\n        int a = x, b = m, u =\
-    \ 1, v = 0, t;\n        while (b > 0) {\n            t = a / b;\n            swap(a\
-    \ -= t * b, b);\n            swap(u -= t * v, v);\n        }\n        return u;\n\
-    \    }\n    mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend\
-    \ mint operator+(mint l, mint r) { return l += r; }\n    friend mint operator-(mint\
-    \ l, mint r) { return l -= r; }\n    friend mint operator*(mint l, mint r) { return\
-    \ l *= r; }\n    friend mint operator/(mint l, mint r) { return l /= r; }\n  \
-    \  mint pow(ll n) {\n        mint ret = 1, tmp = *this;\n        while (n) {\n\
-    \            if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n      \
-    \  }\n        return ret;\n    }\n    friend bool operator==(mint l, mint r) {\
-    \ return l.x == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x\
-    \ != r.x; }\n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
-    \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, mint& a) {\n\
-    \        int x; is >> x; a = x; return is;\n    }\n};\n#line 5 \"test/yosupo-judge/range_affine_range_sum.test.cpp\"\
+    \        return *this;\n    }\n    mint inv() const { return pow(m-2); }\n   \
+    \ mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend mint operator+(mint\
+    \ l, mint r) { return l += r; }\n    friend mint operator-(mint l, mint r) { return\
+    \ l -= r; }\n    friend mint operator*(mint l, mint r) { return l *= r; }\n  \
+    \  friend mint operator/(mint l, mint r) { return l /= r; }\n    mint pow(ll n)\
+    \ const {\n        mint ret = 1, tmp = *this;\n        while (n) {\n         \
+    \   if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n    \
+    \    return ret;\n    }\n    friend bool operator==(mint l, mint r) { return l.x\
+    \ == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x != r.x; }\n\
+    \    friend ostream &operator<<(ostream &os, mint a) {\n        return os << a.x;\n\
+    \    }\n    friend istream &operator>>(istream &is, mint& a) {\n        ll x;\
+    \ is >> x; a = x; return is;\n    }\n};\n\n#line 5 \"test/yosupo-judge/range_affine_range_sum.test.cpp\"\
     \n\n\nusing Mint = mint<998244353>;\n\nstruct S {\n    Mint val;\n};\n\nstruct\
     \ T {\n    Mint b;\n    Mint c;\n\n    bool operator==(const T &rhs) const {\n\
     \        return b.x == rhs.b.x && c.x == rhs.c.x;\n    }\n};\n\nint main() {\n\
@@ -187,8 +185,8 @@ data:
   isVerificationFile: true
   path: test/yosupo-judge/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-23 18:09:04+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-24 19:29:28+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-judge/range_affine_range_sum.test.cpp
 layout: document

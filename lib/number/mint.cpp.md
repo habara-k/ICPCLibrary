@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
@@ -27,11 +27,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/point_set_range_composite.test.cpp
     title: test/yosupo-judge/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -55,53 +55,48 @@ data:
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/mint.cpp\"\
-    \n\ntemplate<int m>\nstruct mint {\n    int x;\n    mint(int x = 0) : x(((x %\
-    \ m) + m) % m) {}\n    mint operator-() { return x ? m-x : 0; }\n    mint &operator+=(mint\
+    \n\ntemplate<int m>\nstruct mint {\n    int x;\n    mint(ll x = 0) : x(((x % m)\
+    \ + m) % m) {}\n    mint operator-() const { return x ? m-x : 0; }\n    mint &operator+=(mint\
     \ r) {\n        if ((x += r.x) >= m) x -= m;\n        return *this;\n    }\n \
     \   mint &operator-=(mint r) {\n        if ((x -= r.x) < 0) x += m;\n        return\
     \ *this;\n    }\n    mint &operator*=(mint r) {\n        x = ((ll)x * r.x) % m;\n\
-    \        return *this;\n    }\n    mint inv() {\n        int a = x, b = m, u =\
-    \ 1, v = 0, t;\n        while (b > 0) {\n            t = a / b;\n            swap(a\
-    \ -= t * b, b);\n            swap(u -= t * v, v);\n        }\n        return u;\n\
-    \    }\n    mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend\
-    \ mint operator+(mint l, mint r) { return l += r; }\n    friend mint operator-(mint\
-    \ l, mint r) { return l -= r; }\n    friend mint operator*(mint l, mint r) { return\
-    \ l *= r; }\n    friend mint operator/(mint l, mint r) { return l /= r; }\n  \
-    \  mint pow(ll n) {\n        mint ret = 1, tmp = *this;\n        while (n) {\n\
-    \            if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n      \
-    \  }\n        return ret;\n    }\n    friend bool operator==(mint l, mint r) {\
-    \ return l.x == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x\
-    \ != r.x; }\n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
-    \ os << a.x;\n    }\n    friend istream &operator>>(istream &is, mint& a) {\n\
-    \        int x; is >> x; a = x; return is;\n    }\n};\n"
+    \        return *this;\n    }\n    mint inv() const { return pow(m-2); }\n   \
+    \ mint &operator/=(mint r) { return *this *= r.inv(); }\n\n    friend mint operator+(mint\
+    \ l, mint r) { return l += r; }\n    friend mint operator-(mint l, mint r) { return\
+    \ l -= r; }\n    friend mint operator*(mint l, mint r) { return l *= r; }\n  \
+    \  friend mint operator/(mint l, mint r) { return l /= r; }\n    mint pow(ll n)\
+    \ const {\n        mint ret = 1, tmp = *this;\n        while (n) {\n         \
+    \   if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n    \
+    \    return ret;\n    }\n    friend bool operator==(mint l, mint r) { return l.x\
+    \ == r.x; }\n    friend bool operator!=(mint l, mint r) { return l.x != r.x; }\n\
+    \    friend ostream &operator<<(ostream &os, mint a) {\n        return os << a.x;\n\
+    \    }\n    friend istream &operator>>(istream &is, mint& a) {\n        ll x;\
+    \ is >> x; a = x; return is;\n    }\n};\n\n"
   code: "#include \"../template.cpp\"\n\ntemplate<int m>\nstruct mint {\n    int x;\n\
-    \    mint(int x = 0) : x(((x % m) + m) % m) {}\n    mint operator-() { return\
+    \    mint(ll x = 0) : x(((x % m) + m) % m) {}\n    mint operator-() const { return\
     \ x ? m-x : 0; }\n    mint &operator+=(mint r) {\n        if ((x += r.x) >= m)\
     \ x -= m;\n        return *this;\n    }\n    mint &operator-=(mint r) {\n    \
     \    if ((x -= r.x) < 0) x += m;\n        return *this;\n    }\n    mint &operator*=(mint\
     \ r) {\n        x = ((ll)x * r.x) % m;\n        return *this;\n    }\n    mint\
-    \ inv() {\n        int a = x, b = m, u = 1, v = 0, t;\n        while (b > 0) {\n\
-    \            t = a / b;\n            swap(a -= t * b, b);\n            swap(u\
-    \ -= t * v, v);\n        }\n        return u;\n    }\n    mint &operator/=(mint\
-    \ r) { return *this *= r.inv(); }\n\n    friend mint operator+(mint l, mint r)\
-    \ { return l += r; }\n    friend mint operator-(mint l, mint r) { return l -=\
-    \ r; }\n    friend mint operator*(mint l, mint r) { return l *= r; }\n    friend\
-    \ mint operator/(mint l, mint r) { return l /= r; }\n    mint pow(ll n) {\n  \
-    \      mint ret = 1, tmp = *this;\n        while (n) {\n            if (n & 1)\
-    \ ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n        return ret;\n\
-    \    }\n    friend bool operator==(mint l, mint r) { return l.x == r.x; }\n  \
-    \  friend bool operator!=(mint l, mint r) { return l.x != r.x; }\n    friend ostream\
-    \ &operator<<(ostream &os, mint a) {\n        return os << a.x;\n    }\n    friend\
-    \ istream &operator>>(istream &is, mint& a) {\n        int x; is >> x; a = x;\
-    \ return is;\n    }\n};\n"
+    \ inv() const { return pow(m-2); }\n    mint &operator/=(mint r) { return *this\
+    \ *= r.inv(); }\n\n    friend mint operator+(mint l, mint r) { return l += r;\
+    \ }\n    friend mint operator-(mint l, mint r) { return l -= r; }\n    friend\
+    \ mint operator*(mint l, mint r) { return l *= r; }\n    friend mint operator/(mint\
+    \ l, mint r) { return l /= r; }\n    mint pow(ll n) const {\n        mint ret\
+    \ = 1, tmp = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n\
+    \            tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n   \
+    \ friend bool operator==(mint l, mint r) { return l.x == r.x; }\n    friend bool\
+    \ operator!=(mint l, mint r) { return l.x != r.x; }\n    friend ostream &operator<<(ostream\
+    \ &os, mint a) {\n        return os << a.x;\n    }\n    friend istream &operator>>(istream\
+    \ &is, mint& a) {\n        ll x; is >> x; a = x; return is;\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/mint.cpp
   requiredBy:
   - lib/number/fps.cpp
-  timestamp: '2020-10-23 18:09:04+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-10-24 19:29:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/convolution.test.cpp

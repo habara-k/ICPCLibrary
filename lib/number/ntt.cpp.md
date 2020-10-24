@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
@@ -28,7 +28,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: NTT
-    links: []
+    links:
+    - https://ei1333.github.io/library/math/fft/number-theoretic-transform-friendly-mod-int.cpp
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
     \ namespace std;\n\n#define REP(i, n) for (int i=0; i<(n); ++i)\n#define RREP(i,\
     \ n) for (int i=(int)(n)-1; i>=0; --i)\n#define FOR(i, a, n) for (int i=(a); i<(n);\
@@ -50,49 +51,69 @@ data:
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/ntt.cpp\"\
-    \n\n/*\n * @brief NTT\n * @author habara-k\n * @usage\n *   vector<NTT<>::Int>\
-    \ a, b;\n *   NTT<> ntt;\n *   auto c = ntt.multiply(a, b);\n * \u6709\u540D\u306A\
-    mod, root\u306E\u7D44\n * 998244353, 3\n * 163577857, 23\n * 167772161, 3\n *\
-    \ 469762049, 3\n */\ntemplate<int mod=998244353, int root=3>\nstruct NTT {\n \
-    \   using Int = mint<mod>;\n    int n;\n    Int r;\n    void ensure(int need)\
-    \ {\n        n = 1;\n        while (n < need) n <<= 1;\n        r = Int{root}.pow((mod-1)\
-    \ / n);\n    }\n\n    vector<Int> multiply(vector<Int> a, vector<Int> b) {\n \
-    \       int need = SZ(a) + SZ(b) - 1;\n        ensure(need);\n        ntt(a);\n\
-    \        ntt(b);\n        REP(i, n) (a[i] *= b[i]) /= n;\n        reverse(a.begin()\
-    \ + 1, a.end());\n        ntt(a); a.resize(need);\n        return a;\n    }\n\n\
-    \    void ntt(vector<Int>& a) {\n        a.resize(n);\n        int p = 0;\n  \
-    \      FOR(i, 1, n-1) {\n            for (int k = n >> 1; k > (p ^= k); k >>=\
-    \ 1);\n            if (i < p) swap(a[i], a[p]);\n        }\n        for (int k\
-    \ = 1; k < n; k <<= 1) {\n            Int base = r.pow(n / (2*k));\n         \
-    \   Int z = 1;\n            REP(j, k) {\n                for (int i = j; i < n;\
-    \ i += 2*k) {\n                    Int v = a[i+k] * z;\n                    a[i+k]\
-    \ = a[i] - v;\n                    a[i] += v;\n                }\n           \
-    \     z *= base;\n            }\n        }\n    }\n};\n\n"
-  code: "#include \"../template.cpp\"\n\n/*\n * @brief NTT\n * @author habara-k\n\
-    \ * @usage\n *   vector<NTT<>::Int> a, b;\n *   NTT<> ntt;\n *   auto c = ntt.multiply(a,\
-    \ b);\n * \u6709\u540D\u306Amod, root\u306E\u7D44\n * 998244353, 3\n * 163577857,\
-    \ 23\n * 167772161, 3\n * 469762049, 3\n */\ntemplate<int mod=998244353, int root=3>\n\
-    struct NTT {\n    using Int = mint<mod>;\n    int n;\n    Int r;\n    void ensure(int\
-    \ need) {\n        n = 1;\n        while (n < need) n <<= 1;\n        r = Int{root}.pow((mod-1)\
-    \ / n);\n    }\n\n    vector<Int> multiply(vector<Int> a, vector<Int> b) {\n \
-    \       int need = SZ(a) + SZ(b) - 1;\n        ensure(need);\n        ntt(a);\n\
-    \        ntt(b);\n        REP(i, n) (a[i] *= b[i]) /= n;\n        reverse(a.begin()\
-    \ + 1, a.end());\n        ntt(a); a.resize(need);\n        return a;\n    }\n\n\
-    \    void ntt(vector<Int>& a) {\n        a.resize(n);\n        int p = 0;\n  \
-    \      FOR(i, 1, n-1) {\n            for (int k = n >> 1; k > (p ^= k); k >>=\
-    \ 1);\n            if (i < p) swap(a[i], a[p]);\n        }\n        for (int k\
-    \ = 1; k < n; k <<= 1) {\n            Int base = r.pow(n / (2*k));\n         \
-    \   Int z = 1;\n            REP(j, k) {\n                for (int i = j; i < n;\
-    \ i += 2*k) {\n                    Int v = a[i+k] * z;\n                    a[i+k]\
-    \ = a[i] - v;\n                    a[i] += v;\n                }\n           \
-    \     z *= base;\n            }\n        }\n    }\n};\n\n"
+    \n\n/*\n * @brief NTT\n * @ref https://ei1333.github.io/library/math/fft/number-theoretic-transform-friendly-mod-int.cpp\n\
+    \ * @author habara-k\n * @usage\n *   vector<NTT<>::Int> a, b;\n *   auto c =\
+    \ NTT<>::multiply(a, b);\n *\n * root\u306E\u63A2\u7D22\n * int root = 2;\n *\
+    \ while (Int{root}.pow((mod-1)/2) == 1) ++root;\n */\ntemplate<int mod = 998244353,\
+    \ int root = 3>\nstruct NTT {\n    using Int = mint<mod>;\n    constexpr static\
+    \ int sz = __builtin_ctz(mod-1);\n\n    static void ntt(vector<Int> &a) {\n  \
+    \      const int n = (int) a.size();\n        assert((n & (n - 1)) == 0);\n  \
+    \      assert(__builtin_ctz(n) <= sz);\n        Int dw[sz];\n        REP(i, sz)\
+    \ {\n            dw[i] = -Int{root}.pow((mod-1) >> (i+2));\n        }\n      \
+    \  for (int m = n; m >>= 1;) {\n            Int w = 1;\n            for (int s\
+    \ = 0, k = 0; s < n; s += 2 * m) {\n                for (int i = s, j = s + m;\
+    \ i < s + m; ++i, ++j) {\n                    auto x = a[i], y = a[j] * w;\n \
+    \                   a[i] = x + y, a[j] = x - y;\n                }\n         \
+    \       w *= dw[__builtin_ctz(++k)];\n            }\n        }\n    }\n\n    static\
+    \ void intt(vector<Int> &a) {\n        const int n = (int) a.size();\n       \
+    \ assert((n & (n - 1)) == 0);\n        assert(__builtin_ctz(n) <= sz);\n     \
+    \   Int idw[sz];\n        REP(i, sz) {\n            idw[i] = (-Int{root}.pow((mod-1)\
+    \ >> (i+2))).inv();\n        }\n        for (int m = 1; m < n; m *= 2) {\n   \
+    \         Int w = 1;\n            for (int s = 0, k = 0; s < n; s += 2 * m) {\n\
+    \                for (int i = s, j = s + m; i < s + m; ++i, ++j) {\n         \
+    \           auto x = a[i], y = a[j];\n                    a[i] = x + y, a[j] =\
+    \ (x - y) * w;\n                }\n                w *= idw[__builtin_ctz(++k)];\n\
+    \            }\n        }\n        Int inv_n = Int{n}.inv();\n        REP(i, n)\
+    \ a[i] *= inv_n;\n    }\n\n    static vector<Int> multiply(vector<Int> a, vector<Int>\
+    \ b) {\n        int need = SZ(a) + SZ(b) - 1;\n        int n = 1;\n        while\
+    \ (n < need) n <<= 1;\n        a.resize(n);\n        b.resize(n);\n        ntt(a);\n\
+    \        ntt(b);\n        REP(i, n) a[i] *= b[i];\n        intt(a);\n        a.resize(need);\n\
+    \        return a;\n    }\n};\n\n"
+  code: "#include \"../template.cpp\"\n\n/*\n * @brief NTT\n * @ref https://ei1333.github.io/library/math/fft/number-theoretic-transform-friendly-mod-int.cpp\n\
+    \ * @author habara-k\n * @usage\n *   vector<NTT<>::Int> a, b;\n *   auto c =\
+    \ NTT<>::multiply(a, b);\n *\n * root\u306E\u63A2\u7D22\n * int root = 2;\n *\
+    \ while (Int{root}.pow((mod-1)/2) == 1) ++root;\n */\ntemplate<int mod = 998244353,\
+    \ int root = 3>\nstruct NTT {\n    using Int = mint<mod>;\n    constexpr static\
+    \ int sz = __builtin_ctz(mod-1);\n\n    static void ntt(vector<Int> &a) {\n  \
+    \      const int n = (int) a.size();\n        assert((n & (n - 1)) == 0);\n  \
+    \      assert(__builtin_ctz(n) <= sz);\n        Int dw[sz];\n        REP(i, sz)\
+    \ {\n            dw[i] = -Int{root}.pow((mod-1) >> (i+2));\n        }\n      \
+    \  for (int m = n; m >>= 1;) {\n            Int w = 1;\n            for (int s\
+    \ = 0, k = 0; s < n; s += 2 * m) {\n                for (int i = s, j = s + m;\
+    \ i < s + m; ++i, ++j) {\n                    auto x = a[i], y = a[j] * w;\n \
+    \                   a[i] = x + y, a[j] = x - y;\n                }\n         \
+    \       w *= dw[__builtin_ctz(++k)];\n            }\n        }\n    }\n\n    static\
+    \ void intt(vector<Int> &a) {\n        const int n = (int) a.size();\n       \
+    \ assert((n & (n - 1)) == 0);\n        assert(__builtin_ctz(n) <= sz);\n     \
+    \   Int idw[sz];\n        REP(i, sz) {\n            idw[i] = (-Int{root}.pow((mod-1)\
+    \ >> (i+2))).inv();\n        }\n        for (int m = 1; m < n; m *= 2) {\n   \
+    \         Int w = 1;\n            for (int s = 0, k = 0; s < n; s += 2 * m) {\n\
+    \                for (int i = s, j = s + m; i < s + m; ++i, ++j) {\n         \
+    \           auto x = a[i], y = a[j];\n                    a[i] = x + y, a[j] =\
+    \ (x - y) * w;\n                }\n                w *= idw[__builtin_ctz(++k)];\n\
+    \            }\n        }\n        Int inv_n = Int{n}.inv();\n        REP(i, n)\
+    \ a[i] *= inv_n;\n    }\n\n    static vector<Int> multiply(vector<Int> a, vector<Int>\
+    \ b) {\n        int need = SZ(a) + SZ(b) - 1;\n        int n = 1;\n        while\
+    \ (n < need) n <<= 1;\n        a.resize(n);\n        b.resize(n);\n        ntt(a);\n\
+    \        ntt(b);\n        REP(i, n) a[i] *= b[i];\n        intt(a);\n        a.resize(need);\n\
+    \        return a;\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/ntt.cpp
   requiredBy:
   - lib/number/fps.cpp
-  timestamp: '2020-10-23 18:09:04+09:00'
+  timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/convolution.test.cpp

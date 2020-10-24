@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: lib/structure/bit_range_add.cpp
     title: lib/structure/bit_range_add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

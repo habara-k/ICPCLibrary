@@ -103,7 +103,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/number/mint.cpp
     title: lib/number/mint.cpp
   - icon: ':heavy_check_mark:'
@@ -162,7 +162,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_rbst.cpp
     title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/structure/lazy_segment_tree.cpp
     title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':warning:'
@@ -478,10 +478,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/point_set_range_composite.test.cpp
     title: test/yosupo-judge/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -506,7 +506,7 @@ data:
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -630,7 +630,7 @@ data:
   - lib/geometry/3D_template.cpp
   - lib/geometry/2D_template.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/suffix_array_2.test.cpp
   - test/string/rolling_hash_2D.test.cpp

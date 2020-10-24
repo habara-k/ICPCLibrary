@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/string/rolling_hash_2D.cpp
     title: "2\u6B21\u5143\u6587\u5B57\u5217\u306E\u30CF\u30C3\u30B7\u30E5\u5316"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

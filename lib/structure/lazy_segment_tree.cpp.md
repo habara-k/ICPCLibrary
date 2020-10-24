@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
@@ -12,11 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/heavy_light_decomposition/hld.test.cpp
     title: test/tree/heavy_light_decomposition/hld.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/range_affine_range_sum.test.cpp
     title: test/yosupo-judge/range_affine_range_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     links: []
@@ -217,7 +217,7 @@ data:
   path: lib/structure/lazy_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-10-10 20:35:00+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/structure/lazy_segment_tree.test.cpp

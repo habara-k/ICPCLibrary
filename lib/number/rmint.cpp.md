@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
@@ -36,53 +36,49 @@ data:
     \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/number/rmint.cpp\"\
     \n\ntemplate<typename T=int>\nstruct rmint {\n    static T &m() {\n        static\
     \ T m = 0;\n        return m;\n    }\n    static void set_mod(T md) { m() = md;\
-    \ }\n    T x;\n    rmint(T x = 0) : x(((x % m()) + m()) % m()) {}\n    rmint operator-()\
-    \ { return x ? m()-x : 0; }\n    rmint &operator+=(rmint r) {\n        if ((x\
-    \ += r.x) >= m()) x -= m();\n        return *this;\n    }\n    rmint &operator-=(rmint\
-    \ r) {\n        if ((x -= r.x) < 0) x += m();\n        return *this;\n    }\n\
-    \    rmint &operator*=(rmint r) {\n        x = ((ll)x * r.x) % m();\n        return\
-    \ *this;\n    }\n    rmint inv() {\n        int a = x, b = m, u = 1, v = 0, t;\n\
-    \        while (b > 0) {\n            t = a / b;\n            swap(a -= t * b,\
-    \ b);\n            swap(u -= t * v, v);\n        }\n        return u;\n    }\n\
-    \    rmint &operator/=(rmint r) { return *this *= r.inv(); }\n\n    friend rmint\
-    \ operator+(rmint l, rmint r) { return l += r; }\n    friend rmint operator-(rmint\
-    \ l, rmint r) { return l -= r; }\n    friend rmint operator*(rmint l, rmint r)\
-    \ { return l *= r; }\n    friend rmint operator/(rmint l, rmint r) { return l\
-    \ /= r; }\n    rmint pow(T n) {\n        rmint ret = 1, tmp = *this;\n       \
-    \ while (n) {\n            if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>=\
-    \ 1;\n        }\n        return ret;\n    }\n    friend bool operator==(rmint\
-    \ l, rmint r) { return l.x == r.x; }\n    friend bool operator!=(rmint l, rmint\
-    \ r) { return l.x != r.x; }\n    friend ostream &operator<<(ostream &os, rmint\
-    \ a) {\n        return os << a.x;\n    }\n    friend istream &operator>>(istream\
+    \ }\n    T x;\n    rmint(ll x = 0) : x(((x % m()) + m()) % m()) {}\n    rmint\
+    \ operator-() const { return x ? m()-x : 0; }\n    rmint &operator+=(rmint r)\
+    \ {\n        if ((x += r.x) >= m()) x -= m();\n        return *this;\n    }\n\
+    \    rmint &operator-=(rmint r) {\n        if ((x -= r.x) < 0) x += m();\n   \
+    \     return *this;\n    }\n    rmint &operator*=(rmint r) {\n        x = ((ll)x\
+    \ * r.x) % m();\n        return *this;\n    }\n    rmint inv() const { return\
+    \ pow(m-2); }\n    rmint &operator/=(rmint r) { return *this *= r.inv(); }\n\n\
+    \    friend rmint operator+(rmint l, rmint r) { return l += r; }\n    friend rmint\
+    \ operator-(rmint l, rmint r) { return l -= r; }\n    friend rmint operator*(rmint\
+    \ l, rmint r) { return l *= r; }\n    friend rmint operator/(rmint l, rmint r)\
+    \ { return l /= r; }\n    rmint pow(T n) const {\n        rmint ret = 1, tmp =\
+    \ *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n          \
+    \  tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n    friend bool\
+    \ operator==(rmint l, rmint r) { return l.x == r.x; }\n    friend bool operator!=(rmint\
+    \ l, rmint r) { return l.x != r.x; }\n    friend ostream &operator<<(ostream &os,\
+    \ rmint a) {\n        return os << a.x;\n    }\n    friend istream &operator>>(istream\
     \ &is, rmint& a) {\n        ll x; is >> x; a = x; return is;\n    }\n};\n\n"
   code: "#include \"../template.cpp\"\n\ntemplate<typename T=int>\nstruct rmint {\n\
     \    static T &m() {\n        static T m = 0;\n        return m;\n    }\n    static\
-    \ void set_mod(T md) { m() = md; }\n    T x;\n    rmint(T x = 0) : x(((x % m())\
-    \ + m()) % m()) {}\n    rmint operator-() { return x ? m()-x : 0; }\n    rmint\
-    \ &operator+=(rmint r) {\n        if ((x += r.x) >= m()) x -= m();\n        return\
-    \ *this;\n    }\n    rmint &operator-=(rmint r) {\n        if ((x -= r.x) < 0)\
-    \ x += m();\n        return *this;\n    }\n    rmint &operator*=(rmint r) {\n\
-    \        x = ((ll)x * r.x) % m();\n        return *this;\n    }\n    rmint inv()\
-    \ {\n        int a = x, b = m, u = 1, v = 0, t;\n        while (b > 0) {\n   \
-    \         t = a / b;\n            swap(a -= t * b, b);\n            swap(u -=\
-    \ t * v, v);\n        }\n        return u;\n    }\n    rmint &operator/=(rmint\
-    \ r) { return *this *= r.inv(); }\n\n    friend rmint operator+(rmint l, rmint\
-    \ r) { return l += r; }\n    friend rmint operator-(rmint l, rmint r) { return\
-    \ l -= r; }\n    friend rmint operator*(rmint l, rmint r) { return l *= r; }\n\
-    \    friend rmint operator/(rmint l, rmint r) { return l /= r; }\n    rmint pow(T\
-    \ n) {\n        rmint ret = 1, tmp = *this;\n        while (n) {\n           \
-    \ if (n & 1) ret *= tmp;\n            tmp *= tmp, n >>= 1;\n        }\n      \
-    \  return ret;\n    }\n    friend bool operator==(rmint l, rmint r) { return l.x\
-    \ == r.x; }\n    friend bool operator!=(rmint l, rmint r) { return l.x != r.x;\
-    \ }\n    friend ostream &operator<<(ostream &os, rmint a) {\n        return os\
-    \ << a.x;\n    }\n    friend istream &operator>>(istream &is, rmint& a) {\n  \
-    \      ll x; is >> x; a = x; return is;\n    }\n};\n\n"
+    \ void set_mod(T md) { m() = md; }\n    T x;\n    rmint(ll x = 0) : x(((x % m())\
+    \ + m()) % m()) {}\n    rmint operator-() const { return x ? m()-x : 0; }\n  \
+    \  rmint &operator+=(rmint r) {\n        if ((x += r.x) >= m()) x -= m();\n  \
+    \      return *this;\n    }\n    rmint &operator-=(rmint r) {\n        if ((x\
+    \ -= r.x) < 0) x += m();\n        return *this;\n    }\n    rmint &operator*=(rmint\
+    \ r) {\n        x = ((ll)x * r.x) % m();\n        return *this;\n    }\n    rmint\
+    \ inv() const { return pow(m-2); }\n    rmint &operator/=(rmint r) { return *this\
+    \ *= r.inv(); }\n\n    friend rmint operator+(rmint l, rmint r) { return l +=\
+    \ r; }\n    friend rmint operator-(rmint l, rmint r) { return l -= r; }\n    friend\
+    \ rmint operator*(rmint l, rmint r) { return l *= r; }\n    friend rmint operator/(rmint\
+    \ l, rmint r) { return l /= r; }\n    rmint pow(T n) const {\n        rmint ret\
+    \ = 1, tmp = *this;\n        while (n) {\n            if (n & 1) ret *= tmp;\n\
+    \            tmp *= tmp, n >>= 1;\n        }\n        return ret;\n    }\n   \
+    \ friend bool operator==(rmint l, rmint r) { return l.x == r.x; }\n    friend\
+    \ bool operator!=(rmint l, rmint r) { return l.x != r.x; }\n    friend ostream\
+    \ &operator<<(ostream &os, rmint a) {\n        return os << a.x;\n    }\n    friend\
+    \ istream &operator>>(istream &is, rmint& a) {\n        ll x; is >> x; a = x;\
+    \ return is;\n    }\n};\n\n"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/number/rmint.cpp
   requiredBy: []
-  timestamp: '2020-10-23 18:09:04+09:00'
+  timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/montmort_number.test.cpp

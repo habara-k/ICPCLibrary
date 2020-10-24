@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/structure/rbtree.cpp
     title: lib/structure/rbtree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
