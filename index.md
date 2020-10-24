@@ -130,7 +130,7 @@ data:
     - icon: ':warning:'
       path: lib/others/LIS.cpp
       title: lib/others/LIS.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/others/dice.cpp
       title: lib/others/dice.cpp
     - icon: ':warning:'
@@ -213,7 +213,7 @@ data:
       title: lib/structure/weighted_union_find.cpp
   - name: lib
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/template.cpp
       title: lib/template.cpp
   - name: lib/tree
@@ -425,7 +425,7 @@ data:
       title: test/number/fps/pow.test.cpp
   - name: test/others
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/others/dice.test.cpp
       title: test/others/dice.test.cpp
   - name: test/string

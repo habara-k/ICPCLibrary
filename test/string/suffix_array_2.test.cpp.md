@@ -5,7 +5,7 @@ data:
     path: lib/string/suffix_array.cpp
     title: "\u63A5\u5C3E\u8F9E\u914D\u5217 O(n(logn)^2) \u3042\u308A\u307B\u3093\u306E\
       \u3084\u3064\u305D\u306E\u307E\u307E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

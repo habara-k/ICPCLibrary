@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/number/mod.cpp
     title: "\u96E2\u6563\u5BFE\u6570 BSGS O(sqrt(m))"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

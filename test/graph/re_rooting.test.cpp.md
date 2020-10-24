@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/re_rooting.cpp
     title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(1)."
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

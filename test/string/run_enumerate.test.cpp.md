@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/string/z_algorithm.cpp
     title: Z Algorithm O(|s|)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

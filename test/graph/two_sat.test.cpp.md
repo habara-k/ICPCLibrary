@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/two_sat.cpp
     title: lib/graph/two_sat.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []

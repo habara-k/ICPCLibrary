@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/others/dice.test.cpp
     title: test/others/dice.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -56,13 +56,14 @@ data:
     \    swap(face, newface);\n  }\n\n  // \u624B\u524D\u306B\u8EE2\u304C\u3059\n\
     \  void rotf() {\n    vi newface = {face[3], face[0], face[2], face[5], face[4],\
     \ face[1]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\u5DE6\u9762\
-    \u3078\n  void kaitenl() {\n    vi newface = {face[0], face[4], face[1], face[2],\
-    \ face[3], face[5]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\
-    \u53F3\u9762\u3078\n  void kaitenr() {\n    vi newface = {face[0], face[2], face[3],\
-    \ face[4], face[1], face[5]};\n    swap(face, newface);\n  }\n\n  bool operator==(const\
-    \ Dice &d) const {\n    return face == d.face;\n  }\n\n  bool operator<(const\
-    \ Dice &d) const {\n    return face < d.face;\n  }\n\n  int& operator[](int i)\
-    \ {\n    return face[i];\n  }\n};\n"
+    \u3078(\u4E0A\u304B\u3089\u307F\u3066\u6642\u8A08\u56DE\u308A)\n  void rotc()\
+    \ {\n    vi newface = {face[0], face[4], face[1], face[2], face[3], face[5]};\n\
+    \    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\u53F3\u9762\u3078(\u4E0A\
+    \u304B\u3089\u898B\u3066\u53CD\u6642\u8A08\u56DE\u308A)\n  void rotcc() {\n  \
+    \  vi newface = {face[0], face[2], face[3], face[4], face[1], face[5]};\n    swap(face,\
+    \ newface);\n  }\n\n  bool operator==(const Dice &d) const {\n    return face\
+    \ == d.face;\n  }\n\n  bool operator<(const Dice &d) const {\n    return face\
+    \ < d.face;\n  }\n\n  int& operator[](int i) {\n    return face[i];\n  }\n};\n"
   code: "#include \"../template.cpp\"\n\n// 0: \u4E0A, 1: \u624B\u524D, 2: \u5DE6\
     , 3: \u5965, 4: \u53F3, 5: \u4E0B\nstruct Dice {\n  vi face = {1, 3, 2, 4, 5,\
     \ 6};\n\n  vector<string> cand = {\n      \"124536\",\n      \"132456\",\n   \
@@ -85,20 +86,22 @@ data:
     \ face[0], face[4], face[3]};\n    swap(face, newface);\n  }\n\n  // \u624B\u524D\
     \u306B\u8EE2\u304C\u3059\n  void rotf() {\n    vi newface = {face[3], face[0],\
     \ face[2], face[5], face[4], face[1]};\n    swap(face, newface);\n  }\n\n  //\
-    \ \u6B63\u9762\u3092\u5DE6\u9762\u3078\n  void kaitenl() {\n    vi newface = {face[0],\
-    \ face[4], face[1], face[2], face[3], face[5]};\n    swap(face, newface);\n  }\n\
-    \n  // \u6B63\u9762\u3092\u53F3\u9762\u3078\n  void kaitenr() {\n    vi newface\
-    \ = {face[0], face[2], face[3], face[4], face[1], face[5]};\n    swap(face, newface);\n\
-    \  }\n\n  bool operator==(const Dice &d) const {\n    return face == d.face;\n\
-    \  }\n\n  bool operator<(const Dice &d) const {\n    return face < d.face;\n \
-    \ }\n\n  int& operator[](int i) {\n    return face[i];\n  }\n};"
+    \ \u6B63\u9762\u3092\u5DE6\u9762\u3078(\u4E0A\u304B\u3089\u307F\u3066\u6642\u8A08\
+    \u56DE\u308A)\n  void rotc() {\n    vi newface = {face[0], face[4], face[1], face[2],\
+    \ face[3], face[5]};\n    swap(face, newface);\n  }\n\n  // \u6B63\u9762\u3092\
+    \u53F3\u9762\u3078(\u4E0A\u304B\u3089\u898B\u3066\u53CD\u6642\u8A08\u56DE\u308A\
+    )\n  void rotcc() {\n    vi newface = {face[0], face[2], face[3], face[4], face[1],\
+    \ face[5]};\n    swap(face, newface);\n  }\n\n  bool operator==(const Dice &d)\
+    \ const {\n    return face == d.face;\n  }\n\n  bool operator<(const Dice &d)\
+    \ const {\n    return face < d.face;\n  }\n\n  int& operator[](int i) {\n    return\
+    \ face[i];\n  }\n};"
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
   path: lib/others/dice.cpp
   requiredBy: []
-  timestamp: '2020-10-24 19:57:42+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-24 20:43:19+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/others/dice.test.cpp
 documentation_of: lib/others/dice.cpp

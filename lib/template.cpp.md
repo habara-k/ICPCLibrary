@@ -118,7 +118,7 @@ data:
   - icon: ':warning:'
     path: lib/others/LIS.cpp
     title: lib/others/LIS.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/others/dice.cpp
     title: lib/others/dice.cpp
   - icon: ':warning:'
@@ -376,7 +376,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/number/modsqrt.test.cpp
     title: test/number/modsqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/others/dice.test.cpp
     title: test/others/dice.test.cpp
   - icon: ':heavy_check_mark:'
@@ -506,7 +506,7 @@ data:
     path: test/yosupo-judge/z_algorithm.test.cpp
     title: test/yosupo-judge/z_algorithm.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/template.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\nusing\
@@ -630,7 +630,7 @@ data:
   - lib/geometry/3D_template.cpp
   - lib/geometry/2D_template.cpp
   timestamp: '2020-05-06 01:41:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/suffix_array_2.test.cpp
   - test/string/rolling_hash_2D.test.cpp
