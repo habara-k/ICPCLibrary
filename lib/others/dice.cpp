@@ -73,14 +73,14 @@ struct Dice {
     swap(face, newface);
   }
 
-  // 正面を左面へ(上からみて反時計回り)
-  void rotcc() {
+  // 正面を左面へ(上からみて時計回り)
+  void rotc() {
     vi newface = {face[0], face[4], face[1], face[2], face[3], face[5]};
     swap(face, newface);
   }
 
-  // 正面を右面へ(上から見て時計回り)
-  void rotc() {
+  // 正面を右面へ(上から見て反時計回り)
+  void rotcc() {
     vi newface = {face[0], face[2], face[3], face[4], face[1], face[5]};
     swap(face, newface);
   }
