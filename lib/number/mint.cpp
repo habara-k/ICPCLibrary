@@ -3,8 +3,8 @@
 template<int m>
 struct mint {
     int x;
-    mint(int x = 0) : x(((x % m) + m) % m) {}
-    mint operator-() { return x ? m-x : 0; }
+    mint(ll x = 0) : x(((x % m) + m) % m) {}
+    mint operator-() const { return x ? m-x : 0; }
     mint &operator+=(mint r) {
         if ((x += r.x) >= m) x -= m;
         return *this;
@@ -17,22 +17,14 @@ struct mint {
         x = ((ll)x * r.x) % m;
         return *this;
     }
-    mint inv() {
-        int a = x, b = m, u = 1, v = 0, t;
-        while (b > 0) {
-            t = a / b;
-            swap(a -= t * b, b);
-            swap(u -= t * v, v);
-        }
-        return u;
-    }
+    mint inv() const { return pow(m-2); }
     mint &operator/=(mint r) { return *this *= r.inv(); }
 
     friend mint operator+(mint l, mint r) { return l += r; }
     friend mint operator-(mint l, mint r) { return l -= r; }
     friend mint operator*(mint l, mint r) { return l *= r; }
     friend mint operator/(mint l, mint r) { return l /= r; }
-    mint pow(ll n) {
+    mint pow(ll n) const {
         mint ret = 1, tmp = *this;
         while (n) {
             if (n & 1) ret *= tmp;
@@ -46,6 +38,7 @@ struct mint {
         return os << a.x;
     }
     friend istream &operator>>(istream &is, mint& a) {
-        int x; is >> x; a = x; return is;
+        ll x; is >> x; a = x; return is;
     }
 };
+
