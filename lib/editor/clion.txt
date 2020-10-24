@@ -1,5 +1,8 @@
 // CMakeLists.txt
+cmake_minimum_required(VERSION 3.10.2)
+project(kyopro)
 
-set(CMAKE_CXX_FLAGS "-Wuninitialized -ftrapv")
-// 初期化されていない変数をWarn
-// オーバーフロー検知
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -fsanitize=address -fsanitize=undefined -ftrapv -Wall -Wextra")
+
+add_executable(a src/a.cpp)
