@@ -2,58 +2,75 @@
 
 /*
  * @brief NTT
+ * @ref https://ei1333.github.io/library/math/fft/number-theoretic-transform-friendly-mod-int.cpp
  * @author habara-k
  * @usage
  *   vector<NTT<>::Int> a, b;
- *   NTT<> ntt;
- *   auto c = ntt.multiply(a, b);
- * 有名なmod, rootの組
- * 998244353, 3
- * 163577857, 23
- * 167772161, 3
- * 469762049, 3
+ *   auto c = NTT<>::multiply(a, b);
+ *
+ * rootの探索
+ * int root = 2;
+ * while (Int{root}.pow((mod-1)/2) == 1) ++root;
  */
-template<int mod=998244353, int root=3>
+template<int mod = 998244353, int root = 3>
 struct NTT {
     using Int = mint<mod>;
-    int n;
-    Int r;
-    void ensure(int need) {
-        n = 1;
-        while (n < need) n <<= 1;
-        r = Int{root}.pow((mod-1) / n);
-    }
+    constexpr static int sz = __builtin_ctz(mod-1);
 
-    vector<Int> multiply(vector<Int> a, vector<Int> b) {
-        int need = SZ(a) + SZ(b) - 1;
-        ensure(need);
-        ntt(a);
-        ntt(b);
-        REP(i, n) (a[i] *= b[i]) /= n;
-        reverse(a.begin() + 1, a.end());
-        ntt(a); a.resize(need);
-        return a;
-    }
-
-    void ntt(vector<Int>& a) {
-        a.resize(n);
-        int p = 0;
-        FOR(i, 1, n-1) {
-            for (int k = n >> 1; k > (p ^= k); k >>= 1);
-            if (i < p) swap(a[i], a[p]);
+    static void ntt(vector<Int> &a) {
+        const int n = (int) a.size();
+        assert((n & (n - 1)) == 0);
+        assert(__builtin_ctz(n) <= sz);
+        Int dw[sz];
+        REP(i, sz) {
+            dw[i] = -Int{root}.pow((mod-1) >> (i+2));
         }
-        for (int k = 1; k < n; k <<= 1) {
-            Int base = r.pow(n / (2*k));
-            Int z = 1;
-            REP(j, k) {
-                for (int i = j; i < n; i += 2*k) {
-                    Int v = a[i+k] * z;
-                    a[i+k] = a[i] - v;
-                    a[i] += v;
+        for (int m = n; m >>= 1;) {
+            Int w = 1;
+            for (int s = 0, k = 0; s < n; s += 2 * m) {
+                for (int i = s, j = s + m; i < s + m; ++i, ++j) {
+                    auto x = a[i], y = a[j] * w;
+                    a[i] = x + y, a[j] = x - y;
                 }
-                z *= base;
+                w *= dw[__builtin_ctz(++k)];
             }
         }
+    }
+
+    static void intt(vector<Int> &a) {
+        const int n = (int) a.size();
+        assert((n & (n - 1)) == 0);
+        assert(__builtin_ctz(n) <= sz);
+        Int idw[sz];
+        REP(i, sz) {
+            idw[i] = (-Int{root}.pow((mod-1) >> (i+2))).inv();
+        }
+        for (int m = 1; m < n; m *= 2) {
+            Int w = 1;
+            for (int s = 0, k = 0; s < n; s += 2 * m) {
+                for (int i = s, j = s + m; i < s + m; ++i, ++j) {
+                    auto x = a[i], y = a[j];
+                    a[i] = x + y, a[j] = (x - y) * w;
+                }
+                w *= idw[__builtin_ctz(++k)];
+            }
+        }
+        Int inv_n = Int{n}.inv();
+        REP(i, n) a[i] *= inv_n;
+    }
+
+    static vector<Int> multiply(vector<Int> a, vector<Int> b) {
+        int need = SZ(a) + SZ(b) - 1;
+        int n = 1;
+        while (n < need) n <<= 1;
+        a.resize(n);
+        b.resize(n);
+        ntt(a);
+        ntt(b);
+        REP(i, n) a[i] *= b[i];
+        intt(a);
+        a.resize(need);
+        return a;
     }
 };
 

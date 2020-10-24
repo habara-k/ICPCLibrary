@@ -6,7 +6,7 @@ int main() {
     int n, m; cin >> n >> m;
     vector<FPS<>::Int> a(n);
     REP(i, n) cin >> a[i];
-    auto ans = FPS(a).pow(m).a;
+    auto ans = FPS<>(a).pow(m).a;
     REP(i, n) {
         if (i) cout << ' ';
         cout << ans[i];
