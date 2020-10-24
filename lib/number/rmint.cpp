@@ -8,8 +8,8 @@ struct rmint {
     }
     static void set_mod(T md) { m() = md; }
     T x;
-    rmint(T x = 0) : x(((x % m()) + m()) % m()) {}
-    rmint operator-() { return x ? m()-x : 0; }
+    rmint(ll x = 0) : x(((x % m()) + m()) % m()) {}
+    rmint operator-() const { return x ? m()-x : 0; }
     rmint &operator+=(rmint r) {
         if ((x += r.x) >= m()) x -= m();
         return *this;
@@ -22,22 +22,14 @@ struct rmint {
         x = ((ll)x * r.x) % m();
         return *this;
     }
-    rmint inv() {
-        int a = x, b = m, u = 1, v = 0, t;
-        while (b > 0) {
-            t = a / b;
-            swap(a -= t * b, b);
-            swap(u -= t * v, v);
-        }
-        return u;
-    }
+    rmint inv() const { return pow(m-2); }
     rmint &operator/=(rmint r) { return *this *= r.inv(); }
 
     friend rmint operator+(rmint l, rmint r) { return l += r; }
     friend rmint operator-(rmint l, rmint r) { return l -= r; }
     friend rmint operator*(rmint l, rmint r) { return l *= r; }
     friend rmint operator/(rmint l, rmint r) { return l /= r; }
-    rmint pow(T n) {
+    rmint pow(T n) const {
         rmint ret = 1, tmp = *this;
         while (n) {
             if (n & 1) ret *= tmp;
