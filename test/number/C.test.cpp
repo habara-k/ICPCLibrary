@@ -1,19 +1,16 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_C"
 
-#include "../../lib/number/combination.cpp"
+#include "../../lib/number/mint.cpp"
+#include "../../lib/number/comb.cpp"
 
 int main() {
     ll n, k; cin >> n >> k;
-    const ll mod = 1e9+7;
+    using Int = mint<MOD>;
+    Combination<Int> comb;
 
-    init_fact(k, mod);
-
-    ll ans = 0;
+    Int ans = 0;
     for (ll l = 0; l <= k; ++l) {
-        ll tmp = powm(k-l, n, mod);
-        (tmp *= C(k, l, mod)) %= mod;
-        if (l & 1) tmp = (-tmp + mod) % mod;
-        (ans += tmp) %= mod;
+        ans += comb.C(k, l) * Int{k-l}.pow(n) * (l & 1 ? -1 : 1);
     }
     cout << ans << endl;
 }

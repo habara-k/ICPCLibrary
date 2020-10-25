@@ -1,12 +1,11 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
 
-#include "../../lib/number/combination.cpp"
+#include "../../lib/number/mint.cpp"
+#include "../../lib/number/comb.cpp"
 
 int main() {
     ll n, k; cin >> n >> k;
-    const ll mod = 1e9+7;
+    Combination<mint<MOD>> comb;
 
-    init_fact(k, mod);
-
-    cout << Bell(n, k, mod) << endl;
+    cout << comb.Bell(n, k) << endl;
 }
