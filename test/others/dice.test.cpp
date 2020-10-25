@@ -30,13 +30,13 @@ bool solve() {
           nowc = nc;
           switch(e.second) {
             case 1:
-              dice.rotd();
+              dice.rotf();
               break;
             case 2:
               dice.rotl();
               break;
             case 3:
-              dice.rotu();
+              dice.rotb();
               break;
             case 4:
               dice.rotr();
