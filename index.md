@@ -86,7 +86,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/number/comb.cpp
       title: lib/number/comb.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/number/combination.cpp
       title: lib/number/combination.cpp
     - icon: ':heavy_check_mark:'
@@ -182,9 +182,6 @@ data:
       path: lib/structure/convex_hull_trick.cpp
       title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF O(n)"
     - icon: ':heavy_check_mark:'
-      path: lib/structure/lazy_segment_rbst.cpp
-      title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
-    - icon: ':heavy_check_mark:'
       path: lib/structure/lazy_segment_tree.cpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':warning:'
@@ -193,15 +190,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/structure/persistent_segment_tree.cpp
       title: "\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':warning:'
-      path: lib/structure/randomized_binary_search_tree.cpp
-      title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
     - icon: ':heavy_check_mark:'
       path: lib/structure/rbtree.cpp
       title: lib/structure/rbtree.cpp
-    - icon: ':heavy_check_mark:'
-      path: lib/structure/segment_rbst.cpp
-      title: "\u914D\u5217\u3067\u521D\u671F\u5316\u3059\u308B. O(n)"
     - icon: ':heavy_check_mark:'
       path: lib/structure/segment_tree.cpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -451,17 +442,11 @@ data:
       path: test/structure/binary_indexed_tree.test.cpp
       title: test/structure/binary_indexed_tree.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/structure/lazy_segment_rbst.test.cpp
-      title: test/structure/lazy_segment_rbst.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/structure/lazy_segment_tree.test.cpp
       title: test/structure/lazy_segment_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/structure/persistent_segment_tree.test.cpp
       title: test/structure/persistent_segment_tree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/structure/segment_rbst.test.cpp
-      title: test/structure/segment_rbst.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/structure/segment_tree.test.cpp
       title: test/structure/segment_tree.test.cpp

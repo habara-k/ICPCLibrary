@@ -7,6 +7,21 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/number/Bell.test.cpp
+    title: test/number/Bell.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/C.test.cpp
+    title: test/number/C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Partition1.test.cpp
+    title: test/number/Partition1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Partition2.test.cpp
+    title: test/number/Partition2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Stirling.test.cpp
+    title: test/number/Stirling.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/montmort_number.test.cpp
     title: test/yosupo-judge/montmort_number.test.cpp
   _pathExtension: cpp
@@ -150,6 +165,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/montmort_number.test.cpp
+  - test/number/Stirling.test.cpp
+  - test/number/Partition2.test.cpp
+  - test/number/Partition1.test.cpp
+  - test/number/C.test.cpp
+  - test/number/Bell.test.cpp
 documentation_of: lib/number/comb.cpp
 layout: document
 redirect_from:

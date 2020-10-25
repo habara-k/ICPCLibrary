@@ -10,6 +10,21 @@ data:
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/number/Bell.test.cpp
+    title: test/number/Bell.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/C.test.cpp
+    title: test/number/C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Partition1.test.cpp
+    title: test/number/Partition1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Partition2.test.cpp
+    title: test/number/Partition2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/number/Stirling.test.cpp
+    title: test/number/Stirling.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/number/fps/exp.test.cpp
     title: test/number/fps/exp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -101,6 +116,11 @@ data:
   - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/convolution.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp
+  - test/number/Stirling.test.cpp
+  - test/number/Partition2.test.cpp
+  - test/number/Partition1.test.cpp
+  - test/number/C.test.cpp
+  - test/number/Bell.test.cpp
   - test/number/fps/pow.test.cpp
   - test/number/fps/exp.test.cpp
   - test/number/fps/inv.test.cpp

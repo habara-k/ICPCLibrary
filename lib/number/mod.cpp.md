@@ -5,25 +5,10 @@ data:
     path: lib/template.cpp
     title: lib/template.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: lib/number/combination.cpp
     title: lib/number/combination.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/number/Bell.test.cpp
-    title: test/number/Bell.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/number/C.test.cpp
-    title: test/number/C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/number/Partition1.test.cpp
-    title: test/number/Partition1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/number/Partition2.test.cpp
-    title: test/number/Partition2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/number/Stirling.test.cpp
-    title: test/number/Stirling.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/number/logm.test.cpp
     title: test/number/logm.test.cpp
@@ -162,12 +147,7 @@ data:
   timestamp: '2020-10-17 08:43:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/number/Stirling.test.cpp
-  - test/number/Partition2.test.cpp
-  - test/number/Partition1.test.cpp
   - test/number/logm.test.cpp
-  - test/number/C.test.cpp
-  - test/number/Bell.test.cpp
   - test/number/modsqrt.test.cpp
 documentation_of: lib/number/mod.cpp
 layout: document
