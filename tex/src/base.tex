@@ -1,11 +1,9 @@
 \documentclass[titlepage, landscape, a4paper, twocolumn, 10pt]{ujarticle}
 \usepackage[top=15truemm,bottom=15truemm,left=10truemm,right=10truemm]{geometry}
 \usepackage{listings, src/jlisting}
-\usepackage{xcolor} % for setting colors
 
 % set the default code style
 \lstset{
-  %language=C++,
   basicstyle={\footnotesize\ttfamily},
   frame=tb, % draw a frame at the top and bottom of the code block
   tabsize=4, % tab space width
@@ -17,21 +15,6 @@
   xleftmargin=3ex,
   breaklines=true, % 自動で改行
   columns=[l]{fullflexible}, % 文字間のスペース
-  %commentstyle=\color{gray}, % comment color
-  %deletekeywords={void,bool,size\_t,int,int64\_t,auto,return,break,continue},
-  %deletekeywords={const,true,false,decltype},
-  %deletekeywords={while,for,if,else,do},
-  %morekeywords={vector,string,priority\_queue,pair,tuple,set,multiset,map,stack,queue,function},
-  %morekeywords={istream,ostream},
-  %morekeywords={tie,min,max,numeric\_limits,greater,iota,sort,reverse,assert},
-  %keywordstyle=\color{cyan}, % keyword color
-  %keywordstyle=[2]{\color{green}},
-  %keywordstyle=[3]{\color{brown}},
-  %keywordstyle=[4]{\color{violet}},
-  %stringstyle=\color{orange}, % string color
-  %morekeywords=[2]{void,bool,size\_t,int,int64\_t,auto,return,break,continue},
-  %morekeywords=[3]{const,true,false,decltype},
-  %morekeywords=[4]{while,for,if,else,do},
 }
 
 \begin{document}
