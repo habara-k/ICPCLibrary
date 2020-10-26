@@ -1,10 +1,9 @@
 #include "../template.cpp"
 
 /*
- * @brief ガウスの消去法, 連立方程式
+ * @brief ガウスの消去法
  * @ref https://drken1215.hatenablog.com/entry/2019/03/20/000200
  * @date 2020/10/26
- * @details
  */
 template<class T>
 using Matrix = vector<vector<T>>;
@@ -15,7 +14,6 @@ template<class T> int GaussJordan(Matrix<T> &A, bool is_extended = false) {
     for (int col = 0; col < n; ++col) {
         if (is_extended && col == n-1) break;
         int pivot = -1;
-        // Tがmodintのときは, A[row][pivot] != 0 なるpivotを選べばよい
         T ma = eps;
         for (int row = rank; row < m; ++row) {
             if (abs(A[row][col]) > ma) {
@@ -41,6 +39,20 @@ template<class T> int GaussJordan(Matrix<T> &A, bool is_extended = false) {
 }
 
 
+/*
+ * @brief 線型方程式
+ * @ref https://drken1215.hatenablog.com/entry/2019/03/20/000200
+ * @date 2020/10/26
+ * @usage
+ * vector<vector<double>> A(m, vector<double>(n));
+ * vector<double> b(m);
+ * auto x = linear_equation(A, b);
+ * if (x.empty()) {
+ * // 解なし
+ * } else {
+ * // xはAx = bを満たす一つの解
+ * }
+ */
 template<class T> vector<T> linear_equation(Matrix<T> A, vector<T> b) {
     // extended
     int m = A.size(), n = A[0].size();
@@ -53,7 +65,7 @@ template<class T> vector<T> linear_equation(Matrix<T> A, vector<T> b) {
 
     // check if it has no solution
     vector<T> res;
-    for (int row = rank; row < m; ++row) if (abs(M[row][n]) > eps) return res;
+    for (int row = rank; row < m; ++row) if (abs(M[row][n]) > 1e-5) return res;
 
     // answer
     res.assign(n, 0);
