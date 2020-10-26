@@ -65,7 +65,7 @@ template<class T> vector<T> linear_equation(Matrix<T> A, vector<T> b) {
 
     // check if it has no solution
     vector<T> res;
-    for (int row = rank; row < m; ++row) if (abs(M[row][n]) > 1e-5) return res;
+    for (int row = rank; row < m; ++row) if (abs(M[row][n]) > eps) return res;
 
     // answer
     res.assign(n, 0);
