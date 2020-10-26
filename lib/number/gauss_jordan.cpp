@@ -57,7 +57,11 @@ template<class T> vector<T> linear_equation(Matrix<T> A, vector<T> b) {
 
     // answer
     res.assign(n, 0);
-    for (int i = 0; i < rank; ++i) res[i] = M[i][n];
+    int col = 0;
+    for (int i = 0; i < rank; ++i) {
+        while (abs(M[i][col]) < eps) ++col;
+        res[col] = M[i][n];
+    }
     return res;
 }
 
