@@ -7,14 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/range_affine_range_sum.test.cpp
-    title: test/structure/rbtree/range_affine_range_sum.test.cpp
+    path: test/structure/red_black_tree/range_affine_range_sum.test.cpp
+    title: test/structure/red_black_tree/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/shift_rmq.test.cpp
-    title: test/structure/rbtree/shift_rmq.test.cpp
+    path: test/structure/red_black_tree/shift_rmq.test.cpp
+    title: test/structure/red_black_tree/shift_rmq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/static_rmq.test.cpp
-    title: test/structure/rbtree/static_rmq.test.cpp
+    path: test/structure/red_black_tree/static_rmq.test.cpp
+    title: test/structure/red_black_tree/static_rmq.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -41,8 +41,8 @@ data:
     const ll MOD = 1e9 + 7;\nconst int INF = INT_MAX / 2;\nconst ll LINF = LLONG_MAX\
     \ / 2;\nconst ld eps = 1e-9;\n\n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n\
     \    cout << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n \
-    \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/structure/rbtree.cpp\"\
-    \n\n/*\n * @breif \u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
+    \   // cin.rdbuf(in.rdbuf());\n\n    return 0;\n}\n*/\n\n\n#line 2 \"lib/structure/red_black_tree.cpp\"\
+    \n\n/**\n * @breif \u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
     \ * http://blog.mitaki28.info/1447078746296/\n * @author habara-k\n * @data 2020/10/22\n\
     \ * @details\n * merge, split, insert, erase, range-query, range-update: O(log\
     \ n)\n * WARNING: POOL >= 2*MAX_N \u3068\u306A\u308B\u3088\u3046\u306BPOOL\u3092\
@@ -113,7 +113,7 @@ data:
     \ or r <= a) return e();\n        if (l <= a and b <= r) return g(p->prd, lazy);\n\
     \        return f(prod(p->l, a, a + p->l->sz, h(p->lazy, lazy), l, r),\n     \
     \            prod(p->r, b - p->r->sz, b, h(p->lazy, lazy), l, r));\n    }\n};\n\
-    \n/*\n * @breif \u6C38\u7D9A\u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
+    \n/**\n * @breif \u6C38\u7D9A\u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
     \ * http://blog.mitaki28.info/1447078746296/\n * @author habara-k\n * @data 2020/10/22\n\
     \ * @details\n * copy-and-paste \u304C\u3067\u304D\u308B.\n * WARNING: POOL\u306F\
     \u3067\u304D\u308B\u3060\u3051\u5927\u304D\u304F\u3068\u308B(\u30E1\u30E2\u30EA\
@@ -132,7 +132,7 @@ data:
     \ {\n            *it++ = g(p->prd, lazy);\n            return;\n        }\n  \
     \      lazy = h(lazy, p->lazy);\n        dfs(p->l, lazy, it);\n        dfs(p->r,\
     \ lazy, it);\n    }\n};\n\n"
-  code: "#include \"../template.cpp\"\n\n/*\n * @breif \u8D64\u9ED2\u6728\n * @ref\n\
+  code: "#include \"../template.cpp\"\n\n/**\n * @breif \u8D64\u9ED2\u6728\n * @ref\n\
     \ * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
     \ * http://blog.mitaki28.info/1447078746296/\n * @author habara-k\n * @data 2020/10/22\n\
     \ * @details\n * merge, split, insert, erase, range-query, range-update: O(log\
@@ -204,7 +204,7 @@ data:
     \ or r <= a) return e();\n        if (l <= a and b <= r) return g(p->prd, lazy);\n\
     \        return f(prod(p->l, a, a + p->l->sz, h(p->lazy, lazy), l, r),\n     \
     \            prod(p->r, b - p->r->sz, b, h(p->lazy, lazy), l, r));\n    }\n};\n\
-    \n/*\n * @breif \u6C38\u7D9A\u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
+    \n/**\n * @breif \u6C38\u7D9A\u8D64\u9ED2\u6728\n * @ref\n * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html\n\
     \ * http://blog.mitaki28.info/1447078746296/\n * @author habara-k\n * @data 2020/10/22\n\
     \ * @details\n * copy-and-paste \u304C\u3067\u304D\u308B.\n * WARNING: POOL\u306F\
     \u3067\u304D\u308B\u3060\u3051\u5927\u304D\u304F\u3068\u308B(\u30E1\u30E2\u30EA\
@@ -226,18 +226,18 @@ data:
   dependsOn:
   - lib/template.cpp
   isVerificationFile: false
-  path: lib/structure/rbtree.cpp
+  path: lib/structure/red_black_tree.cpp
   requiredBy: []
-  timestamp: '2020-10-23 17:42:58+09:00'
+  timestamp: '2020-10-26 23:14:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/structure/rbtree/shift_rmq.test.cpp
-  - test/structure/rbtree/static_rmq.test.cpp
-  - test/structure/rbtree/range_affine_range_sum.test.cpp
-documentation_of: lib/structure/rbtree.cpp
+  - test/structure/red_black_tree/shift_rmq.test.cpp
+  - test/structure/red_black_tree/static_rmq.test.cpp
+  - test/structure/red_black_tree/range_affine_range_sum.test.cpp
+documentation_of: lib/structure/red_black_tree.cpp
 layout: document
 redirect_from:
-- /library/lib/structure/rbtree.cpp
-- /library/lib/structure/rbtree.cpp.html
-title: lib/structure/rbtree.cpp
+- /library/lib/structure/red_black_tree.cpp
+- /library/lib/structure/red_black_tree.cpp.html
+title: lib/structure/red_black_tree.cpp
 ---

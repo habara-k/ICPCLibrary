@@ -184,15 +184,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/structure/lazy_segment_tree.cpp
       title: "\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':warning:'
-      path: lib/structure/multi_set.cpp
-      title: "\u5024\u306E\u633F\u5165\u3092\u884C\u3046. O(log n)"
     - icon: ':heavy_check_mark:'
       path: lib/structure/persistent_segment_tree.cpp
       title: "\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
-      path: lib/structure/rbtree.cpp
-      title: lib/structure/rbtree.cpp
+      path: lib/structure/red_black_tree.cpp
+      title: lib/structure/red_black_tree.cpp
     - icon: ':heavy_check_mark:'
       path: lib/structure/segment_tree.cpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -459,17 +456,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/weighted_union_find.test.cpp
       title: test/structure/weighted_union_find.test.cpp
-  - name: test/structure/rbtree
+  - name: test/structure/red_black_tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/structure/rbtree/range_affine_range_sum.test.cpp
-      title: test/structure/rbtree/range_affine_range_sum.test.cpp
+      path: test/structure/red_black_tree/range_affine_range_sum.test.cpp
+      title: test/structure/red_black_tree/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/structure/rbtree/shift_rmq.test.cpp
-      title: test/structure/rbtree/shift_rmq.test.cpp
+      path: test/structure/red_black_tree/shift_rmq.test.cpp
+      title: test/structure/red_black_tree/shift_rmq.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/structure/rbtree/static_rmq.test.cpp
-      title: test/structure/rbtree/static_rmq.test.cpp
+      path: test/structure/red_black_tree/static_rmq.test.cpp
+      title: test/structure/red_black_tree/static_rmq.test.cpp
   - name: test/tree/heavy_light_decomposition
     pages:
     - icon: ':heavy_check_mark:'

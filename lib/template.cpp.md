@@ -166,8 +166,8 @@ data:
     path: lib/structure/persistent_segment_tree.cpp
     title: "\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/structure/rbtree.cpp
-    title: lib/structure/rbtree.cpp
+    path: lib/structure/red_black_tree.cpp
+    title: lib/structure/red_black_tree.cpp
   - icon: ':heavy_check_mark:'
     path: lib/structure/segment_tree.cpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -398,14 +398,14 @@ data:
     path: test/structure/persistent_segment_tree.test.cpp
     title: test/structure/persistent_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/range_affine_range_sum.test.cpp
-    title: test/structure/rbtree/range_affine_range_sum.test.cpp
+    path: test/structure/red_black_tree/range_affine_range_sum.test.cpp
+    title: test/structure/red_black_tree/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/shift_rmq.test.cpp
-    title: test/structure/rbtree/shift_rmq.test.cpp
+    path: test/structure/red_black_tree/shift_rmq.test.cpp
+    title: test/structure/red_black_tree/shift_rmq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/structure/rbtree/static_rmq.test.cpp
-    title: test/structure/rbtree/static_rmq.test.cpp
+    path: test/structure/red_black_tree/static_rmq.test.cpp
+    title: test/structure/red_black_tree/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/structure/segment_tree.test.cpp
     title: test/structure/segment_tree.test.cpp
@@ -595,7 +595,7 @@ data:
   - lib/number/ntt.cpp
   - lib/structure/persistent_segment_tree.cpp
   - lib/structure/union_find.cpp
-  - lib/structure/rbtree.cpp
+  - lib/structure/red_black_tree.cpp
   - lib/structure/binary_indexed_tree.cpp
   - lib/structure/convex_hull_trick.cpp
   - lib/structure/weighted_union_find.cpp
@@ -675,11 +675,11 @@ data:
   - test/structure/segment_tree.test.cpp
   - test/structure/binary_indexed_tree.test.cpp
   - test/structure/union_find.test.cpp
+  - test/structure/red_black_tree/shift_rmq.test.cpp
+  - test/structure/red_black_tree/static_rmq.test.cpp
+  - test/structure/red_black_tree/range_affine_range_sum.test.cpp
   - test/structure/persistent_segment_tree.test.cpp
   - test/structure/persistent_segment_tree.test.cpp
-  - test/structure/rbtree/shift_rmq.test.cpp
-  - test/structure/rbtree/static_rmq.test.cpp
-  - test/structure/rbtree/range_affine_range_sum.test.cpp
   - test/structure/lazy_segment_tree.test.cpp
   - test/tree/tree_hash.test.cpp
   - test/tree/tree_hash.test.cpp
