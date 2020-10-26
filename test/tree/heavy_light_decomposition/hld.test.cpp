@@ -15,7 +15,7 @@ int main()
         }
     }
 
-    HLDecomposition hld(g);
+    HLDecomposition hld(g, 0);
 
     LazySegmentTree<ll> segt(
             n,
