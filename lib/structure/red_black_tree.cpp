@@ -1,6 +1,6 @@
 #include "../template.cpp"
 
-/*
+/**
  * @breif 赤黒木
  * @ref
  * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html
@@ -192,7 +192,7 @@ protected:
     }
 };
 
-/*
+/**
  * @breif 永続赤黒木
  * @ref
  * https://ei1333.github.io/luzhiled/snippets/structure/red-black-tree.html
