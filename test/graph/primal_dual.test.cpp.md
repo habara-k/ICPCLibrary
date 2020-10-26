@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/primal_dual.cpp
-    title: lib/graph/primal_dual.cpp
+    title: "\u6700\u5C0F\u8CBB\u7528\u6D41(Primal Dual)"
   - icon: ':heavy_check_mark:'
     path: lib/graph/template.cpp
     title: lib/graph/template.cpp
@@ -44,34 +44,40 @@ data:
     \n    return 0;\n}\n*/\n\n\n#line 5 \"lib/graph/template.cpp\"\n\ntemplate<typename\
     \ T>\nstruct edge {\n    int src, to;\n    T cost;\n};\n\ntemplate<typename T>\n\
     using Graph = vector<vector<edge<T>>>;\n\n\n#line 2 \"lib/graph/primal_dual.cpp\"\
-    \n\ntemplate<typename flow_t, typename cost_t>\nstruct PrimalDual {\n    const\
-    \ cost_t INF;\n\n    struct edge {\n        int to;\n        flow_t cap;\n   \
-    \     cost_t cost;\n        int rev;\n    };\n    vector<vector<edge>> g;\n  \
-    \  vector<cost_t> h, d;\n    vector<int> prevv, preve;\n\n    PrimalDual(int V)\
-    \ : g(V), INF(numeric_limits< cost_t >::max()) {}\n\n    void add_edge(int from,\
-    \ int to, flow_t cap, cost_t cost) {\n        g[from].push_back({to, cap, cost,\
-    \ (int)g[to].size()});\n        g[to].push_back({from, 0, -cost, (int)g[from].size()-1});\n\
-    \    }\n\n    cost_t min_cost_flow(int s, int t, flow_t f) {\n        int V =\
-    \ (int)g.size();\n        cost_t ret = 0;\n        using Pi = pair<cost_t, int>;\n\
-    \        priority_queue<Pi, vector<Pi>, greater<Pi>> que;\n        h.assign(V,\
-    \ 0);\n        preve.assign(V, -1);\n        prevv.assign(V, -1);\n\n        while\
-    \ (f > 0) {\n            d.assign(V, INF);\n            que.emplace(0, s);\n \
-    \           d[s] = 0;\n            while (!que.empty()) {\n                Pi\
-    \ p = que.top(); que.pop();\n                if (d[p.second] < p.first) continue;\n\
-    \                for (int i = 0; i < g[p.second].size(); i++) {\n            \
-    \        edge &e = g[p.second][i];\n                    cost_t nextCost = d[p.second]\
-    \ + e.cost +\n                        h[p.second] - h[e.to];\n               \
-    \     if (e.cap > 0 && d[e.to] > nextCost) {\n                        d[e.to]\
-    \ = nextCost;\n                        prevv[e.to] = p.second, preve[e.to] = i;\n\
-    \                        que.emplace(d[e.to], e.to);\n                    }\n\
-    \                }\n            }\n            if (d[t] == INF) return -1;\n \
-    \           for (int v = 0; v < V; v++) h[v] += d[v];\n            flow_t addflow\
-    \ = f;\n            for (int v = t; v != s; v = prevv[v]) {\n                addflow\
+    \n\n/**\n * @brief \u6700\u5C0F\u8CBB\u7528\u6D41(Primal Dual)\n * @author habara-k\n\
+    \ * @date 2020/10/26\n * @usage\n * PrimalDual<int,int> g(n);     // \u9802\u70B9\
+    \u6570\u3067\u521D\u671F\u5316\n * g.add_edge(u, v, cap, cost);  // \u8FBA\u306E\
+    \u8FFD\u52A0\n * g.min_cost_flow(s, t, flow);  // O(FElogV). \u3060\u3044\u305F\
+    \u3044\u3082\u3063\u3068\u901F\u3044\n */\ntemplate<typename flow_t, typename\
+    \ cost_t>\nstruct PrimalDual {\n    const cost_t INF;\n\n    struct edge {\n \
+    \       int to;\n        flow_t cap;\n        cost_t cost;\n        int rev;\n\
+    \        bool is_rev; // \u9006\u65B9\u5411:1, \u9806\u65B9\u5411:0. \u5FA9\u5143\
+    \u306B\u4F7F\u7528\n    };\n    vector<vector<edge>> g;\n    vector<cost_t> h,\
+    \ d;\n    vector<int> prevv, preve;\n\n    PrimalDual(int V) : g(V), INF(numeric_limits<\
+    \ cost_t >::max()) {}\n\n    void add_edge(int from, int to, flow_t cap, cost_t\
+    \ cost) {\n        g[from].push_back({to, cap, cost, SZ(g[to]), false});\n   \
+    \     g[to].push_back({from, 0, -cost, SZ(g[from])-1, true});\n    }\n\n    cost_t\
+    \ min_cost_flow(int s, int t, flow_t f) {\n        int V = (int)g.size();\n  \
+    \      cost_t ret = 0;\n        using Pi = pair<cost_t, int>;\n        priority_queue<Pi,\
+    \ vector<Pi>, greater<Pi>> que;\n        h.assign(V, 0);\n        preve.assign(V,\
+    \ -1);\n        prevv.assign(V, -1);\n\n        while (f > 0) {\n            d.assign(V,\
+    \ INF);\n            que.emplace(0, s);\n            d[s] = 0;\n            while\
+    \ (!que.empty()) {\n                Pi p = que.top(); que.pop();\n           \
+    \     if (d[p.second] < p.first) continue;\n                for (int i = 0; i\
+    \ < g[p.second].size(); i++) {\n                    edge &e = g[p.second][i];\n\
+    \                    cost_t nextCost = d[p.second] + e.cost +\n              \
+    \                        h[p.second] - h[e.to];\n                    if (e.cap\
+    \ > 0 && d[e.to] > nextCost) {\n                        d[e.to] = nextCost;\n\
+    \                        prevv[e.to] = p.second, preve[e.to] = i;\n          \
+    \              que.emplace(d[e.to], e.to);\n                    }\n          \
+    \      }\n            }\n            if (d[t] == INF) return -1;\n           \
+    \ for (int v = 0; v < V; v++) h[v] += d[v];\n            flow_t addflow = f;\n\
+    \            for (int v = t; v != s; v = prevv[v]) {\n                addflow\
     \ = min(addflow, g[prevv[v]][preve[v]].cap);\n            }\n            f -=\
     \ addflow;\n            ret += addflow * h[t];\n            for (int v = t; v\
     \ != s; v = prevv[v]) {\n                edge &e = g[prevv[v]][preve[v]];\n  \
     \              e.cap -= addflow;\n                g[v][e.rev].cap += addflow;\n\
-    \            }\n        }\n        return ret;\n    }\n};\n#line 4 \"test/graph/primal_dual.test.cpp\"\
+    \            }\n        }\n        return ret;\n    }\n};\n\n#line 4 \"test/graph/primal_dual.test.cpp\"\
     \n\nint main() {\n    int V, E, F;\n    cin >> V >> E >> F;\n    PrimalDual<int,\
     \ int> g(V);\n    for(int i = 0; i < E; i++) {\n        int a, b, c, d;\n    \
     \    cin >> a >> b >> c >> d;\n        g.add_edge(a, b, c, d);\n    }\n    cout\
@@ -89,7 +95,7 @@ data:
   isVerificationFile: true
   path: test/graph/primal_dual.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-26 23:10:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/primal_dual.test.cpp

@@ -106,7 +106,7 @@ data:
     \ {\n      iter[s] = i;\n      auto e = g[s][i];\n      if(e.cap > 0 && level[s]\
     \ < level[e.to]) {\n        T d = dfs(e.to, t, min(flow, e.cap));\n        if(d\
     \ > 0) {\n          g[s][i].cap -= d;\n          g[e.to][e.rev].cap += d;\n  \
-    \        return d;\n        }\n      }\n    }\n    return 0;\n  }\n};"
+    \        return d;\n        }\n      }\n    }\n    return 0;\n  }\n};\n"
   dependsOn:
   - lib/graph/template.cpp
   - lib/template.cpp
@@ -114,7 +114,7 @@ data:
   path: lib/graph/dinic.cpp
   requiredBy:
   - lib/graph/max_flow_with_lower_limit.cpp
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-26 23:10:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/max_flow_with_lower_limit.test.cpp

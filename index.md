@@ -59,7 +59,7 @@ data:
       title: lib/graph/maximum_independent_set.cpp
     - icon: ':heavy_check_mark:'
       path: lib/graph/primal_dual.cpp
-      title: lib/graph/primal_dual.cpp
+      title: "\u6700\u5C0F\u8CBB\u7528\u6D41(Primal Dual)"
     - icon: ':heavy_check_mark:'
       path: lib/graph/re_rooting.cpp
       title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(1)."

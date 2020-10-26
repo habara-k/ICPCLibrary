@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: test/graph/dinic.test.cpp
   requiredBy: []
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-26 23:10:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/dinic.test.cpp
