@@ -45,32 +45,27 @@ data:
     \n/*\nint main() {\n    cin.tie(0);\n    ios::sync_with_stdio(false);\n    cout\
     \ << fixed << setprecision(10);\n\n    // ifstream in(\"in.txt\");\n    // cin.rdbuf(in.rdbuf());\n\
     \n    return 0;\n}\n*/\n\n\n#line 2 \"lib/tree/heavy_light_decomposition.cpp\"\
-    \n\n/**\n* @brief HL\u5206\u89E3\n* @author habara-k\n* @date 2020/10/15\n* @details\
-    \ \u4F7F\u3044\u65B9\n*   vector<vector<int>> g(n); // \u7121\u5411\u6728\n* \
-    \  HLDecomposition hld(g);\n*/\n\nstruct HLDecomposition {\n\n    /**\n    * @brief\
-    \ \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF O(V)\n    * @param[in] g: \u7121\u5411\
-    \u6728\n    * @param[in] root: \u6839\n    */\n    HLDecomposition(const vector<vector<int>>&\
-    \ g, int root=0) :\n            g(g), par(g.size()), size(g.size()), depth(g.size()),\n\
-    \            head(g.size()), vid(g.size()) {\n        dfs(root, -1, 0);\n    \
-    \    int k = 0;\n        hld(root, root, k);\n    }\n\n    /**\n    * @brief LCA\u3092\
-    \u6C42\u3081\u308B. O(logV)\n    */\n    int lca(int u, int v) const {\n     \
-    \   for (;; v = par[head[v]]) {\n            if (depth[head[u]] > depth[head[v]])\
+    \n\n/**\n * @brief HL\u5206\u89E3\n * @author habara-k\n * @date 2020/10/15\n\
+    \ * @usage\n *   vector<vector<int>> g(n); // \u7121\u5411\u6728\n *   int root;\n\
+    \ *   HLDecomposition hld(g, root);\n */\nstruct HLDecomposition {\n\n    HLDecomposition(const\
+    \ vector<vector<int>>& g, int root) :\n            g(g), par(g.size()), size(g.size()),\
+    \ depth(g.size()),\n            head(g.size()), vid(g.size()) {\n        dfs(root,\
+    \ -1, 0);\n        int k = 0;\n        hld(root, root, k);\n    }\n\n    /**\n\
+    \     * @brief LCA. O(logV)\n     */\n    int lca(int u, int v) const {\n    \
+    \    for (;; v = par[head[v]]) {\n            if (depth[head[u]] > depth[head[v]])\
     \ swap(u, v);\n            if (head[u] == head[v]) {\n                if (depth[u]\
     \ > depth[v]) swap(u, v);\n                return u;\n            }\n        }\n\
-    \    }\n\n    /**\n     * @brief \u9802\u70B9u,v\u9593\u306E\u8DDD\u96E2\u3092\
-    \u53D6\u5F97\u3059\u308B. O(logV)\n     */\n    int dist(int u, int v) {\n   \
-    \     return depth[u] + depth[v] - 2 * depth[lca(u,v)];\n    }\n\n    /**\n  \
-    \  * @brief \u6307\u5B9A\u3057\u305F2\u9802\u70B9\u9593\u306E\u30D1\u30B9\u4E0A\
-    \u3067\u66F4\u65B0\u30AF\u30A8\u30EA\u3092\u5B9F\u884C\u3059\u308B. O(logV)*O(q).\n\
-    \    * @param[in] u, v: \u66F4\u65B0\u30AF\u30A8\u30EA\u3092\u5B9F\u884C\u3059\
-    \u308B\u30D1\u30B9\u306E\u4E21\u7AEF\n    * @param[in] q: \u5B9F\u884C\u3059\u308B\
-    \u66F4\u65B0\u30AF\u30A8\u30EA\n    * @param[in] edge: \u8FBA\u30AF\u30A8\u30EA\
-    \u304B\u9802\u70B9\u30AF\u30A8\u30EA\u304B\n    * @details \u4F7F\u3044\u65B9\n\
-    \    *     e.g. Range Update Query\n    *     LazySegmentTree<int> segt(n);\n\
-    \    *       // \u9802\u70B9v (\u8FBA\u30AF\u30A8\u30EA\u306E\u5834\u5408\u306F\
-    (par[v],v)) \u306E\u30C7\u30FC\u30BF\u304Cvid[v]\u306B\u4FDD\u5B58\u3055\u308C\
-    \u308B\n    *\n    *     hld.update(u, v, [&](int s,int t){ segt.update(s, t,\
-    \ x); });\n    *       // u, v \u9593\u306E\u5168\u3066\u306E\u9802\u70B9\u306E\
+    \    }\n\n    /**\n    * @brief \u6307\u5B9A\u3057\u305F2\u9802\u70B9\u9593\u306E\
+    \u30D1\u30B9\u4E0A\u3067\u66F4\u65B0\u30AF\u30A8\u30EA\u3092\u5B9F\u884C\u3059\
+    \u308B. O(logV)*O(q).\n    * @param[in] u, v: \u66F4\u65B0\u30AF\u30A8\u30EA\u3092\
+    \u5B9F\u884C\u3059\u308B\u30D1\u30B9\u306E\u4E21\u7AEF\n    * @param[in] q: \u5B9F\
+    \u884C\u3059\u308B\u66F4\u65B0\u30AF\u30A8\u30EA\n    * @param[in] edge: \u8FBA\
+    \u30AF\u30A8\u30EA\u304B\u9802\u70B9\u30AF\u30A8\u30EA\u304B\n    * @details \u4F7F\
+    \u3044\u65B9\n    *     e.g. Range Update Query\n    *     LazySegmentTree<int>\
+    \ segt(n);\n    *       // \u9802\u70B9v (\u8FBA\u30AF\u30A8\u30EA\u306E\u5834\
+    \u5408\u306F(par[v],v)) \u306E\u30C7\u30FC\u30BF\u304Cvid[v]\u306B\u4FDD\u5B58\
+    \u3055\u308C\u308B\n    *\n    *     hld.update(u, v, [&](int s,int t){ segt.update(s,\
+    \ t, x); });\n    *       // u, v \u9593\u306E\u5168\u3066\u306E\u9802\u70B9\u306E\
     \u5024\u3092x \u306B\u5909\u66F4\u3059\u308B.\n    *     hld.update(u, v, [&](int\
     \ s,int t){ segt.update(s, t, x); }, true);\n    *       // u, v \u9593\u306E\u5168\
     \u3066\u306E\u8FBA\u306E\u5024\u3092x \u306B\u5909\u66F4\u3059\u308B.\n    */\n\
@@ -210,7 +205,7 @@ data:
     \    int n; cin >> n;\n    vector<vector<int>> g(n);\n    for (int i = 0; i <\
     \ n; ++i) {\n        int k; cin >> k;\n        g[i].resize(k);\n        for (int\
     \ j = 0; j < k; ++j) {\n            cin >> g[i][j];\n        }\n    }\n\n    HLDecomposition\
-    \ hld(g);\n\n    LazySegmentTree<ll> segt(\n            n,\n            [](ll\
+    \ hld(g, 0);\n\n    LazySegmentTree<ll> segt(\n            n,\n            [](ll\
     \ a,ll b){ return a+b; },\n            [](ll a,ll b,int w){ return a+b*w; },\n\
     \            [](ll a,ll b){ return a+b; },\n            0, 0);\n\n    int q; cin\
     \ >> q;\n    for (int t = 0; t < q; ++t) {\n        int c; cin >> c;\n       \
@@ -226,7 +221,7 @@ data:
     \ >> n;\n    vector<vector<int>> g(n);\n    for (int i = 0; i < n; ++i) {\n  \
     \      int k; cin >> k;\n        g[i].resize(k);\n        for (int j = 0; j <\
     \ k; ++j) {\n            cin >> g[i][j];\n        }\n    }\n\n    HLDecomposition\
-    \ hld(g);\n\n    LazySegmentTree<ll> segt(\n            n,\n            [](ll\
+    \ hld(g, 0);\n\n    LazySegmentTree<ll> segt(\n            n,\n            [](ll\
     \ a,ll b){ return a+b; },\n            [](ll a,ll b,int w){ return a+b*w; },\n\
     \            [](ll a,ll b){ return a+b; },\n            0, 0);\n\n    int q; cin\
     \ >> q;\n    for (int t = 0; t < q; ++t) {\n        int c; cin >> c;\n       \
@@ -244,7 +239,7 @@ data:
   isVerificationFile: true
   path: test/tree/heavy_light_decomposition/hld.test.cpp
   requiredBy: []
-  timestamp: '2020-10-16 15:26:01+09:00'
+  timestamp: '2020-10-26 21:48:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/heavy_light_decomposition/hld.test.cpp

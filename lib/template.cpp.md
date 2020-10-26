@@ -34,9 +34,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/kruskal.cpp
     title: lib/graph/kruskal.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/lowest_common_ancestor.cpp
-    title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(nlog n)"
+    title: LCA
   - icon: ':heavy_check_mark:'
     path: lib/graph/lowlink.cpp
     title: lib/graph/lowlink.cpp
@@ -286,6 +286,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/kruskal.test.cpp
     title: test/graph/kruskal.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/lca.test.cpp
+    title: test/graph/lca.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/lowlink/articulation.test.cpp
     title: test/graph/lowlink/articulation.test.cpp
@@ -652,6 +655,7 @@ data:
   - test/graph/two_edge_connected_components.test.cpp
   - test/graph/two_edge_connected_components.test.cpp
   - test/graph/scc.test.cpp
+  - test/graph/lca.test.cpp
   - test/number/matrix.test.cpp
   - test/number/Stirling.test.cpp
   - test/number/Partition2.test.cpp
