@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508"
 
-#include "../../../lib/structure/rbtree.cpp"
+#include "../../../lib/structure/red_black_tree.cpp"
 
 using M = int;
 using OM = int;

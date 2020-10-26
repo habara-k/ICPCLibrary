@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_range_sum"
 
-#include "../../../lib/structure/rbtree.cpp"
+#include "../../../lib/structure/red_black_tree.cpp"
 
 using Int = ll;
 struct M {
