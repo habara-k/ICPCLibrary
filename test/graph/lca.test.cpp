@@ -14,7 +14,7 @@ int main() {
         }
     }
 
-    LCA lca(g);
+    LCA lca(g, 0);
 
     cin >> Q;
     while (Q--) {

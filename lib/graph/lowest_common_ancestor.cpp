@@ -27,7 +27,7 @@ struct LCA {
         }
     }
 
-    int query(int u, int v) {
+    int get(int u, int v) {
         if (depth[u] > depth[v]) swap(u, v);
         for (int k = 0; k <= log2_n; ++k) {
             if ((depth[v] - depth[u]) >> k & 1) {
