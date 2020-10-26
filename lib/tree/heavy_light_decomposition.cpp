@@ -1,22 +1,17 @@
 #include "../template.cpp"
 
 /**
-* @brief HL分解
-* @author habara-k
-* @date 2020/10/15
-* @details 使い方
-*   vector<vector<int>> g(n); // 無向木
-*   HLDecomposition hld(g);
-*/
-
+ * @brief HL分解
+ * @author habara-k
+ * @date 2020/10/15
+ * @usage
+ *   vector<vector<int>> g(n); // 無向木
+ *   int root;
+ *   HLDecomposition hld(g, root);
+ */
 struct HLDecomposition {
 
-    /**
-    * @brief コンストラクタ O(V)
-    * @param[in] g: 無向木
-    * @param[in] root: 根
-    */
-    HLDecomposition(const vector<vector<int>>& g, int root=0) :
+    HLDecomposition(const vector<vector<int>>& g, int root) :
             g(g), par(g.size()), size(g.size()), depth(g.size()),
             head(g.size()), vid(g.size()) {
         dfs(root, -1, 0);
@@ -25,8 +20,8 @@ struct HLDecomposition {
     }
 
     /**
-    * @brief LCAを求める. O(logV)
-    */
+     * @brief LCA. O(logV)
+     */
     int lca(int u, int v) const {
         for (;; v = par[head[v]]) {
             if (depth[head[u]] > depth[head[v]]) swap(u, v);
@@ -35,13 +30,6 @@ struct HLDecomposition {
                 return u;
             }
         }
-    }
-
-    /**
-     * @brief 頂点u,v間の距離を取得する. O(logV)
-     */
-    int dist(int u, int v) {
-        return depth[u] + depth[v] - 2 * depth[lca(u,v)];
     }
 
     /**

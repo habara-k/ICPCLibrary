@@ -14,7 +14,7 @@ int main() {
         }
     }
 
-    HLDecomposition hld(g);
+    HLDecomposition hld(g, 0);
 
     cin >> Q;
     while (Q--) {
