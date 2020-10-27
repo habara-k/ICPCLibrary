@@ -1,68 +1,64 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1308"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2171"
+#define ERROR "1e-8"
 
 #include "../../lib/number/gauss_jordan.cpp"
 
-struct GF2 {
-    int x;
-    bool operator==(int a) { return x == a; }
-    bool operator!=(int a) { return !(*this == a); }
-    GF2(int x=0) : x(x) {}
-    GF2 &operator/=(GF2 a) {
-        assert(a != 0);
-        x /= a.x;
-        return *this;
-    }
-    GF2 &operator-=(GF2 a) {
-        x ^= a.x;
-        return *this;
-    }
-    GF2 operator*(GF2 a) {
-        return GF2(x * a.x);
-    }
-    friend istream& operator>>(istream& is, GF2& a) {
-        int tmp; is >> tmp;
-        a = tmp;
-        return is;
-    }
-};
 
 int main() {
 
-    for (;;) {
-        int m, n, d;
-        cin >> m >> n >> d;
-        if (m == 0) break;
+    cout << fixed << setprecision(10);
 
-        vector<vector<GF2>> mat(n*m, vector<GF2>(n*m+1));
+    while (true) {
+        int n, s, t; cin >> n >> s >> t;
+        --s, --t;
+        if (n == 0) break;
+        vi q(n); REP(i, n) cin >> q[i];
+        vvi a(n, vi(n)); REP(i, n) REP(j, n) cin >> a[i][j];
 
-        REP(i, n) REP(j, m) cin >> mat[i*m + j][n*m];
+        vi dist(n, INF), cand(n, 1);
+        dist[t] = 0;
 
-        REP(i, n) REP(j, m) {
-            mat[i*m + j][i*m + j] = 1;
-            REP(y, n) REP(x, m) {
-                if (abs(y - i) + abs(x - j) == d) {
-                    mat[i*m + j][y*m + x] = 1;
+        REP(i, n) {
+            int mi = -1, min_dist = INF;
+            REP(u, n) {
+                if (cand[u]) {
+                    if (chmin(min_dist, dist[u])) mi = u;
                 }
+            }
+            cand[mi] = 0;
+            REP(v, n) {
+                if (a[mi][v] == 0) continue;
+                chmin(dist[v], dist[mi] + a[mi][v]);
             }
         }
 
-        GaussJordanElimination(mat);
-
-        int ans = true;
-        REP(i, n * m) {
-            int allZero = true;
-            REP(j, n * m) {
-                if (mat[i][j] != 0) {
-                    allZero = false;
-                    break;
-                }
-            }
-            if (allZero and mat[i][n * m] == 1) {
-                ans = false;
-                break;
-            }
+        if (dist[s] == INF) {
+            cout << "impossible" << endl;
+            continue;
         }
-        cout << ans << endl;
+
+        Matrix<double> A(n, vector<double>(n));
+        vector<double> b(n);
+        REP(u, n) {
+            if (u == t) {
+                A[u][u] = 1;
+                continue;
+            }
+            vi neighbors;
+            REP(v, n) {
+                if (a[u][v] == 0) continue;
+                if (q[u] == 1 and dist[u] != dist[v] + a[u][v]) continue;
+                neighbors.emplace_back(v);
+            }
+            for (int v : neighbors) {
+                A[u][v] -= 1;
+                b[u] += a[u][v];
+            }
+            A[u][u] += neighbors.size();
+        }
+
+        auto res = linear_equation(A, b);
+        cout << res[s] << endl;
     }
 
     return 0;
