@@ -15,7 +15,9 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    links: []
+    document_title: Maximum Clique
+    links:
+    - https://www.slideshare.net/wata_orz/ss-12131479
   bundledCode: "#line 1 \"lib/graph/template.cpp\"\n\n\n\n#line 1 \"lib/template.cpp\"\
     \n\n\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define REP(i, n)\
     \ for (int i=0; i<(n); ++i)\n#define RREP(i, n) for (int i=(int)(n)-1; i>=0; --i)\n\
@@ -40,51 +42,62 @@ data:
     \n    return 0;\n}\n*/\n\n\n#line 5 \"lib/graph/template.cpp\"\n\ntemplate<typename\
     \ T>\nstruct edge {\n    int src, to;\n    T cost;\n};\n\ntemplate<typename T>\n\
     using Graph = vector<vector<edge<T>>>;\n\n\n#line 2 \"lib/graph/maximum_clique.cpp\"\
-    \n\nint maximum_clique(const vector<vector<bool>>& G) {\n    // G: \u96A3\u63A5\
-    \u884C\u5217, \u7121\u5411\u30B0\u30E9\u30D5\n    int n = G.size();\n    vector<int>\
+    \n\n/**\n * @brief Maximum Clique\n * V,E <= 200\u304F\u3089\u3044\u306A\u3089\
+    \u8010\u3048\u308B\n * @author habara-k\n * @ref https://www.slideshare.net/wata_orz/ss-12131479\n\
+    \ * @date 2020/10/27\n * @param G \u96A3\u63A5\u884C\u5217\n * @return \u6700\u5927\
+    \u30AF\u30EA\u30FC\u30AF\u306B\u9078\u3070\u308C\u305F\u9802\u70B9\n */\nvector<int>\
+    \ maximum_clique(vector<vector<bool>> g) {\n    int n = g.size();\n    vector<int>\
     \ deg(n);\n    int M = 0;\n    for (int i = 0; i < n; ++i) {\n        for (int\
-    \ j = i+1; j < n; ++j) {\n            ++deg[i], ++deg[j], ++M;\n        }\n  \
-    \  }\n    vector<vector<bool>> g = G;\n    vector<bool> used(n);\n\n    int lim\
-    \ = sqrt(2*M), ret = 0;\n\n    for (int t = 0; t < n; ++t) {\n        int u =\
-    \ -1;\n        for (int i = 0; i < n; ++i) {\n            if (!used[i] && deg[i]\
-    \ < lim) {\n                u = i;\n                used[u] = true;\n        \
-    \        break;\n            }\n        }\n\n        vector<int> neighbor;\n \
-    \       if (u != -1) neighbor.push_back(u);\n        for (int v = 0; v < n; ++v)\
-    \ if (!used[v]) {\n            if (u == -1 || g[u][v]) {\n                neighbor.push_back(v);\n\
-    \            }\n        }\n\n        int sz = neighbor.size();\n        vector<int>\
-    \ bit(sz);\n        for(int i = 0; i < sz; i++) {\n            for(int j = i+1;\
-    \ j < sz; j++) {\n                if(!g[neighbor[i]][neighbor[j]]) {\n       \
-    \             bit[i] |= 1 << j;\n                    bit[j] |= 1 << i;\n     \
-    \           }\n            }\n        }\n\n        vector<int> dp(1<<sz);\n  \
-    \      dp[0] = 1;\n        for (int s = 1; s < 1<<sz; ++s) {\n            int\
-    \ i = __builtin_ffs(s) - 1;\n\n            dp[s] = dp[s & ~(1<<i)] && (bit[i]\
-    \ & s) == 0;\n            if (dp[s]) {\n                ret = max(ret, __builtin_popcount(s));\n\
-    \            }\n        }\n\n        if (u == -1) break;\n\n        for (auto\
-    \ v : neighbor) {\n            --deg[v], --deg[u];\n            g[u][v] = g[v][u]\
-    \ = false;\n        }\n    }\n\n    return ret;\n}\n"
-  code: "#include \"template.cpp\"\n\nint maximum_clique(const vector<vector<bool>>&\
-    \ G) {\n    // G: \u96A3\u63A5\u884C\u5217, \u7121\u5411\u30B0\u30E9\u30D5\n \
-    \   int n = G.size();\n    vector<int> deg(n);\n    int M = 0;\n    for (int i\
-    \ = 0; i < n; ++i) {\n        for (int j = i+1; j < n; ++j) {\n            ++deg[i],\
-    \ ++deg[j], ++M;\n        }\n    }\n    vector<vector<bool>> g = G;\n    vector<bool>\
-    \ used(n);\n\n    int lim = sqrt(2*M), ret = 0;\n\n    for (int t = 0; t < n;\
-    \ ++t) {\n        int u = -1;\n        for (int i = 0; i < n; ++i) {\n       \
-    \     if (!used[i] && deg[i] < lim) {\n                u = i;\n              \
-    \  used[u] = true;\n                break;\n            }\n        }\n\n     \
-    \   vector<int> neighbor;\n        if (u != -1) neighbor.push_back(u);\n     \
-    \   for (int v = 0; v < n; ++v) if (!used[v]) {\n            if (u == -1 || g[u][v])\
-    \ {\n                neighbor.push_back(v);\n            }\n        }\n\n    \
-    \    int sz = neighbor.size();\n        vector<int> bit(sz);\n        for(int\
-    \ i = 0; i < sz; i++) {\n            for(int j = i+1; j < sz; j++) {\n       \
-    \         if(!g[neighbor[i]][neighbor[j]]) {\n                    bit[i] |= 1\
-    \ << j;\n                    bit[j] |= 1 << i;\n                }\n          \
-    \  }\n        }\n\n        vector<int> dp(1<<sz);\n        dp[0] = 1;\n      \
-    \  for (int s = 1; s < 1<<sz; ++s) {\n            int i = __builtin_ffs(s) - 1;\n\
-    \n            dp[s] = dp[s & ~(1<<i)] && (bit[i] & s) == 0;\n            if (dp[s])\
-    \ {\n                ret = max(ret, __builtin_popcount(s));\n            }\n \
-    \       }\n\n        if (u == -1) break;\n\n        for (auto v : neighbor) {\n\
-    \            --deg[v], --deg[u];\n            g[u][v] = g[v][u] = false;\n   \
-    \     }\n    }\n\n    return ret;\n}\n"
+    \ j = i+1; j < n; ++j) {\n            if (g[i][j]) ++deg[i], ++deg[j], ++M;\n\
+    \        }\n    }\n    vector<bool> used(n);\n    int lim = sqrt(2*M);\n    vector<int>\
+    \ ret;\n    for (int t = 0; t < n; ++t) {\n        int u = -1;\n        for (int\
+    \ i = 0; i < n; ++i) {\n            if (!used[i] and deg[i] < lim) {\n       \
+    \         u = i;\n                used[u] = true;\n                break;\n  \
+    \          }\n        }\n        vector<int> neighbor;\n        if (u != -1) neighbor.push_back(u);\n\
+    \        for (int v = 0; v < n; ++v) {\n            if (used[v]) continue;\n \
+    \           if (u == -1 || g[u][v]) {\n                neighbor.push_back(v);\n\
+    \            }\n        }\n        int sz = neighbor.size();\n        vector<int>\
+    \ bit(sz);\n        for (int i = 0; i < sz; ++i) {\n            for (int j = i+1;\
+    \ j < sz; ++j) {\n                if (!g[neighbor[i]][neighbor[j]]) {\n      \
+    \              bit[i] |= 1 << j;\n                    bit[j] |= 1 << i;\n    \
+    \            }\n            }\n        }\n        vector<int> dp(1<<sz);\n   \
+    \     dp[0] = 1;\n        int ma = 0, maxs = 0;\n        for (int s = 1; s < 1<<sz;\
+    \ ++s) {\n            int i = __builtin_ctz(s);\n            dp[s] = dp[s & ~(1<<i)]\
+    \ and (bit[i] & s) == 0;\n            if (!dp[s]) continue;\n            if (chmax(ma,\
+    \ __builtin_popcount(s))) {\n                maxs = s;\n            }\n      \
+    \  }\n        if (SZ(ret) < ma) {\n            ret.clear();\n            for (int\
+    \ i = 0; i < sz; ++i) {\n                if (maxs >> i & 1) ret.emplace_back(neighbor[i]);\n\
+    \            }\n        }\n        if (u == -1) break;\n        for (auto v :\
+    \ neighbor) {\n            --deg[v], --deg[u];\n            g[u][v] = g[v][u]\
+    \ = false;\n        }\n    }\n    return ret;\n}\n\n"
+  code: "#include \"template.cpp\"\n\n/**\n * @brief Maximum Clique\n * V,E <= 200\u304F\
+    \u3089\u3044\u306A\u3089\u8010\u3048\u308B\n * @author habara-k\n * @ref https://www.slideshare.net/wata_orz/ss-12131479\n\
+    \ * @date 2020/10/27\n * @param G \u96A3\u63A5\u884C\u5217\n * @return \u6700\u5927\
+    \u30AF\u30EA\u30FC\u30AF\u306B\u9078\u3070\u308C\u305F\u9802\u70B9\n */\nvector<int>\
+    \ maximum_clique(vector<vector<bool>> g) {\n    int n = g.size();\n    vector<int>\
+    \ deg(n);\n    int M = 0;\n    for (int i = 0; i < n; ++i) {\n        for (int\
+    \ j = i+1; j < n; ++j) {\n            if (g[i][j]) ++deg[i], ++deg[j], ++M;\n\
+    \        }\n    }\n    vector<bool> used(n);\n    int lim = sqrt(2*M);\n    vector<int>\
+    \ ret;\n    for (int t = 0; t < n; ++t) {\n        int u = -1;\n        for (int\
+    \ i = 0; i < n; ++i) {\n            if (!used[i] and deg[i] < lim) {\n       \
+    \         u = i;\n                used[u] = true;\n                break;\n  \
+    \          }\n        }\n        vector<int> neighbor;\n        if (u != -1) neighbor.push_back(u);\n\
+    \        for (int v = 0; v < n; ++v) {\n            if (used[v]) continue;\n \
+    \           if (u == -1 || g[u][v]) {\n                neighbor.push_back(v);\n\
+    \            }\n        }\n        int sz = neighbor.size();\n        vector<int>\
+    \ bit(sz);\n        for (int i = 0; i < sz; ++i) {\n            for (int j = i+1;\
+    \ j < sz; ++j) {\n                if (!g[neighbor[i]][neighbor[j]]) {\n      \
+    \              bit[i] |= 1 << j;\n                    bit[j] |= 1 << i;\n    \
+    \            }\n            }\n        }\n        vector<int> dp(1<<sz);\n   \
+    \     dp[0] = 1;\n        int ma = 0, maxs = 0;\n        for (int s = 1; s < 1<<sz;\
+    \ ++s) {\n            int i = __builtin_ctz(s);\n            dp[s] = dp[s & ~(1<<i)]\
+    \ and (bit[i] & s) == 0;\n            if (!dp[s]) continue;\n            if (chmax(ma,\
+    \ __builtin_popcount(s))) {\n                maxs = s;\n            }\n      \
+    \  }\n        if (SZ(ret) < ma) {\n            ret.clear();\n            for (int\
+    \ i = 0; i < sz; ++i) {\n                if (maxs >> i & 1) ret.emplace_back(neighbor[i]);\n\
+    \            }\n        }\n        if (u == -1) break;\n        for (auto v :\
+    \ neighbor) {\n            --deg[v], --deg[u];\n            g[u][v] = g[v][u]\
+    \ = false;\n        }\n    }\n    return ret;\n}\n\n"
   dependsOn:
   - lib/graph/template.cpp
   - lib/template.cpp
@@ -92,7 +105,7 @@ data:
   path: lib/graph/maximum_clique.cpp
   requiredBy:
   - test/graph/maximum_clique.cpp
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-28 03:20:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/graph/maximum_clique.cpp
@@ -100,5 +113,5 @@ layout: document
 redirect_from:
 - /library/lib/graph/maximum_clique.cpp
 - /library/lib/graph/maximum_clique.cpp.html
-title: lib/graph/maximum_clique.cpp
+title: Maximum Clique
 ---

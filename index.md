@@ -53,7 +53,7 @@ data:
       title: lib/graph/max_flow_with_lower_limit.cpp
     - icon: ':warning:'
       path: lib/graph/maximum_clique.cpp
-      title: lib/graph/maximum_clique.cpp
+      title: Maximum Clique
     - icon: ':heavy_check_mark:'
       path: lib/graph/maximum_independent_set.cpp
       title: lib/graph/maximum_independent_set.cpp

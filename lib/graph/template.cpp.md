@@ -31,7 +31,7 @@ data:
     title: lib/graph/max_flow_with_lower_limit.cpp
   - icon: ':warning:'
     path: lib/graph/maximum_clique.cpp
-    title: lib/graph/maximum_clique.cpp
+    title: Maximum Clique
   - icon: ':heavy_check_mark:'
     path: lib/graph/primal_dual.cpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41(Primal Dual)"
