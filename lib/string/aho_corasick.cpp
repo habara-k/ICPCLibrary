@@ -11,10 +11,10 @@
  * int now = root;
  * string s;
  * for (char c : s) {
- *     while (PMA.nodes[now].nxt[c - margin] == -1) {
+ *     while (PMA.nodes[now].nxt[c - 'a'] == -1) {
  *         now = PMA.nodes[now].nxt[FAIL];
  *     }
- *     now = PMA.nodes[now].nxt[c - margin];
+ *     now = PMA.nodes[now].nxt[c - 'a'];
  *     // nowはsをcまで読んだときのノード.
  *     // ここでPMA.nodes[now].acceptとかを利用していろいろやる
  * }
