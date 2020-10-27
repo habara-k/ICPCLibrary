@@ -99,7 +99,7 @@ data:
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - icon: ':heavy_check_mark:'
     path: lib/number/gauss_jordan.cpp
-    title: lib/number/gauss_jordan.cpp
+    title: "\u30AC\u30A6\u30B9\u306E\u6D88\u53BB\u6CD5"
   - icon: ':heavy_check_mark:'
     path: lib/number/matrix.cpp
     title: lib/number/matrix.cpp
