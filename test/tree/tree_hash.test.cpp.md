@@ -56,35 +56,26 @@ data:
     \ = false;\n        if (isCent) ret.emplace_back(u);\n        return sz[u];\n\
     \    };\n    dfs(0, -1);\n    return ret;\n}\n\n#line 3 \"lib/tree/tree_hash.cpp\"\
     \n\n/**\n * @brief \u6728\u306E\u30CF\u30C3\u30B7\u30E5\u5316\n * @author habara-k\n\
-    \ * @date 2020/10/14\n * @details \u4F7F\u3044\u65B9\n *   vector<vector<int>>\
-    \ g;\n *   int seed = 0;\n *   auto hash = RootedTreeHash(g, seed).get();\n */\n\
-    struct TreeHash {\n    using uint = uint64_t;\n\n    /**\n     * @brief \u30B3\
-    \u30F3\u30B9\u30C8\u30E9\u30AF\u30BF. O(|n|)\n     * @param[in] g \u30CF\u30C3\
-    \u30B7\u30E5\u5316\u3059\u308B\u6728\n     * @param[in] seed \u30CF\u30C3\u30B7\
-    \u30E5\u5316\u306B\u4F7F\u3046\u30B7\u30FC\u30C9\n     */\n    TreeHash(const\
+    \ * @date 2020/10/28\n * @usage\n *   vector<vector<int>> g;\n *   int seed =\
+    \ 0;\n *   auto hash = RootedTreeHash(g, seed).get();\n */\nstruct TreeHash {\n\
+    \    using u64 = uint64_t;\n    using i128 = __int128_t;\n\n    TreeHash(const\
     \ vector<vector<int>>& g, int seed=0) : g(g) {\n        int n = g.size();\n  \
-    \      mt19937 random(seed);\n        uniform_int_distribution<uint> dist(2, MASK61\
-    \ - 2);\n        for (int i = 0; i < n; ++i) base.emplace_back(dist(random));\n\
-    \    }\n\n    /**\n     * @brief \u30CF\u30C3\u30B7\u30E5\u306E\u8A08\u7B97. O(|n|)\n\
-    \     */\n    uint get() {\n        vector<uint> hash;\n        for (int root\
-    \ : centroid(g)) {\n            hash.emplace_back(dfs(root, -1, 0));\n       \
-    \ }\n        return *min_element(hash.begin(), hash.end());\n    }\n\nprivate:\n\
-    \    vector<uint> base;\n    vector<vector<int>> g;\n    static const uint MASK30\
-    \ = (1LL << 30) - 1,\n            MASK31 = (1LL << 31) - 1,\n            MASK61\
-    \ = (1LL << 61) - 1;\n\n    static uint mul(uint a, uint b) {\n        uint au\
-    \ = a >> 31, ad = a & MASK31,\n                bu = b >> 31, bd = b & MASK31;\n\
-    \        uint m = au * bd + ad * bu;\n        uint mu = m >> 30, md = m & MASK30;\n\
-    \n        return mod(au * bu * 2 + mu + (md << 31) + ad * bd);\n    }\n\n    static\
-    \ uint mod(uint x) {\n        uint xu = x >> 61, xd = x & MASK61;\n        uint\
-    \ ret = xu + xd;\n        if (ret >= MASK61) ret -= MASK61;\n        return ret;\n\
-    \    }\n\n    uint dfs(int u, int p, int d) {\n        uint hash = 1;\n      \
-    \  for (int v : g[u]) {\n            if (v == p) continue;\n            hash =\
-    \ mul(hash, dfs(v, u, d+1));\n        }\n        return mod(hash + base[d]);\n\
-    \    }\n};\n\n#line 2 \"lib/structure/union_find.cpp\"\n\nstruct UnionFind\n{\n\
-    \    vector<int> par, sz;\n    UnionFind(int n) : par(n), sz(n, 1) {\n       \
-    \ for (int i = 0; i < n; ++i) par[i] = i;\n    }\n    int root(int x) {\n    \
-    \    if (par[x] == x) return x;\n        return par[x] = root(par[x]);\n    }\n\
-    \    void merge(int x, int y) {\n        x = root(x);\n        y = root(y);\n\
+    \      mt19937 random(seed);\n        uniform_int_distribution<u64> dist(2, MOD-2);\n\
+    \        for (int i = 0; i < n; ++i) base.emplace_back(dist(random));\n    }\n\
+    \n    u64 get() {\n        vector<u64> hash;\n        for (int root : centroid(g))\
+    \ {\n            hash.emplace_back(dfs(root, -1, 0));\n        }\n        return\
+    \ *min_element(hash.begin(), hash.end());\n    }\n\nprivate:\n    vector<u64>\
+    \ base;\n    vector<vector<int>> g;\n    static const u64 MOD = (1ul << 61) -\
+    \ 1;\n\n    static u64 mul(i128 a, i128 b) {\n        i128 t = a * b;\n      \
+    \  t = (t >> 61) + (t & MOD);\n        if (t >= MOD) t -= MOD;\n        return\
+    \ t;\n    }\n\n    u64 dfs(int u, int p, int d) {\n        u64 hash = 1;\n   \
+    \     for (int v : g[u]) {\n            if (v == p) continue;\n            hash\
+    \ = mul(hash, dfs(v, u, d+1));\n        }\n        hash += base[d];\n        return\
+    \ hash >= MOD ? hash - MOD : hash;\n    }\n};\n\n#line 2 \"lib/structure/union_find.cpp\"\
+    \n\nstruct UnionFind\n{\n    vector<int> par, sz;\n    UnionFind(int n) : par(n),\
+    \ sz(n, 1) {\n        for (int i = 0; i < n; ++i) par[i] = i;\n    }\n    int\
+    \ root(int x) {\n        if (par[x] == x) return x;\n        return par[x] = root(par[x]);\n\
+    \    }\n    void merge(int x, int y) {\n        x = root(x);\n        y = root(y);\n\
     \        if (x == y) return;\n        if (sz[x] < sz[y]) swap(x, y);\n       \
     \ par[y] = x;\n        sz[x] += sz[y];\n        sz[y] = 0;\n    }\n    bool issame(int\
     \ x, int y) {\n        return root(x) == root(y);\n    }\n    int size(int x)\
@@ -132,7 +123,7 @@ data:
   isVerificationFile: true
   path: test/tree/tree_hash.test.cpp
   requiredBy: []
-  timestamp: '2020-10-15 21:18:19+09:00'
+  timestamp: '2020-10-28 03:11:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/tree_hash.test.cpp
