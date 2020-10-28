@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
-#include "../../../lib/structure/rbtree.cpp"
+#include "../../../lib/structure/red_black_tree.cpp"
 
 using M = int;
 using OM = bool;

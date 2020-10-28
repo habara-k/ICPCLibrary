@@ -1,5 +1,14 @@
 #include "template.cpp"
 
+/**
+ * @brief 最小費用流(Primal Dual)
+ * @author habara-k
+ * @date 2020/10/26
+ * @usage
+ * PrimalDual<int,int> g(n);     // 頂点数で初期化
+ * g.add_edge(u, v, cap, cost);  // 辺の追加
+ * g.min_cost_flow(s, t, flow);  // O(FElogV). だいたいもっと速い
+ */
 template<typename flow_t, typename cost_t>
 struct PrimalDual {
     const cost_t INF;
@@ -9,6 +18,7 @@ struct PrimalDual {
         flow_t cap;
         cost_t cost;
         int rev;
+        bool is_rev; // 逆方向:1, 順方向:0. 復元に使用
     };
     vector<vector<edge>> g;
     vector<cost_t> h, d;
@@ -17,8 +27,8 @@ struct PrimalDual {
     PrimalDual(int V) : g(V), INF(numeric_limits< cost_t >::max()) {}
 
     void add_edge(int from, int to, flow_t cap, cost_t cost) {
-        g[from].push_back({to, cap, cost, (int)g[to].size()});
-        g[to].push_back({from, 0, -cost, (int)g[from].size()-1});
+        g[from].push_back({to, cap, cost, SZ(g[to]), false});
+        g[to].push_back({from, 0, -cost, SZ(g[from])-1, true});
     }
 
     cost_t min_cost_flow(int s, int t, flow_t f) {
@@ -40,7 +50,7 @@ struct PrimalDual {
                 for (int i = 0; i < g[p.second].size(); i++) {
                     edge &e = g[p.second][i];
                     cost_t nextCost = d[p.second] + e.cost +
-                        h[p.second] - h[e.to];
+                                      h[p.second] - h[e.to];
                     if (e.cap > 0 && d[e.to] > nextCost) {
                         d[e.to] = nextCost;
                         prevv[e.to] = p.second, preve[e.to] = i;
@@ -65,3 +75,4 @@ struct PrimalDual {
         return ret;
     }
 };
+
