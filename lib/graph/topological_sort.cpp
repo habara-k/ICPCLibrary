@@ -5,14 +5,14 @@ void topological_sort(const vector<vector<int>>& G, vector<int>& ord)
     int n = G.size();
     vector<int> num(n, 0);
     ord.assign(n, 0);
-    for (int i = 0; i < n; ++i) {
+    REP(i, n) {
         for (auto u : G[i]) {
             ++num[u];
         }
     }
     stack<int> st;
-    for(int i = 0; i < n; ++i) {
-        if (num[i] == 0) {
+    REP(i, n) {
+      if (num[i] == 0) {
             st.push(i);
         }
     }
