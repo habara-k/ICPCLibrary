@@ -9,8 +9,7 @@ int main() {
         int s, t; cin >> s >> t;
         G[s].push_back(t);
     }
-    vector<int> ord;
-    topological_sort(G, ord);
+    auto ord = topological_sort(G);
     for (auto v : ord) {
         cout << v << endl;
     }
