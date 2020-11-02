@@ -1,5 +1,13 @@
 #include "../template.cpp"
 
+/**
+ * @brief
+ * 最大流 O(FE)
+ *
+ * @author Md
+ * @date 2020/11/03
+ *
+ */
 template <typename T>
 struct FordFulkerson {
   struct Edge {
