@@ -40,23 +40,29 @@ data:
     \n    return 0;\n}\n*/\n\n\n#line 5 \"lib/graph/template.cpp\"\n\ntemplate<typename\
     \ T>\nstruct edge {\n    int src, to;\n    T cost;\n};\n\ntemplate<typename T>\n\
     using Graph = vector<vector<edge<T>>>;\n\n\n#line 2 \"lib/graph/topological_sort.cpp\"\
-    \n\nvoid topological_sort(const vector<vector<int>>& G, vector<int>& ord)\n{\n\
-    \    int n = G.size();\n    vector<int> num(n, 0);\n    ord.assign(n, 0);\n  \
-    \  for (int i = 0; i < n; ++i) {\n        for (auto u : G[i]) {\n            ++num[u];\n\
-    \        }\n    }\n    stack<int> st;\n    for(int i = 0; i < n; ++i) {\n    \
-    \    if (num[i] == 0) {\n            st.push(i);\n        }\n    }\n    for (int\
-    \ k = 0; !st.empty(); ++k) {\n        int i = st.top(); st.pop();\n        ord[k]\
-    \ = i;\n        for (auto u : G[i]) {\n            if (--num[u] == 0) {\n    \
-    \            st.push(u);\n            }\n        }\n    }\n}\n"
-  code: "#include \"template.cpp\"\n\nvoid topological_sort(const vector<vector<int>>&\
-    \ G, vector<int>& ord)\n{\n    int n = G.size();\n    vector<int> num(n, 0);\n\
-    \    ord.assign(n, 0);\n    for (int i = 0; i < n; ++i) {\n        for (auto u\
-    \ : G[i]) {\n            ++num[u];\n        }\n    }\n    stack<int> st;\n   \
-    \ for(int i = 0; i < n; ++i) {\n        if (num[i] == 0) {\n            st.push(i);\n\
-    \        }\n    }\n    for (int k = 0; !st.empty(); ++k) {\n        int i = st.top();\
-    \ st.pop();\n        ord[k] = i;\n        for (auto u : G[i]) {\n            if\
-    \ (--num[u] == 0) {\n                st.push(u);\n            }\n        }\n \
-    \   }\n}\n"
+    \n\n/*\n * ord\u306B\u306F\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+    \u3055\u308C\u305F\u9806\u756A\u3067\u9802\u70B9\u756A\u53F7\u304C\u5165\u308B\
+    \n * DAG\u3067\u306A\u3051\u308C\u3070\u7A7A\u306E\u914D\u5217\u3092\u8FD4\u3059\
+    \n */\n\nvector<int> topological_sort(const vector<vector<int>>& G) {\n    vector<int>\
+    \ ord;\n    int n = G.size();\n    vector<int> num(n, 0);\n    REP(i, n) {\n \
+    \       for (auto u : G[i]) {\n            ++num[u];\n        }\n    }\n    queue<int>\
+    \ que;\n    REP(i, n) {\n      if (num[i] == 0) {\n            que.push(i);\n\
+    \        }\n    }\n    for (int k = 0; !que.empty(); ++k) {\n        int i = que.front();\
+    \ que.pop();\n        ord.emplace_back(i);\n        for (auto u : G[i]) {\n  \
+    \          if (--num[u] == 0) {\n                que.push(u);\n            }\n\
+    \        }\n    }\n\n    if(SZ(ord) != n) return {};\n    else return ord;\n}\n"
+  code: "#include \"template.cpp\"\n\n/*\n * ord\u306B\u306F\u30C8\u30DD\u30ED\u30B8\
+    \u30AB\u30EB\u30BD\u30FC\u30C8\u3055\u308C\u305F\u9806\u756A\u3067\u9802\u70B9\
+    \u756A\u53F7\u304C\u5165\u308B\n * DAG\u3067\u306A\u3051\u308C\u3070\u7A7A\u306E\
+    \u914D\u5217\u3092\u8FD4\u3059\n */\n\nvector<int> topological_sort(const vector<vector<int>>&\
+    \ G) {\n    vector<int> ord;\n    int n = G.size();\n    vector<int> num(n, 0);\n\
+    \    REP(i, n) {\n        for (auto u : G[i]) {\n            ++num[u];\n     \
+    \   }\n    }\n    queue<int> que;\n    REP(i, n) {\n      if (num[i] == 0) {\n\
+    \            que.push(i);\n        }\n    }\n    for (int k = 0; !que.empty();\
+    \ ++k) {\n        int i = que.front(); que.pop();\n        ord.emplace_back(i);\n\
+    \        for (auto u : G[i]) {\n            if (--num[u] == 0) {\n           \
+    \     que.push(u);\n            }\n        }\n    }\n\n    if(SZ(ord) != n) return\
+    \ {};\n    else return ord;\n}\n"
   dependsOn:
   - lib/graph/template.cpp
   - lib/template.cpp
@@ -64,7 +70,7 @@ data:
   path: lib/graph/topological_sort.cpp
   requiredBy:
   - test/graph/topological_sort.cpp
-  timestamp: '2020-05-06 01:41:24+09:00'
+  timestamp: '2020-10-31 04:16:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/graph/topological_sort.cpp
