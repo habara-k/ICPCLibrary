@@ -1,28 +1,35 @@
 #include "template.cpp"
 
-void topological_sort(const vector<vector<int>>& G, vector<int>& ord)
-{
+/*
+ * ordにはトポロジカルソートされた順番で頂点番号が入る
+ * DAGでなければ空の配列を返す
+ */
+
+vector<int> topological_sort(const vector<vector<int>>& G) {
+    vector<int> ord;
     int n = G.size();
     vector<int> num(n, 0);
-    ord.assign(n, 0);
-    for (int i = 0; i < n; ++i) {
+    REP(i, n) {
         for (auto u : G[i]) {
             ++num[u];
         }
     }
-    stack<int> st;
-    for(int i = 0; i < n; ++i) {
-        if (num[i] == 0) {
-            st.push(i);
+    queue<int> que;
+    REP(i, n) {
+      if (num[i] == 0) {
+            que.push(i);
         }
     }
-    for (int k = 0; !st.empty(); ++k) {
-        int i = st.top(); st.pop();
-        ord[k] = i;
+    for (int k = 0; !que.empty(); ++k) {
+        int i = que.front(); que.pop();
+        ord.emplace_back(i);
         for (auto u : G[i]) {
             if (--num[u] == 0) {
-                st.push(u);
+                que.push(u);
             }
         }
     }
+
+    if(SZ(ord) != n) return {};
+    else return ord;
 }
