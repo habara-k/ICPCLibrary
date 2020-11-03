@@ -147,6 +147,9 @@ data:
       title: lib/others/xorshift.cpp
   - name: lib/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/string/aho_corasick.cpp
+      title: Trie
     - icon: ':warning:'
       path: lib/string/manacher.cpp
       title: "\u6587\u5B57\u5217\u306E\u5404\u4F4D\u7F6E\u3092\u4E2D\u5FC3\u3068\u3059\
@@ -421,6 +424,12 @@ data:
       title: test/others/dice.test.cpp
   - name: test/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/aho_corasick.test.cpp
+      title: test/string/aho_corasick.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/aho_corasick2.test.cpp
+      title: test/string/aho_corasick2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/string/rolling_hash.test.cpp
       title: test/string/rolling_hash.test.cpp

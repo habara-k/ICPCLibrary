@@ -37,6 +37,9 @@ data:
     path: test/number/fps/pow.test.cpp
     title: test/number/fps/pow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.cpp
+    title: test/string/aho_corasick.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-judge/convolution.test.cpp
     title: test/yosupo-judge/convolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -113,6 +116,7 @@ data:
   timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/string/aho_corasick.test.cpp
   - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/convolution.test.cpp
   - test/yosupo-judge/range_affine_range_sum.test.cpp

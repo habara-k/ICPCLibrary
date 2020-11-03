@@ -130,6 +130,9 @@ data:
   - icon: ':warning:'
     path: lib/others/xorshift.cpp
     title: lib/others/xorshift.cpp
+  - icon: ':heavy_check_mark:'
+    path: lib/string/aho_corasick.cpp
+    title: Trie
   - icon: ':warning:'
     path: lib/string/manacher.cpp
     title: "\u6587\u5B57\u5217\u306E\u5404\u4F4D\u7F6E\u3092\u4E2D\u5FC3\u3068\u3059\
@@ -371,6 +374,15 @@ data:
     path: test/others/dice.test.cpp
     title: test/others/dice.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.cpp
+    title: test/string/aho_corasick.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick.test.cpp
+    title: test/string/aho_corasick.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/aho_corasick2.test.cpp
+    title: test/string/aho_corasick2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/rolling_hash.test.cpp
     title: test/string/rolling_hash.test.cpp
   - icon: ':heavy_check_mark:'
@@ -552,6 +564,7 @@ data:
   - lib/string/manacher.cpp
   - lib/string/suffix_array.cpp
   - lib/string/run_enumerate.cpp
+  - lib/string/aho_corasick.cpp
   - lib/string/rolling_hash.cpp
   - lib/string/z_algorithm.cpp
   - lib/others/dice.cpp
@@ -614,9 +627,12 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/suffix_array_2.test.cpp
+  - test/string/aho_corasick.test.cpp
+  - test/string/aho_corasick.test.cpp
   - test/string/rolling_hash_2D.test.cpp
   - test/string/suffix_array.test.cpp
   - test/string/rolling_hash.test.cpp
+  - test/string/aho_corasick2.test.cpp
   - test/string/run_enumerate.test.cpp
   - test/others/dice.test.cpp
   - test/yosupo-judge/point_set_range_composite.test.cpp
