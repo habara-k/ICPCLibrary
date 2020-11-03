@@ -6,9 +6,9 @@
  * @tparam char_size 文字の種類数. ASCIIで連続していること.
  * @tparam margin 0番目の文字 (e.g. 'a')
  * @usage
- * AhoCorasick PMA(26,'a');
+ * AhoCorasick<26,'a'> PMA;
  * PMA.add("pattern");
- * int now = root;
+ * int now = PMA.root;
  * string s;
  * for (char c : s) {
  *     while (PMA.nodes[now].nxt[c - 'a'] == -1) {
