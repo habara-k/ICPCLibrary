@@ -6,9 +6,7 @@
 using namespace std;
 
 #define REP(i, n) for (int i=0; i<(n); ++i)
-#define RREP(i, n) for (int i=(int)(n)-1; i>=0; --i)
 #define FOR(i, a, n) for (int i=(a); i<(n); ++i)
-#define RFOR(i, a, n) for (int i=(int)(n)-1; i>=(a); --i)
 
 #define SZ(x) ((int)(x).size())
 #define ALL(x) (x).begin(),(x).end()
@@ -59,8 +57,6 @@ using vvi = vector<vi>;
 using vvll = vector<vll>;
 
 const ll MOD = 1e9 + 7;
-const int INF = INT_MAX / 2;
-const ll LINF = LLONG_MAX / 2;
 const ld eps = 1e-9;
 
 /*
