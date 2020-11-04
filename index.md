@@ -33,6 +33,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/dinic.cpp
       title: "\u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/ford_fulkerson.cpp
+      title: lib/graph/ford_fulkerson.cpp
     - icon: ':warning:'
       path: lib/graph/graph_coloring.cpp
       title: lib/graph/graph_coloring.cpp
@@ -125,6 +128,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/number/rmint.cpp
       title: lib/number/rmint.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/number/sieve.cpp
+      title: lib/number/sieve.cpp
   - name: lib/others
     pages:
     - icon: ':warning:'
@@ -328,6 +334,9 @@ data:
       path: test/graph/dinic.test.cpp
       title: test/graph/dinic.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/ford_fulkerson.test.cpp
+      title: test/graph/ford_fulkerson.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/hopcroft_karp.test.cpp
       title: test/graph/hopcroft_karp.test.cpp
     - icon: ':heavy_check_mark:'
@@ -403,6 +412,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/number/modsqrt.test.cpp
       title: test/number/modsqrt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/sieve.test.cpp
+      title: test/number/sieve.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/number/sieve2.test.cpp
+      title: test/number/sieve2.test.cpp
   - name: test/number/fps
     pages:
     - icon: ':heavy_check_mark:'
