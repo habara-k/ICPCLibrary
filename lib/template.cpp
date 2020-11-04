@@ -56,6 +56,8 @@ using vll = vector<ll>;
 using vvi = vector<vi>;
 using vvll = vector<vll>;
 
+const int INF = INT_MAX;
+const ll LINF = LLONG_MAX;
 const ll MOD = 1e9 + 7;
 const ld eps = 1e-9;
 
