@@ -136,6 +136,9 @@ data:
     - icon: ':warning:'
       path: lib/others/LIS.cpp
       title: lib/others/LIS.cpp
+    - icon: ':warning:'
+      path: lib/others/brute-forth.cpp
+      title: lib/others/brute-forth.cpp
     - icon: ':heavy_check_mark:'
       path: lib/others/dice.cpp
       title: lib/others/dice.cpp
