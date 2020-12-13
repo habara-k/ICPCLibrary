@@ -116,19 +116,19 @@ data:
   timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/aho_corasick.test.cpp
+  - test/number/Partition1.test.cpp
+  - test/number/Partition2.test.cpp
+  - test/number/fps/inv.test.cpp
+  - test/number/fps/exp.test.cpp
+  - test/number/fps/log.test.cpp
+  - test/number/fps/pow.test.cpp
+  - test/number/Bell.test.cpp
+  - test/number/C.test.cpp
+  - test/number/Stirling.test.cpp
+  - test/yosupo-judge/range_affine_range_sum.test.cpp
   - test/yosupo-judge/point_set_range_composite.test.cpp
   - test/yosupo-judge/convolution.test.cpp
-  - test/yosupo-judge/range_affine_range_sum.test.cpp
-  - test/number/Stirling.test.cpp
-  - test/number/Partition2.test.cpp
-  - test/number/Partition1.test.cpp
-  - test/number/C.test.cpp
-  - test/number/Bell.test.cpp
-  - test/number/fps/pow.test.cpp
-  - test/number/fps/exp.test.cpp
-  - test/number/fps/inv.test.cpp
-  - test/number/fps/log.test.cpp
+  - test/string/aho_corasick.test.cpp
 documentation_of: lib/number/mint.cpp
 layout: document
 redirect_from:

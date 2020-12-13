@@ -190,20 +190,20 @@ data:
     \ b; },\n *            [](int a,int b){ return b; },\n *            0, INF);\n\
     \ *\n * Range Add Range min\n * LazySegmentTree<int> segt(\n *            n,\n\
     \ *            [](int a,int b){ return min(a, b); },\n *            [](int a,int\
-    \ b,int w){ return a + b*w; },\n *            [](int a,int b){ return a+b; },\n\
+    \ b,int w){ return a + b; },\n *            [](int a,int b){ return a+b; },\n\
     \ *            INF, 0);\n *\n * Range Update Range min\n * LazySegmentTree<int>\
     \ segt(\n *            n,\n *            [](int a,int b){ return min(a, b); },\n\
     \ *            [](int a,int b,int w){ return b; },\n *            [](int a,int\
     \ b){ return b; },\n *            INF, INF);\n *\n * Range Add Range max\n * LazySegmentTree<int>\
     \ segt(\n *            n,\n *            [](int a,int b){ return max(a, b); },\n\
-    \ *            [](int a,int b,int w){ return a + b*w; },\n *            [](int\
-    \ a,int b){ return a+b; },\n *            -INF, 0);\n *\n * Range Update Range\
-    \ max\n * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int\
-    \ b){ return max(a, b); },\n *            [](int a,int b,int w){ return b; },\n\
-    \ *            [](int a,int b){ return b; },\n *            -INF, INF);\n */\n\
-    #line 5 \"test/tree/heavy_light_decomposition/hld.test.cpp\"\n\nint main()\n{\n\
-    \    int n; cin >> n;\n    vector<vector<int>> g(n);\n    for (int i = 0; i <\
-    \ n; ++i) {\n        int k; cin >> k;\n        g[i].resize(k);\n        for (int\
+    \ *            [](int a,int b,int w){ return a + b; },\n *            [](int a,int\
+    \ b){ return a+b; },\n *            -INF, 0);\n *\n * Range Update Range max\n\
+    \ * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int b){\
+    \ return max(a, b); },\n *            [](int a,int b,int w){ return b; },\n *\
+    \            [](int a,int b){ return b; },\n *            -INF, INF);\n */\n#line\
+    \ 5 \"test/tree/heavy_light_decomposition/hld.test.cpp\"\n\nint main()\n{\n  \
+    \  int n; cin >> n;\n    vector<vector<int>> g(n);\n    for (int i = 0; i < n;\
+    \ ++i) {\n        int k; cin >> k;\n        g[i].resize(k);\n        for (int\
     \ j = 0; j < k; ++j) {\n            cin >> g[i][j];\n        }\n    }\n\n    HLDecomposition\
     \ hld(g, 0);\n\n    LazySegmentTree<ll> segt(\n            n,\n            [](ll\
     \ a,ll b){ return a+b; },\n            [](ll a,ll b,int w){ return a+b*w; },\n\
@@ -239,7 +239,7 @@ data:
   isVerificationFile: true
   path: test/tree/heavy_light_decomposition/hld.test.cpp
   requiredBy: []
-  timestamp: '2020-10-26 21:48:04+09:00'
+  timestamp: '2020-12-14 00:57:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/heavy_light_decomposition/hld.test.cpp

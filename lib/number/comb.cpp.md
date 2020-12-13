@@ -164,12 +164,12 @@ data:
   timestamp: '2020-10-12 01:33:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/montmort_number.test.cpp
-  - test/number/Stirling.test.cpp
-  - test/number/Partition2.test.cpp
   - test/number/Partition1.test.cpp
-  - test/number/C.test.cpp
+  - test/number/Partition2.test.cpp
   - test/number/Bell.test.cpp
+  - test/number/C.test.cpp
+  - test/number/Stirling.test.cpp
+  - test/yosupo-judge/montmort_number.test.cpp
 documentation_of: lib/number/comb.cpp
 layout: document
 redirect_from:

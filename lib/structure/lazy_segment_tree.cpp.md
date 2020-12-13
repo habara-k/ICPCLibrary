@@ -114,15 +114,15 @@ data:
     \           [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
     \ return b; },\n *            0, INF);\n *\n * Range Add Range min\n * LazySegmentTree<int>\
     \ segt(\n *            n,\n *            [](int a,int b){ return min(a, b); },\n\
-    \ *            [](int a,int b,int w){ return a + b*w; },\n *            [](int\
-    \ a,int b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range\
-    \ min\n * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int\
-    \ b){ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n\
-    \ *            [](int a,int b){ return b; },\n *            INF, INF);\n *\n *\
-    \ Range Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *   \
-    \         [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int\
-    \ w){ return a + b*w; },\n *            [](int a,int b){ return a+b; },\n *  \
-    \          -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
+    \ *            [](int a,int b,int w){ return a + b; },\n *            [](int a,int\
+    \ b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range min\n\
+    \ * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int b){\
+    \ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n *\
+    \            [](int a,int b){ return b; },\n *            INF, INF);\n *\n * Range\
+    \ Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *         \
+    \   [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int w){\
+    \ return a + b; },\n *            [](int a,int b){ return a+b; },\n *        \
+    \    -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
     \ *            n,\n *            [](int a,int b){ return max(a, b); },\n *   \
     \         [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
     \ return b; },\n *            -INF, INF);\n */\n"
@@ -199,15 +199,15 @@ data:
     \           [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
     \ return b; },\n *            0, INF);\n *\n * Range Add Range min\n * LazySegmentTree<int>\
     \ segt(\n *            n,\n *            [](int a,int b){ return min(a, b); },\n\
-    \ *            [](int a,int b,int w){ return a + b*w; },\n *            [](int\
-    \ a,int b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range\
-    \ min\n * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int\
-    \ b){ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n\
-    \ *            [](int a,int b){ return b; },\n *            INF, INF);\n *\n *\
-    \ Range Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *   \
-    \         [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int\
-    \ w){ return a + b*w; },\n *            [](int a,int b){ return a+b; },\n *  \
-    \          -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
+    \ *            [](int a,int b,int w){ return a + b; },\n *            [](int a,int\
+    \ b){ return a+b; },\n *            INF, 0);\n *\n * Range Update Range min\n\
+    \ * LazySegmentTree<int> segt(\n *            n,\n *            [](int a,int b){\
+    \ return min(a, b); },\n *            [](int a,int b,int w){ return b; },\n *\
+    \            [](int a,int b){ return b; },\n *            INF, INF);\n *\n * Range\
+    \ Add Range max\n * LazySegmentTree<int> segt(\n *            n,\n *         \
+    \   [](int a,int b){ return max(a, b); },\n *            [](int a,int b,int w){\
+    \ return a + b; },\n *            [](int a,int b){ return a+b; },\n *        \
+    \    -INF, 0);\n *\n * Range Update Range max\n * LazySegmentTree<int> segt(\n\
     \ *            n,\n *            [](int a,int b){ return max(a, b); },\n *   \
     \         [](int a,int b,int w){ return b; },\n *            [](int a,int b){\
     \ return b; },\n *            -INF, INF);\n */\n"
@@ -216,12 +216,12 @@ data:
   isVerificationFile: false
   path: lib/structure/lazy_segment_tree.cpp
   requiredBy: []
-  timestamp: '2020-10-10 20:35:00+09:00'
+  timestamp: '2020-12-14 00:57:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/range_affine_range_sum.test.cpp
-  - test/structure/lazy_segment_tree.test.cpp
   - test/tree/heavy_light_decomposition/hld.test.cpp
+  - test/structure/lazy_segment_tree.test.cpp
 documentation_of: lib/structure/lazy_segment_tree.cpp
 layout: document
 redirect_from:

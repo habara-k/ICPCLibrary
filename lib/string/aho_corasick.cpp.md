@@ -152,8 +152,8 @@ data:
   timestamp: '2020-11-04 01:34:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/aho_corasick.test.cpp
   - test/string/aho_corasick2.test.cpp
+  - test/string/aho_corasick.test.cpp
 documentation_of: lib/string/aho_corasick.cpp
 layout: document
 redirect_from:

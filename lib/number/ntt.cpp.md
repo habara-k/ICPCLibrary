@@ -116,11 +116,11 @@ data:
   timestamp: '2020-10-24 19:29:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/convolution.test.cpp
-  - test/number/fps/pow.test.cpp
-  - test/number/fps/exp.test.cpp
   - test/number/fps/inv.test.cpp
+  - test/number/fps/exp.test.cpp
   - test/number/fps/log.test.cpp
+  - test/number/fps/pow.test.cpp
+  - test/yosupo-judge/convolution.test.cpp
 documentation_of: lib/number/ntt.cpp
 layout: document
 redirect_from:

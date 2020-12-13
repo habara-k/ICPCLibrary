@@ -99,9 +99,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/two_edge_connected_components.test.cpp
-  - test/graph/lowlink/articulation.test.cpp
-  - test/graph/lowlink/bridge.test.cpp
   - test/graph/two_edge_connected_components.test.cpp
+  - test/graph/lowlink/bridge.test.cpp
+  - test/graph/lowlink/articulation.test.cpp
 documentation_of: lib/graph/lowlink.cpp
 layout: document
 redirect_from:

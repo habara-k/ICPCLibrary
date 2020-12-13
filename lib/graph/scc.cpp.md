@@ -100,8 +100,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-judge/two_sat.test.cpp
-  - test/graph/two_sat.test.cpp
   - test/graph/scc.test.cpp
+  - test/graph/two_sat.test.cpp
 documentation_of: lib/graph/scc.cpp
 layout: document
 redirect_from:

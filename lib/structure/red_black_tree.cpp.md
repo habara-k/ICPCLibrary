@@ -232,8 +232,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/structure/red_black_tree/shift_rmq.test.cpp
-  - test/structure/red_black_tree/static_rmq.test.cpp
   - test/structure/red_black_tree/range_affine_range_sum.test.cpp
+  - test/structure/red_black_tree/static_rmq.test.cpp
 documentation_of: lib/structure/red_black_tree.cpp
 layout: document
 redirect_from:

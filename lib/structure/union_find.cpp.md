@@ -78,12 +78,12 @@ data:
   timestamp: '2020-05-06 01:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-judge/union_find.test.cpp
   - test/yosupo-judge/two_edge_connected_components.test.cpp
-  - test/graph/kruskal.test.cpp
+  - test/yosupo-judge/union_find.test.cpp
   - test/graph/two_edge_connected_components.test.cpp
-  - test/structure/union_find.test.cpp
+  - test/graph/kruskal.test.cpp
   - test/tree/tree_hash.test.cpp
+  - test/structure/union_find.test.cpp
 documentation_of: lib/structure/union_find.cpp
 layout: document
 redirect_from:
