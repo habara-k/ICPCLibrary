@@ -169,7 +169,7 @@ private:
  * LazySegmentTree<int> segt(
  *            n,
  *            [](int a,int b){ return min(a, b); },
- *            [](int a,int b,int w){ return a + b*w; },
+ *            [](int a,int b,int w){ return a + b; },
  *            [](int a,int b){ return a+b; },
  *            INF, 0);
  *
@@ -185,7 +185,7 @@ private:
  * LazySegmentTree<int> segt(
  *            n,
  *            [](int a,int b){ return max(a, b); },
- *            [](int a,int b,int w){ return a + b*w; },
+ *            [](int a,int b,int w){ return a + b; },
  *            [](int a,int b){ return a+b; },
  *            -INF, 0);
  *
